@@ -1,0 +1,36 @@
+.card {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  border: 1px solid var(--accent-attention);
+  box-shadow: 0 4px 0 var(--accent-attention-edge);
+}
+@media (min-width: 1024px) {
+  .card {
+    margin-top: 56px;
+  }
+}
+
+.text {
+  flex: 1 1 240px;
+  min-width: 210px;
+}
+
+.title {
+  margin: 0;
+  font: 700 21px / 1.25 var(--font-sans);
+  letter-spacing: -0.02em;
+  text-wrap: pretty;
+}
+
+.meta {
+  margin: 8px 0 0;
+  font: 400 13px / 1.5 var(--font-mono);
+  color: var(--text-muted);
+}

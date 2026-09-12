@@ -1,0 +1,12 @@
+.container {
+  padding: 20px 20px 96px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.segment {
+  margin: 16px 0 22px;
+}
+.segmentGuide {
+  margin: 16px 0 26px;
+}

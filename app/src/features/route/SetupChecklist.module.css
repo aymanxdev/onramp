@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.count {
+  font: 500 11px / 1 var(--font-mono);
+  color: var(--text-muted);
+}
+
+.track {
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-subtle);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--state-ok);
+  transition: width 0.5s var(--ease-spring);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

@@ -1,0 +1,26 @@
+.list {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.item {
+  display: flex;
+  gap: 10px;
+}
+
+.warnBox {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  background: var(--state-warn-soft);
+  color: var(--state-warn);
+  font: 600 13px / 22px var(--font-mono);
+  text-align: center;
+}

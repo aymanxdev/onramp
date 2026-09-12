@@ -1,0 +1,32 @@
+.bar {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px calc(16px + env(safe-area-inset-bottom));
+  margin: 22px -20px 0;
+  background: color-mix(in oklab, var(--bg-page) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--border);
+  z-index: 6;
+}
+@media (min-width: 768px) {
+  .bar {
+    display: none;
+  }
+}
+
+.copy {
+  flex: 2 1 140px;
+}
+
+.share {
+  flex: 1 1 88px;
+  justify-content: center;
+}
+
+.startOver {
+  flex: 0 0 52px;
+  justify-content: center;
+  padding: 0;
+}

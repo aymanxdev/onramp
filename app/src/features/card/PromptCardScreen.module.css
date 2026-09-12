@@ -1,0 +1,31 @@
+.page {
+  padding: 24px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.note {
+  margin: 0;
+  font: 400 12px / 1.5 var(--font-mono);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+@media print {
+  .note,
+  .buttons {
+    display: none !important;
+  }
+  .page {
+    padding: 0;
+  }
+}

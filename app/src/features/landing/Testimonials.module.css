@@ -1,0 +1,33 @@
+.wrap {
+  margin-top: 32px;
+}
+@media (min-width: 1024px) {
+  .wrap {
+    margin-top: 56px;
+  }
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.meta {
+  font: 400 12px / 1 var(--font-mono);
+  color: var(--text-muted);
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.figure {
+  flex: 1 1 260px;
+  min-width: 240px;
+}

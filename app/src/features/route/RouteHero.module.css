@@ -1,0 +1,65 @@
+.card {
+  position: relative;
+  margin: 14px 0 0;
+  padding: 22px;
+  border-radius: var(--radius-xl);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  inset: -60% -20% 40%;
+  pointer-events: none;
+  background: radial-gradient(circle at 78% 10%, var(--glow-tint, var(--accent-action-soft)), transparent 65%);
+  /*
+   * A `circle` radial-gradient sizes its "farthest-corner" radius from a
+   * single Euclidean distance, so on the very wide, short hero card this
+   * box's own bottom edge (the one inset that is not overshooting the
+   * card, see the comment on `.card` below) sits well inside the fade and
+   * shows as a hard band. The mask fades the box itself to nothing before
+   * that edge so the wash always dissolves smoothly, whatever the card's
+   * aspect ratio at a given breakpoint.
+   */
+  mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 78%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 78%);
+}
+
+.row {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.text {
+  flex: 1 1 260px;
+  min-width: 240px;
+}
+
+.goal {
+  margin: 12px 0 12px;
+  font: 700 clamp(24px, 3.2vw, 34px) / 1.15 var(--font-sans);
+  letter-spacing: -0.025em;
+  text-wrap: pretty;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.extra {
+  font: 400 13px / 1.4 var(--font-mono);
+  color: var(--text-secondary);
+}
+
+.mascot {
+  flex: 0 0 96px;
+  width: 96px;
+}
