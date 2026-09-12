@@ -1,0 +1,7 @@
+# pnpm settings for the app package (there is no multi-package workspace).
+# Never install a version published in the last 7 days.
+minimumReleaseAge: 10080
+# Build scripts are blocked by default; only these two are allowed to run.
+allowBuilds:
+  esbuild: true
+  workerd: true
