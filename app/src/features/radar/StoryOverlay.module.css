@@ -1,0 +1,329 @@
+.dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  overflow: hidden;
+  animation: om-up 0.3s var(--ease-spring);
+}
+.dialog::backdrop {
+  background: transparent;
+}
+
+/* From 768px the story is a centred card over a dimmed, blurred backdrop
+   rather than a full-viewport sheet. Setting all four insets to 0 alongside
+   an explicit width and height, with margin: auto, centres a fixed-position
+   element: the box is over-constrained, so the auto margins absorb the
+   remaining space equally on every side. */
+@media (min-width: 768px) {
+  .dialog {
+    width: 480px;
+    height: min(860px, calc(100vh - 48px));
+    margin: auto;
+    border-radius: 28px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-card);
+    background: var(--bg-page);
+  }
+  .dialog::backdrop {
+    background: color-mix(in oklab, var(--ink) 55%, transparent);
+    backdrop-filter: blur(6px);
+  }
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% -6%, color-mix(in oklab, var(--border-strong) 26%, transparent), transparent 68%);
+}
+.glow[data-tint='chat'] {
+  background: radial-gradient(circle at 50% -6%, color-mix(in oklab, var(--tint-chat) 26%, transparent), transparent 68%);
+}
+.glow[data-tint='cowork'] {
+  background: radial-gradient(circle at 50% -6%, color-mix(in oklab, var(--tint-cowork) 26%, transparent), transparent 68%);
+}
+.glow[data-tint='code'] {
+  background: radial-gradient(circle at 50% -6%, color-mix(in oklab, var(--tint-code) 26%, transparent), transparent 68%);
+}
+.glow[data-tint='design'] {
+  background: radial-gradient(circle at 50% -6%, color-mix(in oklab, var(--tint-design) 26%, transparent), transparent 68%);
+}
+
+.handleRow {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 9px 0 3px;
+}
+.handle {
+  width: 38px;
+  height: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--border-strong);
+}
+@media (min-width: 768px) {
+  /* The drag handle is a mobile bottom-sheet affordance; the desktop card has
+     nothing to drag. */
+  .handleRow {
+    display: none;
+  }
+}
+
+.progressRow {
+  position: relative;
+  display: flex;
+  gap: 6px;
+  padding: 6px 16px 0;
+}
+.progressTrack {
+  flex: 1;
+  height: 3px;
+  border-radius: var(--radius-pill);
+  background: var(--border-strong);
+  overflow: hidden;
+}
+.progressFill {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--text-primary);
+}
+.progressDone {
+  width: 100%;
+}
+.progressPending {
+  width: 0;
+}
+.progressCurrent {
+  width: 0;
+  animation: om-story var(--duration-story) linear forwards;
+}
+.progressCurrent.running {
+  animation-play-state: running;
+}
+.progressCurrent.paused {
+  animation-play-state: paused;
+}
+
+.headerRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 16px 0;
+}
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.verified {
+  font: 400 11px/1.4 var(--font-mono);
+  color: var(--text-muted);
+}
+.close {
+  flex: none;
+  width: var(--size-tap);
+  height: var(--size-tap);
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font: 400 20px/1 var(--font-sans);
+  cursor: pointer;
+}
+
+.body {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 22px 8px;
+  cursor: pointer;
+  min-height: 0;
+  touch-action: none;
+}
+
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  animation: om-up 0.34s var(--ease-spring);
+}
+
+/* The visual block above the copy: a mascot or an owner-supplied image inside
+   a tinted rounded panel, filling the space the card used to leave empty. */
+.visual {
+  position: relative;
+  flex: 1;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 32%, color-mix(in oklab, var(--border-strong) 30%, var(--bg-surface)), var(--bg-surface) 78%);
+  border: 1px solid color-mix(in oklab, var(--border-strong) 34%, var(--border));
+}
+.visual[data-tint='chat'] {
+  background: radial-gradient(circle at 50% 32%, color-mix(in oklab, var(--tint-chat) 30%, var(--bg-surface)), var(--bg-surface) 78%);
+  border-color: color-mix(in oklab, var(--tint-chat) 34%, var(--border));
+}
+.visual[data-tint='cowork'] {
+  background: radial-gradient(circle at 50% 32%, color-mix(in oklab, var(--tint-cowork) 30%, var(--bg-surface)), var(--bg-surface) 78%);
+  border-color: color-mix(in oklab, var(--tint-cowork) 34%, var(--border));
+}
+.visual[data-tint='code'] {
+  background: radial-gradient(circle at 50% 32%, color-mix(in oklab, var(--tint-code) 30%, var(--bg-surface)), var(--bg-surface) 78%);
+  border-color: color-mix(in oklab, var(--tint-code) 34%, var(--border));
+}
+.visual[data-tint='design'] {
+  background: radial-gradient(circle at 50% 32%, color-mix(in oklab, var(--tint-design) 30%, var(--bg-surface)), var(--bg-surface) 78%);
+  border-color: color-mix(in oklab, var(--tint-design) 34%, var(--border));
+}
+.visualImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardName {
+  margin: 14px 0 12px;
+  font: 700 clamp(32px, 4.4vw, 42px) / 1.06 var(--font-sans);
+  letter-spacing: -0.03em;
+}
+.cardOne {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--text-primary);
+  text-wrap: pretty;
+}
+
+.cardWho {
+  margin: 14px 0 16px;
+  font: 700 24px/1.25 var(--font-sans);
+  letter-spacing: -0.02em;
+  text-wrap: pretty;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  min-height: var(--size-tap);
+  display: inline-flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 3px 0 var(--border-strong);
+  font: 500 15px/1 var(--font-sans);
+}
+
+.prompt {
+  margin: 14px 0 14px;
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  border: 1px solid var(--accent-action);
+  font: 400 16px/1.6 var(--font-mono);
+  color: var(--text-primary);
+}
+.copyGo {
+  width: 100%;
+  min-height: var(--size-control);
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  font: 600 17px/1 var(--font-sans);
+  transition: transform var(--duration-press) var(--ease-spring);
+  background: var(--accent-action);
+  color: var(--accent-action-ink);
+  box-shadow: 0 4px 0 var(--accent-action-edge);
+}
+.copyGo:hover {
+  transform: translateY(-2px);
+}
+.copyGo:active {
+  transform: translateY(4px);
+}
+.copyGo.copied {
+  background: var(--state-ok);
+  color: var(--bg-page);
+  box-shadow: 0 4px 0 var(--state-ok);
+}
+
+.cardPitfall {
+  margin: 14px 0 0;
+  font: 700 24px/1.3 var(--font-sans);
+  letter-spacing: -0.02em;
+  text-wrap: pretty;
+}
+.scoreLink {
+  margin-top: 20px;
+  min-height: 52px;
+  padding: 0 22px;
+}
+
+.footerRow {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 22px 20px;
+}
+.footerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.officialLink {
+  font: 400 12px/1.4 var(--font-mono);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--accent-action-text);
+}
+.officialLink:hover,
+.officialLink:focus-visible {
+  color: var(--accent-action-text);
+}
+.hint {
+  font: 400 11px/1.4 var(--font-mono);
+  color: var(--text-muted);
+}
+.next {
+  flex: none;
+  min-height: var(--size-tap);
+  padding: 0 18px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 3px 0 var(--border-strong);
+  color: var(--text-primary);
+  font: 500 14px/1 var(--font-mono);
+  cursor: pointer;
+}
+.next:active {
+  transform: translateY(3px);
+  box-shadow: 0 0 0 var(--border-strong);
+}
