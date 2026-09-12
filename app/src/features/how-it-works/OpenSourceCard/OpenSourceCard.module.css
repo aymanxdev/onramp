@@ -1,0 +1,26 @@
+.card {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+}
+
+.statement {
+  margin: 0;
+  font: 600 18px/1.4 var(--font-sans);
+  max-width: 44ch;
+}
+
+.cta {
+  text-decoration: none;
+  background: var(--accent-attention);
+  color: var(--accent-attention-ink);
+  border-color: var(--accent-attention-edge);
+  box-shadow: 0 3px 0 var(--accent-attention-edge);
+}

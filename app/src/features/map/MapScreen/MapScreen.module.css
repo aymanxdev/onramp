@@ -1,0 +1,43 @@
+.page {
+  width: 100%;
+  padding: 18px 20px 96px;
+  max-width: 1120px;
+  margin: 0 auto;
+  min-width: 0;
+}
+
+.headerRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.h1 {
+  margin: 0;
+  font: 700 clamp(24px, 3.2vw, 34px) / 1.1 var(--font-sans);
+  letter-spacing: -0.025em;
+}
+
+.meta {
+  font: 400 12px/1 var(--font-mono);
+  color: var(--text-muted);
+}
+
+.graph {
+  margin-top: 18px;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 470px;
+  margin-top: 18px;
+  border-radius: var(--radius-xl);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font: 400 12px/1 var(--font-mono);
+}

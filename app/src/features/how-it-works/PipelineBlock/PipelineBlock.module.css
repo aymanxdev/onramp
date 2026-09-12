@@ -1,0 +1,55 @@
+.card {
+  width: 100%;
+}
+
+.strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: stretch;
+  margin-top: 14px;
+}
+
+.stage {
+  flex: 1 1 220px;
+  min-width: 210px;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--bg-page);
+  border: 1px solid var(--border);
+}
+
+.title {
+  margin: 0 0 10px;
+  font: 600 15px/1.3 var(--font-sans);
+}
+
+.body {
+  margin: 0 0 12px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.preview {
+  padding: 11px 13px;
+  border-radius: 12px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  font: 400 12px/1.5 var(--font-mono);
+  color: var(--text-secondary);
+}
+
+.dot {
+  margin-right: 7px;
+}
+
+.clusterSvg {
+  width: 100%;
+  height: 56px;
+}
+
+.arrow {
+  align-self: center;
+  font: 400 18px/1 var(--font-mono);
+  color: var(--text-muted);
+}

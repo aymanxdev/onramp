@@ -1,0 +1,24 @@
+.strip {
+  margin-top: 16px;
+  padding: 16px 20px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-page);
+  border: 1px solid var(--border-strong);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  font: 400 12px/1.6 var(--font-mono);
+  color: var(--text-secondary);
+}
+
+.value {
+  color: var(--text-primary);
+}
+
+.ok {
+  color: var(--state-ok);
+}
+
+.warn {
+  color: var(--state-warn);
+}

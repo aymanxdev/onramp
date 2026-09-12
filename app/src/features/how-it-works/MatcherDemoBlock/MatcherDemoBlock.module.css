@@ -1,0 +1,89 @@
+.card {
+  flex: 1 1 380px;
+  min-width: 290px;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.verdict {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font: 600 10px/1 var(--font-mono);
+  letter-spacing: 0.14em;
+  padding: 8px 11px;
+  border-radius: var(--radius-pill);
+}
+.verdictClear {
+  background: var(--state-ok-soft);
+  color: var(--state-ok-text);
+  border: 1px solid var(--state-ok);
+}
+.verdictQuestion {
+  background: var(--accent-attention-soft);
+  color: var(--accent-attention-text);
+  border: 1px solid var(--accent-attention-edge);
+}
+.verdictNone {
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.input {
+  margin-top: 14px;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.rowHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.pct {
+  font: 500 13px/1.3 var(--font-mono);
+  color: var(--text-muted);
+}
+
+.track {
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-subtle);
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--border-strong);
+  transition: width 0.5s var(--ease-spring);
+}
+.fillTop {
+  background: var(--accent-action);
+}
+
+.footnote {
+  margin: 14px 0 0;
+  font: 400 12px/1.5 var(--font-mono);
+  color: var(--text-muted);
+}

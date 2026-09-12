@@ -1,0 +1,195 @@
+.stage {
+  position: relative;
+  border-radius: var(--radius-xl);
+  background: radial-gradient(
+    120% 95% at 32% 42%,
+    color-mix(in oklab, var(--bg-surface) 94%, var(--accent-action)),
+    var(--bg-surface) 52%,
+    var(--bg-page)
+  );
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+.stage:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: -3px;
+}
+
+/* Not `.ambient`: the desktop map fills its container. The ambient thumbnail
+   on /how-it-works is sized entirely by the consumer's own className (see
+   MapLiveBlock's `.graph`, width 150px) so this rule must not compete with it
+   at equal specificity, which forced the thumbnail to the row's full width. */
+.stage:not(.ambient) {
+  width: 100%;
+}
+
+.ambient {
+  border-radius: var(--radius-md);
+}
+
+/* Covers the canvas while it primes and settles (see Graph.tsx's `primeToken`
+   dance), so the graph never appears mid-layout or clipped by a stale camera fit. */
+.fallbackOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  margin: 0 !important;
+  border-radius: inherit;
+}
+
+.canvasHidden {
+  visibility: hidden;
+}
+
+.gridLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--dot) 1px, transparent 1px),
+    linear-gradient(90deg, var(--dot) 1px, transparent 1px);
+  background-size: 46px 46px;
+  opacity: 0.6;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.blobCowork {
+  left: 34%;
+  top: 46%;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, color-mix(in oklab, var(--tint-cowork) 18%, transparent), transparent 70%);
+}
+.blobChat {
+  left: 68%;
+  top: 26%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, color-mix(in oklab, var(--tint-chat) 14%, transparent), transparent 70%);
+}
+.blobCode {
+  left: 72%;
+  top: 72%;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, color-mix(in oklab, var(--tint-code) 14%, transparent), transparent 70%);
+}
+
+.zoomControls {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+.zoomButtons {
+  display: flex;
+  gap: 6px;
+}
+.zoomButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: color-mix(in oklab, var(--bg-page) 72%, transparent);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font: 500 15px/1 var(--font-mono);
+  cursor: pointer;
+}
+.zoomButton:hover {
+  color: var(--text-primary);
+}
+
+.hint {
+  padding: 6px 10px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in oklab, var(--bg-page) 72%, transparent);
+  border: 1px solid var(--border);
+  font: 400 10px/1 var(--font-mono);
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 400ms ease;
+}
+.hintFaded {
+  opacity: 0;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hint {
+    transition: none;
+  }
+}
+
+.legend {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font: 500 10px/1 var(--font-mono);
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 11px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in oklab, var(--bg-page) 72%, transparent);
+  border: 1px solid var(--border);
+}
+.legendDotSurface {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent-action);
+}
+.legendDotCapability {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  background: var(--text-secondary);
+}
+.legendDotConnector {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px dashed var(--text-secondary);
+}
+
+.statsPill {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in oklab, var(--bg-page) 72%, transparent);
+  border: 1px solid var(--border);
+  font: 400 10px/1 var(--font-mono);
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.liveRegion {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

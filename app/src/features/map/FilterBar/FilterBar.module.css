@@ -1,0 +1,87 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.search {
+  margin-top: 14px;
+}
+.searchInput {
+  width: 100%;
+}
+
+.searchRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+.searchField {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.filtersChip {
+  flex: none;
+  align-self: center;
+}
+
+.chipsRow {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.chip {
+  flex: none;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  font: 500 14px/1 var(--font-sans);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  box-shadow: 0 3px 0 var(--border-strong);
+}
+.chipActive {
+  background: var(--accent-action);
+  color: var(--accent-action-ink);
+  border-color: var(--accent-action-edge);
+  box-shadow: 0 3px 0 var(--accent-action-edge);
+}
+
+.planChip {
+  flex: none;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  font: 500 11px/1 var(--font-mono);
+  letter-spacing: 0.1em;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px dashed var(--border-strong);
+}
+.planChipActive {
+  background: var(--accent-attention);
+  color: var(--accent-attention-ink);
+  border-color: var(--accent-attention-edge);
+  border-style: solid;
+}
+
+.slider {
+  margin-top: 14px;
+}
+
+.sheetChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sheetSlider {
+  margin-top: 20px;
+}
