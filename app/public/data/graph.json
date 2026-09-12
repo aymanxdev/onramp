@@ -1,0 +1,2224 @@
+{
+  "builtAt": "2026-09-12T11:25:47Z",
+  "edges": [
+    {
+      "source": "surface:chat",
+      "target": "surface:chrome",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:chat",
+      "target": "surface:code",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:chat",
+      "target": "surface:cowork",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:chat",
+      "target": "surface:design",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:chat",
+      "target": "surface:excel",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:chat",
+      "target": "surface:word",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:chrome",
+      "target": "surface:chat",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:chrome",
+      "target": "surface:cowork",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:code",
+      "target": "surface:api",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:code",
+      "target": "surface:cowork",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:code",
+      "target": "surface:design",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:cowork",
+      "target": "surface:chat",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:cowork",
+      "target": "surface:excel",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:cowork",
+      "target": "surface:mobile",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:cowork",
+      "target": "surface:outlook",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:cowork",
+      "target": "surface:slack",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:design",
+      "target": "surface:chat",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:design",
+      "target": "surface:powerpoint",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:excel",
+      "target": "surface:chat",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:excel",
+      "target": "surface:cowork",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:outlook",
+      "target": "surface:cowork",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:powerpoint",
+      "target": "surface:chat",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:powerpoint",
+      "target": "surface:design",
+      "type": "alternative_to"
+    },
+    {
+      "source": "surface:word",
+      "target": "surface:chat",
+      "type": "alternative_to"
+    },
+    {
+      "source": "capability:artifacts",
+      "target": "surface:chat",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:chat-search",
+      "target": "surface:chat",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:computer-use",
+      "target": "surface:cowork",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:connectors",
+      "target": "surface:chat",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:connectors",
+      "target": "surface:cowork",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:custom-visuals",
+      "target": "surface:chat",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:dispatch",
+      "target": "surface:cowork",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:dispatch",
+      "target": "surface:mobile",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:file-creation",
+      "target": "surface:chat",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:file-creation",
+      "target": "surface:cowork",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:file-creation",
+      "target": "surface:excel",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:file-creation",
+      "target": "surface:powerpoint",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:file-creation",
+      "target": "surface:word",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:interactive-apps",
+      "target": "surface:chat",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:mcp-local",
+      "target": "surface:code",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:memory",
+      "target": "surface:chat",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:memory",
+      "target": "surface:cowork",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:plugins",
+      "target": "surface:code",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:plugins",
+      "target": "surface:cowork",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:projects",
+      "target": "surface:chat",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:reflect",
+      "target": "surface:chat",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:scheduled-tasks",
+      "target": "surface:cowork",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:skills",
+      "target": "surface:chat",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:skills",
+      "target": "surface:code",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:skills",
+      "target": "surface:cowork",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:web-search",
+      "target": "surface:chat",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:web-search",
+      "target": "surface:cowork",
+      "type": "available_on"
+    },
+    {
+      "source": "plugin:code-review",
+      "target": "surface:code",
+      "type": "available_on"
+    },
+    {
+      "source": "plugin:legal-review",
+      "target": "surface:code",
+      "type": "available_on"
+    },
+    {
+      "source": "plugin:legal-review",
+      "target": "surface:cowork",
+      "type": "available_on"
+    },
+    {
+      "source": "plugin:marketing",
+      "target": "surface:chat",
+      "type": "available_on"
+    },
+    {
+      "source": "plugin:marketing",
+      "target": "surface:cowork",
+      "type": "available_on"
+    },
+    {
+      "source": "skill:brand-guidelines",
+      "target": "surface:chat",
+      "type": "available_on"
+    },
+    {
+      "source": "skill:brand-guidelines",
+      "target": "surface:design",
+      "type": "available_on"
+    },
+    {
+      "source": "skill:docx",
+      "target": "surface:chat",
+      "type": "available_on"
+    },
+    {
+      "source": "skill:docx",
+      "target": "surface:cowork",
+      "type": "available_on"
+    },
+    {
+      "source": "skill:docx",
+      "target": "surface:word",
+      "type": "available_on"
+    },
+    {
+      "source": "skill:frontend-design",
+      "target": "surface:code",
+      "type": "available_on"
+    },
+    {
+      "source": "skill:frontend-design",
+      "target": "surface:design",
+      "type": "available_on"
+    },
+    {
+      "source": "skill:pdf",
+      "target": "surface:chat",
+      "type": "available_on"
+    },
+    {
+      "source": "skill:pdf",
+      "target": "surface:cowork",
+      "type": "available_on"
+    },
+    {
+      "source": "skill:pptx",
+      "target": "surface:chat",
+      "type": "available_on"
+    },
+    {
+      "source": "skill:pptx",
+      "target": "surface:cowork",
+      "type": "available_on"
+    },
+    {
+      "source": "skill:pptx",
+      "target": "surface:powerpoint",
+      "type": "available_on"
+    },
+    {
+      "source": "skill:xlsx",
+      "target": "surface:chat",
+      "type": "available_on"
+    },
+    {
+      "source": "skill:xlsx",
+      "target": "surface:cowork",
+      "type": "available_on"
+    },
+    {
+      "source": "skill:xlsx",
+      "target": "surface:excel",
+      "type": "available_on"
+    },
+    {
+      "source": "surface:api",
+      "target": "usecase:api-integration",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:article-summary",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:blog-repurpose",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:brand-guidelines",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:brand-voice",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:campaign-brief",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:checkout-screen",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:ci-pipeline",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:codebase-tour",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:contract-check",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:csv-chart",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:edit-manuscript",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:essay-feedback",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:financial-model",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:fix-bug",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:interview-themes",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:investor-update",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:job-advert",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:kpi-dashboard",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:landing-copy",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:lecture-notes",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:meeting-prep",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:newsletter",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:price-list",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:refactor",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:research-report",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:review-pr",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:social-calendar",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:study-plan",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:summarise-pdfs",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:web-form",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:weekly-status",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:chat",
+      "target": "usecase:write-tests",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:chrome",
+      "target": "usecase:article-summary",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:chrome",
+      "target": "usecase:campaign-brief",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:chrome",
+      "target": "usecase:competitor-watch",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:chrome",
+      "target": "usecase:contract-check",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:chrome",
+      "target": "usecase:web-form",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:code",
+      "target": "usecase:api-integration",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:code",
+      "target": "usecase:ci-pipeline",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:code",
+      "target": "usecase:codebase-tour",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:code",
+      "target": "usecase:design-system-sync",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:code",
+      "target": "usecase:file-tidy",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:code",
+      "target": "usecase:fix-bug",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:code",
+      "target": "usecase:landing-prototype",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:code",
+      "target": "usecase:refactor",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:code",
+      "target": "usecase:review-pr",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:code",
+      "target": "usecase:write-tests",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:blog-repurpose",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:brand-voice",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:competitor-watch",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:data-cleanup",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:expense-sort",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:file-tidy",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:interview-themes",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:investor-update",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:invoice-chase",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:meeting-prep",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:phone-dispatch",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:research-report",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:slack-digest",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:social-calendar",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:spreadsheet-audit",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:study-plan",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:summarise-pdfs",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:support-triage",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:tidy-inbox",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:cowork",
+      "target": "usecase:weekly-status",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:design",
+      "target": "usecase:brand-guidelines",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:design",
+      "target": "usecase:checkout-screen",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:design",
+      "target": "usecase:design-system-sync",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:design",
+      "target": "usecase:design-to-deck",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:design",
+      "target": "usecase:landing-copy",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:design",
+      "target": "usecase:landing-prototype",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:design",
+      "target": "usecase:notes-to-deck",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:design",
+      "target": "usecase:pitch-deck",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:excel",
+      "target": "usecase:csv-chart",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:excel",
+      "target": "usecase:data-cleanup",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:excel",
+      "target": "usecase:expense-sort",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:excel",
+      "target": "usecase:financial-model",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:excel",
+      "target": "usecase:kpi-dashboard",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:excel",
+      "target": "usecase:price-list",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:excel",
+      "target": "usecase:spreadsheet-audit",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:mobile",
+      "target": "usecase:phone-dispatch",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:outlook",
+      "target": "usecase:invoice-chase",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:outlook",
+      "target": "usecase:support-triage",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:outlook",
+      "target": "usecase:tidy-inbox",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:powerpoint",
+      "target": "usecase:design-to-deck",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:powerpoint",
+      "target": "usecase:lecture-notes",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:powerpoint",
+      "target": "usecase:notes-to-deck",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:powerpoint",
+      "target": "usecase:pitch-deck",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:slack",
+      "target": "usecase:slack-digest",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:word",
+      "target": "usecase:edit-manuscript",
+      "type": "good_for",
+      "weight": 10
+    },
+    {
+      "source": "surface:word",
+      "target": "usecase:essay-feedback",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:word",
+      "target": "usecase:job-advert",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "surface:word",
+      "target": "usecase:newsletter",
+      "type": "good_for",
+      "weight": 4
+    },
+    {
+      "source": "feature:chrome-reads-pdfs",
+      "target": "capability:file-creation",
+      "type": "introduces"
+    },
+    {
+      "source": "feature:component-export",
+      "target": "capability:file-creation",
+      "type": "introduces"
+    },
+    {
+      "source": "feature:design-to-slides",
+      "target": "capability:file-creation",
+      "type": "introduces"
+    },
+    {
+      "source": "feature:dispatch",
+      "target": "capability:dispatch",
+      "type": "introduces"
+    },
+    {
+      "source": "feature:skill-packs",
+      "target": "capability:skills",
+      "type": "introduces"
+    },
+    {
+      "source": "capability:computer-use",
+      "target": "surface:cowork",
+      "type": "requires"
+    },
+    {
+      "source": "capability:dispatch",
+      "target": "surface:cowork",
+      "type": "requires"
+    },
+    {
+      "source": "capability:dispatch",
+      "target": "surface:mobile",
+      "type": "requires"
+    },
+    {
+      "source": "capability:scheduled-tasks",
+      "target": "surface:cowork",
+      "type": "requires"
+    },
+    {
+      "source": "surface:chat",
+      "target": "plan:free",
+      "type": "requires"
+    },
+    {
+      "source": "surface:chrome",
+      "target": "plan:free",
+      "type": "requires"
+    },
+    {
+      "source": "surface:code",
+      "target": "plan:pro",
+      "type": "requires"
+    },
+    {
+      "source": "surface:cowork",
+      "target": "plan:pro",
+      "type": "requires"
+    },
+    {
+      "source": "surface:design",
+      "target": "plan:pro",
+      "type": "requires"
+    },
+    {
+      "source": "surface:excel",
+      "target": "plan:max",
+      "type": "requires"
+    },
+    {
+      "source": "surface:mobile",
+      "target": "plan:pro",
+      "type": "requires"
+    },
+    {
+      "source": "surface:outlook",
+      "target": "plan:max",
+      "type": "requires"
+    },
+    {
+      "source": "surface:powerpoint",
+      "target": "plan:max",
+      "type": "requires"
+    },
+    {
+      "source": "surface:slack",
+      "target": "plan:team",
+      "type": "requires"
+    },
+    {
+      "source": "surface:word",
+      "target": "plan:max",
+      "type": "requires"
+    },
+    {
+      "source": "connector:figma",
+      "target": "usecase:design-system-sync",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:figma",
+      "target": "usecase:design-to-deck",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:figma",
+      "target": "usecase:landing-prototype",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:github",
+      "target": "usecase:ci-pipeline",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:github",
+      "target": "usecase:codebase-tour",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:github",
+      "target": "usecase:design-system-sync",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:github",
+      "target": "usecase:fix-bug",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:github",
+      "target": "usecase:refactor",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:github",
+      "target": "usecase:review-pr",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:github",
+      "target": "usecase:write-tests",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:gmail",
+      "target": "usecase:support-triage",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:gmail",
+      "target": "usecase:weekly-status",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:google-calendar",
+      "target": "usecase:meeting-prep",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:google-calendar",
+      "target": "usecase:weekly-status",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:google-drive",
+      "target": "usecase:expense-sort",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:google-drive",
+      "target": "usecase:notes-to-deck",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:google-drive",
+      "target": "usecase:summarise-pdfs",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:microsoft-365",
+      "target": "usecase:edit-manuscript",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:microsoft-365",
+      "target": "usecase:invoice-chase",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:microsoft-365",
+      "target": "usecase:meeting-prep",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:microsoft-365",
+      "target": "usecase:support-triage",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:microsoft-365",
+      "target": "usecase:tidy-inbox",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:microsoft-365",
+      "target": "usecase:weekly-status",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:slack",
+      "target": "usecase:slack-digest",
+      "type": "unlocks"
+    },
+    {
+      "source": "connector:stripe",
+      "target": "usecase:invoice-chase",
+      "type": "unlocks"
+    },
+    {
+      "source": "plugin:code-review",
+      "target": "usecase:fix-bug",
+      "type": "unlocks"
+    },
+    {
+      "source": "plugin:code-review",
+      "target": "usecase:refactor",
+      "type": "unlocks"
+    },
+    {
+      "source": "plugin:code-review",
+      "target": "usecase:review-pr",
+      "type": "unlocks"
+    },
+    {
+      "source": "plugin:code-review",
+      "target": "usecase:write-tests",
+      "type": "unlocks"
+    },
+    {
+      "source": "plugin:legal-review",
+      "target": "usecase:contract-check",
+      "type": "unlocks"
+    },
+    {
+      "source": "plugin:marketing",
+      "target": "usecase:blog-repurpose",
+      "type": "unlocks"
+    },
+    {
+      "source": "plugin:marketing",
+      "target": "usecase:campaign-brief",
+      "type": "unlocks"
+    },
+    {
+      "source": "plugin:marketing",
+      "target": "usecase:social-calendar",
+      "type": "unlocks"
+    },
+    {
+      "source": "skill:brand-guidelines",
+      "target": "usecase:brand-guidelines",
+      "type": "unlocks"
+    },
+    {
+      "source": "skill:brand-guidelines",
+      "target": "usecase:brand-voice",
+      "type": "unlocks"
+    },
+    {
+      "source": "skill:docx",
+      "target": "usecase:edit-manuscript",
+      "type": "unlocks"
+    },
+    {
+      "source": "skill:docx",
+      "target": "usecase:newsletter",
+      "type": "unlocks"
+    },
+    {
+      "source": "skill:frontend-design",
+      "target": "usecase:checkout-screen",
+      "type": "unlocks"
+    },
+    {
+      "source": "skill:frontend-design",
+      "target": "usecase:design-system-sync",
+      "type": "unlocks"
+    },
+    {
+      "source": "skill:frontend-design",
+      "target": "usecase:landing-prototype",
+      "type": "unlocks"
+    },
+    {
+      "source": "skill:pdf",
+      "target": "usecase:lecture-notes",
+      "type": "unlocks"
+    },
+    {
+      "source": "skill:pdf",
+      "target": "usecase:summarise-pdfs",
+      "type": "unlocks"
+    },
+    {
+      "source": "skill:pptx",
+      "target": "usecase:design-to-deck",
+      "type": "unlocks"
+    },
+    {
+      "source": "skill:pptx",
+      "target": "usecase:notes-to-deck",
+      "type": "unlocks"
+    },
+    {
+      "source": "skill:pptx",
+      "target": "usecase:pitch-deck",
+      "type": "unlocks"
+    },
+    {
+      "source": "skill:xlsx",
+      "target": "usecase:data-cleanup",
+      "type": "unlocks"
+    },
+    {
+      "source": "skill:xlsx",
+      "target": "usecase:expense-sort",
+      "type": "unlocks"
+    },
+    {
+      "source": "skill:xlsx",
+      "target": "usecase:financial-model",
+      "type": "unlocks"
+    },
+    {
+      "source": "skill:xlsx",
+      "target": "usecase:kpi-dashboard",
+      "type": "unlocks"
+    },
+    {
+      "source": "skill:xlsx",
+      "target": "usecase:price-list",
+      "type": "unlocks"
+    },
+    {
+      "source": "skill:xlsx",
+      "target": "usecase:spreadsheet-audit",
+      "type": "unlocks"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "capability:artifacts",
+      "name": "Artifacts",
+      "officialUrl": "https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them",
+      "ref": "artifacts",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "capability"
+    },
+    {
+      "id": "capability:chat-search",
+      "name": "Chat search",
+      "officialUrl": "https://support.claude.com/en/articles/11817273",
+      "ref": "chat-search",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "capability"
+    },
+    {
+      "id": "capability:computer-use",
+      "name": "Computer use",
+      "officialUrl": "https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork",
+      "ref": "computer-use",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "capability"
+    },
+    {
+      "id": "capability:connectors",
+      "name": "Connectors",
+      "officialUrl": "https://claude.com/connectors",
+      "ref": "connectors",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "capability"
+    },
+    {
+      "id": "capability:custom-visuals",
+      "name": "Custom visuals",
+      "officialUrl": "https://support.claude.com/en/articles/13979539-custom-visuals-in-chat",
+      "ref": "custom-visuals",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "capability"
+    },
+    {
+      "id": "capability:dispatch",
+      "name": "Dispatch",
+      "officialUrl": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
+      "ref": "dispatch",
+      "shippedOn": "2026-09-02",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "capability"
+    },
+    {
+      "id": "capability:file-creation",
+      "name": "File creation",
+      "officialUrl": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+      "ref": "file-creation",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "capability"
+    },
+    {
+      "id": "capability:interactive-apps",
+      "name": "Interactive apps",
+      "officialUrl": "https://support.claude.com/en/articles/13454812-use-interactive-connectors-in-claude",
+      "ref": "interactive-apps",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "capability"
+    },
+    {
+      "id": "capability:mcp-local",
+      "name": "MCP local",
+      "officialUrl": "https://docs.claude.com/en/docs/claude-code/overview",
+      "ref": "mcp-local",
+      "surface": "code",
+      "tint": "code",
+      "type": "capability"
+    },
+    {
+      "id": "capability:memory",
+      "name": "Memory",
+      "officialUrl": "https://support.claude.com/en/articles/11817273",
+      "ref": "memory",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "capability"
+    },
+    {
+      "id": "capability:plugins",
+      "name": "Plugins",
+      "officialUrl": "https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization",
+      "ref": "plugins",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "capability"
+    },
+    {
+      "id": "capability:projects",
+      "name": "Projects",
+      "officialUrl": "https://claude.ai",
+      "ref": "projects",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "capability"
+    },
+    {
+      "id": "capability:reflect",
+      "name": "Reflect",
+      "officialUrl": "https://support.claude.com/en/articles/11817273",
+      "ref": "reflect",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "capability"
+    },
+    {
+      "id": "capability:scheduled-tasks",
+      "name": "Scheduled tasks",
+      "officialUrl": "https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork",
+      "ref": "scheduled-tasks",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "capability"
+    },
+    {
+      "id": "capability:skills",
+      "name": "Skills",
+      "officialUrl": "https://support.claude.com/en/articles/13119606-managing-skills-as-an-admin",
+      "ref": "skills",
+      "shippedOn": "2026-09-01",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "capability"
+    },
+    {
+      "id": "capability:web-search",
+      "name": "Web search",
+      "officialUrl": "https://claude.ai",
+      "ref": "web-search",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "capability"
+    },
+    {
+      "id": "connector:asana",
+      "name": "Asana",
+      "officialUrl": "https://claude.com/connectors",
+      "ref": "asana",
+      "type": "connector"
+    },
+    {
+      "id": "connector:canva",
+      "name": "Canva",
+      "officialUrl": "https://claude.com/connectors",
+      "ref": "canva",
+      "type": "connector"
+    },
+    {
+      "id": "connector:datadog",
+      "name": "Datadog",
+      "officialUrl": "https://claude.com/connectors",
+      "ref": "datadog",
+      "type": "connector"
+    },
+    {
+      "id": "connector:figma",
+      "name": "Figma",
+      "officialUrl": "https://claude.com/connectors",
+      "ref": "figma",
+      "surface": "design",
+      "tint": "design",
+      "type": "connector"
+    },
+    {
+      "id": "connector:github",
+      "name": "GitHub",
+      "officialUrl": "https://claude.com/connectors",
+      "ref": "github",
+      "surface": "code",
+      "tint": "code",
+      "type": "connector"
+    },
+    {
+      "id": "connector:gmail",
+      "name": "Gmail",
+      "officialUrl": "https://claude.com/connectors",
+      "ref": "gmail",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "connector"
+    },
+    {
+      "id": "connector:google-calendar",
+      "name": "Google Calendar",
+      "officialUrl": "https://claude.com/connectors",
+      "ref": "google-calendar",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "connector"
+    },
+    {
+      "id": "connector:google-drive",
+      "name": "Google Drive",
+      "officialUrl": "https://claude.com/connectors",
+      "ref": "google-drive",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "connector"
+    },
+    {
+      "id": "connector:jira",
+      "name": "Jira",
+      "officialUrl": "https://claude.com/connectors",
+      "ref": "jira",
+      "type": "connector"
+    },
+    {
+      "id": "connector:linear",
+      "name": "Linear",
+      "officialUrl": "https://claude.com/connectors",
+      "ref": "linear",
+      "type": "connector"
+    },
+    {
+      "id": "connector:microsoft-365",
+      "name": "Microsoft 365",
+      "officialUrl": "https://claude.com/connectors",
+      "ref": "microsoft-365",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "connector"
+    },
+    {
+      "id": "connector:notion",
+      "name": "Notion",
+      "officialUrl": "https://claude.com/connectors",
+      "ref": "notion",
+      "type": "connector"
+    },
+    {
+      "id": "connector:slack",
+      "name": "Slack",
+      "officialUrl": "https://claude.com/connectors",
+      "ref": "slack",
+      "surface": "slack",
+      "tint": "design",
+      "type": "connector"
+    },
+    {
+      "id": "connector:stripe",
+      "name": "Stripe",
+      "officialUrl": "https://claude.com/connectors",
+      "ref": "stripe",
+      "surface": "outlook",
+      "tint": "chat",
+      "type": "connector"
+    },
+    {
+      "id": "feature:chrome-reads-pdfs",
+      "name": "Chrome reads PDFs",
+      "officialUrl": "https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome",
+      "ref": "chrome-reads-pdfs",
+      "shippedOn": "2026-08-24",
+      "surface": "chrome",
+      "tint": "cowork",
+      "type": "feature"
+    },
+    {
+      "id": "feature:component-export",
+      "name": "Component export",
+      "officialUrl": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+      "ref": "component-export",
+      "shippedOn": "2026-08-19",
+      "surface": "design",
+      "tint": "design",
+      "type": "feature"
+    },
+    {
+      "id": "feature:design-to-slides",
+      "name": "Design to slides",
+      "officialUrl": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+      "ref": "design-to-slides",
+      "shippedOn": "2026-09-01",
+      "surface": "design",
+      "tint": "design",
+      "type": "feature"
+    },
+    {
+      "id": "feature:dispatch",
+      "name": "Dispatch",
+      "officialUrl": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
+      "ref": "dispatch",
+      "shippedOn": "2026-09-02",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "feature"
+    },
+    {
+      "id": "feature:skill-packs",
+      "name": "Skill packs",
+      "officialUrl": "https://support.claude.com/en/articles/13119606-managing-skills-as-an-admin",
+      "ref": "skill-packs",
+      "shippedOn": "2026-08-29",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "feature"
+    },
+    {
+      "id": "plan:enterprise",
+      "name": "Enterprise",
+      "officialUrl": "https://claude.com",
+      "ref": "enterprise",
+      "type": "plan"
+    },
+    {
+      "id": "plan:free",
+      "name": "Free",
+      "officialUrl": "https://claude.com",
+      "ref": "free",
+      "type": "plan"
+    },
+    {
+      "id": "plan:max",
+      "name": "Max",
+      "officialUrl": "https://claude.com",
+      "ref": "max",
+      "type": "plan"
+    },
+    {
+      "id": "plan:pro",
+      "name": "Pro",
+      "officialUrl": "https://claude.com",
+      "ref": "pro",
+      "type": "plan"
+    },
+    {
+      "id": "plan:team",
+      "name": "Team",
+      "officialUrl": "https://claude.com",
+      "ref": "team",
+      "type": "plan"
+    },
+    {
+      "id": "plugin:code-review",
+      "name": "Code review",
+      "officialUrl": "https://claude.com/docs/plugins/overview",
+      "ref": "code-review",
+      "surface": "code",
+      "tint": "code",
+      "type": "plugin"
+    },
+    {
+      "id": "plugin:legal-review",
+      "name": "Legal review",
+      "officialUrl": "https://claude.com/docs/plugins/overview",
+      "ref": "legal-review",
+      "surface": "chrome",
+      "tint": "cowork",
+      "type": "plugin"
+    },
+    {
+      "id": "plugin:marketing",
+      "name": "Marketing",
+      "officialUrl": "https://claude.com/docs/plugins/overview",
+      "ref": "marketing",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "plugin"
+    },
+    {
+      "id": "skill:brand-guidelines",
+      "name": "Brand guidelines",
+      "officialUrl": "https://support.claude.com/en/articles/13119606-managing-skills-as-an-admin",
+      "ref": "brand-guidelines",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "skill"
+    },
+    {
+      "id": "skill:docx",
+      "name": "docx",
+      "officialUrl": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+      "ref": "docx",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "skill"
+    },
+    {
+      "id": "skill:frontend-design",
+      "name": "Frontend design",
+      "officialUrl": "https://support.claude.com/en/articles/13119606-managing-skills-as-an-admin",
+      "ref": "frontend-design",
+      "surface": "design",
+      "tint": "design",
+      "type": "skill"
+    },
+    {
+      "id": "skill:pdf",
+      "name": "pdf",
+      "officialUrl": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+      "ref": "pdf",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "skill"
+    },
+    {
+      "id": "skill:pptx",
+      "name": "pptx",
+      "officialUrl": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+      "ref": "pptx",
+      "surface": "design",
+      "tint": "design",
+      "type": "skill"
+    },
+    {
+      "id": "skill:xlsx",
+      "name": "xlsx",
+      "officialUrl": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+      "ref": "xlsx",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "skill"
+    },
+    {
+      "caption": "For builders",
+      "id": "surface:api",
+      "name": "API",
+      "officialUrl": "https://docs.claude.com/en/docs/intro",
+      "ref": "api",
+      "surface": "api",
+      "tint": "neutral",
+      "type": "surface"
+    },
+    {
+      "caption": "Free plan",
+      "id": "surface:chat",
+      "name": "Chat",
+      "officialUrl": "https://claude.ai",
+      "ref": "chat",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "surface"
+    },
+    {
+      "caption": "Browser",
+      "id": "surface:chrome",
+      "name": "Chrome",
+      "officialUrl": "https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome",
+      "ref": "chrome",
+      "surface": "chrome",
+      "tint": "cowork",
+      "type": "surface"
+    },
+    {
+      "caption": "Terminal",
+      "id": "surface:code",
+      "name": "Code",
+      "officialUrl": "https://docs.claude.com/en/docs/claude-code/overview",
+      "ref": "code",
+      "surface": "code",
+      "tint": "code",
+      "type": "surface"
+    },
+    {
+      "caption": "Agentic work",
+      "id": "surface:cowork",
+      "name": "Cowork",
+      "officialUrl": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
+      "ref": "cowork",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "surface"
+    },
+    {
+      "caption": "Systems",
+      "id": "surface:design",
+      "name": "Design",
+      "officialUrl": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+      "ref": "design",
+      "surface": "design",
+      "tint": "design",
+      "type": "surface"
+    },
+    {
+      "caption": "Spreadsheets",
+      "id": "surface:excel",
+      "name": "Excel",
+      "officialUrl": "https://support.claude.com/en/articles/12650343-using-claude-in-excel",
+      "ref": "excel",
+      "surface": "excel",
+      "tint": "code",
+      "type": "surface"
+    },
+    {
+      "caption": "On the go",
+      "id": "surface:mobile",
+      "name": "Mobile",
+      "officialUrl": "https://support.claude.com/en/articles/15520349",
+      "ref": "mobile",
+      "surface": "mobile",
+      "tint": "cowork",
+      "type": "surface"
+    },
+    {
+      "caption": "Mail",
+      "id": "surface:outlook",
+      "name": "Outlook",
+      "officialUrl": "https://support.claude.com/en/articles/15183774",
+      "ref": "outlook",
+      "surface": "outlook",
+      "tint": "chat",
+      "type": "surface"
+    },
+    {
+      "caption": "Decks",
+      "id": "surface:powerpoint",
+      "name": "PowerPoint",
+      "officialUrl": "https://support.claude.com/en/articles/13521390-using-claude-in-powerpoint",
+      "ref": "powerpoint",
+      "surface": "powerpoint",
+      "tint": "chat",
+      "type": "surface"
+    },
+    {
+      "caption": "Team chat",
+      "id": "surface:slack",
+      "name": "Tag for Slack",
+      "officialUrl": "https://www.anthropic.com/news/introducing-claude-tag",
+      "ref": "slack",
+      "surface": "slack",
+      "tint": "design",
+      "type": "surface"
+    },
+    {
+      "caption": "Documents",
+      "id": "surface:word",
+      "name": "Word",
+      "officialUrl": "https://support.claude.com/en/articles/15183774",
+      "ref": "word",
+      "surface": "word",
+      "tint": "chat",
+      "type": "surface"
+    },
+    {
+      "id": "usecase:api-integration",
+      "name": "Build Claude into my own product",
+      "ref": "api-integration",
+      "surface": "api",
+      "tint": "neutral",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:article-summary",
+      "name": "Summarise the article I am reading",
+      "ref": "article-summary",
+      "surface": "chrome",
+      "tint": "cowork",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:blog-repurpose",
+      "name": "Turn a blog post into a week of social posts",
+      "ref": "blog-repurpose",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:brand-guidelines",
+      "name": "Write brand guidelines from our existing assets",
+      "ref": "brand-guidelines",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:brand-voice",
+      "name": "Rewrite copy in our brand voice",
+      "ref": "brand-voice",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:campaign-brief",
+      "name": "Write a campaign brief from a product page",
+      "ref": "campaign-brief",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:checkout-screen",
+      "name": "Prototype a checkout screen",
+      "ref": "checkout-screen",
+      "surface": "design",
+      "tint": "design",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:ci-pipeline",
+      "name": "Set up a CI pipeline for my project",
+      "ref": "ci-pipeline",
+      "surface": "code",
+      "tint": "code",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:codebase-tour",
+      "name": "Explain an unfamiliar codebase to me",
+      "ref": "codebase-tour",
+      "surface": "code",
+      "tint": "code",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:competitor-watch",
+      "name": "Watch competitor pages weekly and summarise changes",
+      "ref": "competitor-watch",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:contract-check",
+      "name": "Summarise a contract before I sign it",
+      "ref": "contract-check",
+      "surface": "chrome",
+      "tint": "cowork",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:csv-chart",
+      "name": "Analyse a CSV and chart what matters",
+      "ref": "csv-chart",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:data-cleanup",
+      "name": "Clean messy data in a sheet",
+      "ref": "data-cleanup",
+      "surface": "excel",
+      "tint": "code",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:design-system-sync",
+      "name": "Keep a design system in sync with our code",
+      "ref": "design-system-sync",
+      "surface": "design",
+      "tint": "design",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:design-to-deck",
+      "name": "Turn a design file into a deck",
+      "ref": "design-to-deck",
+      "surface": "design",
+      "tint": "design",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:edit-manuscript",
+      "name": "Edit a long document for tone and flow",
+      "ref": "edit-manuscript",
+      "surface": "word",
+      "tint": "chat",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:essay-feedback",
+      "name": "Get honest feedback on my essay",
+      "ref": "essay-feedback",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:expense-sort",
+      "name": "Sort receipts into an expense spreadsheet",
+      "ref": "expense-sort",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:file-tidy",
+      "name": "Organise the files on my machine into folders",
+      "ref": "file-tidy",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:financial-model",
+      "name": "Build a financial model",
+      "ref": "financial-model",
+      "surface": "excel",
+      "tint": "code",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:fix-bug",
+      "name": "Fix a bug in my repo",
+      "ref": "fix-bug",
+      "surface": "code",
+      "tint": "code",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:interview-themes",
+      "name": "Turn interview transcripts into themes",
+      "ref": "interview-themes",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:investor-update",
+      "name": "Write a monthly investor update",
+      "ref": "investor-update",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:invoice-chase",
+      "name": "Chase unpaid invoices politely",
+      "ref": "invoice-chase",
+      "surface": "outlook",
+      "tint": "chat",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:job-advert",
+      "name": "Write a job advert",
+      "ref": "job-advert",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:kpi-dashboard",
+      "name": "Build a monthly KPI dashboard",
+      "ref": "kpi-dashboard",
+      "surface": "excel",
+      "tint": "code",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:landing-copy",
+      "name": "Write landing page copy",
+      "ref": "landing-copy",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:landing-prototype",
+      "name": "Build a landing page prototype",
+      "ref": "landing-prototype",
+      "surface": "design",
+      "tint": "design",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:lecture-notes",
+      "name": "Turn lecture slides into revision notes",
+      "ref": "lecture-notes",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:meeting-prep",
+      "name": "Prepare me for tomorrow's meetings",
+      "ref": "meeting-prep",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:newsletter",
+      "name": "Draft a monthly newsletter from my notes",
+      "ref": "newsletter",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:notes-to-deck",
+      "name": "Turn my messy research notes into a client deck",
+      "ref": "notes-to-deck",
+      "surface": "powerpoint",
+      "tint": "chat",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:phone-dispatch",
+      "name": "Start a long job from my phone and pick it up later",
+      "ref": "phone-dispatch",
+      "surface": "mobile",
+      "tint": "cowork",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:pitch-deck",
+      "name": "Turn my notes into a pitch deck",
+      "ref": "pitch-deck",
+      "surface": "powerpoint",
+      "tint": "chat",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:price-list",
+      "name": "Build a price list spreadsheet",
+      "ref": "price-list",
+      "surface": "excel",
+      "tint": "code",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:refactor",
+      "name": "Refactor a module and keep the tests green",
+      "ref": "refactor",
+      "surface": "code",
+      "tint": "code",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:research-report",
+      "name": "Research a topic and write a report",
+      "ref": "research-report",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:review-pr",
+      "name": "Review a pull request before I merge it",
+      "ref": "review-pr",
+      "surface": "code",
+      "tint": "code",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:slack-digest",
+      "name": "Summarise my Slack channel every day",
+      "ref": "slack-digest",
+      "surface": "slack",
+      "tint": "design",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:social-calendar",
+      "name": "Plan a month of social posts",
+      "ref": "social-calendar",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:spreadsheet-audit",
+      "name": "Check a spreadsheet for broken formulas before I send it",
+      "ref": "spreadsheet-audit",
+      "surface": "excel",
+      "tint": "code",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:study-plan",
+      "name": "Make a study plan and quiz me on it",
+      "ref": "study-plan",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:summarise-pdfs",
+      "name": "Summarise a folder of PDFs",
+      "ref": "summarise-pdfs",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:support-triage",
+      "name": "Triage customer support emails",
+      "ref": "support-triage",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:tidy-inbox",
+      "name": "Tidy my inbox every morning",
+      "ref": "tidy-inbox",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:web-form",
+      "name": "Fill in a long web form from my notes",
+      "ref": "web-form",
+      "surface": "chrome",
+      "tint": "cowork",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:weekly-status",
+      "name": "Write my weekly status report from my calendar and email",
+      "ref": "weekly-status",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "usecase"
+    },
+    {
+      "id": "usecase:write-tests",
+      "name": "Add tests to an untested codebase",
+      "ref": "write-tests",
+      "surface": "code",
+      "tint": "code",
+      "type": "usecase"
+    }
+  ],
+  "version": "2026.09.1"
+}

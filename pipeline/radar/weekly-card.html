@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onramp Radar weekly card</title>
+<style>
+  /* Values copied from app/src/design-system/tokens.json (dark, the default
+     theme). This file is filled by pipeline/radar/render_weekly_card.py and
+     rendered to a 1080 x 1350 PNG by Playwright in CI; nothing here reads
+     tokens.css directly, since this page is not part of the app build. */
+  :root {
+    --bg-page: #141413;
+    --bg-surface: #1c1c1a;
+    --bg-raised: #24241f;
+    --bg-subtle: #201f1c;
+    --border: #37372f;
+    --border-strong: #4a4941;
+    --text-primary: #faf9f5;
+    --text-secondary: #b0aea5;
+    --text-muted: #918f86;
+    --accent-action: #b5cd7a;
+    --accent-action-edge: #7e9c4f;
+    --accent-action-ink: #141413;
+    --accent-attention: #f2c94c;
+    --tint-chat: #f2c94c;
+    --tint-cowork: #b5cd7a;
+    --tint-code: #6a9bcc;
+    --tint-design: #a878c9;
+    --radius-lg: 24px;
+    --radius-xl: 28px;
+    --radius-pill: 999px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    width: 1080px;
+    height: 1350px;
+    background: var(--bg-page);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+  }
+  .card {
+    width: 1080px;
+    height: 1350px;
+    padding: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background:
+      radial-gradient(circle at 82% 6%, rgba(181, 205, 122, 0.16), transparent 60%),
+      var(--bg-page);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .mark {
+    width: 72px;
+    height: 72px;
+    flex: none;
+  }
+  .brand-name {
+    font: 700 30px/1 var(--font-sans);
+    letter-spacing: -0.02em;
+  }
+  .brand-tag {
+    font: 500 15px/1 var(--font-mono);
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .eyebrow {
+    font: 500 16px/1 var(--font-mono);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  h1 {
+    margin: 0;
+    font: 700 56px/1.1 var(--font-sans);
+    letter-spacing: -0.03em;
+  }
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    flex: 1;
+  }
+  .feature {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 28px 32px;
+    border-radius: var(--radius-xl);
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+  }
+  .feature-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    font: 600 15px/1 var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    border-radius: var(--radius-pill);
+    background: var(--accent-action);
+    color: var(--accent-action-ink);
+  }
+  .feature-date {
+    font: 400 15px/1 var(--font-mono);
+    color: var(--text-muted);
+  }
+  .feature-name {
+    margin: 0;
+    font: 700 32px/1.2 var(--font-sans);
+    letter-spacing: -0.015em;
+  }
+  .feature-text {
+    margin: 0;
+    font: 400 20px/1.5 var(--font-sans);
+    color: var(--text-secondary);
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+  }
+  .disclaimer {
+    margin: 0;
+    font: 400 15px/1.5 var(--font-sans);
+    color: var(--text-muted);
+    max-width: 70ch;
+  }
+  .url {
+    margin: 0;
+    font: 500 17px/1 var(--font-mono);
+    color: var(--text-secondary);
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="brand">
+      <svg class="mark" viewBox="28 24 74 82" role="img" aria-label="Onramp mark">
+        <ellipse cx="44" cy="36" rx="9" ry="10" fill="#a3bd68" stroke="#141413" stroke-width="2.5" />
+        <ellipse cx="86" cy="36" rx="9" ry="10" fill="#a3bd68" stroke="#141413" stroke-width="2.5" />
+        <path d="M31 66 Q31 38 60 38 L70 38 Q99 38 99 66 L101 90 Q101 102 87 102 L43 102 Q29 102 29 90 Z" fill="#b5cd7a" stroke="#141413" stroke-width="2.5" />
+        <ellipse cx="51" cy="66" rx="8" ry="9.5" fill="#141413" />
+        <ellipse cx="79" cy="66" rx="8" ry="9.5" fill="#141413" />
+        <circle cx="54" cy="62" r="3" fill="#faf9f5" />
+        <circle cx="82" cy="62" r="3" fill="#faf9f5" />
+        <path d="M57 82 Q65 88 73 82" fill="none" stroke="#141413" stroke-width="3" stroke-linecap="round" />
+      </svg>
+      <div>
+        <div class="brand-name">Onramp</div>
+        <div class="brand-tag">an unofficial guide to Claude</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="eyebrow">Radar, week of {{WEEK_LABEL}}</div>
+      <h1>What Claude shipped this week</h1>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <div class="feature-top">
+          <span class="badge" style="background:{{FEATURE_1_TINT}}">{{FEATURE_1_SURFACE}}</span>
+          <span class="feature-date">{{FEATURE_1_DATE}}</span>
+        </div>
+        <h2 class="feature-name">{{FEATURE_1_NAME}}</h2>
+        <p class="feature-text">{{FEATURE_1_TEXT}}</p>
+      </div>
+      <div class="feature">
+        <div class="feature-top">
+          <span class="badge" style="background:{{FEATURE_2_TINT}}">{{FEATURE_2_SURFACE}}</span>
+          <span class="feature-date">{{FEATURE_2_DATE}}</span>
+        </div>
+        <h2 class="feature-name">{{FEATURE_2_NAME}}</h2>
+        <p class="feature-text">{{FEATURE_2_TEXT}}</p>
+      </div>
+      <div class="feature">
+        <div class="feature-top">
+          <span class="badge" style="background:{{FEATURE_3_TINT}}">{{FEATURE_3_SURFACE}}</span>
+          <span class="feature-date">{{FEATURE_3_DATE}}</span>
+        </div>
+        <h2 class="feature-name">{{FEATURE_3_NAME}}</h2>
+        <p class="feature-text">{{FEATURE_3_TEXT}}</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p class="disclaimer">Onramp is an independent project. It is not affiliated with, endorsed by, or sponsored by Anthropic. Claude and Anthropic are trademarks of Anthropic, PBC.</p>
+      <p class="url">{{SITE_URL}}</p>
+    </div>
+  </div>
+</body>
+</html>

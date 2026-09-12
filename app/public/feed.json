@@ -1,0 +1,43 @@
+{
+  "feed_url": "https://onramp.example/feed.json",
+  "home_page_url": "https://onramp.example/new",
+  "items": [
+    {
+      "content_text": "Send Claude a job from your phone and pick up the result later.",
+      "date_published": "2026-09-02T00:00:00Z",
+      "id": "dispatch",
+      "title": "Dispatch",
+      "url": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork"
+    },
+    {
+      "content_text": "Turn a design file into a deck without rebuilding the layouts.",
+      "date_published": "2026-09-01T00:00:00Z",
+      "id": "design-to-slides",
+      "title": "Design to slides",
+      "url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design"
+    },
+    {
+      "content_text": "Drop in a folder of instructions and Claude follows your house rules.",
+      "date_published": "2026-08-29T00:00:00Z",
+      "id": "skill-packs",
+      "title": "Skill packs",
+      "url": "https://support.claude.com/en/articles/13119606-managing-skills-as-an-admin"
+    },
+    {
+      "content_text": "The sidebar can read the PDF you have open and answer from it.",
+      "date_published": "2026-08-24T00:00:00Z",
+      "id": "chrome-reads-pdfs",
+      "title": "Chrome reads PDFs",
+      "url": "https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome"
+    },
+    {
+      "content_text": "Send a design component straight to code as real, named files.",
+      "date_published": "2026-08-19T00:00:00Z",
+      "id": "component-export",
+      "title": "Component export",
+      "url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design"
+    }
+  ],
+  "title": "Onramp Radar",
+  "version": "https://jsonfeed.org/version/1.1"
+}
