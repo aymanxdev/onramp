@@ -1,0 +1,35 @@
+.block {
+  margin: 0;
+  padding: 18px;
+  border-radius: var(--radius-md);
+  background: var(--bg-page);
+  border: 1px solid var(--border);
+  font: 400 15px/1.65 var(--font-mono);
+  color: var(--text-primary);
+}
+
+.editing {
+  border-color: var(--accent-action);
+  line-height: 1.9;
+}
+
+.placeholder {
+  background: var(--accent-attention-soft);
+  border-bottom: 2px solid var(--accent-attention);
+  padding: 1px 3px;
+}
+
+.input {
+  display: inline-block;
+  min-width: 96px;
+  min-height: 36px;
+  padding: 2px 8px;
+  border-radius: 9px;
+  background: var(--accent-attention-soft);
+  border: 1px solid var(--accent-attention);
+  color: var(--text-primary);
+  font: 500 15px/1 var(--font-mono);
+}
+.input:focus-visible {
+  outline-offset: 2px;
+}

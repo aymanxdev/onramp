@@ -1,0 +1,22 @@
+.wrap {
+  position: relative;
+  height: 74px;
+  margin-bottom: 22px;
+}
+
+.svg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  width: 100%;
+  height: 24px;
+}
+
+.walker {
+  position: absolute;
+  bottom: 14px;
+  width: 52px;
+  transition: left 0.5s var(--ease-spring);
+  animation: om-walk 1.6s ease-in-out infinite;
+}

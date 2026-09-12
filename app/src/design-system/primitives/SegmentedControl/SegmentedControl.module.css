@@ -1,0 +1,34 @@
+.list {
+  display: flex;
+  gap: 4px;
+  /* 2px, not the design's 4px: the item itself grew to the 44px tap-target
+     minimum (DEVELOPER_BRIEF 10a), so the container padding is trimmed to
+     keep the control's overall height close to the design's. */
+  padding: 2px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+}
+
+.tab {
+  /* --size-tap (44px), not the design's --size-seg (38px): tap targets are
+     44px minimum (DEVELOPER_BRIEF 10a). Documented deviation. */
+  min-height: var(--size-tap);
+  padding: 0 16px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  font: 600 13px/1 var(--font-sans);
+  transition: transform var(--duration-press) var(--ease-spring);
+  background: transparent;
+  color: var(--text-secondary);
+}
+.tab:focus-visible {
+  outline-offset: 2px;
+}
+
+.active {
+  background: var(--accent-action);
+  color: var(--accent-action-ink);
+  box-shadow: 0 3px 0 var(--accent-action-edge);
+}

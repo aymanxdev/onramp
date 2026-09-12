@@ -1,0 +1,170 @@
+.button {
+  position: relative;
+  width: auto;
+  min-height: var(--size-control);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 24px;
+  border-radius: var(--radius-pill);
+  border: none;
+  font: 600 17px/1 var(--font-sans);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform var(--duration-press) var(--ease-spring);
+}
+
+/* The one-second attention pulse: a ring in the button's own edge colour, expanding
+   from the outline to about 10px outside and fading. Plays once per pointer enter or
+   focus-visible, and re-arms on the next enter since it is driven by :hover / :focus-visible
+   rather than a class toggle. Neutralised globally under prefers-reduced-motion. */
+.attention::after,
+.action::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.attention::after {
+  --pulse-edge: var(--accent-attention-edge);
+}
+
+.action::after {
+  --pulse-edge: var(--accent-action-edge);
+}
+
+.attention:hover::after,
+.attention:focus-visible::after,
+.action:hover::after,
+.action:focus-visible::after {
+  animation: om-pulse 1s var(--ease-spring);
+}
+
+@keyframes om-pulse {
+  from {
+    opacity: 0.6;
+    box-shadow: 0 0 0 0 var(--pulse-edge);
+  }
+  35% {
+    opacity: 0.5;
+    box-shadow: 0 0 0 10px var(--pulse-edge);
+    /* The spring bounce is for the quick expand only; the fade that follows
+       (to 100%) runs at this even pace so the ring stays visible for most
+       of the second instead of vanishing in the first third of it. */
+    animation-timing-function: linear;
+  }
+  to {
+    opacity: 0;
+    box-shadow: 0 0 0 10px var(--pulse-edge);
+  }
+}
+
+.block {
+  width: 100%;
+}
+
+.md {
+  min-height: var(--size-tap);
+  padding: 0 18px;
+  font: 600 14px/1 var(--font-sans);
+}
+
+.attention {
+  background: var(--accent-attention);
+  color: var(--accent-attention-ink);
+  box-shadow: 0 4px 0 var(--accent-attention-edge);
+}
+.attention:hover,
+.attention:focus-visible {
+  transform: translateY(-2px);
+  color: var(--accent-attention-ink);
+}
+.attention:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 var(--accent-attention-edge);
+}
+
+.action {
+  background: var(--accent-action);
+  color: var(--accent-action-ink);
+  box-shadow: 0 4px 0 var(--accent-action-edge);
+}
+.action:hover,
+.action:focus-visible {
+  transform: translateY(-2px);
+  color: var(--accent-action-ink);
+}
+.action:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 var(--accent-action-edge);
+}
+
+.secondary {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  /* Same 4px edge depth as .attention/.action, so the two sit at the same
+     height next to each other (see the desktop hero CTA and the mobile
+     thumb bar, which pair this with .attention). */
+  box-shadow: 0 4px 0 var(--border-strong);
+}
+.secondary:hover,
+.secondary:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+.secondary:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 var(--border-strong);
+}
+
+.ghost {
+  background: none;
+  border: none;
+  color: var(--accent-action-text);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  box-shadow: none;
+}
+.ghost:hover,
+.ghost:focus-visible {
+  color: var(--accent-action-text);
+}
+
+.button:disabled,
+.button[aria-disabled='true'] {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  opacity: 0.7;
+  box-shadow: none;
+  transform: none;
+}
+
+.loading {
+  cursor: progress;
+}
+
+.dots {
+  display: inline-flex;
+  gap: 5px;
+}
+.dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: om-float 0.9s ease-in-out infinite;
+}
+.dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}

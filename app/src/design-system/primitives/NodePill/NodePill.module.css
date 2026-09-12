@@ -1,0 +1,81 @@
+.hub {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: var(--accent-action);
+  color: var(--accent-action-ink);
+  font: 700 15px/84px var(--font-sans);
+  text-align: center;
+  box-shadow: 0 6px 0 rgba(20, 20, 19, 0.28);
+  border: none;
+  cursor: pointer;
+}
+.hub:hover,
+.hub:focus-visible {
+  color: var(--accent-action-ink);
+}
+
+.capability {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--bg-raised);
+  border: 2px solid var(--border-strong);
+  box-shadow: 0 3px 0 var(--border-strong);
+  font: 500 13px/1 var(--font-mono);
+  cursor: pointer;
+  color: var(--text-primary);
+}
+.capability:hover,
+.capability:focus-visible {
+  color: var(--text-primary);
+}
+
+.connector {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-raised);
+  border: 2px dashed var(--border-strong);
+  box-shadow: 0 3px 0 var(--border-strong);
+  font: 500 13px/1 var(--font-mono);
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+.connector:hover,
+.connector:focus-visible {
+  color: var(--text-secondary);
+}
+
+.selected {
+  border-color: var(--focus);
+}
+
+.hub.tintChat {
+  background: var(--tint-chat);
+}
+.hub.tintCode {
+  background: var(--tint-code);
+}
+.hub.tintDesign {
+  background: var(--tint-design);
+}
+
+.capability.tintChat,
+.connector.tintChat {
+  border-color: color-mix(in oklab, var(--tint-chat) 62%, var(--border-strong));
+}
+.capability.tintCode,
+.connector.tintCode {
+  border-color: color-mix(in oklab, var(--tint-code) 62%, var(--border-strong));
+}
+.capability.tintDesign,
+.connector.tintDesign {
+  border-color: color-mix(in oklab, var(--tint-design) 62%, var(--border-strong));
+}
+.capability.tintCowork,
+.connector.tintCowork {
+  border-color: color-mix(in oklab, var(--tint-cowork) 62%, var(--border-strong));
+}

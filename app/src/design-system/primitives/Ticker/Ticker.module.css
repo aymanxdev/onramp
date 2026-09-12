@@ -1,0 +1,50 @@
+.ticker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.pill {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font: 600 10px/1 var(--font-mono);
+  letter-spacing: 0.12em;
+  color: var(--accent-attention-ink);
+  background: var(--accent-attention);
+  padding: 6px 9px;
+  border-radius: var(--radius-pill);
+}
+
+.track {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.trackInner {
+  display: inline-block;
+  font: 400 13px/1 var(--font-mono);
+  color: var(--text-secondary);
+  animation: om-ticker 22s linear infinite;
+}
+
+.ticker:hover .trackInner,
+.ticker:focus-within .trackInner {
+  animation-play-state: paused;
+}
+
+.staticList {
+  display: inline-block;
+  font: 400 13px/1 var(--font-mono);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

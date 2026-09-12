@@ -1,0 +1,33 @@
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-raised);
+  border: 1px solid var(--state-ok);
+  box-shadow: var(--shadow-pop);
+  font-size: 15px;
+  color: var(--text-primary);
+  animation: om-up 0.4s var(--ease-spring);
+}
+
+.warn {
+  border-color: var(--state-warn);
+}
+
+.icon {
+  color: var(--state-ok);
+  flex: none;
+}
+.warnIcon {
+  color: var(--state-warn);
+}
+
+.overlay {
+  position: fixed;
+  left: 50%;
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  z-index: 50;
+}

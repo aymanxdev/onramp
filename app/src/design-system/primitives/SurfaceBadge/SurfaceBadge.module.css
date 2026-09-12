@@ -1,0 +1,52 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font: 600 11px/1 var(--font-mono);
+  letter-spacing: 0.08em;
+  padding: 9px 12px;
+  border-radius: var(--radius-pill);
+  color: var(--ink);
+}
+
+.sm {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  padding: 6px 9px;
+}
+
+.lg {
+  font-size: 12px;
+  padding: 9px 13px;
+}
+
+.neutral {
+  background: var(--bg-subtle);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.chat {
+  background: var(--tint-chat);
+}
+.cowork {
+  background: var(--tint-cowork);
+}
+.code {
+  background: var(--tint-code);
+}
+.design {
+  background: var(--tint-design);
+}
+
+.lgChat {
+  box-shadow: 0 3px 0 color-mix(in oklab, var(--tint-chat) 70%, var(--ink));
+}
+.lgCowork {
+  box-shadow: 0 3px 0 var(--accent-action-edge);
+}
+.lgCode {
+  box-shadow: 0 3px 0 color-mix(in oklab, var(--tint-code) 70%, var(--ink));
+}
+.lgDesign {
+  box-shadow: 0 3px 0 color-mix(in oklab, var(--tint-design) 70%, var(--ink));
+}
