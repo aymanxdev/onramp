@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style>
+@font-face { font-family: 'IBM Plex Sans'; src: url('{{FONT_SANS_400}}') format('woff2'); font-weight: 400; font-style: normal; font-display: block; }
+@font-face { font-family: 'IBM Plex Sans'; src: url('{{FONT_SANS_600}}') format('woff2'); font-weight: 600; font-style: normal; font-display: block; }
+@font-face { font-family: 'IBM Plex Sans'; src: url('{{FONT_SANS_700}}') format('woff2'); font-weight: 700; font-style: normal; font-display: block; }
+@font-face { font-family: 'IBM Plex Mono'; src: url('{{FONT_MONO_400}}') format('woff2'); font-weight: 400; font-style: normal; font-display: block; }
+@font-face { font-family: 'IBM Plex Mono'; src: url('{{FONT_MONO_500}}') format('woff2'); font-weight: 500; font-style: normal; font-display: block; }
+@font-face { font-family: 'IBM Plex Mono'; src: url('{{FONT_MONO_600}}') format('woff2'); font-weight: 600; font-style: normal; font-display: block; }
+
+:root {
+  --bg-page: #faf9f5;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f2f0e6;
+  --border: #e8e6dc;
+  --text-primary: #141413;
+  --text-secondary: #5f5e57;
+  --text-muted: #6b695f;
+  --dot: rgba(20,20,19,.1);
+  --dot-strip: rgba(20,20,19,.16);
+  --lime: #b5cd7a;
+  --lime-text: #556f2c;
+  --sun: #f2c94c;
+  --sky: #6a9bcc;
+  --plum: #a878c9;
+  --ink: #141413;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  width: 1600px;
+  height: 600px;
+  background: var(--bg-page);
+  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+  background-size: 22px 22px;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  color: var(--text-primary);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Four soft ambient corner glows, tints at ~18%, blurred, no hard edge. */
+.glow { position: absolute; width: 620px; height: 620px; border-radius: 50%; filter: blur(50px); pointer-events: none; }
+.glow.lime { left: -180px; top: -200px; background: radial-gradient(circle, rgba(181,205,122,.30) 0%, rgba(181,205,122,0) 70%); }
+.glow.sun { right: -200px; top: -220px; background: radial-gradient(circle, rgba(242,201,76,.30) 0%, rgba(242,201,76,0) 70%); }
+.glow.sky { right: -180px; bottom: -220px; background: radial-gradient(circle, rgba(106,155,204,.30) 0%, rgba(106,155,204,0) 70%); }
+.glow.plum { left: -200px; bottom: -200px; background: radial-gradient(circle, rgba(168,120,201,.30) 0%, rgba(168,120,201,0) 70%); }
+
+.wordmark { position: absolute; left: 60px; top: 48px; display: flex; align-items: center; gap: 12px; }
+.wordmark svg { display: block; width: 34px; height: 37px; }
+.wordmark span { font-weight: 700; font-size: 23px; letter-spacing: -0.02em; }
+
+.content { position: absolute; left: 60px; top: 116px; width: 940px; }
+
+.headline {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.16;
+  letter-spacing: -0.03em;
+}
+.headline .route { color: var(--lime-text); }
+
+.sub {
+  margin-top: 14px;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  max-width: 700px;
+}
+
+.badges { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
+.badge {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-weight: 600;
+  font-size: 16.5px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  padding: 13.5px 18px;
+  border-radius: 999px;
+}
+.badge.cowork, .badge.chrome { background: var(--lime); }
+.badge.chat, .badge.powerpoint, .badge.word { background: var(--sun); }
+.badge.code, .badge.excel { background: var(--sky); }
+.badge.design { background: var(--plum); }
+
+.steps { margin-top: 24px; display: flex; gap: 14px; }
+.step {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+}
+.step .number {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--sun);
+  color: var(--ink);
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-weight: 600;
+  font-size: 11px;
+}
+.step .text { margin-top: 2px; font-size: 14px; line-height: 1.4; color: var(--text-primary); }
+
+.mascot { position: absolute; right: 90px; top: 90px; width: 300px; height: 286px; }
+.mascot svg { width: 100%; height: 100%; display: block; }
+
+.strip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 60px;
+  background: var(--bg-subtle);
+  border-top: 1px solid var(--border);
+  background-image: radial-gradient(var(--dot-strip) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  display: flex;
+  align-items: center;
+}
+.disclaimer {
+  margin-left: 60px;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+}
+</style>
+</head>
+<body>
+
+<div class="glow lime"></div>
+<div class="glow sun"></div>
+<div class="glow sky"></div>
+<div class="glow plum"></div>
+
+<div class="wordmark">
+  <svg viewBox="28 24 74 82" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="44" cy="36" rx="9" ry="10" fill="#a3bd68" stroke="#141413" stroke-width="2.5"/>
+    <ellipse cx="86" cy="36" rx="9" ry="10" fill="#a3bd68" stroke="#141413" stroke-width="2.5"/>
+    <path d="M31 66 Q31 38 60 38 L70 38 Q99 38 99 66 L101 90 Q101 102 87 102 L43 102 Q29 102 29 90 Z" fill="#b5cd7a" stroke="#141413" stroke-width="2.5"/>
+    <ellipse cx="51" cy="66" rx="8" ry="9.5" fill="#141413"/>
+    <ellipse cx="79" cy="66" rx="8" ry="9.5" fill="#141413"/>
+    <circle cx="54" cy="62" r="3" fill="#faf9f5"/>
+    <circle cx="82" cy="62" r="3" fill="#faf9f5"/>
+    <path d="M57 82 Q65 88 73 82" fill="none" stroke="#141413" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+  <span>Onramp</span>
+</div>
+
+<div class="content">
+  <div class="headline">Tell us what you are trying to do. We hand you the <span class="route">route</span>.</div>
+  <div class="sub">The right surface, what to switch on, the exact first prompt. Free, no login.</div>
+
+  <div class="badges">
+    <span class="badge cowork">COWORK</span>
+    <span class="badge chat">CHAT</span>
+    <span class="badge code">CODE</span>
+    <span class="badge design">DESIGN</span>
+    <span class="badge chrome">CHROME</span>
+    <span class="badge excel">EXCEL</span>
+    <span class="badge powerpoint">POWERPOINT</span>
+    <span class="badge word">WORD</span>
+  </div>
+
+  <div class="steps">
+    <div class="step"><span class="number">01</span><p class="text">Tell us the job in plain words.</p></div>
+    <div class="step"><span class="number">02</span><p class="text">We match it to the right Claude surface and what to switch on.</p></div>
+    <div class="step"><span class="number">03</span><p class="text">Copy the first prompt and go.</p></div>
+  </div>
+</div>
+
+<div class="mascot">
+  <svg viewBox="0 0 130 124" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 40 L19 44" stroke="#f2c94c" stroke-width="3" stroke-linecap="round"/>
+    <path d="M20 22 L26 29" stroke="#f2c94c" stroke-width="3" stroke-linecap="round"/>
+    <path d="M118 44 L111 47" stroke="#f2c94c" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="65" cy="118" rx="26" ry="4" fill="#141413" opacity="0.16"/>
+    <ellipse cx="44" cy="36" rx="9" ry="10" fill="#a3bd68" stroke="#141413" stroke-width="2.5"/>
+    <ellipse cx="86" cy="36" rx="9" ry="10" fill="#a3bd68" stroke="#141413" stroke-width="2.5"/>
+    <rect x="45" y="96" width="14" height="16" rx="7" fill="#a3bd68" stroke="#141413" stroke-width="2.5"/>
+    <rect x="71" y="96" width="14" height="16" rx="7" fill="#a3bd68" stroke="#141413" stroke-width="2.5"/>
+    <path d="M31 66 Q31 38 60 38 L70 38 Q99 38 99 66 L101 90 Q101 102 87 102 L43 102 Q29 102 29 90 Z" fill="#b5cd7a" stroke="#141413" stroke-width="2.5"/>
+    <circle cx="41" cy="78" r="5" fill="#d97757" opacity="0.55"/>
+    <circle cx="89" cy="78" r="5" fill="#d97757" opacity="0.55"/>
+    <path d="M43 50 Q50 45 57 49" fill="none" stroke="#141413" stroke-width="3" stroke-linecap="round"/>
+    <path d="M73 49 Q80 45 87 50" fill="none" stroke="#141413" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="51" cy="65" rx="8.5" ry="10.5" fill="#141413"/>
+    <ellipse cx="79" cy="65" rx="8.5" ry="10.5" fill="#141413"/>
+    <circle cx="54" cy="61" r="3.2" fill="#faf9f5"/>
+    <circle cx="82" cy="61" r="3.2" fill="#faf9f5"/>
+    <path d="M56 80 Q65 92 74 80 Z" fill="#141413"/>
+    <g transform="translate(22 52)"><rect x="-8" y="-9" width="18" height="18" rx="9" fill="#b5cd7a" stroke="#141413" stroke-width="2.5"/></g>
+    <g transform="translate(98 44) rotate(-14)">
+      <path d="M0 -10 L26 -16 L26 6 L0 10 Z" fill="#f2c94c" stroke="#141413" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M9 -12 L9 8 M17 -13 L17 7" stroke="#141413" stroke-width="1.5" opacity="0.5"/>
+      <rect x="-9" y="-3" width="18" height="18" rx="9" fill="#b5cd7a" stroke="#141413" stroke-width="2.5"/>
+    </g>
+  </svg>
+</div>
+
+<div class="strip">
+  <div class="disclaimer">Unofficial. Not affiliated with Anthropic.</div>
+</div>
+
+</body>
+</html>
