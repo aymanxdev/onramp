@@ -1,0 +1,22 @@
+.figure {
+  flex: 1 1 260px;
+  min-width: 240px;
+  margin: 0;
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+}
+
+.quote {
+  margin: 12px 0 0;
+  font-size: 17px;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.caption {
+  margin-top: 14px;
+  font: 400 12px/1.5 var(--font-mono);
+  color: var(--text-muted);
+}

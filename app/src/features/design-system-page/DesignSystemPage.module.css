@@ -1,0 +1,372 @@
+.page {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3vw, 40px) 80px;
+  min-width: 0;
+}
+
+.section {
+  padding: 72px 0 0;
+}
+.section:first-child {
+  padding-top: 40px;
+}
+
+.eyebrow {
+  font: 500 11px/1 var(--font-mono);
+  letter-spacing: 0.18em;
+  color: var(--accent-action-text);
+}
+
+.h2 {
+  font: var(--type-h2);
+  letter-spacing: var(--tracking-h2);
+  margin: 12px 0 8px;
+}
+
+.intro {
+  margin: 0 0 26px;
+  color: var(--text-secondary);
+  max-width: 62ch;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.rowTop {
+  margin-top: 18px;
+}
+
+.panel {
+  flex: 1 1 320px;
+  min-width: 290px;
+  max-width: 100%;
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+}
+.panelSubtle {
+  background: var(--bg-subtle);
+}
+.panelColumn {
+  flex: 1 1 300px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.panelStack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.h3 {
+  margin: 0 0 4px;
+  font: 700 17px/1.2 var(--font-sans);
+}
+.h3Gap {
+  margin: 0 0 14px;
+}
+
+/* --- token swatch rows --- */
+.swatchRow {
+  display: grid;
+  grid-template-columns: 38px 38px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.swatchRow:first-child {
+  padding-top: 12px;
+}
+.swatchRow:last-child {
+  border-bottom: none;
+}
+.swatch {
+  height: 32px;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+}
+.swatchName {
+  font: 500 13px/1 var(--font-mono);
+}
+.swatchNote {
+  font: 400 11px/1 var(--font-mono);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* --- type scale --- */
+.typeDisplay {
+  margin: 0 0 4px;
+  font: var(--type-display);
+  letter-spacing: var(--tracking-display);
+}
+.typeH2Sample {
+  margin: 0 0 4px;
+  font: var(--type-h2);
+  letter-spacing: var(--tracking-h2);
+}
+.typeH3Sample {
+  margin: 0 0 4px;
+  font: var(--type-h3);
+}
+.typeCaption {
+  margin: 0 0 16px;
+  font: 400 11px/1 var(--font-mono);
+  color: var(--text-muted);
+}
+.typeBody {
+  margin: 0 0 4px;
+  max-width: 66ch;
+}
+.typeMonoLabel {
+  margin: 0 0 4px;
+  font: 500 11px/1 var(--font-mono);
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+}
+
+/* --- space --- */
+.spaceRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+.spaceCaption {
+  margin: 12px 0 0;
+  font: 400 11px/1.5 var(--font-mono);
+  color: var(--text-muted);
+}
+
+/* --- radius and shadow --- */
+.swatchesWrap {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.radiusBox {
+  width: 64px;
+  height: 52px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  font: 400 10px/52px var(--font-mono);
+  color: var(--text-muted);
+  text-align: center;
+}
+.shadowBox {
+  width: 96px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--bg-raised);
+  font: 400 10px/44px var(--font-mono);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* --- tokens.json export card --- */
+.exportHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.exportTag {
+  font: 500 10px/1 var(--font-mono);
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+}
+.pre {
+  margin: 0;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--bg-page);
+  border: 1px solid var(--border);
+  font: 400 12px/1.6 var(--font-mono);
+  color: var(--text-secondary);
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* --- components section --- */
+.stack12 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 14px;
+}
+.wrapChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.componentLabel {
+  font: 500 10px/1 var(--font-mono);
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+}
+.segDemo {
+  max-width: 280px;
+}
+.badgeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.stackGap10 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+.checklistDemo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+.nodeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 12px;
+}
+.iconRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+}
+.iconSwatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+.iconSwatchLabel {
+  font: 500 10px/1 var(--font-mono);
+  color: var(--text-muted);
+}
+.sheetPreview {
+  margin-top: 12px;
+  padding: 16px;
+  border-radius: 24px 24px 12px 12px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-pop);
+}
+.sheetHandle {
+  display: block;
+  width: 44px;
+  height: 5px;
+  border-radius: var(--radius-pill);
+  background: var(--border-strong);
+  margin: 0 auto 14px;
+}
+.sheetCopy {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+.mascotContainer {
+  margin-top: 12px;
+  position: relative;
+  height: 132px;
+  border-radius: 20px;
+  background: var(--bg-page);
+  border: 1px dashed var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.mascotContainerFace {
+  width: 104px;
+  position: relative;
+}
+
+/* --- mascot section --- */
+.mascotGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.mascotCard {
+  flex: 1 1 170px;
+  min-width: 150px;
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  text-align: center;
+}
+.mascotFace {
+  width: 100%;
+  max-width: 120px;
+  margin: 0 auto;
+}
+.mascotState {
+  margin: 12px 0 4px;
+  font: 500 11px/1 var(--font-mono);
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+}
+.mascotCaption {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+.deliverables {
+  margin: 18px 0 0;
+  font: 400 13px/1.6 var(--font-mono);
+  color: var(--text-muted);
+}
+
+/* --- motion table --- */
+.motionTable {
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.motionRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 12px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+.motionHead {
+  border-top: none;
+  background: var(--bg-subtle);
+  font: 500 10px/1.4 var(--font-mono);
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+}
+.motionWhat {
+  color: var(--text-primary);
+}
+.motionSpring {
+  font-family: var(--font-mono);
+  font-size: 13px;
+}

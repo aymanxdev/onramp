@@ -1,0 +1,24 @@
+/* A 44x44 tap target around a glyph that reads at its natural, small size:
+   the box grows via negative margins rather than padding, so the "Made with
+   ♥ for Claude in London" line does not reflow around a bigger heart. */
+.heart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: -15px -15px;
+  vertical-align: middle;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--accent-detail);
+  font-size: inherit;
+  line-height: 1;
+  animation: om-beat 3.4s ease-in-out infinite;
+  transition: transform 0.2s var(--ease-spring);
+  cursor: pointer;
+}
+.heart:hover {
+  transform: scale(1.5) rotate(-10deg);
+}

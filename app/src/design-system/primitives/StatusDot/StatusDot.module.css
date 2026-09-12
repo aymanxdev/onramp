@@ -1,0 +1,17 @@
+.dot {
+  display: inline-block;
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.ok {
+  background: var(--state-ok);
+}
+.action {
+  background: var(--accent-action);
+}
+.muted {
+  background: var(--border-strong);
+}

@@ -1,0 +1,29 @@
+.bar {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 14px 20px calc(18px + env(safe-area-inset-bottom));
+  background: linear-gradient(to top, var(--bg-page) 62%, transparent);
+  z-index: 5;
+  margin: 26px -20px 0;
+}
+
+.flush {
+  margin: 26px 0 0;
+}
+
+@media (min-width: 768px) {
+  .bar {
+    position: static;
+    background: none;
+    padding: 0;
+    margin: 26px 0 0;
+    gap: 12px;
+  }
+  .bar > :global(*) {
+    flex: 0 0 auto;
+    width: auto;
+  }
+}

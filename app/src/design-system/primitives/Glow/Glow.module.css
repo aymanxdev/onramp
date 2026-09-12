@@ -1,0 +1,72 @@
+.glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 45%, var(--accent-action-soft), transparent 74%);
+  animation: om-glow 5s ease-in-out infinite;
+  /*
+   * A `circle` radial-gradient sizes its radius from the farthest corner, so
+   * on a box whose width and height differ noticeably it does not reach
+   * transparent before the nearer edges. Whatever wraps this (e.g. the
+   * landing hero, which clips a slightly larger box with overflow: hidden
+   * so the wash can still scale with its wrapper) would otherwise show that
+   * as a hard edge. The mask fades the box itself out well inside its own
+   * bounds so the wash always dissolves smoothly first.
+   */
+  mask-image: radial-gradient(circle at 50% 45%, #000 0%, #000 35%, transparent 58%);
+  -webkit-mask-image: radial-gradient(circle at 50% 45%, #000 0%, #000 35%, transparent 58%);
+}
+
+.thinking {
+  inset: -16%;
+  background: radial-gradient(circle at 50% 50%, var(--accent-attention-soft), transparent 74%);
+  animation-duration: 3.4s;
+  /* Unaffected by the hero variant's mask fix above: its own square box and
+     visible overflow (no clipping wrapper) never showed a hard edge. */
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+
+/*
+ * Matches the route hero card (docs/design/Onramp.dc.html line 392): a
+ * wide, short box, so the `circle` gradient's farthest-corner radius is
+ * dominated by the width and does not fade to transparent before this
+ * div's own bottom edge (the one side that does not already overshoot the
+ * card, see RouteHero.module.css for the fuller explanation). The mask
+ * fades the box out first so the wash never shows a hard band.
+ */
+.card {
+  inset: -60% -20% 40%;
+  border-radius: 0;
+  background: radial-gradient(circle at 78% 10%, var(--accent-action-soft), transparent 65%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 78%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 78%);
+}
+
+/* Non-lime tints for the `card` variant, same gradient position as `.card`. */
+.cardTintChat {
+  background: radial-gradient(circle at 78% 10%, color-mix(in oklab, var(--tint-chat) 14%, transparent), transparent 65%);
+}
+.cardTintCode {
+  background: radial-gradient(circle at 78% 10%, color-mix(in oklab, var(--tint-code) 14%, transparent), transparent 65%);
+}
+.cardTintDesign {
+  background: radial-gradient(circle at 78% 10%, color-mix(in oklab, var(--tint-design) 14%, transparent), transparent 65%);
+}
+.cardTintNeutral {
+  background: radial-gradient(circle at 78% 10%, color-mix(in oklab, var(--border-strong) 14%, transparent), transparent 65%);
+}
+
+.tintChat {
+  background: radial-gradient(circle at 50% 45%, color-mix(in oklab, var(--tint-chat) 14%, transparent), transparent 74%);
+}
+.tintCode {
+  background: radial-gradient(circle at 50% 45%, color-mix(in oklab, var(--tint-code) 14%, transparent), transparent 74%);
+}
+.tintDesign {
+  background: radial-gradient(circle at 50% 45%, color-mix(in oklab, var(--tint-design) 14%, transparent), transparent 74%);
+}
+.tintNeutral {
+  background: radial-gradient(circle at 50% 45%, color-mix(in oklab, var(--border-strong) 14%, transparent), transparent 74%);
+}

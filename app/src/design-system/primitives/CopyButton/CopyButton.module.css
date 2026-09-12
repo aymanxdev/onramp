@@ -1,0 +1,123 @@
+.wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.button {
+  position: relative;
+  min-height: var(--size-control);
+  padding: 0 24px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  font: 600 16px/1 var(--font-sans);
+  transition: transform var(--duration-press) var(--ease-spring);
+  background: var(--accent-action);
+  color: var(--accent-action-ink);
+  box-shadow: 0 4px 0 var(--accent-action-edge);
+}
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+  color: var(--accent-action-ink);
+}
+.button:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 var(--accent-action-edge);
+}
+
+/* Same one-second attention pulse as the main Button primitive (Button.module.css),
+   for the main (non-mini) variant only. Neutralised globally under prefers-reduced-motion. */
+.button:not(.mini)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+  --pulse-edge: var(--accent-action-edge);
+}
+.button:not(.mini):hover::after,
+.button:not(.mini):focus-visible::after {
+  animation: om-pulse 1s var(--ease-spring);
+}
+
+@keyframes om-pulse {
+  from {
+    opacity: 0.6;
+    box-shadow: 0 0 0 0 var(--pulse-edge);
+  }
+  35% {
+    opacity: 0.5;
+    box-shadow: 0 0 0 10px var(--pulse-edge);
+    animation-timing-function: linear;
+  }
+  to {
+    opacity: 0;
+    box-shadow: 0 0 0 10px var(--pulse-edge);
+  }
+}
+
+.copied {
+  background: var(--state-ok);
+  color: var(--bg-page);
+  box-shadow: 0 4px 0 var(--state-ok);
+}
+.copied:hover,
+.copied:focus-visible {
+  color: var(--bg-page);
+}
+.copied:active {
+  box-shadow: 0 0 0 var(--state-ok);
+}
+
+.mini {
+  min-height: var(--size-tap);
+  min-width: 64px;
+  padding: 0 14px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font: 500 13px/1 var(--font-mono);
+  box-shadow: none;
+}
+.mini:hover,
+.mini:focus-visible {
+  transform: none;
+  color: var(--text-secondary);
+}
+.mini:active {
+  transform: none;
+  box-shadow: none;
+}
+.mini.copied {
+  background: var(--state-ok-soft);
+  color: var(--state-ok);
+  border-color: var(--state-ok);
+}
+.mini.copied:hover,
+.mini.copied:focus-visible {
+  color: var(--state-ok);
+}
+
+.caption {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 500 13px/1 var(--font-mono);
+  color: var(--state-ok);
+  animation: om-pop 0.3s var(--ease-spring);
+}
+
+.sparkle {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--accent-attention);
+  pointer-events: none;
+}
