@@ -1,0 +1,14 @@
+# Cloudflare Pages headers (DEVELOPER_BRIEF 15a publish checklist: security headers).
+# style-src keeps 'unsafe-inline' because Motion sets inline `style` attributes at runtime
+# for its animations; CSP3 treats that as a style *attribute*, not an injected <style>
+# element or stylesheet, so this does not permit injected <style> blocks or remote CSS.
+# script-src never gets 'unsafe-inline': no inline or injected scripts are allowed, ever.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

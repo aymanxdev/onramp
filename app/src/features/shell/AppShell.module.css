@@ -1,0 +1,10 @@
+/* Root layout: the skip link target and the flex frame that keeps the footer at the bottom. */
+.page {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.page:focus {
+  outline: none;
+}

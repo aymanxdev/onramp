@@ -1,0 +1,5 @@
+.line {
+  margin: 4px 0 0;
+  font: 400 12px/1.4 var(--font-mono);
+  color: var(--text-secondary);
+}

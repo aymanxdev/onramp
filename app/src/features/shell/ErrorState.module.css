@@ -1,0 +1,31 @@
+/* Offline or error card, design lines 669 to 675. */
+.card {
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  max-width: 420px;
+  margin: 40px auto;
+}
+
+.heading {
+  margin: 12px 0 8px;
+  font: 700 20px/1.2 var(--font-sans);
+}
+
+.body {
+  margin: 0 0 14px;
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.detail {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--state-warn-soft);
+  border: 1px solid var(--state-warn);
+  font: 400 13px/1.5 var(--font-mono);
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  overflow-wrap: break-word;
+}

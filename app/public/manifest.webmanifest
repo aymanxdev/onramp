@@ -1,0 +1,16 @@
+{
+  "name": "Onramp",
+  "short_name": "Onramp",
+  "description": "An unofficial guide to Claude. Tell us what you are trying to do and we hand you the route.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#141413",
+  "background_color": "#141413",
+  "lang": "en-GB",
+  "icons": [
+    { "src": "/icons/mark.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icons/mark-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/mark-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

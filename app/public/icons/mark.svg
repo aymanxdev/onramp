@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="28 24 74 82" role="img" aria-label="Onramp mark">
+  <title>Onramp</title>
+  <ellipse cx="44" cy="36" rx="9" ry="10" fill="#a3bd68" stroke="#141413" stroke-width="2.5" />
+  <ellipse cx="86" cy="36" rx="9" ry="10" fill="#a3bd68" stroke="#141413" stroke-width="2.5" />
+  <path d="M31 66 Q31 38 60 38 L70 38 Q99 38 99 66 L101 90 Q101 102 87 102 L43 102 Q29 102 29 90 Z" fill="#b5cd7a" stroke="#141413" stroke-width="2.5" />
+  <ellipse cx="51" cy="66" rx="8" ry="9.5" fill="#141413" />
+  <ellipse cx="79" cy="66" rx="8" ry="9.5" fill="#141413" />
+  <circle cx="54" cy="62" r="3" fill="#faf9f5" />
+  <circle cx="82" cy="62" r="3" fill="#faf9f5" />
+  <path d="M57 82 Q65 88 73 82" fill="none" stroke="#141413" stroke-width="3" stroke-linecap="round" />
+</svg>

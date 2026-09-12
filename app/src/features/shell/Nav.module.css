@@ -1,0 +1,187 @@
+/* Product nav, design lines 151 to 162 (content) and 69 to 101 (sticky, blurred chrome). */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: color-mix(in oklab, var(--bg-page) 88%, transparent);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 9px;
+  font: 700 19px/1 var(--font-sans);
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  text-decoration: none;
+  flex: none;
+}
+.brand:hover {
+  color: var(--text-primary);
+}
+
+.cluster {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.radar {
+  position: relative;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 4px;
+  background: none;
+  border: none;
+  font: 500 14px/1 var(--font-mono);
+  color: var(--text-secondary);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-action);
+  box-shadow: 0 0 8px var(--accent-action);
+}
+
+.map {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  font: 500 14px/1 var(--font-mono);
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.gh {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 13px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 3px 0 var(--border-strong);
+  color: var(--text-primary);
+  text-decoration: none;
+  font: 500 13px/1 var(--font-mono);
+  transition: transform var(--duration-press) var(--ease-spring);
+}
+.gh:hover,
+.gh:focus-visible {
+  transform: translateY(-2px);
+  color: var(--text-primary);
+}
+.gh:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--border-strong);
+}
+.star {
+  color: var(--accent-attention);
+  font-size: 14px;
+}
+
+.iconBtn {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font: 500 12px/1 var(--font-mono);
+  cursor: pointer;
+  transition:
+    transform var(--duration-press) var(--ease-spring),
+    border-color var(--duration-press) var(--ease-spring);
+}
+
+/* 44px round icon button: theme, sound and the mobile "more" pill. */
+.round {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.round:hover,
+.round:focus-visible {
+  transform: translateY(-1px);
+  border-color: var(--border-strong);
+  color: var(--text-secondary);
+}
+
+.sheetToggles {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 4px 0 8px;
+}
+
+.togglePair {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.moreBtn {
+  display: none;
+}
+
+.sheetMap {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+@media (max-width: 479px) {
+  .starCount {
+    display: none;
+  }
+  .togglePair {
+    display: none;
+  }
+  .moreBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Below 480px there is not enough room for "Radar", "Map", the GitHub pill
+     and "MORE" on one row at 44px tap targets each; "Map" moves into the
+     MORE sheet instead of wrapping the nav onto a second row. */
+  .map {
+    display: none;
+  }
+  .sheetMap {
+    display: inline-flex;
+  }
+}
