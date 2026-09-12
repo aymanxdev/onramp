@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root, [data-theme="dark"]{
+  --bg-page:#141413; --bg-surface:#1c1c1a; --bg-raised:#24241f; --bg-subtle:#201f1c;
+  --border:#37372f; --border-strong:#4a4941;
+  --text-primary:#faf9f5; --text-secondary:#b0aea5; --text-muted:#918f86;
+  --accent-action:#b5cd7a; --accent-action-edge:#7e9c4f; --accent-action-ink:#141413;
+  --accent-action-soft:rgba(181,205,122,.14); --accent-action-text:#cfe39c;
+  --accent-attention:#f2c94c; --accent-attention-edge:#c9a43a; --accent-attention-ink:#141413;
+  --accent-attention-soft:rgba(242,201,76,.14);
+  --accent-detail:#d97757;
+  --tint-chat:#f2c94c; --tint-cowork:#b5cd7a; --tint-code:#6a9bcc; --tint-design:#a878c9;
+  --state-ok:#3fae9d; --state-ok-soft:rgba(63,174,157,.16); --state-ok-text:#5cc7b6;
+  --accent-attention-text:#f2c94c;
+  --state-warn:#e8628f; --state-warn-soft:rgba(232,98,143,.16);
+  --dot:rgba(250,249,245,.075);
+  --focus:#f2c94c;
+  --shadow-card:0 18px 44px rgba(0,0,0,.5);
+  --shadow-pop:0 10px 24px rgba(0,0,0,.4);
+}
+[data-theme="light"]{
+  --bg-page:#faf9f5; --bg-surface:#ffffff; --bg-raised:#ffffff; --bg-subtle:#f2f0e6;
+  --border:#e8e6dc; --border-strong:#d3d0c3;
+  --text-primary:#141413; --text-secondary:#5f5e57; --text-muted:#6b695f;
+  --accent-action-text:#556f2c;
+  --accent-action-soft:rgba(181,205,122,.3); --accent-attention-soft:rgba(242,201,76,.28);
+  --state-ok:#1f7a6d; --state-ok-soft:rgba(31,122,109,.14); --state-ok-text:#12564c;
+  --accent-attention-text:#6b4d00;
+  --state-warn:#c2185b; --state-warn-soft:rgba(194,24,91,.12);
+  --dot:rgba(20,20,19,.1);
+  --focus:#7e5a00;
+  --shadow-card:0 14px 34px rgba(20,20,19,.1);
+  --shadow-pop:0 8px 20px rgba(20,20,19,.12);
+}
+body{margin:0;background:var(--bg-page);font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--text-primary)}
+a{color:var(--accent-action-text);text-decoration-thickness:2px;text-underline-offset:3px}
+a:hover{color:var(--accent-attention)}
+*{box-sizing:border-box}
+::selection{background:var(--accent-attention);color:#141413}
+@keyframes om-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes om-beat{0%,100%{transform:scale(1)}14%{transform:scale(1.22)}28%{transform:scale(.97)}42%{transform:scale(1.1)}}
+@keyframes om-glow{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:.85;transform:scale(1.07)}}
+@keyframes om-walk{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-5px) rotate(3deg)}}
+@keyframes om-pop{0%{transform:scale(.4);opacity:0}60%{transform:scale(1.12);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes om-ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes om-dash{0%{stroke-dashoffset:14}100%{stroke-dashoffset:0}}
+@keyframes om-orbit{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+@keyframes om-fly{0%,12%{transform:translate(0,0) scale(1);opacity:1}42%,100%{transform:translate(var(--fx,60px),var(--fy,-30px)) scale(.82);opacity:0}}
+@keyframes om-emerge{0%,45%{opacity:0;transform:translateY(10px)}62%,100%{opacity:1;transform:translateY(0)}}
+@keyframes om-sweepbar{0%{transform:translateX(-100%)}100%{transform:translateX(400%)}}
+@keyframes om-story{from{width:0%}to{width:100%}}
+@keyframes om-up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes om-ringpulse{0%,100%{box-shadow:0 0 14px color-mix(in oklab,var(--accent-action) 34%,transparent)}50%{box-shadow:0 0 22px color-mix(in oklab,var(--accent-action) 62%,transparent)}}
+@media (prefers-reduced-motion: reduce){*{animation-duration:1ms !important;animation-iteration-count:1 !important;transition-duration:1ms !important}}
+</style>
+</helmet>
+<div data-theme="{{ themeAttr }}" style="min-height:100vh;background:var(--bg-page);color:var(--text-primary);font:400 17px/1.6 'IBM Plex Sans',system-ui,sans-serif;background-image:radial-gradient(var(--dot) 1px,transparent 1px);background-size:24px 24px">
+
+  <header style="position:sticky;top:0;z-index:40;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding:14px clamp(16px,3vw,40px);background:color-mix(in oklab,var(--bg-page) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)">
+    <div style="display:flex;align-items:center;gap:12px;min-width:0">
+      <div style="width:38px;flex:none"><dc-import name="Pip" state="mark" hint-size="38px,38px"></dc-import></div>
+      <div style="display:flex;flex-direction:column;gap:2px;min-width:0">
+        <strong style="font:700 21px/1 'IBM Plex Sans',sans-serif;letter-spacing:-.02em">Onramp</strong>
+        <span style="font:400 11px/1.2 'IBM Plex Mono',monospace;color:var(--text-muted);letter-spacing:.04em">unofficial guide to Claude &middot; design system</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+      <div style="display:flex;flex-direction:column;gap:5px">
+        <span style="font:500 9px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">VIEWPORT</span>
+        <div role="tablist" aria-label="Viewport" style="display:flex;gap:4px;padding:4px;border-radius:999px;background:var(--bg-subtle);border:1px solid var(--border)">
+          <button type="button" onClick="{{ setMobile }}" style="{{ segVp.mobile }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Mobile 390</button>
+          <button type="button" onClick="{{ setDesktop }}" style="{{ segVp.desktop }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Desktop 1440</button>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:5px">
+        <span style="font:500 9px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">THEME</span>
+        <div role="tablist" aria-label="Theme" style="display:flex;gap:4px;padding:4px;border-radius:999px;background:var(--bg-subtle);border:1px solid var(--border)">
+          <button type="button" onClick="{{ setDark }}" style="{{ segTheme.dark }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Dark</button>
+          <button type="button" onClick="{{ setLight }}" style="{{ segTheme.light }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Light</button>
+        </div>
+      </div>
+      <a href="#gh" style="align-self:flex-end;display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 14px;border-radius:999px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font:500 12px/1 'IBM Plex Mono',monospace">
+        <span aria-hidden="true" style="color:var(--accent-attention);font-size:14px">&#9733;</span>
+        <span>1,284</span>
+        <span style="color:var(--text-muted);letter-spacing:.08em">STARS</span>
+      </a>
+      <button type="button" onClick="{{ toggleMute }}" aria-label="Sound" style="{{ muteStyle }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">{{ muteLabel }}</button>
+    </div>
+  </header>
+
+  <main style="max-width:1280px;margin:0 auto;padding:0 clamp(16px,3vw,40px) 80px">
+
+    <section style="padding:56px 0 24px;max-width:66ch">
+      <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.18em;color:var(--accent-action-text)">01 &nbsp;START HERE</span>
+      <h1 style="font:700 clamp(34px,5.2vw,58px)/1.05 'IBM Plex Sans',sans-serif;letter-spacing:-.03em;margin:16px 0 14px;text-wrap:pretty">Onramp, end to end: the product, its states, and the system behind it.</h1>
+      <p style="margin:0 0 14px;color:var(--text-secondary);font-size:19px;text-wrap:pretty">Every screen below is live. Flip the <strong style="color:var(--text-primary)">viewport toggle</strong> in the header to move between mobile 390 and desktop 1440, and the <strong style="color:var(--text-primary)">theme toggle</strong> to check both themes. Tokens, components and motion specs sit underneath, named the way the developer will import them.</p>
+      <p style="margin:0;padding:14px 16px;border-radius:16px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-secondary);font-size:15px">Onramp is an independent project. It is not affiliated with, endorsed by, or sponsored by Anthropic. Claude and Anthropic are trademarks of Anthropic, PBC.</p>
+    </section>
+
+    <section style="padding:32px 0 0">
+      <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;margin-bottom:18px">
+        <div>
+          <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.18em;color:var(--accent-action-text)">02 &nbsp;SCREENS</span>
+          <h2 style="font:700 clamp(26px,3.4vw,38px)/1.1 'IBM Plex Sans',sans-serif;letter-spacing:-.02em;margin:12px 0 0">The flow, in one frame</h2>
+        </div>
+        <span style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:var(--text-muted)">{{ frameLabel }}</span>
+      </div>
+
+      <div role="tablist" aria-label="Screen" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px">
+        <button type="button" onClick="{{ go.landing }}" style="{{ tab.landing }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Landing</button>
+        <button type="button" onClick="{{ go.landingReturn }}" style="{{ tab.landingReturn }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Landing &middot; return visit</button>
+        <button type="button" onClick="{{ go.type }}" style="{{ tab.type }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Intake &middot; Type it</button>
+        <button type="button" onClick="{{ go.guide }}" style="{{ tab.guide }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Intake &middot; Guide me</button>
+        <button type="button" onClick="{{ go.thinking }}" style="{{ tab.thinking }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Thinking</button>
+        <button type="button" onClick="{{ go.route }}" style="{{ tab.route }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Route</button>
+        <button type="button" onClick="{{ go.radar }}" style="{{ tab.radar }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Radar &middot; /new</button>
+        <button type="button" onClick="{{ go.map }}" style="{{ tab.map }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Map</button>
+        <button type="button" onClick="{{ go.card }}" style="{{ tab.card }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Prompt card</button>
+        <button type="button" onClick="{{ go.how }}" style="{{ tab.how }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">How it works</button>
+        <button type="button" onClick="{{ go.states }}" style="{{ tab.states }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Edge states</button>
+      </div>
+
+      <div style="{{ frameOuter }}">
+        <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 26px 4px;font:500 12px/1 'IBM Plex Mono',monospace;color:var(--text-secondary)">
+            <span>9:41</span>
+            <span style="display:flex;gap:5px;align-items:center"><span style="width:16px;height:8px;border:1px solid var(--text-secondary);border-radius:2px;display:inline-block"></span>onramp.guide</span>
+          </div>
+        </sc-if>
+        <sc-if value="{{ isDesktop }}">
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--border);background:var(--bg-subtle)">
+            <span style="display:flex;gap:6px"><span style="width:11px;height:11px;border-radius:50%;background:var(--accent-detail)"></span><span style="width:11px;height:11px;border-radius:50%;background:var(--accent-attention)"></span><span style="width:11px;height:11px;border-radius:50%;background:var(--accent-action)"></span></span>
+            <span style="flex:1;max-width:420px;padding:5px 12px;border-radius:999px;background:var(--bg-page);border:1px solid var(--border);font:400 12px/1.4 'IBM Plex Mono',monospace;color:var(--text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ url }}</span>
+          </div>
+        </sc-if>
+
+        <div style="{{ frameInner }}">
+
+          <sc-if value="{{ isLanding }}" hint-placeholder-val="{{ true }}">
+            <div style="position:relative;padding:0 0 96px">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px">
+                <span style="display:flex;align-items:center;gap:9px;font:700 19px/1 'IBM Plex Sans',sans-serif;letter-spacing:-.02em"><span style="width:30px;display:inline-block"><dc-import name="Pip" state="mark" hint-size="30px,30px"></dc-import></span>Onramp</span>
+                <span style="display:flex;align-items:center;gap:8px">
+                  <button type="button" onClick="{{ go.radar }}" style="min-height:44px;display:inline-flex;align-items:center;gap:6px;padding:0 4px;background:none;border:none;font:500 14px/1 'IBM Plex Mono',monospace;color:var(--text-secondary);cursor:pointer" style-focus="outline:3px solid var(--focus);outline-offset:3px">Radar<sc-if value="{{ radarDot }}" hint-placeholder-val="{{ true }}"><span aria-label="new items" style="width:7px;height:7px;border-radius:50%;background:var(--accent-action);box-shadow:0 0 8px var(--accent-action)"></span></sc-if></button>
+                  <a href="#map" style="min-height:44px;display:inline-flex;align-items:center;padding:0 4px;font:500 14px/1 'IBM Plex Mono',monospace;color:var(--text-secondary);text-decoration:none">Map</a>
+                  <a href="#gh" aria-label="1,284 stars on GitHub" style="display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 13px;border-radius:999px;background:var(--bg-surface);border:1px solid var(--border);box-shadow:0 3px 0 var(--border-strong);color:var(--text-primary);text-decoration:none;font:500 13px/1 'IBM Plex Mono',monospace;transition:transform .16s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:translateY(-2px)" style-active="transform:translateY(3px);box-shadow:0 1px 0 var(--border-strong)" style-focus="outline:3px solid var(--focus);outline-offset:3px">
+                    <span aria-hidden="true" style="color:var(--accent-attention);font-size:14px">&#9733;</span>1,284
+                  </a>
+                </span>
+              </div>
+              <div style="position:relative;padding:14px 20px 0;max-width:1120px;margin:0 auto">
+                <div style="display:flex;flex-wrap:wrap-reverse;gap:28px;align-items:center">
+                  <div style="flex:1 1 300px;min-width:280px">
+                    <h2 style="font:700 clamp(32px,4.6vw,54px)/1.04 'IBM Plex Sans',sans-serif;letter-spacing:-.03em;margin:0 0 14px;text-wrap:pretty">Tell us what you are trying to do. We hand you the route.</h2>
+                    <p style="margin:0 0 10px;color:var(--text-secondary);font-size:18px;max-width:52ch">The right surface, what to switch on, and the exact first prompt to paste. Free, no login, nothing stored.</p>
+                    <p style="margin:0 0 10px;font:400 13px/1.5 'IBM Plex Mono',monospace;color:var(--text-muted)">An unofficial guide to Claude. Not affiliated with Anthropic.</p>
+                    <p style="margin:0 0 22px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;font:400 12px/1.5 'IBM Plex Mono',monospace;color:var(--text-muted)"><span style="width:7px;height:7px;border-radius:50%;background:var(--state-ok)"></span>412 nodes mapped &middot; verified 3 days ago</p>
+                  </div>
+                  <div style="flex:0 1 240px;display:flex;justify-content:center;position:relative;min-width:200px;padding:14px 0">
+                    <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none"><div style="position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 45%,var(--accent-action-soft),transparent 74%);animation:om-glow 5s ease-in-out infinite"></div></div>
+                    <div style="width:min(200px,52vw);animation:om-float 6s ease-in-out infinite">
+                      <div onMouseEnter="{{ heroOn }}" onMouseLeave="{{ heroOff }}" onClick="{{ heroPoke }}" role="button" tabindex="0" aria-label="Say hello to Pip" style="cursor:pointer;transition:transform .3s cubic-bezier(.34,1.56,.64,1);border-radius:24px" style-hover="transform:scale(1.07) rotate(-3deg)" style-focus="outline:3px solid var(--focus);outline-offset:6px">
+                        <dc-import name="Pip" state="{{ heroState }}" hint-size="180px,180px"></dc-import>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <sc-if value="{{ showBanner }}">
+                  <div style="margin:16px 0 0;padding:16px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--accent-action);box-shadow:0 4px 0 var(--accent-action-edge);animation:om-up .4s cubic-bezier(.34,1.56,.64,1)">
+                    <div style="display:flex;gap:12px;align-items:flex-start;justify-content:space-between">
+                      <div style="min-width:0">
+                        <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--accent-action-text)">SINCE YOU WERE HERE &middot; 12 AUG</span>
+                        <p style="margin:9px 0 0;font:700 20px/1.25 'IBM Plex Sans',sans-serif;letter-spacing:-.02em;text-wrap:pretty">3 new things for how you use Claude</p>
+                      </div>
+                      <button type="button" onClick="{{ dismissBanner }}" aria-label="Dismiss" style="flex:none;width:44px;height:44px;border-radius:50%;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-secondary);font:400 19px/1 'IBM Plex Sans',sans-serif;cursor:pointer" style-focus="outline:3px solid var(--focus);outline-offset:3px">&times;</button>
+                    </div>
+                    <div style="display:flex;gap:12px;margin-top:14px;overflow-x:auto;padding-bottom:4px">
+                      <sc-for list="{{ rings }}" as="r" hint-placeholder-count="3">
+                        <button type="button" onClick="{{ r.on }}" aria-label="{{ r.aria }}" style="{{ r.wrap }}" style-hover="transform:translateY(-3px)" style-active="transform:translateY(2px)" style-focus="outline:3px solid var(--focus);outline-offset:4px">
+                          <span style="{{ r.ring }}"><span style="{{ r.disc }}">{{ r.code }}</span></span>
+                          <span style="{{ r.label }}">{{ r.name }}</span>
+                        </button>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ showRings }}" hint-placeholder-val="{{ true }}">
+                  <div style="margin:16px 0 0">
+                    <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+                      <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">ON YOUR RADAR &middot; THIS WEEK</span>
+                      <button type="button" onClick="{{ go.radar }}" style="min-height:44px;padding:0 4px;background:none;border:none;color:var(--text-secondary);font:500 12px/1 'IBM Plex Mono',monospace;cursor:pointer" style-focus="outline:3px solid var(--focus);outline-offset:3px">See all &rarr;</button>
+                    </div>
+                    <div style="display:flex;gap:12px;margin-top:10px;overflow-x:auto;padding-bottom:4px">
+                      <sc-for list="{{ rings }}" as="r" hint-placeholder-count="3">
+                        <button type="button" onClick="{{ r.on }}" aria-label="{{ r.aria }}" style="{{ r.wrap }}" style-hover="transform:translateY(-3px)" style-active="transform:translateY(2px)" style-focus="outline:3px solid var(--focus);outline-offset:4px">
+                          <span style="{{ r.ring }}"><span style="{{ r.disc }}">{{ r.code }}</span></span>
+                          <span style="{{ r.label }}">{{ r.name }}</span>
+                        </button>
+                      </sc-for>
+                      <button type="button" onClick="{{ go.radar }}" aria-label="Two older items on Radar" style="flex:none;width:88px;display:flex;flex-direction:column;align-items:center;gap:9px;padding:0;background:none;border:none;cursor:pointer;transition:transform .18s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:translateY(-3px)" style-active="transform:translateY(2px)" style-focus="outline:3px solid var(--focus);outline-offset:4px">
+                        <span style="display:grid;place-items:center;width:76px;height:76px;border-radius:50%;padding:3px;background:var(--border-strong)"><span style="display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:var(--bg-surface);border:1px dashed var(--border-strong);font:600 15px/1 'IBM Plex Mono',monospace;color:var(--text-secondary)">+2</span></span>
+                        <span style="font:500 12px/1.25 'IBM Plex Sans',sans-serif;text-align:center;color:var(--text-muted)">2 older</span>
+                      </button>
+                    </div>
+                  </div>
+                </sc-if>
+
+                <div style="margin:22px 0 0">
+                  <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">TRY ONE OF THESE</span>
+                  <button type="button" onClick="{{ go.thinking }}" style="margin-top:10px;width:100%;text-align:left;display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:18px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border);box-shadow:0 4px 0 var(--border-strong);color:var(--text-primary);cursor:pointer;transition:transform .18s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:translateY(-3px)" style-active="transform:translateY(3px);box-shadow:0 1px 0 var(--border-strong)" style-focus="outline:3px solid var(--focus);outline-offset:3px">
+                    <span style="flex:1 1 200px;font-size:17px;line-height:1.45">&ldquo;{{ ex.goal }}&rdquo;</span>
+                    <span style="display:flex;align-items:center;gap:8px;font:500 12px/1 'IBM Plex Mono',monospace;color:var(--text-muted)"><span aria-hidden="true">&rarr;</span><span style="{{ ex.badge }}">{{ ex.surface }}</span><span>{{ ex.extra }}</span></span>
+                  </button>
+                  <div style="display:flex;gap:6px;margin-top:12px" aria-hidden="true">
+                    <span style="{{ ex.d0 }}"></span><span style="{{ ex.d1 }}"></span><span style="{{ ex.d2 }}"></span>
+                  </div>
+                </div>
+
+                <div style="margin-top:24px;display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;background:var(--bg-subtle);border:1px solid var(--border);overflow:hidden">
+                  <span style="flex:none;display:inline-flex;align-items:center;gap:7px;font:600 10px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;color:var(--accent-attention-ink);background:var(--accent-attention);padding:6px 9px;border-radius:999px">WHAT&rsquo;S NEW</span>
+                  <div style="flex:1;overflow:hidden;white-space:nowrap"><span style="display:inline-block;font:400 13px/1 'IBM Plex Mono',monospace;color:var(--text-secondary);animation:om-ticker 22s linear infinite">Cowork adds scheduled tasks &middot; Design gains component export &middot; 12 new connectors this month &middot; Chrome sidebar now reads PDFs &middot; </span></div>
+                </div>
+
+                <div style="margin-top:34px">
+                  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;justify-content:space-between">
+                    <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">WHAT PEOPLE SAY</span>
+                    <span style="font:400 12px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">1,284 stars &middot; 40 routes added by readers</span>
+                  </div>
+                  <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:14px">
+                    <figure style="flex:1 1 260px;min-width:240px;margin:0;padding:20px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border)">
+                      <span aria-hidden="true" style="display:block;font:500 13px/1 'IBM Plex Mono',monospace;color:var(--accent-attention);letter-spacing:.24em">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                      <blockquote style="margin:12px 0 0;font-size:17px;line-height:1.55;text-wrap:pretty">I had been typing into the chat box for a year. Onramp pointed me at Cowork and a connector in about ninety seconds, and the first prompt worked as written.</blockquote>
+                      <figcaption style="margin-top:14px;font:400 12px/1.5 'IBM Plex Mono',monospace;color:var(--text-muted)">operations lead &middot; London</figcaption>
+                    </figure>
+                    <figure style="flex:1 1 260px;min-width:240px;margin:0;padding:20px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border)">
+                      <span aria-hidden="true" style="display:block;font:500 13px/1 'IBM Plex Mono',monospace;color:var(--accent-attention);letter-spacing:.24em">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                      <blockquote style="margin:12px 0 0;font-size:17px;line-height:1.55;text-wrap:pretty">The setup checklist is the bit nobody else does. It told me which permission to say no to, which saved an argument with our admin.</blockquote>
+                      <figcaption style="margin-top:14px;font:400 12px/1.5 'IBM Plex Mono',monospace;color:var(--text-muted)">product designer &middot; Manchester</figcaption>
+                    </figure>
+                    <figure style="flex:1 1 260px;min-width:240px;margin:0;padding:20px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border)">
+                      <span aria-hidden="true" style="display:block;font:500 13px/1 'IBM Plex Mono',monospace;color:var(--accent-attention);letter-spacing:.24em">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                      <blockquote style="margin:12px 0 0;font-size:17px;line-height:1.55;text-wrap:pretty">I sent the map to my whole team instead of writing a training doc. Two of them found things I did not know existed.</blockquote>
+                      <figcaption style="margin-top:14px;font:400 12px/1.5 'IBM Plex Mono',monospace;color:var(--text-muted)">engineering manager &middot; Bristol</figcaption>
+                    </figure>
+                  </div>
+                </div>
+
+                <div style="margin-top:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;padding:22px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--accent-attention);box-shadow:0 4px 0 var(--accent-attention-edge)">
+                  <div style="flex:1 1 240px;min-width:210px">
+                    <p style="margin:0;font:700 21px/1.25 'IBM Plex Sans',sans-serif;letter-spacing:-.02em;text-wrap:pretty">How much of Claude do you actually use?</p>
+                    <p style="margin:8px 0 0;font:400 13px/1.5 'IBM Plex Mono',monospace;color:var(--text-muted)">60 seconds &middot; 14 taps &middot; nothing stored</p>
+                  </div>
+                  <a href="#score" style="display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:999px;background:var(--accent-attention);color:var(--accent-attention-ink);text-decoration:none;font:600 17px/1 'IBM Plex Sans',sans-serif;box-shadow:0 4px 0 var(--accent-attention-edge);transition:transform .16s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:translateY(-2px)" style-active="transform:translateY(4px);box-shadow:0 0 0 var(--accent-attention-edge)" style-focus="outline:3px solid var(--focus);outline-offset:3px">Get my score</a>
+                </div>
+
+                <div style="margin-top:34px;padding-top:22px;border-top:1px solid var(--border);color:var(--text-muted);font-size:14px">
+                  <p style="margin:0 0 6px;color:var(--text-secondary)">Made with <span style="display:inline-block;color:var(--accent-detail);animation:om-beat 3.4s ease-in-out infinite;transition:transform .2s cubic-bezier(.34,1.56,.64,1);cursor:pointer" style-hover="transform:scale(1.5) rotate(-10deg)">&hearts;</span> for Claude in London.</p>
+                  <p style="margin:0 0 8px">Onramp is an independent project. It is not affiliated with, endorsed by, or sponsored by Anthropic. Claude and Anthropic are trademarks of Anthropic, PBC.</p>
+                  <div style="display:flex;flex-wrap:wrap;gap:14px;font:500 13px/1 'IBM Plex Mono',monospace"><a href="#about">About</a><a href="#how">How routes are built</a><a href="#report">Report a wrong route</a><a href="#privacy">Privacy</a><a href="#gh">GitHub</a></div>
+                </div>
+              </div>
+              <div style="{{ thumbBarFlush }}">
+                <button type="button" onClick="{{ go.type }}" style="{{ btnAttention }}" style-hover="transform:translateY(-2px)" style-active="transform:translateY(4px);box-shadow:0 0 0 var(--accent-attention-edge)" style-focus="outline:3px solid var(--focus);outline-offset:3px">Find my route</button>
+                <button type="button" onClick="{{ go.map }}" style="{{ btnGhost }}" style-hover="border-color:var(--border-strong)" style-focus="outline:3px solid var(--focus);outline-offset:3px">Explore the map</button>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isType }}">
+            <div style="padding:20px 20px 96px;max-width:760px;margin:0 auto">
+              <button type="button" onClick="{{ go.landing }}" style="{{ btnBack }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">&larr; Back</button>
+              <div style="display:flex;gap:4px;padding:4px;margin:16px 0 22px;border-radius:999px;background:var(--bg-subtle);border:1px solid var(--border)">
+                <button type="button" onClick="{{ setType }}" style="{{ segMode.type }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Type it</button>
+                <button type="button" onClick="{{ setGuide }}" style="{{ segMode.guide }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Guide me</button>
+              </div>
+              <h2 style="font:700 clamp(26px,3.6vw,38px)/1.1 'IBM Plex Sans',sans-serif;letter-spacing:-.025em;margin:0 0 8px">What are you trying to do?</h2>
+              <p style="margin:0 0 18px;color:var(--text-secondary);font-size:17px">Plain words are best. One sentence is plenty.</p>
+              <label style="display:block;position:relative">
+                <span style="position:absolute;left:0;top:-24px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">YOUR GOAL</span>
+                <textarea onChange="{{ onType }}" value="{{ typed }}" placeholder="{{ ph }}" rows="5" style="width:100%;padding:18px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border);color:var(--text-primary);font:400 17px/1.55 'IBM Plex Sans',sans-serif;resize:vertical;box-shadow:inset 0 2px 0 rgba(0,0,0,.06)" style-focus="outline:3px solid var(--focus);outline-offset:3px;border-color:var(--accent-action)"></textarea>
+              </label>
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:10px;min-height:22px">
+                <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">OR START FROM AN EXAMPLE</span>
+                <sc-if value="{{ showCount }}"><span style="{{ countStyle }}">{{ count }} / 2000</span></sc-if>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+                <button type="button" onClick="{{ fill.inbox }}" style="{{ chip }}" style-hover="transform:translateY(-2px)" style-active="transform:translateY(3px);box-shadow:0 1px 0 var(--border-strong)" style-focus="outline:3px solid var(--focus);outline-offset:3px">Tidy my inbox each morning</button>
+                <button type="button" onClick="{{ fill.deck }}" style="{{ chip }}" style-hover="transform:translateY(-2px)" style-active="transform:translateY(3px);box-shadow:0 1px 0 var(--border-strong)" style-focus="outline:3px solid var(--focus);outline-offset:3px">Turn notes into a deck</button>
+                <button type="button" onClick="{{ fill.audit }}" style="{{ chip }}" style-hover="transform:translateY(-2px)" style-active="transform:translateY(3px);box-shadow:0 1px 0 var(--border-strong)" style-focus="outline:3px solid var(--focus);outline-offset:3px">Audit a spreadsheet</button>
+              </div>
+              <div style="{{ thumbBar }}">
+                <button type="button" onClick="{{ go.thinking }}" style="{{ btnAttention }}" style-hover="transform:translateY(-2px)" style-active="transform:translateY(4px);box-shadow:0 0 0 var(--accent-attention-edge)" style-focus="outline:3px solid var(--focus);outline-offset:3px">Find my route</button>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isGuide }}">
+            <div style="padding:20px 20px 96px;max-width:760px;margin:0 auto">
+              <button type="button" onClick="{{ back }}" style="{{ btnBack }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">&larr; Back</button>
+              <div style="display:flex;gap:4px;padding:4px;margin:16px 0 26px;border-radius:999px;background:var(--bg-subtle);border:1px solid var(--border)">
+                <button type="button" onClick="{{ setType }}" style="{{ segMode.type }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Type it</button>
+                <button type="button" onClick="{{ setGuide }}" style="{{ segMode.guide }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Guide me</button>
+              </div>
+              <div style="position:relative;height:74px;margin-bottom:22px" aria-hidden="true">
+                <svg viewBox="0 0 300 24" preserveAspectRatio="none" style="position:absolute;left:0;right:0;bottom:8px;width:100%;height:24px">
+                  <path d="M4 18 Q75 2 150 14 T296 8" fill="none" stroke="var(--border-strong)" stroke-width="2" stroke-dasharray="7 7" stroke-linecap="round"></path>
+                </svg>
+                <div style="{{ walkStyle }}"><dc-import name="Pip" state="thinking" hint-size="52px,52px"></dc-import></div>
+              </div>
+              <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">STEP {{ stepLabel }}</span>
+              <h2 style="font:700 clamp(24px,3.4vw,36px)/1.12 'IBM Plex Sans',sans-serif;letter-spacing:-.025em;margin:12px 0 8px;text-wrap:pretty">{{ q.title }}</h2>
+              <p style="margin:0 0 20px;color:var(--text-secondary);font-size:17px">{{ q.hint }}</p>
+              <div style="display:flex;flex-wrap:wrap;gap:10px">
+                <sc-for list="{{ q.options }}" as="o" hint-placeholder-count="4">
+                  <button type="button" onClick="{{ o.on }}" style="{{ o.style }}" style-hover="transform:translateY(-2px)" style-active="transform:translateY(3px);box-shadow:0 1px 0 var(--accent-action-edge)" style-focus="outline:3px solid var(--focus);outline-offset:3px">{{ o.label }}</button>
+                </sc-for>
+              </div>
+              <sc-if value="{{ q.skippable }}">
+                <button type="button" onClick="{{ next }}" style="margin-top:20px;min-height:44px;padding:0 4px;background:none;border:none;color:var(--text-muted);font:500 14px/1 'IBM Plex Mono',monospace;text-decoration:underline;text-underline-offset:4px;cursor:pointer" style-focus="outline:3px solid var(--focus);outline-offset:3px">Skip this one</button>
+              </sc-if>
+              <div style="{{ thumbBar }}">
+                <button type="button" onClick="{{ nextOrRoute }}" style="{{ btnNext }}" style-hover="transform:translateY(-2px)" style-active="transform:translateY(4px)" style-focus="outline:3px solid var(--focus);outline-offset:3px">{{ nextLabel }}</button>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isThinking }}">
+            <div style="min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;padding:60px 24px;text-align:center">
+              <div style="position:relative;width:min(190px,50vw)">
+                <div style="position:absolute;inset:-16%;border-radius:50%;background:radial-gradient(circle at 50% 50%,var(--accent-attention-soft),transparent 70%);animation:om-glow 3.4s ease-in-out infinite"></div>
+                <dc-import name="Pip" state="thinking" hint-size="180px,180px"></dc-import>
+              </div>
+              <div role="status" aria-live="polite" style="display:flex;flex-direction:column;gap:12px;align-items:center;font:500 15px/1 'IBM Plex Mono',monospace">
+                <span style="{{ think.s0 }}">Reading the map</span>
+                <span style="{{ think.s1 }}">Matching your goal</span>
+                <span style="{{ think.s2 }}">Writing your first prompt</span>
+              </div>
+              <button type="button" onClick="{{ go.route }}" style="{{ btnGhost }};max-width:260px" style-focus="outline:3px solid var(--focus);outline-offset:3px">Show the route</button>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isCard }}">
+            <div style="padding:24px 20px 60px;display:flex;flex-direction:column;align-items:center;gap:18px">
+              <p style="margin:0;font:400 12px/1.5 'IBM Plex Mono',monospace;color:var(--text-muted);text-align:center">1080 &times; 1350 export &middot; also the print stylesheet</p>
+              <div style="width:min(340px,100%);aspect-ratio:4/5;border-radius:28px;padding:26px;background:var(--bg-surface);border:1px solid var(--border);box-shadow:var(--shadow-card);display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden">
+                <div style="position:absolute;inset:-30% -20% 55%;background:radial-gradient(circle at 70% 20%,var(--accent-action-soft),transparent 70%);pointer-events:none"></div>
+                <div style="display:flex;align-items:center;justify-content:space-between;position:relative">
+                  <span style="display:flex;align-items:center;gap:8px;font:700 17px/1 'IBM Plex Sans',sans-serif"><span style="width:26px"><dc-import name="Pip" state="mark" hint-size="26px,26px"></dc-import></span>Onramp</span>
+                  <span style="font:600 9px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;padding:6px 9px;border-radius:999px;background:var(--accent-action);color:var(--accent-action-ink)">COWORK</span>
+                </div>
+                <p style="margin:0;font:700 20px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.02em;position:relative">Tidy my inbox every morning</p>
+                <div style="font:400 11.5px/1.5 'IBM Plex Mono',monospace;color:var(--text-secondary);background:var(--bg-subtle);border:1px solid var(--border);border-radius:16px;padding:12px;flex:1;overflow:hidden">Every weekday at 08:00, read my unread mail from the last 24 hours. Group it into: needs a reply today, waiting on someone, and safe to archive&hellip;</div>
+                <ol style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px;font:400 12px/1.35 'IBM Plex Mono',monospace;color:var(--text-secondary)">
+                  <li>01 &nbsp;Open Cowork</li>
+                  <li>02 &nbsp;Connect Microsoft 365</li>
+                  <li>03 &nbsp;Save as a scheduled task</li>
+                </ol>
+                <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:10px;font:400 10px/1.4 'IBM Plex Mono',monospace;color:var(--text-muted)">
+                  <span>onramp.guide/r/tidy-inbox</span>
+                  <span style="text-align:right;max-width:52%">Unofficial. Not affiliated with Anthropic.</span>
+                </div>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center">
+                <button type="button" onClick="{{ copy }}" style="{{ btnAction }}" style-hover="transform:translateY(-2px)" style-active="transform:translateY(4px)" style-focus="outline:3px solid var(--focus);outline-offset:3px">{{ copyLabel }}</button>
+                <button type="button" style="{{ chip }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">Save image</button>
+                <button type="button" style="{{ chip }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">Print</button>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isRoute }}">
+            <div style="padding:18px 20px 96px;max-width:1120px;margin:0 auto">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+                <button type="button" onClick="{{ go.type }}" style="{{ btnBack }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">&larr; Change my answer</button>
+                <span style="display:inline-flex;align-items:center;gap:7px;font:500 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)"><span style="width:7px;height:7px;border-radius:50%;background:var(--state-ok)"></span>VERIFIED 3 DAYS AGO</span>
+              </div>
+              <div style="position:relative;margin:14px 0 0;padding:22px;border-radius:28px;background:var(--bg-surface);border:1px solid var(--border);overflow:hidden">
+                <div style="position:absolute;inset:-60% -20% 40%;background:radial-gradient(circle at 78% 10%,var(--accent-action-soft),transparent 65%);pointer-events:none"></div>
+                <div style="position:relative;display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start;justify-content:space-between">
+                  <div style="flex:1 1 260px;min-width:240px">
+                    <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">YOUR ROUTE</span>
+                    <p style="margin:12px 0 12px;font:700 clamp(24px,3.2vw,34px)/1.15 'IBM Plex Sans',sans-serif;letter-spacing:-.025em;text-wrap:pretty">Tidy my inbox every morning and tell me what needs a reply.</p>
+                    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+                      <span style="display:inline-flex;align-items:center;gap:7px;font:600 12px/1 'IBM Plex Mono',monospace;letter-spacing:.08em;padding:9px 13px;border-radius:999px;background:var(--accent-action);color:var(--accent-action-ink);box-shadow:0 3px 0 var(--accent-action-edge)">COWORK</span>
+                      <span style="font:400 13px/1.4 'IBM Plex Mono',monospace;color:var(--text-secondary)">+ Microsoft 365 &middot; scheduled task</span>
+                    </div>
+                  </div>
+                  <div style="flex:0 0 96px;width:96px"><dc-import name="Pip" state="found" hint-size="96px,96px"></dc-import></div>
+                </div>
+              </div>
+
+              <div style="display:flex;flex-wrap:wrap;gap:18px;margin-top:18px;align-items:flex-start">
+                <div style="flex:1 1 330px;min-width:290px;display:flex;flex-direction:column;gap:18px">
+                  <section style="padding:20px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border)">
+                    <h3 style="margin:0 0 14px;font:700 19px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.015em">Why this</h3>
+                    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px;color:var(--text-secondary);font-size:16px">
+                      <li style="display:flex;gap:10px"><span aria-hidden="true" style="flex:none;width:7px;height:7px;margin-top:9px;border-radius:50%;background:var(--accent-action)"></span>Cowork can hold a job that repeats, so you set it up once rather than asking each day.</li>
+                      <li style="display:flex;gap:10px"><span aria-hidden="true" style="flex:none;width:7px;height:7px;margin-top:9px;border-radius:50%;background:var(--accent-action)"></span>Your mail already lives in Microsoft 365, and there is a connector for it.</li>
+                      <li style="display:flex;gap:10px"><span aria-hidden="true" style="flex:none;width:7px;height:7px;margin-top:9px;border-radius:50%;background:var(--accent-action)"></span>Nothing here needs code, so you can undo it from the same screen you set it up in.</li>
+                    </ul>
+                  </section>
+
+                  <section style="padding:20px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border)">
+                    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:6px">
+                      <h3 style="margin:0;font:700 19px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.015em">Set up</h3>
+                      <span style="font:500 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">{{ setupCount }}</span>
+                    </div>
+                    <div style="height:6px;border-radius:999px;background:var(--bg-subtle);margin-bottom:16px;overflow:hidden"><div style="{{ setupBar }}"></div></div>
+                    <div style="display:flex;flex-direction:column;gap:10px">
+                      <button type="button" onClick="{{ tick.open }}" style="{{ chk.open }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">
+                        <span style="{{ box.open }}">{{ boxMark.open }}</span>
+                        <span style="flex:1;text-align:left"><span style="{{ chkText.open }}">Open Cowork in the sidebar</span><br><a href="#cowork" style="font:400 13px/1.5 'IBM Plex Mono',monospace">support.claude.com &rarr; getting started with Cowork</a></span>
+                      </button>
+                      <button type="button" onClick="{{ tick.connect }}" style="{{ chk.connect }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">
+                        <span style="{{ box.connect }}">{{ boxMark.connect }}</span>
+                        <span style="flex:1;text-align:left"><span style="{{ chkText.connect }}">Connect Microsoft 365</span><br><a href="#connectors" style="font:400 13px/1.5 'IBM Plex Mono',monospace">Settings &rarr; Connectors &rarr; Microsoft 365</a></span>
+                      </button>
+                      <button type="button" onClick="{{ tick.allow }}" style="{{ chk.allow }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">
+                        <span style="{{ box.allow }}">{{ boxMark.allow }}</span>
+                        <span style="flex:1;text-align:left"><span style="{{ chkText.allow }}">Allow read access to mail only</span><br><span style="font:400 13px/1.5 'IBM Plex Mono',monospace;color:var(--text-muted)">read scope is enough for this route</span></span>
+                      </button>
+                      <button type="button" onClick="{{ tick.save }}" style="{{ chk.save }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">
+                        <span style="{{ box.save }}">{{ boxMark.save }}</span>
+                        <span style="flex:1;text-align:left"><span style="{{ chkText.save }}">Save the prompt as a task at 08:00</span><br><span style="font:400 13px/1.5 'IBM Plex Mono',monospace;color:var(--text-muted)">weekdays only</span></span>
+                      </button>
+                    </div>
+                  </section>
+
+                  <button type="button" onClick="{{ openDispatch }}" style="display:flex;gap:12px;align-items:center;width:100%;text-align:left;min-height:56px;padding:13px 15px;border-radius:20px;background:var(--bg-subtle);border:1px solid var(--accent-action);box-shadow:0 3px 0 var(--accent-action-edge);color:var(--text-primary);cursor:pointer;font:400 16px/1.4 'IBM Plex Sans',sans-serif;transition:transform .16s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:translateY(-2px)" style-active="transform:translateY(3px);box-shadow:0 0 0 var(--accent-action-edge)" style-focus="outline:3px solid var(--focus);outline-offset:3px">
+                    <span aria-hidden="true" style="flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;padding:2px;background:conic-gradient(from 210deg,var(--accent-action),var(--accent-attention) 58%,var(--accent-action))"><span style="display:block;width:100%;height:100%;border-radius:50%;background:var(--bg-subtle)"></span></span>
+                    <span style="flex:1">New in Cowork since 2 Sep: <strong style="font-weight:600">Dispatch</strong>. Try it after this.</span>
+                    <span aria-hidden="true" style="flex:none;font:500 15px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">&rarr;</span>
+                  </button>
+
+                  <section style="padding:20px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border)">
+                    <h3 style="margin:0 0 6px;font:700 19px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.015em">Watch out for</h3>
+                    <ul style="margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;font-size:16px;color:var(--text-secondary)">
+                      <li style="display:flex;gap:10px"><span aria-hidden="true" style="flex:none;width:22px;height:22px;border-radius:8px;background:var(--state-warn-soft);color:var(--state-warn);font:600 13px/22px 'IBM Plex Mono',monospace;text-align:center">!</span>It will not send replies unless you ask it to. Keep it read only until you trust the summary.</li>
+                      <li style="display:flex;gap:10px"><span aria-hidden="true" style="flex:none;width:22px;height:22px;border-radius:8px;background:var(--state-warn-soft);color:var(--state-warn);font:600 13px/22px 'IBM Plex Mono',monospace;text-align:center">!</span>Very large mailboxes get truncated. Give it a window, not your whole archive.</li>
+                    </ul>
+                  </section>
+
+                  <section style="padding:18px 20px;border-radius:24px;background:var(--bg-subtle);border:1px dashed var(--border-strong)">
+                    <h3 style="margin:0 0 8px;font:700 17px/1.2 'IBM Plex Sans',sans-serif">Plan note</h3>
+                    <p style="margin:0;color:var(--text-secondary);font-size:15px">Connectors and scheduled tasks sit on the paid personal plans <span style="font:400 14px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">(as of 7 September 2026)</span>. Plans change, so <a href="#plans">check the current list</a> before you commit.</p>
+                  </section>
+
+                  <button type="button" onClick="{{ toggleAlt }}" aria-expanded="{{ alt }}" style="{{ altHead }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">
+                    <span>Alternative route</span><span aria-hidden="true" style="{{ altChev }}">&darr;</span>
+                  </button>
+                  <sc-if value="{{ alt }}">
+                    <div style="margin-top:-10px;padding:20px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border);animation:om-pop .32s cubic-bezier(.34,1.56,.64,1)">
+                      <span style="display:inline-flex;font:600 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;padding:8px 11px;border-radius:999px;background:var(--tint-chat);color:#141413">OUTLOOK</span>
+                      <p style="margin:12px 0 0;color:var(--text-secondary);font-size:16px">If you would rather stay inside your mail client, use Claude in Outlook and ask for the same summary by hand each morning. Slower, but nothing to connect.</p>
+                    </div>
+                  </sc-if>
+                </div>
+
+                <div style="flex:1 1 330px;min-width:290px;display:flex;flex-direction:column;gap:18px">
+                  <section style="padding:20px;border-radius:24px;background:var(--bg-raised);border:1px solid var(--border);box-shadow:var(--shadow-pop)">
+                    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:14px">
+                      <h3 style="margin:0;font:700 19px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.015em">Start with this prompt</h3>
+                      <button type="button" onClick="{{ toggleMine }}" style="{{ mineBtn }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">{{ mineLabel }}</button>
+                    </div>
+                    <sc-if value="{{ notMine }}" hint-placeholder-val="{{ true }}">
+                      <p style="margin:0;padding:18px;border-radius:18px;background:var(--bg-page);border:1px solid var(--border);font:400 15px/1.65 'IBM Plex Mono',monospace;color:var(--text-primary)">Every weekday at 08:00, read my unread mail from the last 24 hours. Group it into three lists: needs a reply today, waiting on someone else, and safe to archive. For each item give me the sender, one line of context, and a suggested next step. Keep the whole thing under <span style="background:var(--accent-attention-soft);border-bottom:2px solid var(--accent-attention);padding:1px 3px">[300 words]</span> and flag anything from <span style="background:var(--accent-attention-soft);border-bottom:2px solid var(--accent-attention);padding:1px 3px">[my manager]</span> first.</p>
+                    </sc-if>
+                    <sc-if value="{{ mine }}">
+                      <p style="margin:0;padding:18px;border-radius:18px;background:var(--bg-page);border:1px solid var(--accent-action);font:400 15px/1.9 'IBM Plex Mono',monospace;color:var(--text-primary)">Every weekday at 08:00, read my unread mail from the last 24 hours. Group it into three lists: needs a reply today, waiting on someone else, and safe to archive. Keep the whole thing under <input value="{{ mineLen }}" onChange="{{ onMineLen }}" aria-label="Length" style="width:96px;min-height:36px;padding:2px 8px;border-radius:9px;background:var(--accent-attention-soft);border:1px solid var(--accent-attention);color:var(--text-primary);font:500 15px/1 'IBM Plex Mono',monospace" style-focus="outline:3px solid var(--focus);outline-offset:2px"> and flag anything from <input value="{{ mineSender }}" onChange="{{ onMineSender }}" aria-label="Priority sender" style="width:118px;min-height:36px;padding:2px 8px;border-radius:9px;background:var(--accent-attention-soft);border:1px solid var(--accent-attention);color:var(--text-primary);font:500 15px/1 'IBM Plex Mono',monospace" style-focus="outline:3px solid var(--focus);outline-offset:2px"> first.</p>
+                    </sc-if>
+                    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;align-items:center">
+                      <button type="button" onClick="{{ copy }}" style="{{ copyBtn }}" style-hover="transform:translateY(-2px)" style-active="transform:translateY(4px);box-shadow:0 0 0 var(--accent-action-edge)" style-focus="outline:3px solid var(--focus);outline-offset:3px">{{ copyLabel }}</button>
+                      <sc-if value="{{ copied }}"><span style="display:inline-flex;align-items:center;gap:6px;font:500 13px/1 'IBM Plex Mono',monospace;color:var(--state-ok);animation:om-pop .3s cubic-bezier(.34,1.56,.64,1)"><span aria-hidden="true">&#10003;</span>on your clipboard</span></sc-if>
+                    </div>
+                  </section>
+
+                  <section style="padding:20px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border)">
+                    <h3 style="margin:0 0 14px;font:700 19px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.015em">Then try</h3>
+                    <div style="display:flex;flex-direction:column;gap:10px">
+                      <div style="display:flex;gap:12px;align-items:center;padding:14px;border-radius:18px;background:var(--bg-page);border:1px solid var(--border)">
+                        <span style="flex:1;font:400 14px/1.6 'IBM Plex Mono',monospace;color:var(--text-secondary)">Draft replies for the &ldquo;needs a reply today&rdquo; list, but do not send them.</span>
+                        <button type="button" aria-label="Copy follow-up prompt" style="{{ miniCopy }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Copy</button>
+                      </div>
+                      <div style="display:flex;gap:12px;align-items:center;padding:14px;border-radius:18px;background:var(--bg-page);border:1px solid var(--border)">
+                        <span style="flex:1;font:400 14px/1.6 'IBM Plex Mono',monospace;color:var(--text-secondary)">Every Friday, tell me who I have kept waiting the longest.</span>
+                        <button type="button" aria-label="Copy follow-up prompt" style="{{ miniCopy }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Copy</button>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+
+              <sc-if value="{{ isMobile }}">
+                <div style="position:sticky;bottom:0;display:flex;gap:8px;padding:12px 16px 16px;margin:22px -20px -96px;background:color-mix(in oklab,var(--bg-page) 92%,transparent);backdrop-filter:blur(10px);border-top:1px solid var(--border);z-index:6">
+                  <button type="button" onClick="{{ copy }}" style="{{ btnAction }};flex:2 1 140px;min-height:52px;width:auto;font-size:16px" style-active="transform:translateY(4px)" style-focus="outline:3px solid var(--focus);outline-offset:3px">{{ copyLabel }}</button>
+                  <button type="button" onClick="{{ go.card }}" style="{{ chip }};flex:1 1 88px;justify-content:center" style-focus="outline:3px solid var(--focus);outline-offset:3px">Share</button>
+                  <button type="button" onClick="{{ go.landing }}" style="{{ chip }};flex:0 0 52px;justify-content:center;padding:0" aria-label="Start over" style-focus="outline:3px solid var(--focus);outline-offset:3px">&#8635;</button>
+                </div>
+              </sc-if>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isMap }}">
+            <div style="padding:18px 20px 96px;max-width:1120px;margin:0 auto">
+              <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+                <h2 style="margin:0;font:700 clamp(24px,3.2vw,34px)/1.1 'IBM Plex Sans',sans-serif;letter-spacing:-.025em">The map</h2>
+                <span style="font:400 12px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">9 surfaces &middot; 200+ connectors</span>
+              </div>
+              <input value="{{ mapQuery }}" onChange="{{ onMapQuery }}" placeholder="Search surfaces, connectors, skills" aria-label="Search the map" style="width:100%;margin-top:14px;min-height:52px;padding:0 18px;border-radius:999px;background:var(--bg-surface);border:1px solid var(--border);color:var(--text-primary);font:400 16px/1 'IBM Plex Sans',sans-serif" style-focus="outline:3px solid var(--focus);outline-offset:3px;border-color:var(--accent-action)">
+              <div style="display:flex;gap:8px;margin-top:12px;overflow-x:auto;padding-bottom:4px">
+                <button type="button" onClick="{{ filt.All }}" style="{{ fchip.All }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">All</button>
+                <button type="button" onClick="{{ filt.Surfaces }}" style="{{ fchip.Surfaces }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">Surfaces</button>
+                <button type="button" onClick="{{ filt.Capabilities }}" style="{{ fchip.Capabilities }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">Capabilities</button>
+                <button type="button" onClick="{{ filt.Connectors }}" style="{{ fchip.Connectors }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">Connectors</button>
+                <button type="button" onClick="{{ togglePlan }}" style="{{ planChip }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">{{ planLabel }}</button>
+              </div>
+
+              <sc-if value="{{ isDesktop }}">
+                <div style="position:relative;height:470px;margin-top:18px;border-radius:28px;background:radial-gradient(120% 95% at 32% 42%,color-mix(in oklab,var(--bg-surface) 94%,var(--accent-action)),var(--bg-surface) 52%,var(--bg-page));border:1px solid var(--border);overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.05)">
+                  <div style="position:absolute;inset:0;background-image:linear-gradient(var(--dot) 1px,transparent 1px),linear-gradient(90deg,var(--dot) 1px,transparent 1px);background-size:46px 46px;opacity:.6"></div>
+                  <div style="position:absolute;left:34%;top:46%;width:360px;height:360px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,color-mix(in oklab,var(--tint-cowork) 18%,transparent),transparent 70%)"></div>
+                  <div style="position:absolute;left:68%;top:26%;width:250px;height:250px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,color-mix(in oklab,var(--tint-chat) 14%,transparent),transparent 70%)"></div>
+                  <div style="position:absolute;left:72%;top:72%;width:240px;height:240px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,color-mix(in oklab,var(--tint-code) 14%,transparent),transparent 70%)"></div>
+                  <svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true">
+                    <g fill="none" stroke="var(--text-secondary)" stroke-width="1" vector-effect="non-scaling-stroke" opacity=".26">
+                      <path d="M34 46 Q46 28 66 23" vector-effect="non-scaling-stroke"></path>
+                      <path d="M34 46 Q55 62 72 70" vector-effect="non-scaling-stroke"></path>
+                      <path d="M34 46 Q26 66 27 82" vector-effect="non-scaling-stroke"></path>
+                      <path d="M34 46 Q21 29 17 17" vector-effect="non-scaling-stroke"></path>
+                      <path d="M34 46 Q19 47 9 52" vector-effect="non-scaling-stroke"></path>
+                      <path d="M66 23 Q79 16 89 15" vector-effect="non-scaling-stroke"></path>
+                      <path d="M72 70 Q84 59 89 47" vector-effect="non-scaling-stroke"></path>
+                      <path d="M72 70 Q85 79 92 84" vector-effect="non-scaling-stroke"></path>
+                      <path d="M9 52 Q5 68 8 82" vector-effect="non-scaling-stroke"></path>
+                      <path d="M27 82 Q38 76 47 68" vector-effect="non-scaling-stroke"></path>
+                    </g>
+                    <g fill="none" stroke="var(--accent-action)" stroke-width="1.4" stroke-dasharray="4 6" vector-effect="non-scaling-stroke" opacity=".75">
+                      <path d="M34 46 Q43 43 51 42" vector-effect="non-scaling-stroke" style="animation:om-dash 1.4s linear infinite"></path>
+                      <path d="M51 42 Q60 33 66 23" vector-effect="non-scaling-stroke" style="animation:om-dash 1.4s linear infinite"></path>
+                      <path d="M34 46 Q40 60 47 68" vector-effect="non-scaling-stroke" style="animation:om-dash 1.8s linear infinite"></path>
+                    </g>
+                  </svg>
+                  <button type="button" onClick="{{ pick.cowork }}" style="{{ nodeHub.cowork }}" style-hover="transform:translate(-50%,-50%) scale(1.08)" style-focus="outline:3px solid var(--focus);outline-offset:4px"><span style="font:700 18px/1 'IBM Plex Sans',sans-serif;letter-spacing:-.01em">Cowork</span><span style="font:500 9px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-secondary)">6 CAPABILITIES</span></button>
+                  <button type="button" onClick="{{ pick.chat }}" style="{{ nodeHub.chat }}" style-hover="transform:translate(-50%,-50%) scale(1.08)" style-focus="outline:3px solid var(--focus);outline-offset:4px"><span style="font:700 17px/1 'IBM Plex Sans',sans-serif;letter-spacing:-.01em">Chat</span><span style="font:500 9px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-secondary)">FREE PLAN</span></button>
+                  <button type="button" onClick="{{ pick.code }}" style="{{ nodeHub.code }}" style-hover="transform:translate(-50%,-50%) scale(1.08)" style-focus="outline:3px solid var(--focus);outline-offset:4px"><span style="font:700 17px/1 'IBM Plex Sans',sans-serif;letter-spacing:-.01em">Code</span><span style="font:500 9px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-secondary)">TERMINAL</span></button>
+                  <button type="button" onClick="{{ pick.design }}" style="{{ nodeHub.design }}" style-hover="transform:translate(-50%,-50%) scale(1.08)" style-focus="outline:3px solid var(--focus);outline-offset:4px"><span style="font:700 17px/1 'IBM Plex Sans',sans-serif;letter-spacing:-.01em">Design</span><span style="font:500 9px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-secondary)">SYSTEMS</span></button>
+                  <button type="button" onClick="{{ pick.chrome }}" style="{{ nodeSmall.chrome }}" style-hover="transform:translate(-50%,-50%) scale(1.1)" style-focus="outline:3px solid var(--focus);outline-offset:4px">Chrome</button>
+                  <button type="button" onClick="{{ pick.tasks }}" style="{{ nodeSmall.tasks }}" style-hover="transform:translate(-50%,-50%) scale(1.1)" style-focus="outline:3px solid var(--focus);outline-offset:4px">Tasks</button>
+                  <button type="button" onClick="{{ pick.connectors }}" style="{{ nodeSmall.connectors }}" style-hover="transform:translate(-50%,-50%) scale(1.1)" style-focus="outline:3px solid var(--focus);outline-offset:4px">Connectors</button>
+                  <button type="button" onClick="{{ pick.skills }}" style="{{ nodeSmall.skills }}" style-hover="transform:translate(-50%,-50%) scale(1.1)" style-focus="outline:3px solid var(--focus);outline-offset:4px">Skills</button>
+                  <button type="button" onClick="{{ pick.plugins }}" style="{{ nodeSmall.plugins }}" style-hover="transform:translate(-50%,-50%) scale(1.1)" style-focus="outline:3px solid var(--focus);outline-offset:4px">Plugins</button>
+                  <button type="button" onClick="{{ pick.memory }}" style="{{ nodeSmall.memory }}" style-hover="transform:translate(-50%,-50%) scale(1.1)" style-focus="outline:3px solid var(--focus);outline-offset:4px">Memory</button>
+                  <button type="button" onClick="{{ pick.m365 }}" style="{{ nodeSmall.m365 }}" style-hover="transform:translate(-50%,-50%) scale(1.1)" style-focus="outline:3px solid var(--focus);outline-offset:4px">M365</button>
+                  <button type="button" onClick="{{ pick.excel }}" style="{{ nodeSmall.excel }}" style-hover="transform:translate(-50%,-50%) scale(1.1)" style-focus="outline:3px solid var(--focus);outline-offset:4px">Excel</button>
+                  <span style="position:absolute;left:16px;bottom:14px;display:flex;flex-wrap:wrap;gap:8px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:var(--text-muted)">
+                    <span style="display:flex;align-items:center;gap:7px;padding:8px 11px;border-radius:999px;background:color-mix(in oklab,var(--bg-page) 72%,transparent);border:1px solid var(--border)"><span style="width:9px;height:9px;border-radius:50%;background:var(--accent-action)"></span>SURFACE</span>
+                    <span style="display:flex;align-items:center;gap:7px;padding:8px 11px;border-radius:999px;background:color-mix(in oklab,var(--bg-page) 72%,transparent);border:1px solid var(--border)"><span style="width:9px;height:9px;border-radius:3px;background:var(--text-secondary)"></span>CAPABILITY</span>
+                    <span style="display:flex;align-items:center;gap:7px;padding:8px 11px;border-radius:999px;background:color-mix(in oklab,var(--bg-page) 72%,transparent);border:1px solid var(--border)"><span style="width:9px;height:9px;border-radius:50%;border:1px dashed var(--text-secondary)"></span>CONNECTOR</span>
+                  </span>
+                  <span style="position:absolute;right:16px;bottom:14px;padding:8px 12px;border-radius:999px;background:color-mix(in oklab,var(--bg-page) 72%,transparent);border:1px solid var(--border);font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.06em;color:var(--text-muted)">412 nodes &middot; 1,380 edges &middot; verified 3 days ago</span>
+                  <span style="position:absolute;right:16px;top:16px;display:flex;gap:6px">
+                    <span style="width:36px;height:36px;border-radius:10px;background:color-mix(in oklab,var(--bg-page) 72%,transparent);border:1px solid var(--border);font:500 15px/34px 'IBM Plex Mono',monospace;color:var(--text-secondary);text-align:center">+</span>
+                    <span style="width:36px;height:36px;border-radius:10px;background:color-mix(in oklab,var(--bg-page) 72%,transparent);border:1px solid var(--border);font:500 15px/34px 'IBM Plex Mono',monospace;color:var(--text-secondary);text-align:center">&minus;</span>
+                  </span>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isMobile }}">
+                <div style="margin-top:18px;display:flex;flex-direction:column;gap:20px">
+                  <div>
+                    <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">EVERYDAY WORK</span>
+                    <div style="display:flex;gap:10px;overflow-x:auto;padding:12px 0 6px">
+                      <button type="button" onClick="{{ pick.cowork }}" style="{{ mcard.cowork }}" style-focus="outline:3px solid var(--focus);outline-offset:3px"><strong style="font:700 17px/1.2 'IBM Plex Sans',sans-serif">Cowork</strong><span style="font:400 13px/1.45 'IBM Plex Mono',monospace;opacity:.75">agentic work, files, tasks</span></button>
+                      <button type="button" onClick="{{ pick.chat }}" style="{{ mcard.chat }}" style-focus="outline:3px solid var(--focus);outline-offset:3px"><strong style="font:700 17px/1.2 'IBM Plex Sans',sans-serif">Chat</strong><span style="font:400 13px/1.45 'IBM Plex Mono',monospace;opacity:.75">the box you know</span></button>
+                      <button type="button" onClick="{{ pick.chrome }}" style="{{ mcard.chrome }}" style-focus="outline:3px solid var(--focus);outline-offset:3px"><strong style="font:700 17px/1.2 'IBM Plex Sans',sans-serif">Chrome</strong><span style="font:400 13px/1.45 'IBM Plex Mono',monospace;opacity:.75">reads the page you are on</span></button>
+                    </div>
+                  </div>
+                  <div>
+                    <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">MAKING THINGS</span>
+                    <div style="display:flex;gap:10px;overflow-x:auto;padding:12px 0 6px">
+                      <button type="button" onClick="{{ pick.code }}" style="{{ mcard.code }}" style-focus="outline:3px solid var(--focus);outline-offset:3px"><strong style="font:700 17px/1.2 'IBM Plex Sans',sans-serif">Code</strong><span style="font:400 13px/1.45 'IBM Plex Mono',monospace;opacity:.75">terminal and repos</span></button>
+                      <button type="button" onClick="{{ pick.design }}" style="{{ mcard.design }}" style-focus="outline:3px solid var(--focus);outline-offset:3px"><strong style="font:700 17px/1.2 'IBM Plex Sans',sans-serif">Design</strong><span style="font:400 13px/1.45 'IBM Plex Mono',monospace;opacity:.75">screens and systems</span></button>
+                      <button type="button" onClick="{{ pick.excel }}" style="{{ mcard.excel }}" style-focus="outline:3px solid var(--focus);outline-offset:3px"><strong style="font:700 17px/1.2 'IBM Plex Sans',sans-serif">Excel</strong><span style="font:400 13px/1.45 'IBM Plex Mono',monospace;opacity:.75">in the spreadsheet</span></button>
+                    </div>
+                  </div>
+                  <div>
+                    <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">WHAT YOU SWITCH ON</span>
+                    <div style="display:flex;flex-wrap:wrap;gap:8px;padding-top:12px">
+                      <button type="button" onClick="{{ pick.connectors }}" style="{{ chip }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">Connectors</button>
+                      <button type="button" onClick="{{ pick.skills }}" style="{{ chip }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">Skills</button>
+                      <button type="button" onClick="{{ pick.plugins }}" style="{{ chip }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">Plugins</button>
+                      <button type="button" onClick="{{ pick.memory }}" style="{{ chip }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">Memory</button>
+                      <button type="button" onClick="{{ pick.tasks }}" style="{{ chip }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">Scheduled tasks</button>
+                    </div>
+                  </div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ drawer }}">
+                <div style="{{ drawerStyle }}">
+                  <sc-if value="{{ isMobile }}"><span aria-hidden="true" style="display:block;width:44px;height:5px;border-radius:999px;background:var(--border-strong);margin:0 auto 16px"></span></sc-if>
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+                    <div>
+                      <span style="{{ nodeBadge }}">{{ nodeKind }}</span>
+                      <h3 style="margin:12px 0 0;font:700 24px/1.15 'IBM Plex Sans',sans-serif;letter-spacing:-.02em">{{ nodeName }}</h3>
+                    </div>
+                    <button type="button" onClick="{{ closeDrawer }}" aria-label="Close" style="min-width:44px;min-height:44px;border-radius:999px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-secondary);font:500 16px/1 'IBM Plex Mono',monospace;cursor:pointer" style-focus="outline:3px solid var(--focus);outline-offset:3px">&times;</button>
+                  </div>
+                  <p style="margin:14px 0 18px;color:var(--text-secondary);font-size:16px">{{ nodeWhat }}</p>
+                  <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:18px">
+                    <div style="flex:1 1 150px;padding:14px;border-radius:16px;background:var(--bg-subtle);border:1px solid var(--border)">
+                      <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;color:var(--text-muted)">NEEDS</span>
+                      <p style="margin:9px 0 0;font-size:15px;color:var(--text-primary)">{{ nodeNeeds }}</p>
+                    </div>
+                    <div style="flex:1 1 150px;padding:14px;border-radius:16px;background:var(--bg-subtle);border:1px solid var(--border)">
+                      <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;color:var(--text-muted)">UNLOCKS</span>
+                      <p style="margin:9px 0 0;font-size:15px;color:var(--text-primary)">{{ nodeUnlocks }}</p>
+                    </div>
+                  </div>
+                  <div style="display:flex;flex-wrap:wrap;gap:10px">
+                    <button type="button" onClick="{{ go.route }}" style="{{ btnAction }};width:auto;flex:1 1 160px;padding:0 20px" style-active="transform:translateY(4px)" style-focus="outline:3px solid var(--focus);outline-offset:3px">Route me here</button>
+                    <a href="#docs" style="{{ chip }};text-decoration:none;justify-content:center;flex:1 1 120px">Official docs</a>
+                  </div>
+                </div>
+              </sc-if>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isStates }}">
+            <div style="padding:20px 20px 60px;max-width:1120px;margin:0 auto">
+              <h2 style="margin:0 0 6px;font:700 clamp(24px,3.2vw,34px)/1.1 'IBM Plex Sans',sans-serif;letter-spacing:-.025em">No dead ends</h2>
+              <p style="margin:0 0 20px;color:var(--text-secondary)">Every state keeps the mascot and gives one way forward.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:16px">
+                <div style="flex:1 1 260px;min-width:250px;padding:22px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border);text-align:center">
+                  <div style="width:100px;margin:0 auto 14px"><dc-import name="Pip" state="confused" hint-size="100px,100px"></dc-import></div>
+                  <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">NO MATCH</span>
+                  <h3 style="margin:12px 0 8px;font:700 20px/1.2 'IBM Plex Sans',sans-serif">We could not place that one</h3>
+                  <p style="margin:0 0 16px;color:var(--text-secondary);font-size:15px">Try naming the tool you already use, or let us ask you five quick questions instead.</p>
+                  <button type="button" onClick="{{ go.guide }}" style="{{ btnAction }}" style-active="transform:translateY(4px)" style-focus="outline:3px solid var(--focus);outline-offset:3px">Guide me instead</button>
+                </div>
+                <div style="flex:1 1 260px;min-width:250px;padding:22px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border);text-align:center">
+                  <div style="width:100px;margin:0 auto 14px"><dc-import name="Pip" state="sleeping" hint-size="100px,100px"></dc-import></div>
+                  <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">RATE LIMITED</span>
+                  <h3 style="margin:12px 0 8px;font:700 20px/1.2 'IBM Plex Sans',sans-serif">That is your ten routes for today</h3>
+                  <p style="margin:0 0 16px;color:var(--text-secondary);font-size:15px">The counter resets at midnight UK time. Your saved routes still work.</p>
+                  <button type="button" onClick="{{ go.map }}" style="{{ btnGhost }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">Browse the map</button>
+                </div>
+                <div style="flex:1 1 260px;min-width:250px;padding:22px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border);text-align:center">
+                  <div style="width:100px;margin:0 auto 14px"><dc-import name="Pip" state="waving" hint-size="100px,100px"></dc-import></div>
+                  <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">404</span>
+                  <h3 style="margin:12px 0 8px;font:700 20px/1.2 'IBM Plex Sans',sans-serif">This road does not exist</h3>
+                  <p style="margin:0 0 16px;color:var(--text-secondary);font-size:15px">The link may be old. The map has not moved.</p>
+                  <button type="button" onClick="{{ go.landing }}" style="{{ btnAction }}" style-active="transform:translateY(4px)" style-focus="outline:3px solid var(--focus);outline-offset:3px">Take me home</button>
+                </div>
+                <div style="flex:1 1 260px;min-width:250px;padding:22px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border)">
+                  <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--state-warn)">OFFLINE OR ERROR</span>
+                  <h3 style="margin:12px 0 8px;font:700 20px/1.2 'IBM Plex Sans',sans-serif">We lost the connection</h3>
+                  <p style="margin:0 0 14px;color:var(--text-secondary);font-size:15px">Nothing was lost. Your answers are still in this tab.</p>
+                  <div style="padding:12px 14px;border-radius:14px;background:var(--state-warn-soft);border:1px solid var(--state-warn);font:400 13px/1.5 'IBM Plex Mono',monospace;color:var(--text-primary);margin-bottom:14px">error 503 &middot; retrying in 4s</div>
+                  <button type="button" style="{{ btnGhost }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">Try again now</button>
+                </div>
+                <div style="flex:1 1 260px;min-width:250px;padding:22px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border)">
+                  <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">BOT CHECK FALLBACK</span>
+                  <h3 style="margin:12px 0 8px;font:700 20px/1.2 'IBM Plex Sans',sans-serif">One tap to prove you are human</h3>
+                  <p style="margin:0 0 14px;color:var(--text-secondary);font-size:15px">This is normally invisible. When it is not, it looks like this.</p>
+                  <div style="display:flex;align-items:center;gap:12px;padding:14px;border-radius:16px;background:var(--bg-subtle);border:1px solid var(--border)">
+                    <span aria-hidden="true" style="width:26px;height:26px;border-radius:8px;border:2px solid var(--accent-action);flex:none"></span>
+                    <span style="font:400 14px/1.4 'IBM Plex Mono',monospace;color:var(--text-secondary)">Verify you are human</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isHow }}">
+            <div style="padding:20px 20px 60px;max-width:1120px;margin:0 auto">
+              <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">/HOW-IT-WORKS</span>
+              <h2 style="margin:12px 0 8px;font:700 clamp(26px,3.4vw,40px)/1.08 'IBM Plex Sans',sans-serif;letter-spacing:-.03em">The machine, running</h2>
+              <p style="margin:0 0 24px;color:var(--text-secondary);max-width:62ch">No recipe, no scoring weights, no prompt text. Just the parts you can watch work, and numbers that change on every deploy.</p>
+
+              <div style="display:flex;flex-wrap:wrap;gap:16px">
+                <div style="flex:1 1 300px;min-width:280px;padding:20px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border);overflow:hidden">
+                  <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">01 &nbsp;THE MAP, LIVE</span>
+                  <div style="display:flex;align-items:center;gap:18px;margin-top:14px;flex-wrap:wrap">
+                    <svg viewBox="0 0 160 160" style="width:150px;flex:none" aria-hidden="true">
+                      <g style="animation:om-orbit 58s linear infinite;transform-origin:80px 80px">
+                        <circle cx="80" cy="80" r="66" fill="none" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 7"></circle>
+                        <circle cx="80" cy="80" r="46" fill="none" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 7"></circle>
+                        <circle cx="80" cy="80" r="26" fill="none" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 7"></circle>
+                        <circle cx="80" cy="14" r="4" fill="var(--tint-chat)"></circle>
+                        <circle cx="126" cy="126" r="4" fill="var(--tint-code)"></circle>
+                        <circle cx="34" cy="120" r="4" fill="var(--tint-design)"></circle>
+                        <circle cx="126" cy="46" r="3" fill="var(--text-secondary)"></circle>
+                        <circle cx="34" cy="52" r="3" fill="var(--text-secondary)"></circle>
+                        <circle cx="106" cy="80" r="2.5" fill="var(--text-muted)"></circle>
+                        <circle cx="54" cy="80" r="2.5" fill="var(--text-muted)"></circle>
+                        <circle cx="80" cy="106" r="2.5" fill="var(--text-muted)"></circle>
+                      </g>
+                      <circle cx="80" cy="80" r="13" fill="var(--accent-action)"></circle>
+                    </svg>
+                    <div style="flex:1 1 150px;display:flex;flex-direction:column;gap:8px;font:400 13px/1.5 'IBM Plex Mono',monospace;color:var(--text-secondary)">
+                      <span style="color:var(--text-primary);font-size:26px;font-weight:500">412</span>
+                      <span>nodes</span>
+                      <span style="color:var(--text-primary);font-size:26px;font-weight:500">1,380</span>
+                      <span>edges &middot; verified 3 days ago</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="flex:1 1 380px;min-width:290px;padding:20px;border-radius:24px;background:var(--bg-raised);border:1px solid var(--border);box-shadow:var(--shadow-pop)">
+                  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+                    <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">02 &nbsp;TRY THE MATCHER</span>
+                    <span style="{{ verdictStyle }}">{{ verdict }}</span>
+                  </div>
+                  <input value="{{ matchQ }}" onChange="{{ onMatchQ }}" aria-label="Try the matcher" placeholder="type a goal" style="width:100%;margin-top:14px;min-height:52px;padding:0 16px;border-radius:16px;background:var(--bg-page);border:1px solid var(--border);color:var(--text-primary);font:400 16px/1 'IBM Plex Mono',monospace" style-focus="outline:3px solid var(--focus);outline-offset:3px;border-color:var(--accent-action)">
+                  <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+                    <sc-for list="{{ matches }}" as="m" hint-placeholder-count="3">
+                      <div style="display:flex;flex-direction:column;gap:7px">
+                        <div style="display:flex;justify-content:space-between;gap:10px;font-size:15px"><span>{{ m.name }}</span><span style="font:500 13px/1.3 'IBM Plex Mono',monospace;color:var(--text-muted)">{{ m.surface }} &middot; {{ m.pct }}%</span></div>
+                        <div style="height:8px;border-radius:999px;background:var(--bg-subtle);overflow:hidden"><div style="{{ m.bar }}"></div></div>
+                      </div>
+                    </sc-for>
+                  </div>
+                  <p style="margin:14px 0 0;font:400 12px/1.5 'IBM Plex Mono',monospace;color:var(--text-muted)">runs locally &middot; no network call &middot; real catalogue</p>
+                </div>
+              </div>
+
+              <div style="margin-top:16px;padding:20px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border)">
+                <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">03 &nbsp;THE PIPELINE</span>
+                <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;margin-top:14px">
+                  <div style="flex:1 1 220px;min-width:210px;padding:16px;border-radius:18px;background:var(--bg-page);border:1px solid var(--border)">
+                    <p style="margin:0 0 10px;font:600 15px/1.3 'IBM Plex Sans',sans-serif">Official docs</p>
+                    <p style="margin:0 0 12px;color:var(--text-secondary);font-size:14px">Read from source, never remembered.</p>
+                    <div style="padding:11px 13px;border-radius:12px;background:var(--bg-subtle);border:1px solid var(--border);font:400 12px/1.5 'IBM Plex Mono',monospace;color:var(--text-secondary)"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--state-ok);margin-right:7px"></span>Getting started with Cowork<br>fetched 4h ago</div>
+                  </div>
+                  <span aria-hidden="true" style="align-self:center;font:400 18px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">&rarr;</span>
+                  <div style="flex:1 1 220px;min-width:210px;padding:16px;border-radius:18px;background:var(--bg-page);border:1px solid var(--border)">
+                    <p style="margin:0 0 10px;font:600 15px/1.3 'IBM Plex Sans',sans-serif">Knowledge graph</p>
+                    <p style="margin:0 0 12px;color:var(--text-secondary);font-size:14px">Surfaces, capabilities and what each one needs.</p>
+                    <svg viewBox="0 0 120 56" style="width:100%;height:56px" aria-hidden="true">
+                      <g stroke="var(--border-strong)" stroke-width="1" fill="none"><path d="M24 28 L54 14"></path><path d="M24 28 L54 42"></path><path d="M54 14 L92 22"></path><path d="M54 42 L92 38"></path></g>
+                      <circle cx="24" cy="28" r="8" fill="var(--accent-action)"></circle>
+                      <circle cx="54" cy="14" r="5" fill="var(--text-secondary)"></circle>
+                      <circle cx="54" cy="42" r="5" fill="var(--text-secondary)"></circle>
+                      <circle cx="92" cy="22" r="3.5" fill="var(--text-muted)"></circle>
+                      <circle cx="92" cy="38" r="3.5" fill="var(--text-muted)"></circle>
+                    </svg>
+                  </div>
+                  <span aria-hidden="true" style="align-self:center;font:400 18px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">&rarr;</span>
+                  <div style="flex:1 1 220px;min-width:210px;padding:16px;border-radius:18px;background:var(--bg-page);border:1px solid var(--border)">
+                    <p style="margin:0 0 10px;font:600 15px/1.3 'IBM Plex Sans',sans-serif">Curated catalogue</p>
+                    <p style="margin:0 0 12px;color:var(--text-secondary);font-size:14px">Routes a person wrote, then tested.</p>
+                    <div style="padding:11px 13px;border-radius:12px;background:var(--bg-subtle);border:1px solid var(--border);font:400 12px/1.5 'IBM Plex Mono',monospace;color:var(--text-secondary)">tidy-inbox<br>cowork &middot; m365 &middot; task<br>golden test passing</div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:16px">
+                <div style="flex:1 1 320px;min-width:290px;padding:20px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border);overflow:hidden">
+                  <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">04 &nbsp;ROUTE ASSEMBLY</span>
+                  <div style="position:relative;height:190px;margin-top:14px;border-radius:18px;background:var(--bg-page);border:1px solid var(--border);overflow:hidden">
+                    <span style="position:absolute;left:14px;top:18px;padding:8px 12px;border-radius:999px;background:var(--bg-subtle);border:1px solid var(--border);font:500 12px/1 'IBM Plex Mono',monospace;color:var(--text-secondary);animation:om-fly 6s cubic-bezier(.34,1.56,.64,1) infinite">email</span>
+                    <span style="position:absolute;left:14px;top:62px;padding:8px 12px;border-radius:999px;background:var(--bg-subtle);border:1px solid var(--border);font:500 12px/1 'IBM Plex Mono',monospace;color:var(--text-secondary);animation:om-fly 6s cubic-bezier(.34,1.56,.64,1) .25s infinite">daily</span>
+                    <span style="position:absolute;left:14px;top:106px;padding:8px 12px;border-radius:999px;background:var(--bg-subtle);border:1px solid var(--border);font:500 12px/1 'IBM Plex Mono',monospace;color:var(--text-secondary);animation:om-fly 6s cubic-bezier(.34,1.56,.64,1) .5s infinite">summary</span>
+                    <span style="position:absolute;right:20px;top:24px;padding:9px 13px;border-radius:999px;background:var(--accent-action);color:var(--accent-action-ink);font:600 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em">COWORK</span>
+                    <div style="position:absolute;left:20px;right:20px;bottom:16px;display:flex;flex-direction:column;gap:8px;animation:om-emerge 6s ease-out infinite">
+                      <span style="font:400 11px/1.4 'IBM Plex Mono',monospace;color:var(--text-muted)">01 open &middot; 02 connect &middot; 03 schedule</span>
+                      <span style="padding:11px 13px;border-radius:12px;background:var(--bg-subtle);border:1px solid var(--accent-action);font:400 12px/1.5 'IBM Plex Mono',monospace;color:var(--text-primary)">Every weekday at 08:00, read my unread mail&hellip;</span>
+                    </div>
+                  </div>
+                  <p style="margin:12px 0 0;font:400 12px/1.5 'IBM Plex Mono',monospace;color:var(--text-muted)">six seconds &middot; loops once in the product</p>
+                </div>
+
+                <div style="flex:1 1 300px;min-width:280px;padding:20px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border)">
+                  <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">05 &nbsp;WHAT WE NEVER STORE</span>
+                  <ul style="margin:14px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;color:var(--text-secondary);font-size:16px">
+                    <li style="display:flex;gap:10px"><span aria-hidden="true" style="flex:none;width:20px;height:20px;margin-top:2px;border-radius:6px;background:var(--state-ok-soft);color:var(--state-ok);font:600 12px/20px 'IBM Plex Mono',monospace;text-align:center">&#10003;</span>No accounts. There is nothing to log in to.</li>
+                    <li style="display:flex;gap:10px"><span aria-hidden="true" style="flex:none;width:20px;height:20px;margin-top:2px;border-radius:6px;background:var(--state-ok-soft);color:var(--state-ok);font:600 12px/20px 'IBM Plex Mono',monospace;text-align:center">&#10003;</span>No personal data. Your goal text is never written to disk.</li>
+                    <li style="display:flex;gap:10px"><span aria-hidden="true" style="flex:none;width:20px;height:20px;margin-top:2px;border-radius:6px;background:var(--state-ok-soft);color:var(--state-ok);font:600 12px/20px 'IBM Plex Mono',monospace;text-align:center">&#10003;</span>No analytics cookies. None, not even the polite kind.</li>
+                    <li style="display:flex;gap:10px"><span aria-hidden="true" style="flex:none;width:20px;height:20px;margin-top:2px;border-radius:6px;background:var(--state-ok-soft);color:var(--state-ok);font:600 12px/20px 'IBM Plex Mono',monospace;text-align:center">&#10003;</span>Daily hashed counters only, so we know the rate limit is working.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div style="margin-top:16px;padding:16px 20px;border-radius:20px;background:var(--bg-page);border:1px solid var(--border-strong);display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;font:400 12px/1.6 'IBM Plex Mono',monospace;color:var(--text-secondary)">
+                <span>commit <span style="color:var(--text-primary)">8b1f0c2</span></span>
+                <span>catalogue <span style="color:var(--text-primary)">v2026.09.3</span></span>
+                <span>links checked <span style="color:var(--text-primary)">2026-09-04</span></span>
+                <span>golden tests <span style="color:var(--state-ok)">148 / 148</span></span>
+                <span>lighthouse <span style="color:var(--state-ok)">100 100 100 100</span></span>
+              </div>
+
+              <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding:20px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border)">
+                <p style="margin:0;font:600 18px/1.4 'IBM Plex Sans',sans-serif;max-width:44ch">The code is open. The curated map is the work.</p>
+                <a href="#gh" style="{{ chip }};text-decoration:none;background:var(--accent-attention);color:var(--accent-attention-ink);border-color:var(--accent-attention-edge);box-shadow:0 3px 0 var(--accent-attention-edge)">Read the source</a>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isRadar }}">
+            <div style="padding:20px 20px 96px;max-width:820px;margin:0 auto">
+              <button type="button" onClick="{{ go.landing }}" style="{{ btnBack }}" style-focus="outline:3px solid var(--focus);outline-offset:3px">&larr; Back</button>
+              <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;justify-content:space-between;margin-top:14px">
+                <h2 style="margin:0;font:700 clamp(28px,3.6vw,40px)/1.08 'IBM Plex Sans',sans-serif;letter-spacing:-.025em">Radar</h2>
+                <span style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:var(--text-muted)">{{ unseenLabel }}</span>
+              </div>
+              <p style="margin:8px 0 18px;color:var(--text-secondary);font-size:17px;max-width:56ch">Everything Claude shipped, in plain words, newest first. Every card names the thing and hands you the first prompt.</p>
+
+              <div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:6px">
+                <sc-for list="{{ rfilters }}" as="c" hint-placeholder-count="6">
+                  <button type="button" onClick="{{ c.on }}" style="{{ c.style }}" style-hover="transform:translateY(-1px)" style-active="transform:translateY(3px)" style-focus="outline:3px solid var(--focus);outline-offset:3px">{{ c.label }}</button>
+                </sc-for>
+              </div>
+
+              <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:18px 0 20px">
+                <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">HOW MUCH DETAIL</span>
+                <div role="tablist" aria-label="Card depth" style="display:flex;gap:4px;padding:4px;border-radius:999px;background:var(--bg-subtle);border:1px solid var(--border)">
+                  <button type="button" onClick="{{ setDepth.bus }}" style="{{ segDepth.bus }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Bus</button>
+                  <button type="button" onClick="{{ setDepth.coffee }}" style="{{ segDepth.coffee }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Coffee</button>
+                  <button type="button" onClick="{{ setDepth.deep }}" style="{{ segDepth.deep }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Deep</button>
+                </div>
+              </div>
+
+              <div style="display:flex;flex-direction:column;gap:0">
+                <sc-for list="{{ feed }}" as="f" hint-placeholder-count="3">
+                  <div style="display:flex;gap:14px;align-items:stretch">
+                    <div aria-hidden="true" style="flex:none;width:14px;display:flex;flex-direction:column;align-items:center;padding-top:24px">
+                      <span style="{{ f.dot }}"></span>
+                      <span style="flex:1;width:1px;background:var(--border)"></span>
+                    </div>
+                    <div style="flex:1;min-width:0;margin-bottom:16px;padding:18px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border)">
+                      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+                        <span style="{{ f.badge }}">{{ f.surface }}</span>
+                        <span style="font:400 11px/1.4 'IBM Plex Mono',monospace;color:var(--text-muted)">verified {{ f.date }}</span>
+                      </div>
+                      <h3 style="margin:12px 0 6px;font:700 20px/1.2 'IBM Plex Sans',sans-serif;letter-spacing:-.02em">{{ f.name }}</h3>
+                      <p style="margin:0;color:var(--text-secondary);font-size:16px;line-height:1.5;text-wrap:pretty">{{ f.one }}</p>
+                      <sc-if value="{{ f.coffee }}">
+                        <ul style="margin:14px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;color:var(--text-secondary);font-size:15px">
+                          <li style="display:flex;gap:9px"><span aria-hidden="true" style="flex:none;width:6px;height:6px;margin-top:8px;border-radius:50%;background:var(--accent-action)"></span>{{ f.b0 }}</li>
+                          <li style="display:flex;gap:9px"><span aria-hidden="true" style="flex:none;width:6px;height:6px;margin-top:8px;border-radius:50%;background:var(--accent-action)"></span>{{ f.b1 }}</li>
+                          <li style="display:flex;gap:9px"><span aria-hidden="true" style="flex:none;width:6px;height:6px;margin-top:8px;border-radius:50%;background:var(--accent-action)"></span>{{ f.b2 }}</li>
+                        </ul>
+                        <p style="margin:14px 0 0;padding:14px;border-radius:16px;background:var(--bg-page);border:1px solid var(--border);font:400 14px/1.6 'IBM Plex Mono',monospace">{{ f.prompt }}</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:9px;margin-top:12px">
+                          <button type="button" onClick="{{ f.copy }}" style="{{ f.copyBtn }}" style-hover="transform:translateY(-2px)" style-active="transform:translateY(3px)" style-focus="outline:3px solid var(--focus);outline-offset:3px">{{ f.copyLabel }}</button>
+                          <sc-if value="{{ f.hasStory }}">
+                            <button type="button" onClick="{{ f.watch }}" style="min-height:44px;padding:0 16px;border-radius:999px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-secondary);font:500 13px/1 'IBM Plex Mono',monospace;cursor:pointer" style-focus="outline:3px solid var(--focus);outline-offset:3px">Watch the story</button>
+                          </sc-if>
+                        </div>
+                      </sc-if>
+                      <sc-if value="{{ f.deep }}">
+                        <div style="margin-top:14px;padding:14px;border-radius:16px;background:var(--bg-subtle);border:1px dashed var(--border-strong)">
+                          <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;color:var(--state-warn)">WATCH OUT FOR</span>
+                          <p style="margin:8px 0 0;color:var(--text-secondary);font-size:15px">{{ f.pitfall }}</p>
+                        </div>
+                      </sc-if>
+                      <p style="margin:12px 0 0"><a href="{{ f.href }}" style="font:400 12px/1.5 'IBM Plex Mono',monospace">{{ f.link }}</a></p>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+
+              <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding:18px 20px;border-radius:24px;background:var(--bg-subtle);border:1px solid var(--border)">
+                <p style="margin:0;color:var(--text-secondary);font-size:15px;max-width:38ch">Follow it without giving us anything. No email capture, ever.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:14px;font:500 13px/1 'IBM Plex Mono',monospace"><a href="#rss">RSS</a><a href="#json">JSON feed</a><a href="#ics">Add to calendar</a></div>
+              </div>
+            </div>
+          </sc-if>
+
+        </div>
+
+        <sc-if value="{{ storyOpen }}">
+          <div role="dialog" aria-modal="true" aria-label="{{ st.aria }}" style="position:absolute;inset:0;z-index:60;display:flex;flex-direction:column;background:var(--bg-page);animation:om-up .3s cubic-bezier(.34,1.56,.64,1)">
+            <div aria-hidden="true" style="{{ st.glow }}"></div>
+            <div aria-hidden="true" style="position:relative;display:flex;justify-content:center;padding:9px 0 3px"><span style="width:38px;height:4px;border-radius:999px;background:var(--border-strong)"></span></div>
+            <div style="position:relative;display:flex;gap:6px;padding:6px 16px 0">
+              <sc-for list="{{ storyBars }}" as="b" hint-placeholder-count="4">
+                <span style="flex:1;height:3px;border-radius:999px;background:var(--border-strong);overflow:hidden"><span style="{{ b.fill }}"></span></span>
+              </sc-for>
+            </div>
+            <div style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px 0">
+              <span style="display:flex;align-items:center;gap:10px;min-width:0">
+                <span style="{{ st.badge }}">{{ st.surface }}</span>
+                <span style="font:400 11px/1.4 'IBM Plex Mono',monospace;color:var(--text-muted)">verified {{ st.date }}</span>
+              </span>
+              <button type="button" onClick="{{ closeStory }}" aria-label="Close story" style="flex:none;width:44px;height:44px;border-radius:50%;background:var(--bg-surface);border:1px solid var(--border);color:var(--text-primary);font:400 20px/1 'IBM Plex Sans',sans-serif;cursor:pointer" style-focus="outline:3px solid var(--focus);outline-offset:3px">&times;</button>
+            </div>
+
+            <div onPointerDown="{{ holdDown }}" onPointerUp="{{ holdUp }}" style="position:relative;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:24px 22px 8px;cursor:pointer;min-height:0">
+              <sc-if value="{{ cardIs.c0 }}">
+                <div style="animation:om-up .34s cubic-bezier(.34,1.56,.64,1)">
+                  <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">NEW &middot; CARD 1 OF 4</span>
+                  <h3 style="margin:14px 0 12px;font:700 clamp(32px,4.4vw,42px)/1.06 'IBM Plex Sans',sans-serif;letter-spacing:-.03em">{{ st.name }}</h3>
+                  <p style="margin:0;font-size:20px;line-height:1.45;color:var(--text-primary);text-wrap:pretty">{{ st.one }}</p>
+                </div>
+              </sc-if>
+              <sc-if value="{{ cardIs.c1 }}">
+                <div style="animation:om-up .34s cubic-bezier(.34,1.56,.64,1)">
+                  <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">WHO IT IS FOR</span>
+                  <p style="margin:14px 0 16px;font:700 24px/1.25 'IBM Plex Sans',sans-serif;letter-spacing:-.02em;text-wrap:pretty">{{ st.who }}</p>
+                  <div style="display:flex;flex-wrap:wrap;gap:8px">
+                    <span style="min-height:44px;display:inline-flex;align-items:center;padding:0 16px;border-radius:999px;background:var(--bg-surface);border:1px solid var(--border);box-shadow:0 3px 0 var(--border-strong);font:500 15px/1 'IBM Plex Sans',sans-serif">{{ st.c0 }}</span>
+                    <span style="min-height:44px;display:inline-flex;align-items:center;padding:0 16px;border-radius:999px;background:var(--bg-surface);border:1px solid var(--border);box-shadow:0 3px 0 var(--border-strong);font:500 15px/1 'IBM Plex Sans',sans-serif">{{ st.c1 }}</span>
+                    <span style="min-height:44px;display:inline-flex;align-items:center;padding:0 16px;border-radius:999px;background:var(--bg-surface);border:1px solid var(--border);box-shadow:0 3px 0 var(--border-strong);font:500 15px/1 'IBM Plex Sans',sans-serif">{{ st.c2 }}</span>
+                  </div>
+                </div>
+              </sc-if>
+              <sc-if value="{{ cardIs.c2 }}">
+                <div style="animation:om-up .34s cubic-bezier(.34,1.56,.64,1)">
+                  <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--accent-action-text)">TRY IT IN 60 SECONDS</span>
+                  <p style="margin:14px 0 14px;padding:16px;border-radius:20px;background:var(--bg-surface);border:1px solid var(--accent-action);font:400 16px/1.6 'IBM Plex Mono',monospace;color:var(--text-primary)">{{ st.prompt }}</p>
+                  <button type="button" onClick="{{ copyGo }}" onPointerDown="{{ stop }}" onPointerUp="{{ stop }}" style="{{ copyGoBtn }}" style-hover="transform:translateY(-2px)" style-active="transform:translateY(4px)" style-focus="outline:3px solid var(--focus);outline-offset:3px">{{ copyGoLabel }}</button>
+                </div>
+              </sc-if>
+              <sc-if value="{{ cardIs.c3 }}">
+                <div style="animation:om-up .34s cubic-bezier(.34,1.56,.64,1)">
+                  <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--state-warn)">ONE THING TO KNOW</span>
+                  <p style="margin:14px 0 0;font:700 24px/1.3 'IBM Plex Sans',sans-serif;letter-spacing:-.02em;text-wrap:pretty">{{ st.pitfall }}</p>
+                  <sc-if value="{{ st.isScore }}">
+                    <a href="#score" onPointerDown="{{ stop }}" onPointerUp="{{ stop }}" style="margin-top:20px;display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 22px;border-radius:999px;background:var(--accent-attention);color:var(--accent-attention-ink);text-decoration:none;font:600 16px/1 'IBM Plex Sans',sans-serif;box-shadow:0 4px 0 var(--accent-attention-edge)" style-active="transform:translateY(4px);box-shadow:0 0 0 var(--accent-attention-edge)" style-focus="outline:3px solid var(--focus);outline-offset:3px">How much of Claude do you use?</a>
+                  </sc-if>
+                </div>
+              </sc-if>
+            </div>
+
+            <div style="position:relative;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:8px 22px 20px">
+              <span style="display:flex;flex-direction:column;gap:5px;min-width:0">
+                <a href="{{ st.href }}" style="font:400 12px/1.4 'IBM Plex Mono',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ st.link }}</a>
+                <span style="font:400 11px/1.4 'IBM Plex Mono',monospace;color:var(--text-muted)">{{ storyHint }}</span>
+              </span>
+              <button type="button" onClick="{{ nextCard }}" aria-label="Next card" style="flex:none;min-height:44px;padding:0 18px;border-radius:999px;background:var(--bg-surface);border:1px solid var(--border);box-shadow:0 3px 0 var(--border-strong);color:var(--text-primary);font:500 14px/1 'IBM Plex Mono',monospace;cursor:pointer" style-active="transform:translateY(3px);box-shadow:0 0 0 var(--border-strong)" style-focus="outline:3px solid var(--focus);outline-offset:3px">Next &rarr;</button>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+
+    <section style="padding:72px 0 0">
+      <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.18em;color:var(--accent-action-text)">03 &nbsp;FOUNDATIONS</span>
+      <h2 style="font:700 clamp(26px,3.4vw,38px)/1.1 'IBM Plex Sans',sans-serif;letter-spacing:-.02em;margin:12px 0 8px">Tokens, named for import</h2>
+      <p style="margin:0 0 26px;color:var(--text-secondary);max-width:62ch">Two columns per row: dark value, then light value. Semantic names only, so a surface can retint without a rename. Lime is action, sun is attention, terracotta is a detail and appears at most once per screen.</p>
+
+      <div style="display:flex;flex-wrap:wrap;gap:18px">
+        <div style="flex:1 1 320px;min-width:290px;padding:22px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border)">
+          <h3 style="margin:0 0 4px;font:700 17px/1.2 'IBM Plex Sans',sans-serif">Surfaces and ink</h3>
+          <div style="display:grid;grid-template-columns:38px 38px 1fr auto;gap:10px;align-items:center;padding:12px 0 10px;border-bottom:1px solid var(--border)"><span style="height:32px;border-radius:9px;background:#141413;border:1px solid var(--border)"></span><span style="height:32px;border-radius:9px;background:#faf9f5;border:1px solid var(--border)"></span><code style="font:500 13px/1 'IBM Plex Mono',monospace">bg-page</code><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">141413 / faf9f5</span></div>
+          <div style="display:grid;grid-template-columns:38px 38px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)"><span style="height:32px;border-radius:9px;background:#1c1c1a;border:1px solid var(--border)"></span><span style="height:32px;border-radius:9px;background:#ffffff;border:1px solid var(--border)"></span><code style="font:500 13px/1 'IBM Plex Mono',monospace">bg-surface</code><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">1c1c1a / ffffff</span></div>
+          <div style="display:grid;grid-template-columns:38px 38px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)"><span style="height:32px;border-radius:9px;background:#201f1c;border:1px solid var(--border)"></span><span style="height:32px;border-radius:9px;background:#f2f0e6;border:1px solid var(--border)"></span><code style="font:500 13px/1 'IBM Plex Mono',monospace">bg-subtle</code><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">201f1c / f2f0e6</span></div>
+          <div style="display:grid;grid-template-columns:38px 38px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)"><span style="height:32px;border-radius:9px;background:#37372f;border:1px solid var(--border)"></span><span style="height:32px;border-radius:9px;background:#e8e6dc;border:1px solid var(--border)"></span><code style="font:500 13px/1 'IBM Plex Mono',monospace">border</code><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">37372f / e8e6dc</span></div>
+          <div style="display:grid;grid-template-columns:38px 38px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)"><span style="height:32px;border-radius:9px;background:#faf9f5;border:1px solid var(--border)"></span><span style="height:32px;border-radius:9px;background:#141413;border:1px solid var(--border)"></span><code style="font:500 13px/1 'IBM Plex Mono',monospace">text-primary</code><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">15.8:1 / 15.8:1</span></div>
+          <div style="display:grid;grid-template-columns:38px 38px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)"><span style="height:32px;border-radius:9px;background:#b0aea5;border:1px solid var(--border)"></span><span style="height:32px;border-radius:9px;background:#5f5e57;border:1px solid var(--border)"></span><code style="font:500 13px/1 'IBM Plex Mono',monospace">text-secondary</code><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">8.4:1 / 6.9:1</span></div>
+          <div style="display:grid;grid-template-columns:38px 38px 1fr auto;gap:10px;align-items:center;padding:10px 0"><span style="height:32px;border-radius:9px;background:#918f86;border:1px solid var(--border)"></span><span style="height:32px;border-radius:9px;background:#76746c;border:1px solid var(--border)"></span><code style="font:500 13px/1 'IBM Plex Mono',monospace">text-muted</code><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">5.4:1 / 5.2:1</span></div>
+        </div>
+
+        <div style="flex:1 1 320px;min-width:290px;padding:22px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border)">
+          <h3 style="margin:0 0 4px;font:700 17px/1.2 'IBM Plex Sans',sans-serif">Accents, tints and states</h3>
+          <div style="display:grid;grid-template-columns:38px 38px 1fr auto;gap:10px;align-items:center;padding:12px 0 10px;border-bottom:1px solid var(--border)"><span style="height:32px;border-radius:9px;background:#b5cd7a"></span><span style="height:32px;border-radius:9px;background:#7e9c4f"></span><code style="font:500 13px/1 'IBM Plex Mono',monospace">accent-action</code><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">b5cd7a / edge 7e9c4f</span></div>
+          <div style="display:grid;grid-template-columns:38px 38px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)"><span style="height:32px;border-radius:9px;background:#f2c94c"></span><span style="height:32px;border-radius:9px;background:#c9a43a"></span><code style="font:500 13px/1 'IBM Plex Mono',monospace">accent-attention</code><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">f2c94c / edge c9a43a</span></div>
+          <div style="display:grid;grid-template-columns:38px 38px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)"><span style="height:32px;border-radius:9px;background:#d97757"></span><span style="height:32px;border-radius:9px;background:#d97757;opacity:.45"></span><code style="font:500 13px/1 'IBM Plex Mono',monospace">accent-detail</code><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">d97757 &middot; once per screen</span></div>
+          <div style="display:grid;grid-template-columns:38px 38px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)"><span style="height:32px;border-radius:9px;background:#f2c94c"></span><span style="height:32px;border-radius:9px;background:#b5cd7a"></span><code style="font:500 13px/1 'IBM Plex Mono',monospace">tint-chat / cowork</code><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">f2c94c / b5cd7a</span></div>
+          <div style="display:grid;grid-template-columns:38px 38px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)"><span style="height:32px;border-radius:9px;background:#6a9bcc"></span><span style="height:32px;border-radius:9px;background:#a878c9"></span><code style="font:500 13px/1 'IBM Plex Mono',monospace">tint-code / design</code><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">6a9bcc / a878c9</span></div>
+          <div style="display:grid;grid-template-columns:38px 38px 1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)"><span style="height:32px;border-radius:9px;background:#3fae9d"></span><span style="height:32px;border-radius:9px;background:#1f7a6d"></span><code style="font:500 13px/1 'IBM Plex Mono',monospace">state-ok</code><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">3fae9d / 1f7a6d</span></div>
+          <div style="display:grid;grid-template-columns:38px 38px 1fr auto;gap:10px;align-items:center;padding:10px 0"><span style="height:32px;border-radius:9px;background:#e8628f"></span><span style="height:32px;border-radius:9px;background:#c2185b"></span><code style="font:500 13px/1 'IBM Plex Mono',monospace">state-warn</code><span style="font:400 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">e8628f / c2185b</span></div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:18px;margin-top:18px">
+        <div style="flex:1 1 380px;min-width:300px;padding:24px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border)">
+          <h3 style="margin:0 0 18px;font:700 17px/1.2 'IBM Plex Sans',sans-serif">Type scale, fluid</h3>
+          <p style="margin:0 0 4px;font:700 clamp(34px,5vw,58px)/1.04 'IBM Plex Sans',sans-serif;letter-spacing:-.03em">Display</p>
+          <p style="margin:0 0 16px;font:400 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">display &middot; clamp(34px, 5vw, 58px) / 1.04 / -3%</p>
+          <p style="margin:0 0 4px;font:700 clamp(26px,3.4vw,38px)/1.1 'IBM Plex Sans',sans-serif;letter-spacing:-.02em">Section heading</p>
+          <p style="margin:0 0 16px;font:400 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">h2 &middot; clamp(26px, 3.4vw, 38px) / 1.1 / -2%</p>
+          <p style="margin:0 0 4px;font:700 19px/1.2 'IBM Plex Sans',sans-serif">Card heading</p>
+          <p style="margin:0 0 16px;font:400 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">h3 &middot; 19px / 1.2</p>
+          <p style="margin:0 0 4px;max-width:66ch">Body copy sits at 17px on mobile and 18px on desktop, with a 1.6 line height and a measure that never runs past 66 characters. Numbers in a paragraph, like 200 connectors, stay in the sans.</p>
+          <p style="margin:0 0 16px;font:400 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">body &middot; 17&ndash;18px / 1.6 / max 66ch</p>
+          <p style="margin:0 0 4px;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">MONO LABEL &middot; VALUES ONLY</p>
+          <p style="margin:0;font:400 11px/1 'IBM Plex Mono',monospace;color:var(--text-muted)">mono-label &middot; 10&ndash;11px / .16em &middot; prompts, dates, hex, step numbers</p>
+        </div>
+
+        <div style="flex:1 1 300px;min-width:280px;display:flex;flex-direction:column;gap:18px">
+          <div style="padding:22px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border)">
+            <h3 style="margin:0 0 14px;font:700 17px/1.2 'IBM Plex Sans',sans-serif">Space, 4px base</h3>
+            <div style="display:flex;align-items:flex-end;gap:8px">
+              <span style="width:4px;height:4px;background:var(--accent-action);border-radius:2px"></span>
+              <span style="width:8px;height:8px;background:var(--accent-action);border-radius:2px"></span>
+              <span style="width:12px;height:12px;background:var(--accent-action);border-radius:3px"></span>
+              <span style="width:16px;height:16px;background:var(--accent-action);border-radius:4px"></span>
+              <span style="width:24px;height:24px;background:var(--accent-action);border-radius:5px"></span>
+              <span style="width:32px;height:32px;background:var(--accent-action);border-radius:6px"></span>
+              <span style="width:48px;height:48px;background:var(--accent-action);border-radius:8px"></span>
+            </div>
+            <p style="margin:12px 0 0;font:400 11px/1.5 'IBM Plex Mono',monospace;color:var(--text-muted)">1 &middot; 2 &middot; 3 &middot; 4 &middot; 6 &middot; 8 &middot; 12 &nbsp;&rarr;&nbsp; 4 to 48px</p>
+          </div>
+          <div style="padding:22px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border)">
+            <h3 style="margin:0 0 14px;font:700 17px/1.2 'IBM Plex Sans',sans-serif">Radius and shadow</h3>
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+              <span style="width:64px;height:52px;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);font:400 10px/52px 'IBM Plex Mono',monospace;color:var(--text-muted);text-align:center">8</span>
+              <span style="width:64px;height:52px;border-radius:16px;background:var(--bg-subtle);border:1px solid var(--border);font:400 10px/52px 'IBM Plex Mono',monospace;color:var(--text-muted);text-align:center">16</span>
+              <span style="width:64px;height:52px;border-radius:24px;background:var(--bg-subtle);border:1px solid var(--border);font:400 10px/52px 'IBM Plex Mono',monospace;color:var(--text-muted);text-align:center">24</span>
+              <span style="width:64px;height:52px;border-radius:999px;background:var(--bg-subtle);border:1px solid var(--border);font:400 10px/52px 'IBM Plex Mono',monospace;color:var(--text-muted);text-align:center">pill</span>
+            </div>
+            <div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">
+              <span style="width:96px;height:44px;border-radius:14px;background:var(--bg-raised);box-shadow:0 3px 0 var(--border-strong);font:400 10px/44px 'IBM Plex Mono',monospace;color:var(--text-muted);text-align:center">edge-3</span>
+              <span style="width:96px;height:44px;border-radius:14px;background:var(--bg-raised);box-shadow:var(--shadow-pop);font:400 10px/44px 'IBM Plex Mono',monospace;color:var(--text-muted);text-align:center">pop</span>
+              <span style="width:96px;height:44px;border-radius:14px;background:var(--bg-raised);box-shadow:var(--shadow-card);font:400 10px/44px 'IBM Plex Mono',monospace;color:var(--text-muted);text-align:center">card</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex:1 1 320px;min-width:290px;padding:22px;border-radius:24px;background:var(--bg-subtle);border:1px solid var(--border)">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px">
+            <h3 style="margin:0;font:700 17px/1.2 'IBM Plex Sans',sans-serif">tokens.json</h3>
+            <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;color:var(--text-muted)">EXPORT</span>
+          </div>
+          <pre style="margin:0;padding:16px;border-radius:16px;background:var(--bg-page);border:1px solid var(--border);font:400 12px/1.6 'IBM Plex Mono',monospace;color:var(--text-secondary);overflow-x:auto">{
+  "color": {
+    "bg-page":      { "dark": "#141413", "light": "#faf9f5" },
+    "bg-surface":   { "dark": "#1c1c1a", "light": "#ffffff" },
+    "text-primary": { "dark": "#faf9f5", "light": "#141413" },
+    "accent-action":     "#b5cd7a",
+    "accent-action-edge":"#7e9c4f",
+    "accent-attention":  "#f2c94c",
+    "accent-detail":     "#d97757"
+  },
+  "radius": { "sm": 8, "md": 16, "lg": 24, "pill": 999 },
+  "space":  { "1": 4, "2": 8, "3": 12, "4": 16, "6": 24, "8": 32 },
+  "motion": {
+    "boop":   { "stiffness": 420, "damping": 14, "mass": 1 },
+    "settle": { "stiffness": 260, "damping": 22, "mass": 1 },
+    "sheet":  { "stiffness": 320, "damping": 28, "mass": 1.1 }
+  }
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:72px 0 0">
+      <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.18em;color:var(--accent-action-text)">04 &nbsp;COMPONENTS</span>
+      <h2 style="font:700 clamp(26px,3.4vw,38px)/1.1 'IBM Plex Sans',sans-serif;letter-spacing:-.02em;margin:12px 0 8px">Every state, one press away</h2>
+      <p style="margin:0 0 26px;color:var(--text-secondary);max-width:62ch">Chunky pills with a solid bottom edge that compresses on press. Hover lifts 2px, active drops 4px and drops the edge, focus-visible draws a 3px ring at 3px offset. Tab through this section to see it.</p>
+
+      <div style="display:flex;flex-wrap:wrap;gap:18px">
+        <div style="flex:1 1 320px;min-width:290px;padding:22px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border)">
+          <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">BUTTON</span>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-top:14px">
+            <button type="button" style="{{ btnAttention }}" style-hover="transform:translateY(-2px)" style-active="transform:translateY(4px);box-shadow:0 0 0 var(--accent-attention-edge)" style-focus="outline:3px solid var(--focus);outline-offset:3px">Primary, attention</button>
+            <button type="button" style="{{ btnAction }}" style-hover="transform:translateY(-2px)" style-active="transform:translateY(4px);box-shadow:0 0 0 var(--accent-action-edge)" style-focus="outline:3px solid var(--focus);outline-offset:3px">Primary, action</button>
+            <button type="button" style="{{ btnGhost }}" style-hover="transform:translateY(-2px);border-color:var(--border-strong)" style-active="transform:translateY(3px);box-shadow:0 0 0 var(--border-strong)" style-focus="outline:3px solid var(--focus);outline-offset:3px">Secondary</button>
+            <button type="button" style="width:100%;min-height:52px;border-radius:999px;background:none;border:none;color:var(--accent-action-text);font:600 17px/1 'IBM Plex Sans',sans-serif;cursor:pointer;text-decoration:underline;text-underline-offset:5px" style-focus="outline:3px solid var(--focus);outline-offset:3px">Ghost</button>
+            <button type="button" disabled="disabled" style="width:100%;min-height:52px;border-radius:999px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-muted);font:600 17px/1 'IBM Plex Sans',sans-serif;cursor:not-allowed;opacity:.7">Disabled</button>
+            <button type="button" style="width:100%;min-height:52px;border-radius:999px;background:var(--accent-action);border:none;color:var(--accent-action-ink);font:600 17px/1 'IBM Plex Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:9px;cursor:progress;box-shadow:0 4px 0 var(--accent-action-edge)"><span style="width:8px;height:8px;border-radius:50%;background:#141413;animation:om-float .9s ease-in-out infinite"></span><span style="width:8px;height:8px;border-radius:50%;background:#141413;animation:om-float .9s ease-in-out .15s infinite"></span><span style="width:8px;height:8px;border-radius:50%;background:#141413;animation:om-float .9s ease-in-out .3s infinite"></span>Loading</button>
+          </div>
+        </div>
+
+        <div style="flex:1 1 320px;min-width:290px;padding:22px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border);display:flex;flex-direction:column;gap:20px">
+          <div>
+            <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">CHIP</span>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+              <button type="button" style="{{ chip }}" style-hover="transform:translateY(-2px)" style-active="transform:translateY(3px);box-shadow:0 1px 0 var(--border-strong)" style-focus="outline:3px solid var(--focus);outline-offset:3px">Default</button>
+              <button type="button" style="{{ chip }};background:var(--accent-action);color:var(--accent-action-ink);border-color:var(--accent-action-edge);box-shadow:0 3px 0 var(--accent-action-edge)" style-active="transform:translateY(3px);box-shadow:0 1px 0 var(--accent-action-edge)" style-focus="outline:3px solid var(--focus);outline-offset:3px">Selected</button>
+              <button type="button" disabled="disabled" style="{{ chip }};opacity:.55;cursor:not-allowed;box-shadow:none">Disabled</button>
+            </div>
+          </div>
+          <div>
+            <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">SEGMENTED CONTROL</span>
+            <div style="display:flex;gap:4px;padding:4px;margin-top:12px;border-radius:999px;background:var(--bg-subtle);border:1px solid var(--border);max-width:280px">
+              <button type="button" onClick="{{ setType }}" style="{{ segMode.type }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Type it</button>
+              <button type="button" onClick="{{ setGuide }}" style="{{ segMode.guide }}" style-focus="outline:3px solid var(--focus);outline-offset:2px">Guide me</button>
+            </div>
+          </div>
+          <div>
+            <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">SURFACE BADGE</span>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;font:600 11px/1 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#141413">
+              <span style="padding:9px 12px;border-radius:999px;background:#f2c94c">CHAT</span>
+              <span style="padding:9px 12px;border-radius:999px;background:#b5cd7a">COWORK</span>
+              <span style="padding:9px 12px;border-radius:999px;background:#6a9bcc">CODE</span>
+              <span style="padding:9px 12px;border-radius:999px;background:#a878c9">DESIGN</span>
+              <span style="padding:9px 12px;border-radius:999px;background:#b5cd7a">CHROME</span>
+              <span style="padding:9px 12px;border-radius:999px;background:#6a9bcc">EXCEL</span>
+              <span style="padding:9px 12px;border-radius:999px;background:#f2c94c">POWERPOINT</span>
+              <span style="padding:9px 12px;border-radius:999px;background:#a878c9">SLACK</span>
+              <span style="padding:9px 12px;border-radius:999px;background:var(--bg-subtle);color:var(--text-secondary);border:1px solid var(--border)">API</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex:1 1 320px;min-width:290px;padding:22px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border);display:flex;flex-direction:column;gap:20px">
+          <div>
+            <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">TEXTAREA</span>
+            <textarea rows="2" placeholder="Default" style="width:100%;margin-top:12px;padding:14px;border-radius:20px;background:var(--bg-page);border:1px solid var(--border);color:var(--text-primary);font:400 16px/1.5 'IBM Plex Sans',sans-serif" style-focus="outline:3px solid var(--focus);outline-offset:3px;border-color:var(--accent-action)"></textarea>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:10px;padding:12px 14px;border-radius:16px;background:var(--state-warn-soft);border:1px solid var(--state-warn);font:400 13px/1.4 'IBM Plex Mono',monospace;color:var(--text-primary)">Error &middot; that is over 2,000 characters</div>
+          </div>
+          <div>
+            <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">CHECKLIST ITEM</span>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px">
+              <div style="display:flex;gap:12px;align-items:center;padding:14px;border-radius:18px;background:var(--bg-page);border:1px solid var(--border)"><span style="flex:none;width:30px;height:30px;border-radius:10px;background:var(--accent-attention);color:#141413;font:600 12px/30px 'IBM Plex Mono',monospace;text-align:center">02</span><span style="font-weight:500">To do</span></div>
+              <div style="display:flex;gap:12px;align-items:center;padding:14px;border-radius:18px;background:var(--state-ok-soft);border:1px solid var(--state-ok);opacity:.72"><span style="flex:none;width:30px;height:30px;border-radius:10px;background:var(--state-ok);color:var(--bg-page);font:600 12px/30px 'IBM Plex Mono',monospace;text-align:center">&#10003;</span><span style="text-decoration:line-through;text-decoration-thickness:2px;color:var(--text-secondary)">Done, collapsed</span></div>
+            </div>
+          </div>
+          <div>
+            <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">TOAST &amp; TOOLTIP</span>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px">
+              <div style="display:flex;align-items:center;gap:10px;padding:14px 16px;border-radius:18px;background:var(--bg-raised);border:1px solid var(--state-ok);box-shadow:var(--shadow-pop)"><span style="color:var(--state-ok)">&#10003;</span><span style="font-size:15px">Prompt copied</span></div>
+              <span style="align-self:flex-start;padding:9px 12px;border-radius:12px;background:var(--bg-raised);border:1px solid var(--border);box-shadow:var(--shadow-pop);font:400 13px/1.3 'IBM Plex Mono',monospace;color:var(--text-secondary)">Read access only</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex:1 1 320px;min-width:290px;padding:22px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border);display:flex;flex-direction:column;gap:20px">
+          <div>
+            <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">NODE</span>
+            <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:12px">
+              <span style="width:84px;height:84px;border-radius:50%;background:var(--accent-action);color:#141413;font:700 15px/84px 'IBM Plex Sans',sans-serif;text-align:center;box-shadow:0 6px 0 rgba(20,20,19,.28)">Hub</span>
+              <span style="padding:12px 14px;border-radius:12px;background:var(--bg-raised);border:2px solid var(--border-strong);box-shadow:0 3px 0 var(--border-strong);font:500 13px/1 'IBM Plex Mono',monospace">Capability</span>
+              <span style="padding:12px 14px;border-radius:999px;background:var(--bg-raised);border:2px solid var(--border-strong);box-shadow:0 3px 0 var(--border-strong);font:500 13px/1 'IBM Plex Mono',monospace">Connector</span>
+            </div>
+          </div>
+          <div>
+            <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">BOTTOM SHEET</span>
+            <div style="margin-top:12px;padding:16px;border-radius:24px 24px 12px 12px;background:var(--bg-raised);border:1px solid var(--border);box-shadow:var(--shadow-pop)">
+              <span style="display:block;width:44px;height:5px;border-radius:999px;background:var(--border-strong);margin:0 auto 14px"></span>
+              <p style="margin:0;color:var(--text-secondary);font-size:15px">Filters and detail live here on mobile. Drag handle, 24px top radius, sheet spring.</p>
+            </div>
+          </div>
+          <div>
+            <span style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--text-muted)">MASCOT CONTAINER</span>
+            <div style="margin-top:12px;position:relative;height:132px;border-radius:20px;background:var(--bg-page);border:1px dashed var(--border-strong);display:flex;align-items:center;justify-content:center;overflow:hidden">
+              <div style="position:absolute;inset:14% 30%;border-radius:50%;background:radial-gradient(circle,var(--accent-action-soft),transparent 70%)"></div>
+              <div style="width:104px;position:relative"><dc-import name="Pip" state="idle" hint-size="104px,104px"></dc-import></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:72px 0 0">
+      <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.18em;color:var(--accent-action-text)">05 &nbsp;MASCOT</span>
+      <h2 style="font:700 clamp(26px,3.4vw,38px)/1.1 'IBM Plex Sans',sans-serif;letter-spacing:-.02em;margin:12px 0 8px">Pip, and the folded map</h2>
+      <p style="margin:0 0 26px;color:var(--text-secondary);max-width:62ch">A rounded creature with two mitten hands and one prop it never puts down: a sun yellow folded map. The face carries the state, the map carries the gesture. Original character, three colours plus terracotta cheeks, no light gimmick, nothing borrowed.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:16px">
+        <div style="flex:1 1 170px;min-width:150px;padding:18px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border);text-align:center"><div style="width:100%;max-width:120px;margin:0 auto"><dc-import name="Pip" state="idle" hint-size="120px,120px"></dc-import></div><p style="margin:12px 0 4px;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;color:var(--text-muted)">IDLE</p><p style="margin:0;font-size:14px;color:var(--text-secondary)">soft smile, map tucked in</p></div>
+        <div style="flex:1 1 170px;min-width:150px;padding:18px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border);text-align:center"><div style="width:100%;max-width:120px;margin:0 auto"><dc-import name="Pip" state="thinking" hint-size="120px,120px"></dc-import></div><p style="margin:12px 0 4px;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;color:var(--text-muted)">THINKING</p><p style="margin:0;font-size:14px;color:var(--text-secondary)">eyes drop to the map</p></div>
+        <div style="flex:1 1 170px;min-width:150px;padding:18px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border);text-align:center"><div style="width:100%;max-width:120px;margin:0 auto"><dc-import name="Pip" state="found" hint-size="120px,120px"></dc-import></div><p style="margin:12px 0 4px;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;color:var(--text-muted)">FOUND IT</p><p style="margin:0;font-size:14px;color:var(--text-secondary)">map held overhead, hop</p></div>
+        <div style="flex:1 1 170px;min-width:150px;padding:18px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border);text-align:center"><div style="width:100%;max-width:120px;margin:0 auto"><dc-import name="Pip" state="confused" hint-size="120px,120px"></dc-import></div><p style="margin:12px 0 4px;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;color:var(--text-muted)">CONFUSED</p><p style="margin:0;font-size:14px;color:var(--text-secondary)">no match state</p></div>
+        <div style="flex:1 1 170px;min-width:150px;padding:18px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border);text-align:center"><div style="width:100%;max-width:120px;margin:0 auto"><dc-import name="Pip" state="sleeping" hint-size="120px,120px"></dc-import></div><p style="margin:12px 0 4px;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;color:var(--text-muted)">SLEEPING</p><p style="margin:0;font-size:14px;color:var(--text-secondary)">rate limited</p></div>
+        <div style="flex:1 1 170px;min-width:150px;padding:18px;border-radius:24px;background:var(--bg-surface);border:1px solid var(--border);text-align:center"><div style="width:100%;max-width:120px;margin:0 auto"><dc-import name="Pip" state="waving" hint-size="120px,120px"></dc-import></div><p style="margin:12px 0 4px;font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;color:var(--text-muted)">WAVING</p><p style="margin:0;font-size:14px;color:var(--text-secondary)">404 and footer</p></div>
+      </div>
+      <p style="margin:18px 0 0;font:400 13px/1.6 'IBM Plex Mono',monospace;color:var(--text-muted)">deliverables &middot; SVG master &middot; Lottie per state &middot; favicon 16 / 32 / 64 / 192 / 512 &middot; OG image 1200 &times; 630</p>
+    </section>
+
+    <section style="padding:72px 0 0">
+      <span style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.18em;color:var(--accent-action-text)">06 &nbsp;MOTION</span>
+      <h2 style="font:700 clamp(26px,3.4vw,38px)/1.1 'IBM Plex Sans',sans-serif;letter-spacing:-.02em;margin:12px 0 8px">Springs, not curves</h2>
+      <p style="margin:0 0 22px;color:var(--text-secondary);max-width:62ch">Three springs cover the product. Everything overshoots slightly and settles. Every entry has a reduced-motion fallback, and the media query is already wired into this page.</p>
+      <div style="border-radius:24px;background:var(--bg-surface);border:1px solid var(--border);overflow:hidden">
+        <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);gap:12px;padding:14px 18px;background:var(--bg-subtle);font:500 10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.14em;color:var(--text-muted)"><span>WHAT</span><span>TRIGGER</span><span>SPRING</span><span>REDUCED MOTION</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);gap:12px;padding:14px 18px;border-top:1px solid var(--border);font-size:14px;color:var(--text-secondary)"><span style="color:var(--text-primary)">Button press</span><span>pointer down</span><span style="font-family:'IBM Plex Mono',monospace;font-size:13px">420 / 14</span><span>colour change only</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);gap:12px;padding:14px 18px;border-top:1px solid var(--border);font-size:14px;color:var(--text-secondary)"><span style="color:var(--text-primary)">Heart boop</span><span>hover, focus</span><span style="font-family:'IBM Plex Mono',monospace;font-size:13px">420 / 14</span><span>static heart</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);gap:12px;padding:14px 18px;border-top:1px solid var(--border);font-size:14px;color:var(--text-secondary)"><span style="color:var(--text-primary)">Mascot idle</span><span>always</span><span style="font-family:'IBM Plex Mono',monospace;font-size:13px">3.6s loop</span><span>first frame, no loop</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);gap:12px;padding:14px 18px;border-top:1px solid var(--border);font-size:14px;color:var(--text-secondary)"><span style="color:var(--text-primary)">Guide-me walk</span><span>step change</span><span style="font-family:'IBM Plex Mono',monospace;font-size:13px">260 / 22</span><span>instant jump</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);gap:12px;padding:14px 18px;border-top:1px solid var(--border);font-size:14px;color:var(--text-secondary)"><span style="color:var(--text-primary)">Sheet and drawer</span><span>node tap</span><span style="font-family:'IBM Plex Mono',monospace;font-size:13px">320 / 28</span><span>fade, 120ms</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);gap:12px;padding:14px 18px;border-top:1px solid var(--border);font-size:14px;color:var(--text-secondary)"><span style="color:var(--text-primary)">Copy sparkle</span><span>copy success</span><span style="font-family:'IBM Plex Mono',monospace;font-size:13px">420 / 14</span><span>tick, no sparkle</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);gap:12px;padding:14px 18px;border-top:1px solid var(--border);font-size:14px;color:var(--text-secondary)"><span style="color:var(--text-primary)">Route confetti</span><span>first route only</span><span style="font-family:'IBM Plex Mono',monospace;font-size:13px">260 / 22</span><span>none</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);gap:12px;padding:14px 18px;border-top:1px solid var(--border);font-size:14px;color:var(--text-secondary)"><span style="color:var(--text-primary)">Ambient glow</span><span>always</span><span style="font-family:'IBM Plex Mono',monospace;font-size:13px">5s loop</span><span>static glow</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);gap:12px;padding:14px 18px;border-top:1px solid var(--border);font-size:14px;color:var(--text-secondary)"><span style="color:var(--text-primary)">Radar ring glow</span><span>unseen items</span><span style="font-family:'IBM Plex Mono',monospace;font-size:13px">2.4s loop</span><span>static lime ring</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);gap:12px;padding:14px 18px;border-top:1px solid var(--border);font-size:14px;color:var(--text-secondary)"><span style="color:var(--text-primary)">Story progress</span><span>card shown</span><span style="font-family:'IBM Plex Mono',monospace;font-size:13px">6s linear</span><span>no auto-advance, manual only</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);gap:12px;padding:14px 18px;border-top:1px solid var(--border);font-size:14px;color:var(--text-secondary)"><span style="color:var(--text-primary)">Story open and close</span><span>ring tap, swipe down</span><span style="font-family:'IBM Plex Mono',monospace;font-size:13px">320 / 28</span><span>fade, 120ms</span></div>
+      </div>
+    </section>
+
+    <footer style="margin-top:76px;padding:34px 0 0;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start;justify-content:space-between">
+      <div style="flex:1 1 320px;max-width:60ch">
+        <p style="margin:0 0 8px;font:600 18px/1.4 'IBM Plex Sans',sans-serif">Made with <span style="display:inline-block;color:var(--accent-detail);animation:om-beat 3.4s ease-in-out infinite;transition:transform .2s cubic-bezier(.34,1.56,.64,1);cursor:pointer" style-hover="transform:scale(1.55) rotate(-12deg)">&hearts;</span> for Claude in London.</p>
+        <p style="margin:0 0 12px;color:var(--text-secondary);font-size:15px">Onramp is an independent project. It is not affiliated with, endorsed by, or sponsored by Anthropic. Claude and Anthropic are trademarks of Anthropic, PBC.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;font:500 13px/1 'IBM Plex Mono',monospace"><a href="#about">About</a><a href="#how">How routes are built</a><a href="#report">Report a wrong route</a><a href="#privacy">Privacy, we store nothing personal</a><a href="#gh">GitHub</a></div>
+      </div>
+      <div style="flex:0 0 96px;width:96px"><dc-import name="Pip" state="waving" hint-size="96px,96px"></dc-import></div>
+    </footer>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;initialTheme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;dark&quot;,&quot;light&quot;],&quot;default&quot;:&quot;dark&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;initialViewport&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;mobile&quot;,&quot;desktop&quot;],&quot;default&quot;:&quot;mobile&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+const EXAMPLES = [
+  { goal: 'I want Claude to tidy my inbox every morning', surface: 'COWORK', extra: '+ M365 + task', tint: 'var(--tint-cowork)' },
+  { goal: 'Turn my messy research notes into a client deck', surface: 'POWERPOINT', extra: '+ project files', tint: 'var(--tint-chat)' },
+  { goal: 'Check a 40MB spreadsheet for broken formulas', surface: 'EXCEL', extra: '+ skills', tint: 'var(--tint-code)' }
+];
+const PLACEHOLDERS = [
+  'e.g. summarise my team\u2019s Slack threads every Friday',
+  'e.g. keep a design system in sync with our code',
+  'e.g. draft replies to supplier emails in my tone'
+];
+const QUESTIONS = [
+  { key: 'role', title: 'What is your day mostly made of?', hint: 'This shapes which surface we point you at.', skippable: false,
+    options: ['Meetings and email', 'Documents and decks', 'Code and reviews', 'Design and research'] },
+  { key: 'goal', title: 'What do you want to happen?', hint: 'Pick the closest one. You can refine it later.', skippable: false,
+    options: ['Save me repeat work', 'Make something new', 'Understand a pile of stuff', 'Watch something for me'] },
+  { key: 'input', title: 'What will it start from?', hint: 'Where your material already lives.', skippable: false,
+    options: ['My email and calendar', 'Files on my machine', 'A repository', 'Nothing yet'] },
+  { key: 'output', title: 'What should come out?', hint: 'Optional. Skip if you are not sure yet.', skippable: true,
+    options: ['A short summary', 'A finished document', 'A change in a tool', 'A recurring nudge'] },
+  { key: 'comfort', title: 'How technical do you want this to get?', hint: 'Optional. We will keep it honest either way.', skippable: true,
+    options: ['Keep it clickable', 'A bit of setup is fine', 'I will happily use the API'] }
+];
+
+const NODES = {
+  cowork: { name: 'Cowork', kind: 'SURFACE', tint: 'var(--tint-cowork)', what: 'A workspace where Claude does jobs rather than answers questions. It keeps files, runs tasks and can repeat work on a schedule.', needs: 'A paid personal plan', unlocks: 'Scheduled tasks, connectors, file output' },
+  chat: { name: 'Chat', kind: 'SURFACE', tint: 'var(--tint-chat)', what: 'The box everyone starts in. Best for thinking out loud, drafting and one-off questions.', needs: 'Nothing, the free plan works', unlocks: 'Projects, memory, skills' },
+  code: { name: 'Code', kind: 'SURFACE', tint: 'var(--tint-code)', what: 'Claude in your terminal and repository, reading and editing real files with your permission.', needs: 'A terminal and a repo', unlocks: 'Plugins, hooks, review workflows' },
+  design: { name: 'Design', kind: 'SURFACE', tint: 'var(--tint-design)', what: 'Screens, flows and design systems built as real, inspectable files instead of flat mockups.', needs: 'A paid plan', unlocks: 'Design systems, prototypes, handover' },
+  chrome: { name: 'Chrome', kind: 'SURFACE', tint: 'var(--tint-code)', what: 'A sidebar that can read the page you are looking at and act on it.', needs: 'The browser extension', unlocks: 'Page context, form filling' },
+  tasks: { name: 'Scheduled tasks', kind: 'CAPABILITY', tint: 'var(--accent-action)', what: 'A saved prompt that runs on a clock, so the work happens without you opening anything.', needs: 'Cowork', unlocks: 'Morning digests, weekly nudges' },
+  connectors: { name: 'Connectors', kind: 'CAPABILITY', tint: 'var(--accent-action)', what: 'Read or write access to a tool you already use. Over 200 of them, each with its own scopes.', needs: 'An account on the tool', unlocks: 'Your own mail, files and tickets' },
+  skills: { name: 'Skills', kind: 'CAPABILITY', tint: 'var(--accent-action)', what: 'Packaged know-how Claude loads when it fits the job, such as building a deck or reading a PDF.', needs: 'Nothing to install', unlocks: 'Consistent output formats' },
+  plugins: { name: 'Plugins', kind: 'CAPABILITY', tint: 'var(--accent-action)', what: 'Bundles of commands, agents and hooks you install into Code for your own stack.', needs: 'Code', unlocks: 'Team conventions, custom commands' },
+  memory: { name: 'Memory', kind: 'CAPABILITY', tint: 'var(--accent-action)', what: 'What Claude keeps between sessions, and what you can ask it to forget.', needs: 'Nothing', unlocks: 'Less repeating yourself' },
+  m365: { name: 'Microsoft 365', kind: 'CONNECTOR', tint: 'var(--tint-code)', what: 'Mail, calendar and files from your work or personal Microsoft account.', needs: 'Sign in plus admin approval at work', unlocks: 'Inbox routes, meeting prep' },
+  excel: { name: 'Excel', kind: 'SURFACE', tint: 'var(--tint-code)', what: 'Claude inside the spreadsheet, checking formulas and building sheets in place.', needs: 'Excel and a paid plan', unlocks: 'Audits, model building' }
+};
+
+const RADAR = [
+  { key: 'dispatch', name: 'Dispatch', surface: 'Cowork', code: 'COWORK', tint: 'var(--tint-cowork)',
+    one: 'Send Claude a job from your phone and pick up the result later.',
+    who: 'For people who think of work away from a desk.',
+    c: ['On the move', 'Long jobs', 'No waiting'],
+    prompt: 'Read the notes in my Projects folder and write me a one page brief.',
+    pitfall: 'It queues. Expect minutes, not seconds.',
+    b: ['Send it from the phone, no laptop needed.', 'It keeps working after you close the tab.', 'You get a nudge when the result lands.'],
+    date: '4 Sep 2026', link: 'support.claude.com/cowork', mine: true, tried: false },
+  { key: 'slides', name: 'Design to slides', surface: 'Design', code: 'DESIGN', tint: 'var(--tint-design)',
+    one: 'Turn a design file into a deck without rebuilding the layouts.',
+    who: 'For people who design first and present second.',
+    c: ['Designers', 'Client decks', 'No rebuild'],
+    prompt: 'Turn this design file into a ten slide deck. Keep the type and spacing.',
+    pitfall: 'Custom fonts fall back unless they sit in the file.',
+    b: ['Layouts and spacing survive the move.', 'Every slide stays an editable file.', 'Exports to PowerPoint in one step.'],
+    date: '2 Sep 2026', link: 'support.claude.com/design', mine: false, tried: false },
+  { key: 'skills', name: 'Skill packs', surface: 'Chat', code: 'CHAT', tint: 'var(--tint-chat)',
+    one: 'Drop in a folder of instructions and Claude follows your house rules.',
+    who: 'For teams tired of pasting the same brief.',
+    c: ['Teams', 'House style', 'Reusable'],
+    prompt: 'Use our brand skill and rewrite this page in our tone of voice.',
+    pitfall: 'Two packs can disagree. Load the narrower one.',
+    b: ['One folder, shared by the whole team.', 'Works in Chat, Cowork and Code.', 'Version it in your own repo.'],
+    date: '1 Sep 2026', link: 'claude.com/docs/skills', mine: false, tried: false, score: true }
+];
+const RADAR_OLD = [
+  { key: 'pdf', name: 'Chrome reads PDFs', surface: 'Chrome', code: 'CHROME', tint: 'var(--tint-code)',
+    one: 'The sidebar can read the PDF you have open and answer from it.',
+    prompt: 'Summarise this contract and list anything that needs a lawyer.',
+    pitfall: 'Scanned pages without text are still invisible to it.',
+    b: ['No upload, it reads the open tab.', 'Works on files behind a login.', 'Cites the page it took each line from.'],
+    date: '26 Aug 2026', link: 'support.claude.com/chrome', mine: false, tried: true },
+  { key: 'export', name: 'Component export', surface: 'Design', code: 'DESIGN', tint: 'var(--tint-design)',
+    one: 'Send a design component straight to code as real, named files.',
+    prompt: 'Export this card component with the tokens it uses, nothing else.',
+    pitfall: 'It exports what you built, including the mistakes.',
+    b: ['Named layers become named files.', 'Tokens travel with the component.', 'Diffable, so review works normally.'],
+    date: '21 Aug 2026', link: 'support.claude.com/design', mine: false, tried: false }
+];
+
+class Component extends DCLogic {
+  state = {
+    theme: this.props.initialTheme || 'dark',
+    vp: this.props.initialViewport || 'mobile',
+    screen: 'landing', muted: true, mode: 'type', gstep: 0, gans: {},
+    typed: '', ex: 0, ph: 0, think: 0, ticks: {}, copied: false, mine: false, alt: false,
+    node: 'cowork', filter: 'All', drawer: false,
+    matchQ: 'tidy my inbox every morning', mineLen: '300 words', mineSender: 'my manager',
+    seen: {}, story: null, card: 0, paused: false, returning: false, gone: false,
+    radarFilter: 'All', depth: 'bus', rcopied: false, fcopied: null
+  };
+
+  componentDidMount() {
+    this.timer = setInterval(() => this.setState(s => ({
+      ex: (s.ex + 1) % 3, ph: (s.ph + 1) % 3,
+      think: s.screen === 'thinking' ? (s.think + 1) % 3 : 0
+    })), 2400);
+  }
+  componentWillUnmount() { clearInterval(this.timer); clearInterval(this.stimer); clearTimeout(this.holdT); }
+
+  seg(active) {
+    return 'min-height:38px;padding:0 16px;border-radius:999px;border:none;cursor:pointer;font:600 13px/1 \'IBM Plex Sans\',sans-serif;transition:transform .16s cubic-bezier(.34,1.56,.64,1);' +
+      (active
+        ? 'background:var(--accent-action);color:var(--accent-action-ink);box-shadow:0 3px 0 var(--accent-action-edge)'
+        : 'background:transparent;color:var(--text-secondary)');
+  }
+  tabStyle(active) {
+    return 'min-height:44px;padding:0 18px;border-radius:999px;cursor:pointer;font:500 14px/1 \'IBM Plex Sans\',sans-serif;transition:transform .16s cubic-bezier(.34,1.56,.64,1);' +
+      (active
+        ? 'background:var(--accent-attention);color:var(--accent-attention-ink);border:1px solid var(--accent-attention-edge);box-shadow:0 3px 0 var(--accent-attention-edge)'
+        : 'background:var(--bg-surface);color:var(--text-secondary);border:1px solid var(--border);box-shadow:0 3px 0 var(--border-strong)');
+  }
+
+  set(patch) { this.setState(patch); }
+
+  reduced() { try { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } }
+  armStory() { clearInterval(this.stimer); if (this.reduced()) return; this.stimer = setInterval(() => this.adv(), 6000); }
+  openStory(k) {
+    this.setState(st => ({ story: k, card: 0, paused: false, rcopied: false, seen: Object.assign({}, st.seen, { [k]: true }) }));
+    this.armStory();
+  }
+  closeStory() { clearInterval(this.stimer); clearTimeout(this.holdT); this.setState({ story: null, card: 0, paused: false }); }
+  adv() {
+    const st = this.state;
+    if (!st.story) return;
+    if (st.card < 3) { this.setState({ card: st.card + 1, rcopied: false }); this.armStory(); return; }
+    const i = RADAR.findIndex(f => f.key === st.story);
+    if (i > -1 && i < RADAR.length - 1) this.openStory(RADAR[i + 1].key); else this.closeStory();
+  }
+  holdDown() { clearTimeout(this.holdT); this.holdT = setTimeout(() => { clearInterval(this.stimer); this.setState({ paused: true }); }, 220); }
+  holdUp() {
+    clearTimeout(this.holdT);
+    if (this.state.paused) { this.setState({ paused: false }); this.armStory(); } else this.adv();
+  }
+  rchip(name) {
+    const a = (this.state.radarFilter || 'All') === name;
+    return 'flex:none;min-height:44px;padding:0 16px;border-radius:999px;cursor:pointer;font:500 14px/1 \'IBM Plex Sans\',sans-serif;transition:transform .16s cubic-bezier(.34,1.56,.64,1);background:' +
+      (a ? 'var(--accent-action)' : 'var(--bg-surface)') + ';color:' + (a ? 'var(--accent-action-ink)' : 'var(--text-secondary)') +
+      ';border:1px solid ' + (a ? 'var(--accent-action-edge)' : 'var(--border)') + ';box-shadow:0 3px 0 ' + (a ? 'var(--accent-action-edge)' : 'var(--border-strong)');
+  }
+  ringOf(f) {
+    const seen = !!this.state.seen[f.key];
+    return {
+      name: f.name, code: f.code,
+      aria: f.name + ', new in ' + f.surface + (seen ? ', seen' : ', not seen yet'),
+      on: () => this.openStory(f.key),
+      wrap: 'flex:none;width:88px;display:flex;flex-direction:column;align-items:center;gap:9px;padding:0;background:none;border:none;cursor:pointer;transition:transform .18s cubic-bezier(.34,1.56,.64,1)',
+      ring: 'display:grid;place-items:center;width:76px;height:76px;border-radius:50%;padding:3px;' +
+        (seen
+          ? 'background:var(--border-strong)'
+          : 'background:conic-gradient(from 210deg,var(--accent-action),var(--accent-attention) 58%,var(--accent-action));animation:om-ringpulse 2.4s ease-in-out infinite'),
+      disc: 'display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 50% 26%,color-mix(in oklab,' + f.tint + ' ' + (seen ? '10%' : '34%') + ',var(--bg-surface)),var(--bg-surface) 78%);border:1px solid color-mix(in oklab,' + f.tint + ' ' + (seen ? '20%' : '54%') + ',var(--border));font:600 9px/1 \'IBM Plex Mono\',monospace;letter-spacing:.1em;color:' + (seen ? 'var(--text-muted)' : 'var(--text-primary)'),
+      label: 'font:500 12px/1.25 \'IBM Plex Sans\',sans-serif;text-align:center;color:' + (seen ? 'var(--text-muted)' : 'var(--text-primary)')
+    };
+  }
+  feedItem(f) {
+    const s = this.state;
+    const depth = s.depth || 'bus';
+    const hasStory = RADAR.some(r => r.key === f.key);
+    return {
+      name: f.name, one: f.one, date: f.date, link: f.link, href: '#' + f.key,
+      surface: f.surface, prompt: f.prompt, pitfall: f.pitfall,
+      b0: f.b[0], b1: f.b[1], b2: f.b[2],
+      coffee: depth !== 'bus', deep: depth === 'deep', hasStory: hasStory,
+      badge: 'display:inline-flex;font:600 10px/1 \'IBM Plex Mono\',monospace;letter-spacing:.12em;padding:7px 10px;border-radius:999px;color:#141413;background:' + f.tint,
+      dot: 'flex:none;width:11px;height:11px;border-radius:50%;background:' + (hasStory ? 'var(--accent-action)' : 'var(--border-strong)') + ';box-shadow:0 0 0 4px color-mix(in oklab,' + f.tint + ' 16%,transparent)',
+      copy: () => { try { navigator.clipboard.writeText(f.prompt); } catch (e) {} this.setState({ fcopied: f.key }); setTimeout(() => this.setState(st => st.fcopied === f.key ? { fcopied: null } : {}), 1800); },
+      copyLabel: s.fcopied === f.key ? 'Copied \u2713' : 'Copy the prompt',
+      copyBtn: 'min-height:44px;padding:0 18px;border-radius:999px;border:none;cursor:pointer;font:600 14px/1 \'IBM Plex Sans\',sans-serif;transition:transform .16s cubic-bezier(.34,1.56,.64,1);background:' + (s.fcopied === f.key ? 'var(--state-ok)' : 'var(--accent-action)') + ';color:' + (s.fcopied === f.key ? 'var(--bg-page)' : 'var(--accent-action-ink)') + ';box-shadow:0 3px 0 ' + (s.fcopied === f.key ? 'var(--state-ok)' : 'var(--accent-action-edge)'),
+      watch: () => this.openStory(f.key)
+    };
+  }
+
+  t(k) { return () => this.setState(st => ({ ticks: Object.assign({}, st.ticks, { [k]: !st.ticks[k] }) })); }
+  isDone(k) { return !!this.state.ticks[k]; }
+  doneCount() { return ['open', 'connect', 'allow', 'save'].filter(k => this.isDone(k)).length; }
+  chkStyle(k) {
+    const d = this.isDone(k);
+    return 'display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;min-height:56px;padding:14px;border-radius:18px;cursor:pointer;font:400 16px/1.45 \'IBM Plex Sans\',sans-serif;transition:opacity .25s,background .25s;background:' +
+      (d ? 'var(--state-ok-soft)' : 'var(--bg-page)') + ';border:1px solid ' + (d ? 'var(--state-ok)' : 'var(--border)') +
+      ';color:var(--text-primary);' + (d ? 'opacity:.72' : '');
+  }
+  boxStyle(k) {
+    const d = this.isDone(k);
+    return 'flex:none;width:30px;height:30px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;font:600 12px/1 \'IBM Plex Mono\',monospace;transition:transform .2s cubic-bezier(.34,1.56,.64,1);background:' +
+      (d ? 'var(--state-ok)' : 'var(--accent-attention)') + ';color:' + (d ? 'var(--bg-page)' : 'var(--accent-attention-ink)');
+  }
+  mark(k, n) { return this.isDone(k) ? '\u2713' : n; }
+  chkText(k) { return this.isDone(k) ? 'text-decoration:line-through;text-decoration-thickness:2px;color:var(--text-secondary)' : 'font-weight:500'; }
+  fchip(name) {
+    const a = this.state.filter === name;
+    return 'flex:none;min-height:44px;padding:0 18px;border-radius:999px;cursor:pointer;font:500 14px/1 \'IBM Plex Sans\',sans-serif;background:' +
+      (a ? 'var(--accent-action)' : 'var(--bg-surface)') + ';color:' + (a ? 'var(--accent-action-ink)' : 'var(--text-secondary)') +
+      ';border:1px solid ' + (a ? 'var(--accent-action-edge)' : 'var(--border)') + ';box-shadow:0 3px 0 ' + (a ? 'var(--accent-action-edge)' : 'var(--border-strong)');
+  }
+  hub(k, x, y, size) {
+    const sel = this.state.node === k && this.state.drawer;
+    const t = NODES[k].tint;
+    return 'position:absolute;left:' + x + '%;top:' + y + '%;transform:translate(-50%,-50%);width:' + size + 'px;height:' + size + 'px;border-radius:50%;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;' +
+      'background:radial-gradient(circle at 50% 26%,color-mix(in oklab,' + t + ' 30%,transparent),color-mix(in oklab,' + t + ' 9%,transparent) 72%);' +
+      'border:1.5px solid color-mix(in oklab,' + t + ' 62%,transparent);color:var(--text-primary);' +
+      'box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 0 10px color-mix(in oklab,' + t + ' 5%,transparent),0 18px 40px rgba(0,0,0,.32)' + (sel ? ',0 0 0 2.5px var(--focus)' : '') +
+      ';transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s ease';
+  }
+  small(k, x, y) {
+    const sel = this.state.node === k && this.state.drawer;
+    const conn = NODES[k].kind === 'CONNECTOR';
+    return 'position:absolute;left:' + x + '%;top:' + y + '%;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 15px;white-space:nowrap;cursor:pointer;' +
+      'border-radius:' + (conn ? '999px' : '13px') + ';background:var(--bg-raised);' +
+      'border:1px ' + (conn ? 'dashed' : 'solid') + ' ' + (sel ? 'var(--focus)' : 'var(--border-strong)') + ';color:' + (conn ? 'var(--text-secondary)' : 'var(--text-primary)') +
+      ';font:500 13px/1 \'IBM Plex Mono\',monospace;box-shadow:0 10px 24px rgba(0,0,0,.3);transition:transform .25s cubic-bezier(.34,1.56,.64,1),border-color .2s';
+  }
+  mcard(k) {
+    const sel = this.state.node === k && this.state.drawer;
+    const t = NODES[k].tint;
+    return 'flex:none;width:214px;display:flex;flex-direction:column;gap:9px;align-items:flex-start;text-align:left;padding:18px;border-radius:22px;cursor:pointer;color:var(--text-primary);' +
+      'background:linear-gradient(160deg,color-mix(in oklab,' + t + ' 16%,var(--bg-surface)),var(--bg-surface) 62%);' +
+      'border:1px solid ' + (sel ? 'var(--focus)' : 'color-mix(in oklab,' + t + ' 34%,var(--border))') + ';box-shadow:0 12px 26px rgba(0,0,0,.22)';
+  }
+  score(q) {
+    const CASES = [
+      { name: 'Morning inbox triage', surface: 'Cowork', keys: ['inbox', 'email', 'mail', 'reply', 'triage', 'morning', 'tidy', 'outlook', 'gmail'] },
+      { name: 'Notes into a deck', surface: 'PowerPoint', keys: ['deck', 'slides', 'notes', 'presentation', 'pitch', 'client', 'story'] },
+      { name: 'Spreadsheet audit', surface: 'Excel', keys: ['spreadsheet', 'excel', 'formula', 'model', 'numbers', 'audit', 'csv', 'sheet'] },
+      { name: 'Repo review helper', surface: 'Code', keys: ['code', 'repo', 'review', 'pull', 'bug', 'test', 'refactor', 'git'] },
+      { name: 'Design system upkeep', surface: 'Design', keys: ['design', 'system', 'component', 'figma', 'ui', 'tokens', 'screen'] },
+      { name: 'Weekly research digest', surface: 'Chat', keys: ['research', 'summarise', 'summary', 'digest', 'weekly', 'read', 'papers', 'slack'] }
+    ];
+    const words = (q || '').toLowerCase().split(/[^a-z]+/).filter(w => w.length > 2);
+    const scored = CASES.map(c => {
+      let hits = 0;
+      words.forEach(w => { if (c.keys.some(k => k.indexOf(w) === 0 || w.indexOf(k) === 0)) hits += 1; });
+      return { name: c.name, surface: c.surface, raw: hits };
+    }).sort((a, b) => b.raw - a.raw);
+    const total = scored.reduce((n, c) => n + c.raw, 0);
+    return scored.slice(0, 3).map((c, i) => ({
+      name: c.name, surface: c.surface,
+      pct: total ? Math.round((c.raw / total) * 100) : 0,
+      bar: 'height:100%;border-radius:999px;transition:width .5s cubic-bezier(.34,1.56,.64,1);width:' + (total ? Math.round((c.raw / total) * 100) : 0) + '%;background:' + (i === 0 ? 'var(--accent-action)' : 'var(--border-strong)')
+    }));
+  }
+
+  renderVals() {
+    const s = this.state;
+    const mobile = s.vp === 'mobile';
+    const chip = 'min-height:44px;display:inline-flex;align-items:center;gap:8px;padding:0 18px;border-radius:999px;background:var(--bg-surface);color:var(--text-primary);border:1px solid var(--border);box-shadow:0 3px 0 var(--border-strong);font:500 15px/1 \'IBM Plex Sans\',sans-serif;cursor:pointer;transition:transform .16s cubic-bezier(.34,1.56,.64,1)';
+    const btnBase = 'width:100%;min-height:52px;border-radius:999px;border:none;cursor:pointer;font:600 17px/1 \'IBM Plex Sans\',sans-serif;transition:transform .16s cubic-bezier(.34,1.56,.64,1)';
+    const btnAttention = btnBase + ';background:var(--accent-attention);color:var(--accent-attention-ink);box-shadow:0 4px 0 var(--accent-attention-edge)';
+    const btnAction = btnBase + ';background:var(--accent-action);color:var(--accent-action-ink);box-shadow:0 4px 0 var(--accent-action-edge)';
+    const btnGhost = btnBase + ';background:var(--bg-surface);color:var(--text-primary);border:1px solid var(--border);box-shadow:0 3px 0 var(--border-strong)';
+    const q = QUESTIONS[s.gstep];
+    const mq = s.matchQ === undefined ? 'tidy my inbox every morning' : s.matchQ;
+    const answered = s.gans[q.key];
+    const ex = EXAMPLES[s.ex];
+    const dot = a => 'width:' + (a ? '22px' : '8px') + ';height:8px;border-radius:999px;background:' + (a ? 'var(--accent-action)' : 'var(--border-strong)') + ';transition:width .3s cubic-bezier(.34,1.56,.64,1)';
+    const thinkLine = i => 'display:flex;align-items:center;gap:8px;transition:opacity .3s,transform .3s;' +
+      (i === s.think ? 'color:var(--text-primary);opacity:1;transform:scale(1.04)' : i < s.think ? 'color:var(--state-ok);opacity:.85' : 'color:var(--text-muted);opacity:.4');
+
+    const unseen = RADAR.filter(f => !s.seen[f.key]).length;
+    const sf = RADAR.find(x => x.key === s.story) || RADAR[0];
+    const FEED = RADAR.concat(RADAR_OLD);
+    const flt = s.radarFilter || 'All';
+    const feedRaw = FEED.filter(f =>
+      flt === 'All' ? true : flt === 'For me' ? !!f.mine : flt === 'Not tried yet' ? !f.tried : f.surface === flt);
+
+    return {
+      themeAttr: s.theme,
+      isMobile: mobile, isDesktop: !mobile,
+      frameLabel: mobile ? '390 \u00d7 844 \u00b7 iPhone class \u00b7 thumb zone shaded' : '1440 \u00b7 fit to width \u00b7 content max 1120',
+      url: 'onramp.guide/r/tidy-inbox',
+      frameOuter: mobile
+        ? 'width:390px;max-width:100%;margin:0 auto;border-radius:46px;border:10px solid var(--bg-raised);background:var(--bg-page);box-shadow:var(--shadow-card);overflow:hidden;position:relative'
+        : 'width:100%;border-radius:18px;border:1px solid var(--border);background:var(--bg-page);box-shadow:var(--shadow-card);overflow:hidden;position:relative',
+      frameInner: (mobile ? 'height:744px' : 'height:720px') + ';overflow-y:auto;overflow-x:hidden;position:relative;background:var(--bg-page);background-image:radial-gradient(var(--dot) 1px,transparent 1px);background-size:22px 22px',
+      thumbBar: 'position:sticky;bottom:0;left:0;right:0;display:flex;flex-wrap:wrap;gap:10px;padding:14px 20px 18px;margin:26px -20px -96px;background:linear-gradient(to top,var(--bg-page) 62%,transparent);z-index:5',
+      thumbBarFlush: 'position:sticky;bottom:0;left:0;right:0;display:flex;flex-wrap:wrap;gap:10px;padding:14px 20px 18px;margin:26px 0 -96px;background:linear-gradient(to top,var(--bg-page) 62%,transparent);z-index:5',
+      segVp: { mobile: this.seg(mobile), desktop: this.seg(!mobile) },
+      segTheme: { dark: this.seg(s.theme === 'dark'), light: this.seg(s.theme === 'light') },
+      segMode: { type: this.seg(s.mode === 'type'), guide: this.seg(s.mode === 'guide') },
+      muteStyle: 'align-self:flex-end;min-height:44px;min-width:44px;padding:0 14px;border-radius:999px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-secondary);font:500 12px/1 \'IBM Plex Mono\',monospace;cursor:pointer',
+      muteLabel: s.muted ? 'SOUND OFF' : 'SOUND ON',
+      toggleMute: () => this.set({ muted: !s.muted }),
+      setMobile: () => this.set({ vp: 'mobile' }), setDesktop: () => this.set({ vp: 'desktop' }),
+      setDark: () => this.set({ theme: 'dark' }), setLight: () => this.set({ theme: 'light' }),
+      tab: {
+        landing: this.tabStyle(s.screen === 'landing' && !s.returning), type: this.tabStyle(s.screen === 'type'),
+        guide: this.tabStyle(s.screen === 'guide'), thinking: this.tabStyle(s.screen === 'thinking'),
+        route: this.tabStyle(s.screen === 'route'), map: this.tabStyle(s.screen === 'map'),
+        card: this.tabStyle(s.screen === 'card'), states: this.tabStyle(s.screen === 'states'),
+        radar: this.tabStyle(s.screen === 'radar'),
+        landingReturn: this.tabStyle(s.screen === 'landing' && !!s.returning),
+        how: this.tabStyle(s.screen === 'how')
+      },
+      go: {
+        landing: () => this.set({ screen: 'landing', returning: false }),
+        landingReturn: () => this.set({ screen: 'landing', returning: true, gone: false, seen: {} }),
+        radar: () => this.set({ screen: 'radar' }),
+        type: () => this.set({ screen: 'type', mode: 'type' }),
+        guide: () => this.set({ screen: 'guide', mode: 'guide' }),
+        thinking: () => this.set({ screen: 'thinking', think: 0 }),
+        route: () => this.set({ screen: 'route' }),
+        map: () => this.set({ screen: 'map' }),
+        card: () => this.set({ screen: 'card' }),
+        states: () => this.set({ screen: 'states' }),
+        how: () => this.set({ screen: 'how' })
+      },
+      isLanding: s.screen === 'landing', isType: s.screen === 'type' || (s.screen === 'intake' && s.mode === 'type'),
+      isGuide: s.screen === 'guide', isThinking: s.screen === 'thinking',
+      isRoute: s.screen === 'route', isMap: s.screen === 'map',
+      isCard: s.screen === 'card', isStates: s.screen === 'states',
+      isRadar: s.screen === 'radar',
+      radarDot: unseen > 0,
+      unseenLabel: unseen > 0 ? unseen + ' unseen \u00b7 5 items \u00b7 checked 4 Sep' : '5 items \u00b7 checked 4 Sep',
+      rings: RADAR.map(f => this.ringOf(f)),
+      showBanner: s.returning && !s.gone,
+      showRings: !(s.returning && !s.gone),
+      dismissBanner: () => this.set({ gone: true }),
+      openDispatch: () => this.openStory('dispatch'),
+      storyOpen: !!s.story,
+      closeStory: () => this.closeStory(),
+      nextCard: () => this.adv(),
+      holdDown: () => this.holdDown(),
+      holdUp: () => this.holdUp(),
+      stop: e => { if (e && e.stopPropagation) e.stopPropagation(); },
+      cardIs: { c0: s.card === 0, c1: s.card === 1, c2: s.card === 2, c3: s.card === 3 },
+      storyHint: s.paused ? 'paused \u00b7 let go to carry on' : 'tap to advance \u00b7 hold to pause',
+      storyBars: [0, 1, 2, 3].map(i => ({
+        fill: 'display:block;height:100%;border-radius:999px;background:var(--text-primary);' +
+          (i < s.card ? 'width:100%'
+            : i === s.card ? 'width:0;animation:om-story 6s linear forwards;animation-play-state:' + (s.paused ? 'paused' : 'running')
+              : 'width:0')
+      })),
+      st: {
+        name: sf.name, one: sf.one, who: sf.who, c0: sf.c[0], c1: sf.c[1], c2: sf.c[2],
+        prompt: sf.prompt, pitfall: sf.pitfall, date: sf.date, link: sf.link, href: '#' + sf.key,
+        surface: sf.surface, isScore: !!sf.score, aria: 'Radar story: ' + sf.name,
+        badge: 'display:inline-flex;font:600 10px/1 \'IBM Plex Mono\',monospace;letter-spacing:.12em;padding:8px 11px;border-radius:999px;color:#141413;background:' + sf.tint,
+        glow: 'position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% -6%,color-mix(in oklab,' + sf.tint + ' 26%,transparent),transparent 68%)'
+      },
+      copyGo: e => {
+        if (e && e.stopPropagation) e.stopPropagation();
+        try { navigator.clipboard.writeText(sf.prompt); } catch (err) {}
+        clearInterval(this.stimer);
+        this.set({ rcopied: true });
+      },
+      copyGoLabel: s.rcopied ? 'Copied, opening ' + sf.surface + ' \u2713' : 'Copy and go',
+      copyGoBtn: 'width:100%;min-height:52px;border-radius:999px;border:none;cursor:pointer;font:600 17px/1 \'IBM Plex Sans\',sans-serif;transition:transform .16s cubic-bezier(.34,1.56,.64,1);background:' + (s.rcopied ? 'var(--state-ok)' : 'var(--accent-action)') + ';color:' + (s.rcopied ? 'var(--bg-page)' : 'var(--accent-action-ink)') + ';box-shadow:0 4px 0 ' + (s.rcopied ? 'var(--state-ok)' : 'var(--accent-action-edge)'),
+      rfilters: ['All', 'For me', 'Not tried yet', 'Cowork', 'Design', 'Chat'].map(name => ({
+        label: name, style: this.rchip(name), on: () => this.set({ radarFilter: name })
+      })),
+      segDepth: { bus: this.seg(s.depth === 'bus'), coffee: this.seg(s.depth === 'coffee'), deep: this.seg(s.depth === 'deep') },
+      setDepth: { bus: () => this.set({ depth: 'bus' }), coffee: () => this.set({ depth: 'coffee' }), deep: () => this.set({ depth: 'deep' }) },
+      feed: feedRaw.map(f => this.feedItem(f)),
+      setType: () => this.set({ screen: 'type', mode: 'type' }),
+      setGuide: () => this.set({ screen: 'guide', mode: 'guide' }),
+      chip, btnAttention, btnAction, btnGhost,
+      btnBack: 'min-height:44px;display:inline-flex;align-items:center;gap:8px;padding:0 4px;background:none;border:none;color:var(--text-secondary);font:500 14px/1 \'IBM Plex Mono\',monospace;cursor:pointer',
+      heroState: s.heroCheer ? 'found' : (s.heroWave ? 'waving' : 'idle'),
+      heroOn: () => this.set({ heroWave: true }),
+      heroOff: () => this.set({ heroWave: false }),
+      heroPoke: () => { this.set({ heroCheer: true }); setTimeout(() => this.set({ heroCheer: false }), 1400); },
+      ex: {
+        goal: ex.goal, surface: ex.surface, extra: ex.extra,
+        badge: 'font:600 10px/1 \'IBM Plex Mono\',monospace;letter-spacing:.1em;padding:6px 9px;border-radius:999px;color:#141413;background:' + ex.tint,
+        d0: dot(s.ex === 0), d1: dot(s.ex === 1), d2: dot(s.ex === 2)
+      },
+      typed: s.typed, ph: PLACEHOLDERS[s.ph],
+      onType: e => this.set({ typed: e.target.value }),
+      count: s.typed.length, showCount: s.typed.length > 1600,
+      countStyle: 'font:500 12px/1 \'IBM Plex Mono\',monospace;color:' + (s.typed.length > 1900 ? 'var(--state-warn)' : 'var(--text-muted)'),
+      fill: {
+        inbox: () => this.set({ typed: 'Tidy my inbox every morning and tell me what needs a reply.' }),
+        deck: () => this.set({ typed: 'Turn my messy research notes into a client deck.' }),
+        audit: () => this.set({ typed: 'Check this spreadsheet for broken formulas before I send it.' })
+      },
+      q: {
+        title: q.title, hint: q.hint, skippable: q.skippable,
+        options: q.options.map(label => ({
+          label,
+          style: chip + (answered === label ? ';background:var(--accent-action);color:var(--accent-action-ink);border-color:var(--accent-action-edge);box-shadow:0 3px 0 var(--accent-action-edge)' : ''),
+          on: () => this.setState(st => ({ gans: Object.assign({}, st.gans, { [q.key]: label }) }))
+        }))
+      },
+      stepLabel: (s.gstep + 1) + ' OF ' + QUESTIONS.length,
+      walkStyle: 'position:absolute;bottom:14px;width:52px;transition:left .5s cubic-bezier(.34,1.56,.64,1);animation:om-walk 1.6s ease-in-out infinite;left:calc(' + (s.gstep / (QUESTIONS.length - 1)) * 100 + '% - ' + (s.gstep / (QUESTIONS.length - 1)) * 52 + 'px)',
+      next: () => this.setState(st => ({ gstep: Math.min(QUESTIONS.length - 1, st.gstep + 1) })),
+      back: () => this.setState(st => st.gstep === 0 ? { screen: 'landing' } : { gstep: st.gstep - 1 }),
+      nextOrRoute: () => s.gstep === QUESTIONS.length - 1 ? this.set({ screen: 'thinking', think: 0 }) : this.setState(st => ({ gstep: st.gstep + 1 })),
+      nextLabel: s.gstep === QUESTIONS.length - 1 ? 'Find my route' : 'Next question',
+      btnNext: (s.gstep === QUESTIONS.length - 1 ? btnAttention : btnAction),
+      think: { s0: thinkLine(0), s1: thinkLine(1), s2: thinkLine(2) },
+      copy: () => {
+        try { navigator.clipboard.writeText('Every weekday at 08:00, read my unread mail from the last 24 hours.'); } catch (e) {}
+        this.set({ copied: true });
+        setTimeout(() => this.set({ copied: false }), 1800);
+      },
+      copied: s.copied,
+      copyLabel: s.copied ? 'Copied' : 'Copy prompt',
+      copyBtn: 'min-height:52px;padding:0 24px;border-radius:999px;border:none;cursor:pointer;font:600 16px/1 \'IBM Plex Sans\',sans-serif;transition:transform .16s cubic-bezier(.34,1.56,.64,1);background:' + (s.copied ? 'var(--state-ok)' : 'var(--accent-action)') + ';color:' + (s.copied ? 'var(--bg-page)' : 'var(--accent-action-ink)') + ';box-shadow:0 4px 0 ' + (s.copied ? 'var(--state-ok)' : 'var(--accent-action-edge)'),
+      miniCopy: 'min-height:44px;min-width:64px;padding:0 14px;border-radius:999px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-secondary);font:500 13px/1 \'IBM Plex Mono\',monospace;cursor:pointer',
+      mine: s.mine, notMine: !s.mine,
+      mineLen: s.mineLen === undefined ? '300 words' : s.mineLen,
+      onMineLen: e => this.set({ mineLen: e.target.value }),
+      mineSender: s.mineSender === undefined ? 'my manager' : s.mineSender,
+      onMineSender: e => this.set({ mineSender: e.target.value }),
+      mapQuery: s.mapQuery || '',
+      onMapQuery: e => this.set({ mapQuery: e.target.value }),
+      toggleMine: () => this.set({ mine: !s.mine }),
+      mineLabel: s.mine ? 'Done editing' : 'Make it mine',
+      mineBtn: 'min-height:44px;padding:0 16px;border-radius:999px;cursor:pointer;font:500 13px/1 \'IBM Plex Mono\',monospace;background:' + (s.mine ? 'var(--accent-attention)' : 'var(--bg-subtle)') + ';color:' + (s.mine ? 'var(--accent-attention-ink)' : 'var(--text-secondary)') + ';border:1px solid ' + (s.mine ? 'var(--accent-attention-edge)' : 'var(--border)'),
+      alt: s.alt,
+      toggleAlt: () => this.set({ alt: !s.alt }),
+      altHead: 'display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:0 20px;border-radius:24px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);font:600 17px/1 \'IBM Plex Sans\',sans-serif;cursor:pointer',
+      altChev: 'font:500 15px/1 \'IBM Plex Mono\',monospace;color:var(--text-muted);transition:transform .3s cubic-bezier(.34,1.56,.64,1);transform:rotate(' + (s.alt ? '180deg' : '0deg') + ')',
+      tick: { open: this.t('open'), connect: this.t('connect'), allow: this.t('allow'), save: this.t('save') },
+      chk: { open: this.chkStyle('open'), connect: this.chkStyle('connect'), allow: this.chkStyle('allow'), save: this.chkStyle('save') },
+      box: { open: this.boxStyle('open'), connect: this.boxStyle('connect'), allow: this.boxStyle('allow'), save: this.boxStyle('save') },
+      boxMark: { open: this.mark('open', '01'), connect: this.mark('connect', '02'), allow: this.mark('allow', '03'), save: this.mark('save', '04') },
+      chkText: { open: this.chkText('open'), connect: this.chkText('connect'), allow: this.chkText('allow'), save: this.chkText('save') },
+      setupCount: this.doneCount() + ' OF 4 DONE',
+      setupBar: 'height:100%;border-radius:999px;background:var(--state-ok);transition:width .5s cubic-bezier(.34,1.56,.64,1);width:' + (this.doneCount() / 4) * 100 + '%',
+      filt: { All: () => this.set({ filter: 'All' }), Surfaces: () => this.set({ filter: 'Surfaces' }), Capabilities: () => this.set({ filter: 'Capabilities' }), Connectors: () => this.set({ filter: 'Connectors' }) },
+      fchip: { All: this.fchip('All'), Surfaces: this.fchip('Surfaces'), Capabilities: this.fchip('Capabilities'), Connectors: this.fchip('Connectors') },
+      planLabel: s.planOnly ? 'MY PLAN ONLY \u2713' : 'MY PLAN ONLY',
+      togglePlan: () => this.set({ planOnly: !s.planOnly }),
+      planChip: 'flex:none;min-height:44px;padding:0 16px;border-radius:999px;cursor:pointer;font:500 11px/1 \'IBM Plex Mono\',monospace;letter-spacing:.1em;background:' + (s.planOnly ? 'var(--accent-attention)' : 'transparent') + ';color:' + (s.planOnly ? 'var(--accent-attention-ink)' : 'var(--text-muted)') + ';border:1px dashed ' + (s.planOnly ? 'var(--accent-attention-edge)' : 'var(--border-strong)'),
+      pick: Object.keys(NODES).reduce((a, k) => { a[k] = () => this.set({ node: k, drawer: true }); return a; }, {}),
+      nodeHub: {
+        cowork: this.hub('cowork', 34, 46, 132), chat: this.hub('chat', 66, 23, 104),
+        code: this.hub('code', 72, 70, 104), design: this.hub('design', 27, 82, 92)
+      },
+      nodeSmall: {
+        chrome: this.small('chrome', 89, 15), tasks: this.small('tasks', 17, 17),
+        connectors: this.small('connectors', 9, 52), skills: this.small('skills', 51, 42),
+        plugins: this.small('plugins', 89, 47), memory: this.small('memory', 47, 68),
+        m365: this.small('m365', 8, 82), excel: this.small('excel', 92, 84)
+      },
+      isHow: s.screen === 'how',
+      matches: this.score(mq),
+      matchQ: mq,
+      onMatchQ: e => this.set({ matchQ: e.target.value }),
+      verdict: this.score(mq)[0].pct >= 45 ? 'CLEAR' : 'NEEDS A QUESTION',
+      verdictStyle: 'display:inline-flex;align-items:center;gap:7px;font:600 10px/1 \'IBM Plex Mono\',monospace;letter-spacing:.14em;padding:8px 11px;border-radius:999px;' +
+        (this.score(mq)[0].pct >= 45
+          ? 'background:var(--state-ok-soft);color:var(--state-ok-text);border:1px solid var(--state-ok)'
+          : 'background:var(--accent-attention-soft);color:var(--accent-attention-text);border:1px solid var(--accent-attention-edge)'),
+      mcard: Object.keys(NODES).reduce((a, k) => { a[k] = this.mcard(k); return a; }, {}),
+      drawer: s.drawer,
+      closeDrawer: () => this.set({ drawer: false }),
+      drawerStyle: mobile
+        ? 'position:sticky;bottom:0;margin:24px -20px -96px;padding:22px 20px 26px;border-radius:28px 28px 0 0;background:var(--bg-raised);border:1px solid var(--border);border-bottom:none;box-shadow:0 -16px 44px rgba(0,0,0,.4);animation:om-pop .3s cubic-bezier(.34,1.56,.64,1);z-index:7'
+        : 'margin-top:18px;padding:24px;border-radius:24px;background:var(--bg-raised);border:1px solid var(--border);box-shadow:var(--shadow-pop);animation:om-pop .3s cubic-bezier(.34,1.56,.64,1)',
+      nodeName: NODES[s.node].name, nodeKind: NODES[s.node].kind,
+      nodeWhat: NODES[s.node].what, nodeNeeds: NODES[s.node].needs, nodeUnlocks: NODES[s.node].unlocks,
+      nodeBadge: 'display:inline-flex;font:600 10px/1 \'IBM Plex Mono\',monospace;letter-spacing:.14em;padding:7px 10px;border-radius:999px;color:#141413;background:' + NODES[s.node].tint
+    };
+  }
+}
+</script>
+</body>
+</html>
