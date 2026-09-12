@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-GB" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#141413" />
+    <title>Onramp: find your route through everything Claude can do</title>
+    <meta name="description" content="Tell us what you are trying to do. We hand you the route: the right surface, what to switch on, and the exact first prompt. Unofficial, free, no login." />
+    <link rel="icon" href="/icons/mark.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/mark-192.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="alternate" type="application/rss+xml" title="Onramp Radar" href="/feed.xml" />
+    <link rel="alternate" type="application/feed+json" title="Onramp Radar" href="/feed.json" />
+    <meta property="og:title" content="Onramp" />
+    <meta property="og:description" content="An unofficial guide to Claude. Tell us what you are trying to do and we hand you the route." />
+    <meta property="og:image" content="/og/default.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      // Theme before first paint. Only three keys ever touch storage: theme, sound, intake-mode.
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
