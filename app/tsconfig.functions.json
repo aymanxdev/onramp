@@ -18,5 +18,6 @@
     "paths": { "@/*": ["src/*"] },
     "types": ["@cloudflare/workers-types/2023-07-01"]
   },
-  "include": ["../functions/**/*.ts", "src/lib/matcher/**/*.ts", "src/features/catalogue/types.ts"]
+  "include": ["../functions/**/*.ts", "src/lib/matcher/**/*.ts", "src/features/catalogue/types.ts"],
+  "exclude": ["src/lib/matcher/**/*.test.ts", "src/lib/matcher/fixtures/**"]
 }

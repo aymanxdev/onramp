@@ -20,6 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+        with: { package_json_file: app/package.json }
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
       - run: pnpm --dir app install --frozen-lockfile
@@ -31,6 +32,7 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+        with: { package_json_file: app/package.json }
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
       - run: pnpm --dir app install --frozen-lockfile
@@ -41,6 +43,7 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+        with: { package_json_file: app/package.json }
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
       - run: pnpm --dir app install --frozen-lockfile
@@ -51,6 +54,7 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+        with: { package_json_file: app/package.json }
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
       - run: pnpm --dir app install --frozen-lockfile
@@ -63,6 +67,7 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+        with: { package_json_file: app/package.json }
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
@@ -83,6 +88,7 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+        with: { package_json_file: app/package.json }
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
@@ -107,6 +113,7 @@ jobs:
       - run: pip install -r pipeline/requirements.txt
       - run: python pipeline/validate.py pipeline/catalogue.yaml
       - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+        with: { package_json_file: app/package.json }
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
       - run: pnpm --dir app install --frozen-lockfile
@@ -119,7 +126,8 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
         with:
-          args: --no-progress --accept 200,206 --max-concurrency 4 pipeline/catalogue.yaml docs/
+          # 403 and 429 are accepted because claude.ai and some docs hosts refuse automated clients; the design HTML has fragment links only.
+          args: --no-progress --accept 200,206,403,429 --max-concurrency 4 --exclude-path docs/design --exclude 'onramp\.example' --exclude 'github\.com/aymanxdev/onramp' pipeline/catalogue.yaml docs/
           fail: true
 
   no-dashes:
@@ -136,6 +144,7 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+        with: { package_json_file: app/package.json }
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
@@ -150,6 +159,7 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+        with: { package_json_file: app/package.json }
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
       - run: pnpm --dir app install --frozen-lockfile
@@ -180,15 +190,17 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+        with: { package_json_file: app/package.json }
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with: { node-version: 22 }
-      - run: pnpm dlx @fission-ai/openspec@latest validate --strict
+      - run: pnpm dlx @fission-ai/openspec@latest validate --all --strict --no-interactive
 
   licences:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+        with: { package_json_file: app/package.json }
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
       - run: pnpm --dir app install --frozen-lockfile
@@ -222,6 +234,7 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+        with: { package_json_file: app/package.json }
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
