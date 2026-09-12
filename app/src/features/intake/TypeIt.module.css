@@ -1,0 +1,47 @@
+.h1 {
+  font: 700 clamp(26px, 3.6vw, 38px) / 1.1 var(--font-sans);
+  letter-spacing: -0.025em;
+  margin: 0 0 8px;
+}
+
+.sub {
+  margin: 0 0 18px;
+  color: var(--text-secondary);
+  font-size: 17px;
+}
+
+.fieldWrap {
+  position: relative;
+}
+
+.easterEgg {
+  position: absolute;
+  right: 0;
+  top: -46px;
+  width: 64px;
+  animation: om-pop 0.3s var(--ease-spring);
+}
+
+.counterRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  min-height: 22px;
+}
+
+.count {
+  font: 500 12px / 1 var(--font-mono);
+  color: var(--text-muted);
+}
+.countWarn {
+  color: var(--state-warn);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}

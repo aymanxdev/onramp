@@ -1,0 +1,48 @@
+.wrap {
+  margin-top: 32px;
+}
+@media (min-width: 1024px) {
+  .wrap {
+    margin-top: 56px;
+  }
+}
+
+.ringsBlock {
+  margin: 0;
+}
+
+.ringsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.seeAll {
+  min-height: 44px;
+  padding: 0 4px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font: 500 12px / 1 var(--font-mono);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.seeAll:hover,
+.seeAll:focus-visible {
+  color: var(--text-secondary);
+}
+.seeAll:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.ringsRow {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 8px 4px 8px 4px;
+  margin: 2px -4px -4px;
+}

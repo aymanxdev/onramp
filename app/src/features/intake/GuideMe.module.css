@@ -1,0 +1,39 @@
+.path {
+  margin-bottom: 22px;
+}
+
+.h1 {
+  font: 700 clamp(24px, 3.4vw, 36px) / 1.12 var(--font-sans);
+  letter-spacing: -0.025em;
+  margin: 12px 0 8px;
+  text-wrap: pretty;
+}
+
+.hint {
+  margin: 0 0 20px;
+  color: var(--text-secondary);
+  font-size: 17px;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skip {
+  margin-top: 20px;
+  min-height: 44px;
+  padding: 0 4px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font: 500 14px / 1 var(--font-mono);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+.skip:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}

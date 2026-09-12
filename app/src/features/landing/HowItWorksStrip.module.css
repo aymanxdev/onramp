@@ -1,0 +1,64 @@
+.wrap {
+  margin-top: 24px;
+}
+@media (min-width: 1024px) {
+  .wrap {
+    margin-top: 40px;
+  }
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: 12px;
+}
+@media (max-width: 767px) {
+  .steps {
+    flex-direction: column;
+  }
+}
+
+.step {
+  /* Row layout (768px+): grow to fill the row, 220px minimum before wrapping. */
+  flex: 1 1 220px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: var(--space-4) 18px;
+  border-radius: 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+}
+@media (max-width: 767px) {
+  .step {
+    /* In a column flex container, a basis of "220px" sizes the main axis,
+       which is now height, not width: every card was ~220px tall with
+       empty space under its text. Stacked cards should hug their content
+       instead, so they get no flex sizing and no cross axis stretch. */
+    flex: none;
+    align-self: flex-start;
+  }
+}
+
+.step.animated {
+  animation: om-up 0.4s var(--ease-spring) both;
+}
+
+.number {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--accent-attention);
+  color: var(--accent-attention-ink);
+  font: 600 12px/1 var(--font-mono);
+}
+
+.text {
+  margin: 4px 0 0;
+  font: 400 16px/1.4 var(--font-sans);
+  color: var(--text-primary);
+}

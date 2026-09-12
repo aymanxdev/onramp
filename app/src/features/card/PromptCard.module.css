@@ -1,0 +1,122 @@
+.card {
+  width: min(340px, 100%);
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-xl);
+  padding: 26px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  inset: -30% -20% 55%;
+  pointer-events: none;
+  background: radial-gradient(circle at 70% 20%, var(--glow-tint, var(--accent-action-soft)), transparent 70%);
+  /* See the matching comment in RouteHero.module.css: fades the box out
+     before its own bottom edge so the wash never shows a hard band. */
+  mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 78%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 78%);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font: 700 17px / 1 var(--font-sans);
+}
+
+.brandMark {
+  width: 26px;
+}
+
+.goal {
+  margin: 0;
+  font: 700 20px / 1.2 var(--font-sans);
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+.prompt {
+  font: 400 11.5px / 1.5 var(--font-mono);
+  color: var(--text-secondary);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font: 400 12px / 1.35 var(--font-mono);
+  color: var(--text-secondary);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 10px;
+  font: 400 10px / 1.4 var(--font-mono);
+  color: var(--text-muted);
+}
+
+.footerRight {
+  max-width: 52%;
+  text-align: right;
+}
+
+.printUrl {
+  display: none;
+}
+
+@media print {
+  .noPrint {
+    display: none !important;
+  }
+  .card {
+    width: 100% !important;
+    aspect-ratio: auto !important;
+    background: #fff !important;
+    border-color: #000 !important;
+    box-shadow: none !important;
+  }
+  .card,
+  .card * {
+    color: #000 !important;
+  }
+  .glow {
+    display: none !important;
+  }
+  .prompt,
+  .footer {
+    background: transparent !important;
+    border-color: #000 !important;
+  }
+  .printUrl {
+    display: block;
+    margin-top: 12px;
+    font: 700 18px / 1.4 var(--font-mono);
+    text-align: center;
+    word-break: break-all;
+  }
+}
