@@ -1,0 +1,46 @@
+# dependencies
+node_modules/
+# the "node_modules/" pattern above only matches a real directory; the
+# repo-root convenience symlink to app/node_modules needs its own line
+# (git does not treat a symlink as a directory for trailing-slash matching)
+/node_modules
+.pnpm-store/
+
+# build output
+app/dist/
+app/.wrangler/
+.wrangler/
+app/playwright-report/
+app/test-results/
+app/coverage/
+app/.vite/
+
+# pipeline
+pipeline/corpus/
+pipeline/graphify-out/
+pipeline/__pycache__/
+**/__pycache__/
+.venv/
+
+# secrets: never committed
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# os / editor
+.DS_Store
+*.log
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Playwright MCP snapshots
+.playwright-mcp/
+
+# generated launch/marketing images (regenerate with scripts/launch-assets)
+/launch-assets/
+
+# Generated at build time by the proof plugin
+app/public/data/proof.json

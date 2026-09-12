@@ -1,0 +1,9 @@
+title = "Onramp gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Public Turnstile site keys are safe to commit; everything else is not."
+regexes = ['''TURNSTILE_SITE_KEY''']
+paths = ['''pnpm-lock\.yaml''']
