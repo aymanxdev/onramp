@@ -54,7 +54,7 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
       - run: pnpm --dir app install --frozen-lockfile
-      - run: pnpm --dir app test:unit -- --coverage
+      - run: pnpm --dir app test:unit
       - name: Golden matcher tests must exist and pass
         run: test -f app/src/lib/matcher/matcher.test.ts
 
