@@ -1,0 +1,272 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      cache-key: ${{ steps.key.outputs.key }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
+      - run: pnpm --dir app install --frozen-lockfile
+      - id: key
+        run: echo "key=${{ hashFiles('app/pnpm-lock.yaml') }}" >> "$GITHUB_OUTPUT"
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
+      - run: pnpm --dir app install --frozen-lockfile
+      - run: pnpm --dir app lint
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
+      - run: pnpm --dir app install --frozen-lockfile
+      - run: pnpm --dir app typecheck
+
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
+      - run: pnpm --dir app install --frozen-lockfile
+      - run: pnpm --dir app test:unit -- --coverage
+      - name: Golden matcher tests must exist and pass
+        run: test -f app/src/lib/matcher/matcher.test.ts
+
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with: { python-version: "3.12" }
+      - run: pip install -r pipeline/requirements.txt
+      - run: pnpm --dir app install --frozen-lockfile
+      - run: pnpm --dir app exec playwright install --with-deps chromium webkit
+      - name: Build the catalogue JSON the app and its e2e fixtures read
+        run: pnpm --dir app data:build
+      - run: pnpm --dir app build
+      - run: pnpm --dir app test:e2e
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: failure()
+        with: { name: playwright-report, path: app/playwright-report }
+
+  a11y:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with: { python-version: "3.12" }
+      - run: pip install -r pipeline/requirements.txt
+      - run: pnpm --dir app install --frozen-lockfile
+      - run: pnpm --dir app exec playwright install --with-deps chromium
+      - name: Build the catalogue JSON the app and its e2e fixtures read
+        run: pnpm --dir app data:build
+      - run: pnpm --dir app build
+      - run: pnpm --dir app test:a11y
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: failure()
+        with: { name: playwright-report-a11y, path: app/playwright-report }
+
+  catalogue-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with: { python-version: "3.12" }
+      - run: pip install -r pipeline/requirements.txt
+      - run: python pipeline/validate.py pipeline/catalogue.yaml
+      - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
+      - run: pnpm --dir app install --frozen-lockfile
+      - name: Every entry has an official URL and an asOf date
+        run: pnpm --dir app catalogue:validate
+
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
+        with:
+          args: --no-progress --accept 200,206 --max-concurrency 4 pipeline/catalogue.yaml docs/
+          fail: true
+
+  no-dashes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with: { node-version: 22 }
+      - name: Fail on em or en dashes in user-facing copy and docs
+        run: node scripts/no-dashes.mjs app/src/content docs pipeline/catalogue.yaml
+
+  bundle-size:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with: { python-version: "3.12" }
+      - run: pip install -r pipeline/requirements.txt
+      - run: pnpm --dir app install --frozen-lockfile
+      - run: pnpm --dir app build
+      - run: pnpm --dir app size
+
+  tokens-fresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
+      - run: pnpm --dir app install --frozen-lockfile
+      - run: pnpm --dir app tokens:build
+      - name: Generated tokens.css must match the committed file
+        run: git diff --exit-code -- app/src/design-system/tokens.css
+      - name: prompts-fresh, generated LLM prompts must match the committed file
+        run: |
+          if [ -f scripts/build-prompts.mjs ]; then
+            node scripts/build-prompts.mjs
+            git diff --exit-code -- functions/llm/prompts.generated.ts
+          else
+            echo "scripts/build-prompts.mjs does not exist yet; skipping."
+          fi
+
+  secrets-scan:
+    runs-on: ubuntu-latest
+    permissions: { contents: read }
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with: { fetch-depth: 0 }
+      - uses: gitleaks/gitleaks-action@dcedce43c6f43de0b836d1fe38946645c9c638dc # v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  openspec:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with: { node-version: 22 }
+      - run: pnpm dlx @fission-ai/openspec@latest validate --strict
+
+  licences:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
+      - run: pnpm --dir app install --frozen-lockfile
+      - name: Fail on AGPL-incompatible or unknown licences
+        run: pnpm --dir app licenses list --json | node scripts/check-licences.mjs
+
+  brand-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: No Anthropic or Claude assets, no Claude in product name fields
+        run: |
+          set -e
+          if find app/public app/src/assets -iregex '.*\(claude\|anthropic\|clawd\).*' | grep .; then
+            echo "Asset names must not reference Claude, Anthropic or Clawd."; exit 1; fi
+          if grep -rniE '"(productName|appName|siteName)"\s*:\s*".*(claude|anthropic)' app/src app/public; then
+            echo "Product name fields must not contain Claude or Anthropic."; exit 1; fi
+          if ! grep -rq "not affiliated with, endorsed by, or sponsored by Anthropic" app/src/content; then
+            echo "Disclaimer copy is missing."; exit 1; fi
+      - name: Footer disclaimer must render on every route (checked in e2e too)
+        run: echo "See app/tests/e2e/disclaimer.spec.ts"
+
+  # Non-required: scores are informational, not a merge gate, so a Lighthouse
+  # hiccup (a flaky run, a rate-limited Chrome download) never blocks a PR.
+  # The scores are shipped as a build artefact so a later production build can
+  # copy them into app/public/data/ci.json, which proof.json and How it works
+  # read (DEVELOPER_BRIEF section 11 "build-time proof").
+  lighthouse:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with: { python-version: "3.12" }
+      - run: pip install -r pipeline/requirements.txt
+      - run: pnpm --dir app install --frozen-lockfile
+      - run: pnpm --dir app build
+      - name: Serve the preview build in the background
+        run: nohup pnpm --dir app preview --port 4173 --strictPort > preview.log 2>&1 &
+      - name: Wait for the preview server
+        run: |
+          for i in $(seq 1 30); do
+            if curl -sf http://127.0.0.1:4173 > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          echo "Preview server did not come up in time"; cat preview.log; exit 1
+      - uses: treosh/lighthouse-ci-action@512cc908a55bfb0ad231facca52adf3d3a651df4 # v12
+        id: lighthouse
+        with:
+          urls: http://127.0.0.1:4173/
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+      - name: Shape the scores into ci.json
+        run: |
+          node -e '
+            const fs = require("fs");
+            const manifestPath = ".lighthouseci/manifest.json";
+            let summary = { performance: null, accessibility: null, bestPractices: null, seo: null };
+            if (fs.existsSync(manifestPath)) {
+              const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+              const run = manifest.find((r) => r.isRepresentativeRun) ?? manifest[0];
+              if (run) {
+                const s = run.summary ?? {};
+                const pct = (v) => (typeof v === "number" ? Math.round(v * 100) : null);
+                summary = {
+                  performance: pct(s.performance),
+                  accessibility: pct(s.accessibility),
+                  bestPractices: pct(s["best-practices"]),
+                  seo: pct(s.seo),
+                };
+              }
+            }
+            const ci = { lighthouse: summary, linkCheck: new Date().toISOString().slice(0, 10) };
+            fs.writeFileSync("ci.json", JSON.stringify(ci, null, 2));
+            console.log(JSON.stringify(ci, null, 2));
+          '
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with: { name: ci.json, path: ci.json }

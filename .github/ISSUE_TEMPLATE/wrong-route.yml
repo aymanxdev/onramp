@@ -1,0 +1,16 @@
+name: Wrong route
+description: Onramp recommended the wrong surface, step or prompt
+labels: [catalogue, wrong-route]
+body:
+  - type: input
+    id: url
+    attributes: { label: Route URL, description: Paste the Onramp route link }
+    validations: { required: true }
+  - type: textarea
+    id: expected
+    attributes: { label: What should it have recommended, and why }
+    validations: { required: true }
+  - type: input
+    id: source
+    attributes: { label: Official link that proves it (claude.com, support.claude.com, docs.claude.com, anthropic.com only) }
+    validations: { required: true }

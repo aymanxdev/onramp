@@ -1,0 +1,21 @@
+name: New use case
+description: Suggest something people try to do with Claude that Onramp does not cover
+labels: [catalogue, use-case]
+body:
+  - type: input
+    id: goal
+    attributes: { label: The goal in the person's words, placeholder: "I want Claude to tidy my inbox every morning" }
+    validations: { required: true }
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Best surface
+      options: [Chat, Cowork, Code, Design, Chrome, Excel, PowerPoint, Word, Outlook, Slack (Tag), Mobile, API, Not sure]
+    validations: { required: true }
+  - type: textarea
+    id: prompt
+    attributes: { label: Suggested starting prompt (use {{placeholders}}) }
+  - type: input
+    id: source
+    attributes: { label: Official link showing this is possible }
+    validations: { required: true }
