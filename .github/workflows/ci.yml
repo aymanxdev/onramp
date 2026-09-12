@@ -243,7 +243,7 @@ jobs:
       - run: pnpm --dir app install --frozen-lockfile
       - run: pnpm --dir app build
       - name: Serve the preview build in the background
-        run: nohup pnpm --dir app preview --port 4173 --strictPort > preview.log 2>&1 &
+        run: nohup pnpm --dir app preview --host 127.0.0.1 --port 4173 --strictPort > preview.log 2>&1 &
       - name: Wait for the preview server
         run: |
           for i in $(seq 1 30); do
