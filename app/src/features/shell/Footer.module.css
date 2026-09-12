@@ -1,0 +1,81 @@
+/* Footer, design lines 270 to 274 (mobile, inside the landing frame) and 1188 to 1195 (desktop, with Pip). */
+.footer {
+  position: relative;
+  width: 100%;
+  margin-top: 32px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 14px;
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 28px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    display: flex;
+    gap: 22px;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 72px;
+  }
+}
+
+.copy {
+  flex: 1 1 320px;
+  max-width: 60ch;
+}
+
+.line1 {
+  margin: 0 0 6px;
+  color: var(--text-secondary);
+}
+
+.disclaimer {
+  margin: 0 0 12px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  font: 500 13px/1 var(--font-mono);
+}
+.links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  /* Negative vertical margin: the 44px tap target grows around the 13px
+     text rather than pushing the row taller, so wrapped rows stay as
+     tight as the design (row gap 14px) instead of spacing out to ~44px. */
+  margin: -15px 0;
+  padding: 0 2px;
+  color: var(--accent-action-text);
+}
+
+.pip {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .pip {
+    display: block;
+    flex: 0 0 96px;
+    width: 96px;
+  }
+}
+
+.peekingPip {
+  position: absolute;
+  right: 12px;
+  bottom: 100%;
+  width: 96px;
+  pointer-events: none;
+}

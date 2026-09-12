@@ -1,0 +1,29 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+}
+.row + .row {
+  border-top: 1px solid var(--border);
+}
+
+.key {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  font: 500 13px/1 var(--font-mono);
+  color: var(--text-primary);
+}
+
+.description {
+  font: 400 15px/1.4 var(--font-sans);
+  color: var(--text-secondary);
+}
