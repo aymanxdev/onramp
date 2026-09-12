@@ -27,6 +27,17 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import merge  # noqa: E402  (local import, path adjusted above)
+CATALOGUE_AS_OF = "1970-01-01"  # replaced at load time
+
+def build_time() -> datetime:
+    """Deterministic build clock: SOURCE_DATE_EPOCH when set (CI), else the catalogue asOf date at midnight UTC.
+    Keeps graph.json and radar.ics byte-identical between builds of the same catalogue."""
+    import os
+    epoch = os.environ.get("SOURCE_DATE_EPOCH")
+    if epoch:
+        return datetime.fromtimestamp(int(epoch), tz=timezone.utc)
+    return datetime.fromisoformat(str(CATALOGUE_AS_OF) + "T00:00:00+00:00")
+
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 CATALOGUE_YAML = REPO_ROOT / "pipeline" / "catalogue.yaml"
@@ -241,7 +252,7 @@ def build_graph(catalogue: dict, overlay_edges: list[dict]) -> dict:
 
     return {
         "version": catalogue.get("version"),
-        "builtAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "builtAt": build_time().strftime("%Y-%m-%dT%H:%M:%SZ"),
         "nodes": nodes,
         "edges": edges,
     }
@@ -327,7 +338,7 @@ def build_feed_json(catalogue: dict) -> dict:
 
 def build_radar_ics(weeks: int = 12) -> str:
     base = site_url()
-    today = datetime.now(timezone.utc).date()
+    today = build_time().date()
     # If today is already Monday, start today; otherwise the next Monday.
     first_monday = today if today.weekday() == 0 else today + timedelta(days=(7 - today.weekday()))
 
@@ -337,7 +348,7 @@ def build_radar_ics(weeks: int = 12) -> str:
         "PRODID:-//Onramp//Radar//EN",
         "CALSCALE:GREGORIAN",
     ]
-    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    stamp = build_time().strftime("%Y%m%dT%H%M%SZ")
     for i in range(weeks):
         monday = first_monday + timedelta(weeks=i)
         next_day = monday + timedelta(days=1)
@@ -363,7 +374,9 @@ def build_radar_ics(weeks: int = 12) -> str:
 # ---------------------------------------------------------------------------
 
 def main() -> int:
+    global CATALOGUE_AS_OF
     catalogue = load_catalogue()
+    CATALOGUE_AS_OF = str(catalogue.get("asOf", CATALOGUE_AS_OF))
 
     graphify_graph = None
     if GRAPHIFY_OUT.exists():
