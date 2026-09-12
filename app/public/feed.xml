@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Onramp Radar</title>
+    <link>https://onramp.example/new</link>
+    <description>Everything Claude shipped, in plain words, newest first.</description>
+    <item>
+      <title>Dispatch</title>
+      <link>https://support.claude.com/en/articles/13345190-getting-started-with-cowork</link>
+      <guid isPermaLink="false">dispatch</guid>
+      <pubDate>Wed, 02 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Send Claude a job from your phone and pick up the result later.</description>
+    </item>
+    <item>
+      <title>Design to slides</title>
+      <link>https://support.claude.com/en/articles/14604416-get-started-with-claude-design</link>
+      <guid isPermaLink="false">design-to-slides</guid>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Turn a design file into a deck without rebuilding the layouts.</description>
+    </item>
+    <item>
+      <title>Skill packs</title>
+      <link>https://support.claude.com/en/articles/13119606-managing-skills-as-an-admin</link>
+      <guid isPermaLink="false">skill-packs</guid>
+      <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Drop in a folder of instructions and Claude follows your house rules.</description>
+    </item>
+    <item>
+      <title>Chrome reads PDFs</title>
+      <link>https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome</link>
+      <guid isPermaLink="false">chrome-reads-pdfs</guid>
+      <pubDate>Mon, 24 Aug 2026 00:00:00 +0000</pubDate>
+      <description>The sidebar can read the PDF you have open and answer from it.</description>
+    </item>
+    <item>
+      <title>Component export</title>
+      <link>https://support.claude.com/en/articles/14604416-get-started-with-claude-design</link>
+      <guid isPermaLink="false">component-export</guid>
+      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Send a design component straight to code as real, named files.</description>
+    </item>
+  </channel>
+</rss>

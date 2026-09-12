@@ -1,0 +1,5150 @@
+{
+  "asOf": "2026-09-07",
+  "capabilities": [
+    {
+      "asOf": "2026-09-07",
+      "availableOn": [
+        "chat",
+        "cowork"
+      ],
+      "id": "memory",
+      "name": "Memory",
+      "needs": "Nothing",
+      "officialUrl": "https://support.claude.com/en/articles/11817273",
+      "plans": [
+        "free",
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "summary": "What Claude keeps between sessions, and what you can ask it to forget.",
+      "unlocks": "Less repeating yourself between sessions",
+      "weight": 5
+    },
+    {
+      "asOf": "2026-09-07",
+      "availableOn": [
+        "chat"
+      ],
+      "id": "projects",
+      "name": "Projects",
+      "needs": "Nothing",
+      "officialUrl": "https://claude.ai",
+      "plans": [
+        "free",
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "summary": "A space that keeps files and instructions together so you stop repeating context in every chat.",
+      "unlocks": "Shared context and files for a body of work",
+      "weight": 4
+    },
+    {
+      "asOf": "2026-09-07",
+      "availableOn": [
+        "chat"
+      ],
+      "id": "artifacts",
+      "name": "Artifacts",
+      "needs": "Nothing",
+      "officialUrl": "https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them",
+      "plans": [
+        "free",
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "summary": "A working pane next to the chat for documents, code and visuals you can edit in place.",
+      "unlocks": "Inspectable, editable output alongside the chat",
+      "weight": 6
+    },
+    {
+      "asOf": "2026-09-07",
+      "availableOn": [
+        "cowork",
+        "chat",
+        "excel",
+        "powerpoint",
+        "word"
+      ],
+      "id": "file-creation",
+      "name": "File creation",
+      "needs": "A paid plan",
+      "officialUrl": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+      "plans": [
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "summary": "Claude producing and editing real files, spreadsheets, slides and documents, not just pasted text.",
+      "unlocks": "Real files you can open in your own apps",
+      "weight": 6
+    },
+    {
+      "asOf": "2026-09-07",
+      "availableOn": [
+        "chat"
+      ],
+      "id": "custom-visuals",
+      "name": "Custom visuals",
+      "needs": "Nothing extra",
+      "officialUrl": "https://support.claude.com/en/articles/13979539-custom-visuals-in-chat",
+      "plans": [
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "summary": "Claude drawing a chart or diagram built for your data rather than describing one in words.",
+      "unlocks": "Charts and diagrams built for the answer",
+      "weight": 4
+    },
+    {
+      "asOf": "2026-09-07",
+      "availableOn": [
+        "cowork"
+      ],
+      "id": "scheduled-tasks",
+      "name": "Scheduled tasks",
+      "needs": "Cowork",
+      "officialUrl": "https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork",
+      "plans": [
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "summary": "A saved prompt that runs on a clock, so the work happens without you opening anything.",
+      "unlocks": "Morning digests, weekly nudges",
+      "weight": 8
+    },
+    {
+      "asOf": "2026-09-07",
+      "availableOn": [
+        "cowork"
+      ],
+      "id": "computer-use",
+      "name": "Computer use",
+      "needs": "Cowork desktop",
+      "officialUrl": "https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork",
+      "plans": [
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "summary": "Claude operating your computer directly, clicking and typing in apps that have no other way in.",
+      "unlocks": "Steps in apps that have no other integration",
+      "weight": 7
+    },
+    {
+      "asOf": "2026-09-07",
+      "availableOn": [
+        "cowork",
+        "mobile"
+      ],
+      "id": "dispatch",
+      "name": "Dispatch",
+      "needs": "Cowork",
+      "officialUrl": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
+      "plans": [
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "shippedOn": "2026-09-02",
+      "summary": "Send Claude a job and walk away. It keeps working after you close the tab or the app.",
+      "unlocks": "Long jobs started from a phone and picked up later",
+      "weight": 9
+    },
+    {
+      "asOf": "2026-09-07",
+      "availableOn": [
+        "chat",
+        "cowork"
+      ],
+      "id": "web-search",
+      "name": "Web search",
+      "needs": "Nothing",
+      "officialUrl": "https://claude.ai",
+      "plans": [
+        "free",
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "summary": "Claude searching the live web and citing what it used, instead of relying only on training data.",
+      "unlocks": "Answers grounded in current pages",
+      "weight": 5
+    },
+    {
+      "asOf": "2026-09-07",
+      "availableOn": [
+        "chat"
+      ],
+      "id": "chat-search",
+      "name": "Chat search",
+      "needs": "Nothing",
+      "officialUrl": "https://support.claude.com/en/articles/11817273",
+      "plans": [
+        "free",
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "summary": "Search across your own past conversations instead of scrolling to find one.",
+      "unlocks": "Finding a thread from weeks ago",
+      "weight": 4
+    },
+    {
+      "asOf": "2026-09-07",
+      "availableOn": [
+        "chat",
+        "cowork",
+        "code"
+      ],
+      "id": "skills",
+      "name": "Skills",
+      "needs": "Nothing to install",
+      "officialUrl": "https://support.claude.com/en/articles/13119606-managing-skills-as-an-admin",
+      "plans": [
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "shippedOn": "2026-09-01",
+      "summary": "Packaged know how Claude loads when it fits the job, such as building a deck or reading a PDF.",
+      "unlocks": "Consistent output formats",
+      "weight": 8
+    },
+    {
+      "asOf": "2026-09-07",
+      "availableOn": [
+        "cowork",
+        "code"
+      ],
+      "id": "plugins",
+      "name": "Plugins",
+      "needs": "Cowork or Code",
+      "officialUrl": "https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization",
+      "plans": [
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "summary": "Bundles of commands, agents and hooks you install for your own stack and share with a team.",
+      "unlocks": "Team conventions, custom commands",
+      "weight": 6
+    },
+    {
+      "asOf": "2026-09-07",
+      "availableOn": [
+        "cowork",
+        "chat"
+      ],
+      "id": "connectors",
+      "name": "Connectors",
+      "needs": "An account on the tool",
+      "officialUrl": "https://claude.com/connectors",
+      "plans": [
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "summary": "Read or write access to a tool you already use, each with its own scopes you switch on by hand.",
+      "unlocks": "Your own mail, files and tickets",
+      "weight": 9
+    },
+    {
+      "asOf": "2026-09-07",
+      "availableOn": [
+        "code"
+      ],
+      "id": "mcp-local",
+      "name": "MCP local",
+      "needs": "Code and a local server",
+      "officialUrl": "https://docs.claude.com/en/docs/claude-code/overview",
+      "plans": [
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "summary": "A local server that a Model Context Protocol client can reach from inside Code.",
+      "unlocks": "Local tools reachable from a prompt",
+      "weight": 5
+    },
+    {
+      "asOf": "2026-09-07",
+      "availableOn": [
+        "chat"
+      ],
+      "id": "reflect",
+      "name": "Reflect",
+      "needs": "Nothing",
+      "officialUrl": "https://support.claude.com/en/articles/11817273",
+      "plans": [
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "summary": "Claude checking its own draft answer against the question before it replies.",
+      "unlocks": "A second pass before the final answer",
+      "weight": 3
+    },
+    {
+      "asOf": "2026-09-07",
+      "availableOn": [
+        "chat"
+      ],
+      "id": "interactive-apps",
+      "name": "Interactive apps",
+      "needs": "Nothing",
+      "officialUrl": "https://support.claude.com/en/articles/13454812-use-interactive-connectors-in-claude",
+      "plans": [
+        "free",
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "summary": "A small interactive tool rendered inside the chat, such as a form or a mini app, instead of plain text.",
+      "unlocks": "Small tools rendered in the chat itself",
+      "weight": 5
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-08-15",
+      "text": "Cowork adds scheduled tasks",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes"
+    },
+    {
+      "date": "2026-08-21",
+      "text": "Design gains component export",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes"
+    },
+    {
+      "date": "2026-08-24",
+      "text": "Chrome sidebar now reads PDFs",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes"
+    },
+    {
+      "date": "2026-09-01",
+      "text": "12 new connectors this month",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes"
+    }
+  ],
+  "connectors": [
+    {
+      "asOf": "2026-09-07",
+      "category": "Email",
+      "id": "gmail",
+      "interactive": false,
+      "name": "Gmail",
+      "needs": "A Google account",
+      "officialUrl": "https://claude.com/connectors",
+      "summary": "Read and, with permission, send mail from a Gmail account.",
+      "unlocks": "Inbox routes, mail drafting"
+    },
+    {
+      "asOf": "2026-09-07",
+      "category": "Files",
+      "id": "google-drive",
+      "interactive": false,
+      "name": "Google Drive",
+      "needs": "A Google account",
+      "officialUrl": "https://claude.com/connectors",
+      "summary": "Read and search documents, sheets and slides stored in Google Drive.",
+      "unlocks": "Working from your own files"
+    },
+    {
+      "asOf": "2026-09-07",
+      "category": "Calendar",
+      "id": "google-calendar",
+      "interactive": false,
+      "name": "Google Calendar",
+      "needs": "A Google account",
+      "officialUrl": "https://claude.com/connectors",
+      "summary": "Read your calendar so Claude can prepare you for what is coming up.",
+      "unlocks": "Meeting prep, scheduling context"
+    },
+    {
+      "asOf": "2026-09-07",
+      "category": "Productivity",
+      "id": "microsoft-365",
+      "interactive": true,
+      "name": "Microsoft 365",
+      "needs": "Sign in plus admin approval at work",
+      "officialUrl": "https://claude.com/connectors",
+      "summary": "Mail, calendar and files from a Microsoft work or personal account, including write tools.",
+      "unlocks": "Inbox routes, meeting prep"
+    },
+    {
+      "asOf": "2026-09-07",
+      "category": "Communication",
+      "id": "slack",
+      "interactive": true,
+      "name": "Slack",
+      "needs": "A Slack workspace",
+      "officialUrl": "https://claude.com/connectors",
+      "summary": "Read channels you belong to and post back into Slack.",
+      "unlocks": "Channel digests, threaded replies"
+    },
+    {
+      "asOf": "2026-09-07",
+      "category": "Docs",
+      "id": "notion",
+      "interactive": false,
+      "name": "Notion",
+      "needs": "A Notion workspace",
+      "officialUrl": "https://claude.com/connectors",
+      "summary": "Read and update pages in a Notion workspace.",
+      "unlocks": "Notes and wikis as working material"
+    },
+    {
+      "asOf": "2026-09-07",
+      "category": "Development",
+      "id": "github",
+      "interactive": true,
+      "name": "GitHub",
+      "needs": "A GitHub account",
+      "officialUrl": "https://claude.com/connectors",
+      "summary": "Read issues, pull requests and repository content, and comment back.",
+      "unlocks": "Code review, issue triage"
+    },
+    {
+      "asOf": "2026-09-07",
+      "category": "Design",
+      "id": "canva",
+      "interactive": false,
+      "name": "Canva",
+      "needs": "A Canva account",
+      "officialUrl": "https://claude.com/connectors",
+      "summary": "Pull brand assets and templates from a Canva account into a piece of work.",
+      "unlocks": "On brand visuals without leaving the flow"
+    },
+    {
+      "asOf": "2026-09-07",
+      "category": "Design",
+      "id": "figma",
+      "interactive": false,
+      "name": "Figma",
+      "needs": "A Figma account",
+      "officialUrl": "https://claude.com/connectors",
+      "summary": "Read a Figma file's layers, styles and components.",
+      "unlocks": "Design to code, design to deck"
+    },
+    {
+      "asOf": "2026-09-07",
+      "category": "Project management",
+      "id": "jira",
+      "interactive": true,
+      "name": "Jira",
+      "needs": "A Jira account",
+      "officialUrl": "https://claude.com/connectors",
+      "summary": "Read and update tickets in a Jira project.",
+      "unlocks": "Status updates, ticket triage"
+    },
+    {
+      "asOf": "2026-09-07",
+      "category": "Project management",
+      "id": "asana",
+      "interactive": true,
+      "name": "Asana",
+      "needs": "An Asana account",
+      "officialUrl": "https://claude.com/connectors",
+      "summary": "Read and update tasks in an Asana project.",
+      "unlocks": "Status updates, task triage"
+    },
+    {
+      "asOf": "2026-09-07",
+      "category": "Payments",
+      "id": "stripe",
+      "interactive": false,
+      "name": "Stripe",
+      "needs": "A Stripe account",
+      "officialUrl": "https://claude.com/connectors",
+      "summary": "Read payment and invoice data to chase or reconcile it.",
+      "unlocks": "Invoice chasing, revenue summaries"
+    },
+    {
+      "asOf": "2026-09-07",
+      "category": "Observability",
+      "id": "datadog",
+      "interactive": false,
+      "name": "Datadog",
+      "needs": "A Datadog account",
+      "officialUrl": "https://claude.com/connectors",
+      "summary": "Read dashboards, logs and alerts from a Datadog account.",
+      "unlocks": "Incident summaries, on call context"
+    },
+    {
+      "asOf": "2026-09-07",
+      "category": "Project management",
+      "id": "linear",
+      "interactive": true,
+      "name": "Linear",
+      "needs": "A Linear account",
+      "officialUrl": "https://claude.com/connectors",
+      "summary": "Read and update issues in a Linear workspace.",
+      "unlocks": "Status updates, issue triage"
+    }
+  ],
+  "features": [
+    {
+      "bullets": [
+        "Send it from the phone, no laptop needed.",
+        "It keeps working after you close the tab.",
+        "You get a nudge when the result lands."
+      ],
+      "forChips": [
+        "On the move",
+        "Long jobs",
+        "No waiting"
+      ],
+      "id": "dispatch",
+      "introduces": [
+        "dispatch"
+      ],
+      "name": "Dispatch",
+      "officialUrl": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
+      "pitfalls": [
+        "It queues. Expect minutes, not seconds."
+      ],
+      "plainWords": "Send Claude a job from your phone and pick up the result later.",
+      "plans": [
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "shippedOn": "2026-09-02",
+      "status": "published",
+      "surface": [
+        "cowork"
+      ],
+      "tryPrompt": "Read the notes in my Projects folder and write me a one page brief.",
+      "verifiedOn": "2026-09-04",
+      "weight": 8,
+      "whatItIs": "A queued job in Cowork that keeps running after you close the tab or the app, so you can start it from your phone and check back.",
+      "whoItIsFor": "For people who think of work away from a desk."
+    },
+    {
+      "bullets": [
+        "Layouts and spacing survive the move.",
+        "Every slide stays an editable file.",
+        "Exports to PowerPoint in one step."
+      ],
+      "forChips": [
+        "Designers",
+        "Client decks",
+        "No rebuild"
+      ],
+      "id": "design-to-slides",
+      "introduces": [
+        "file-creation"
+      ],
+      "name": "Design to slides",
+      "officialUrl": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+      "pitfalls": [
+        "Custom fonts fall back unless they sit in the file."
+      ],
+      "plainWords": "Turn a design file into a deck without rebuilding the layouts.",
+      "plans": [
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "shippedOn": "2026-09-01",
+      "status": "published",
+      "surface": [
+        "design"
+      ],
+      "tryPrompt": "Turn this design file into a ten slide deck. Keep the type and spacing.",
+      "verifiedOn": "2026-09-02",
+      "weight": 7,
+      "whatItIs": "An export path from a Claude Design file straight into an editable slide deck, keeping type and spacing.",
+      "whoItIsFor": "For people who design first and present second."
+    },
+    {
+      "bullets": [
+        "One folder, shared by the whole team.",
+        "Works in Chat, Cowork and Code.",
+        "Version it in your own repo."
+      ],
+      "forChips": [
+        "Teams",
+        "House style",
+        "Reusable"
+      ],
+      "id": "skill-packs",
+      "introduces": [
+        "skills"
+      ],
+      "name": "Skill packs",
+      "officialUrl": "https://support.claude.com/en/articles/13119606-managing-skills-as-an-admin",
+      "pitfalls": [
+        "Two packs can disagree. Load the narrower one."
+      ],
+      "plainWords": "Drop in a folder of instructions and Claude follows your house rules.",
+      "plans": [
+        "free",
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "shippedOn": "2026-08-29",
+      "status": "published",
+      "surface": [
+        "chat"
+      ],
+      "tryPrompt": "Use our brand skill and rewrite this page in our tone of voice.",
+      "verifiedOn": "2026-09-01",
+      "weight": 10,
+      "whatItIs": "A shared folder of skills a team keeps in its own repository and loads across Chat, Cowork and Code.",
+      "whoItIsFor": "For teams tired of pasting the same brief."
+    },
+    {
+      "bullets": [
+        "No upload, it reads the open tab.",
+        "Works on files behind a login.",
+        "Cites the page it took each line from."
+      ],
+      "forChips": [
+        "No upload",
+        "Behind logins",
+        "Cited pages"
+      ],
+      "id": "chrome-reads-pdfs",
+      "introduces": [
+        "file-creation"
+      ],
+      "name": "Chrome reads PDFs",
+      "officialUrl": "https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome",
+      "pitfalls": [
+        "Scanned pages without text are still invisible to it."
+      ],
+      "plainWords": "The sidebar can read the PDF you have open and answer from it.",
+      "plans": [
+        "free",
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "shippedOn": "2026-08-24",
+      "status": "published",
+      "surface": [
+        "chrome"
+      ],
+      "tryPrompt": "Summarise this contract and list anything that needs a lawyer.",
+      "verifiedOn": "2026-08-26",
+      "weight": 6,
+      "whatItIs": "Claude in Chrome extended to read a PDF open in the browser tab, including ones behind a login.",
+      "whoItIsFor": "For people who live in PDFs sent by other people."
+    },
+    {
+      "bullets": [
+        "Named layers become named files.",
+        "Tokens travel with the component.",
+        "Diffable, so review works normally."
+      ],
+      "forChips": [
+        "Handover",
+        "Named files",
+        "Diffable"
+      ],
+      "id": "component-export",
+      "introduces": [
+        "file-creation"
+      ],
+      "name": "Component export",
+      "officialUrl": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+      "pitfalls": [
+        "It exports what you built, including the mistakes."
+      ],
+      "plainWords": "Send a design component straight to code as real, named files.",
+      "plans": [
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "shippedOn": "2026-08-19",
+      "status": "published",
+      "surface": [
+        "design"
+      ],
+      "tryPrompt": "Export this card component with the tokens it uses, nothing else.",
+      "verifiedOn": "2026-08-21",
+      "weight": 5,
+      "whatItIs": "A one step export from a Claude Design component to named source files that keep their tokens.",
+      "whoItIsFor": "For designers handing work to an engineer."
+    }
+  ],
+  "lighthouse": {
+    "accessibility": 100,
+    "bestPractices": 100,
+    "performance": 100,
+    "seo": 100
+  },
+  "linkCheck": "2026-09-07",
+  "plans": [
+    {
+      "asOf": "2026-09-07",
+      "id": "free",
+      "name": "Free",
+      "officialUrl": "https://claude.com",
+      "summary": "No cost access to Chat and Chrome with lower usage limits."
+    },
+    {
+      "asOf": "2026-09-07",
+      "id": "pro",
+      "name": "Pro",
+      "officialUrl": "https://claude.com",
+      "summary": "A personal paid plan that raises usage limits and unlocks Cowork and Projects."
+    },
+    {
+      "asOf": "2026-09-07",
+      "id": "max",
+      "name": "Max",
+      "officialUrl": "https://claude.com",
+      "summary": "The highest personal plan, adding Excel, PowerPoint and computer use in Cowork."
+    },
+    {
+      "asOf": "2026-09-07",
+      "id": "team",
+      "name": "Team",
+      "officialUrl": "https://claude.com",
+      "summary": "A shared plan for a small organisation, with admin controls and shared connectors."
+    },
+    {
+      "asOf": "2026-09-07",
+      "id": "enterprise",
+      "name": "Enterprise",
+      "officialUrl": "https://claude.com",
+      "summary": "The organisation wide plan with the widest connector and governance controls."
+    }
+  ],
+  "scoreWeights": {
+    "artifacts": 6,
+    "chat-search": 4,
+    "computer-use": 7,
+    "connectors": 9,
+    "custom-visuals": 4,
+    "dispatch": 9,
+    "file-creation": 6,
+    "interactive-apps": 5,
+    "mcp-local": 5,
+    "memory": 5,
+    "plugins": 6,
+    "projects": 4,
+    "reflect": 3,
+    "scheduled-tasks": 8,
+    "skills": 8,
+    "web-search": 5
+  },
+  "skills": [
+    {
+      "asOf": "2026-09-07",
+      "id": "docx",
+      "installsOn": [
+        "chat",
+        "cowork",
+        "word"
+      ],
+      "kind": "skill",
+      "name": "docx",
+      "officialUrl": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+      "summary": "Produces a proper Word document, with headings and styles, instead of plain text."
+    },
+    {
+      "asOf": "2026-09-07",
+      "id": "pptx",
+      "installsOn": [
+        "chat",
+        "cowork",
+        "powerpoint"
+      ],
+      "kind": "skill",
+      "name": "pptx",
+      "officialUrl": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+      "summary": "Produces a proper slide deck, with layout and type intact, instead of a text outline."
+    },
+    {
+      "asOf": "2026-09-07",
+      "id": "xlsx",
+      "installsOn": [
+        "chat",
+        "cowork",
+        "excel"
+      ],
+      "kind": "skill",
+      "name": "xlsx",
+      "officialUrl": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+      "summary": "Produces a working spreadsheet with real formulas, not a table pasted as text."
+    },
+    {
+      "asOf": "2026-09-07",
+      "id": "pdf",
+      "installsOn": [
+        "chat",
+        "cowork"
+      ],
+      "kind": "skill",
+      "name": "pdf",
+      "officialUrl": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+      "summary": "Reads and produces PDF files, including ones with mixed text and scanned pages."
+    },
+    {
+      "asOf": "2026-09-07",
+      "id": "frontend-design",
+      "installsOn": [
+        "design",
+        "code"
+      ],
+      "kind": "skill",
+      "name": "Frontend design",
+      "officialUrl": "https://support.claude.com/en/articles/13119606-managing-skills-as-an-admin",
+      "summary": "House rules for building screens, so the output matches an existing design system."
+    },
+    {
+      "asOf": "2026-09-07",
+      "id": "brand-guidelines",
+      "installsOn": [
+        "chat",
+        "design"
+      ],
+      "kind": "skill",
+      "name": "Brand guidelines",
+      "officialUrl": "https://support.claude.com/en/articles/13119606-managing-skills-as-an-admin",
+      "summary": "Keeps tone, colour and type consistent with a brand's own written guidelines."
+    },
+    {
+      "asOf": "2026-09-07",
+      "id": "legal-review",
+      "installsOn": [
+        "code",
+        "cowork"
+      ],
+      "kind": "plugin",
+      "name": "Legal review",
+      "officialUrl": "https://claude.com/docs/plugins/overview",
+      "summary": "A bundle of prompts and checks for a first pass read of a contract or policy."
+    },
+    {
+      "asOf": "2026-09-07",
+      "id": "marketing",
+      "installsOn": [
+        "cowork",
+        "chat"
+      ],
+      "kind": "plugin",
+      "name": "Marketing",
+      "officialUrl": "https://claude.com/docs/plugins/overview",
+      "summary": "A bundle of prompts for campaign briefs, social calendars and brand voice passes."
+    },
+    {
+      "asOf": "2026-09-07",
+      "id": "code-review",
+      "installsOn": [
+        "code"
+      ],
+      "kind": "plugin",
+      "name": "Code review",
+      "officialUrl": "https://claude.com/docs/plugins/overview",
+      "summary": "House rules and checks a team runs before merging, packaged as a plugin for Code."
+    }
+  ],
+  "surfaces": [
+    {
+      "asOf": "2026-09-07",
+      "blurb": "the box you know",
+      "caption": "Free plan",
+      "group": "Everyday work",
+      "id": "chat",
+      "name": "Chat",
+      "needs": "Nothing, the free plan works",
+      "officialUrl": "https://claude.ai",
+      "openUrl": "https://claude.ai",
+      "plans": [
+        "free",
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "platforms": [
+        "web",
+        "desktop",
+        "ios",
+        "android"
+      ],
+      "summary": "The familiar Claude window: ask a question, draft something, or think out loud, with projects and memory when you want continuity.",
+      "tint": "chat",
+      "unlocks": "Projects, memory, skills"
+    },
+    {
+      "asOf": "2026-09-07",
+      "blurb": "agentic work, files, tasks",
+      "caption": "Agentic work",
+      "group": "Everyday work",
+      "id": "cowork",
+      "name": "Cowork",
+      "needs": "A paid personal plan",
+      "officialUrl": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
+      "openUrl": "https://claude.ai",
+      "plans": [
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "platforms": [
+        "web",
+        "desktop",
+        "ios",
+        "android"
+      ],
+      "summary": "An agentic workspace where Claude runs a job end to end: it keeps files, works across your other apps, and can repeat a task on a schedule.",
+      "tint": "cowork",
+      "unlocks": "Scheduled tasks, connectors, file output"
+    },
+    {
+      "asOf": "2026-09-07",
+      "blurb": "terminal and repos",
+      "caption": "Terminal",
+      "group": "Making things",
+      "id": "code",
+      "name": "Code",
+      "needs": "A terminal and a repo",
+      "officialUrl": "https://docs.claude.com/en/docs/claude-code/overview",
+      "openUrl": "https://docs.claude.com/en/docs/claude-code/overview",
+      "plans": [
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "platforms": [
+        "cli"
+      ],
+      "summary": "Claude working directly in your terminal and repository, reading and editing real files with your say so at each step.",
+      "tint": "code",
+      "unlocks": "Plugins, hooks, review workflows"
+    },
+    {
+      "asOf": "2026-09-07",
+      "blurb": "screens and systems",
+      "caption": "Systems",
+      "group": "Making things",
+      "id": "design",
+      "name": "Design",
+      "needs": "A paid plan",
+      "officialUrl": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+      "openUrl": "https://claude.ai/design",
+      "plans": [
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "platforms": [
+        "web"
+      ],
+      "summary": "Claude building real screens and design systems as inspectable files rather than flat mock ups, with a straight path to code.",
+      "tint": "design",
+      "unlocks": "Design systems, prototypes, handover"
+    },
+    {
+      "asOf": "2026-09-07",
+      "blurb": "reads the page you are on",
+      "caption": "Browser",
+      "group": "Everyday work",
+      "id": "chrome",
+      "name": "Chrome",
+      "needs": "The browser extension",
+      "officialUrl": "https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome",
+      "openUrl": "https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome",
+      "plans": [
+        "free",
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "platforms": [
+        "chrome extension"
+      ],
+      "summary": "A browser sidebar that reads the page you have open and can act on it, from summarising an article to filling in a form.",
+      "tint": "cowork",
+      "unlocks": "Page context, form filling"
+    },
+    {
+      "asOf": "2026-09-07",
+      "blurb": "in the spreadsheet",
+      "caption": "Spreadsheets",
+      "group": "In your tools",
+      "id": "excel",
+      "name": "Excel",
+      "needs": "Excel and a paid plan",
+      "officialUrl": "https://support.claude.com/en/articles/12650343-using-claude-in-excel",
+      "openUrl": "https://support.claude.com/en/articles/12650343-using-claude-in-excel",
+      "plans": [
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "platforms": [
+        "desktop",
+        "web"
+      ],
+      "summary": "Claude working inside the spreadsheet itself: auditing formulas, tidying data and building sheets in place.",
+      "tint": "code",
+      "unlocks": "Audits, model building"
+    },
+    {
+      "asOf": "2026-09-07",
+      "blurb": "decks that stay editable",
+      "caption": "Decks",
+      "group": "In your tools",
+      "id": "powerpoint",
+      "name": "PowerPoint",
+      "needs": "PowerPoint and a paid plan",
+      "officialUrl": "https://support.claude.com/en/articles/13521390-using-claude-in-powerpoint",
+      "openUrl": "https://support.claude.com/en/articles/13521390-using-claude-in-powerpoint",
+      "plans": [
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "platforms": [
+        "desktop",
+        "web"
+      ],
+      "summary": "Claude building and editing slide decks directly inside PowerPoint, keeping the layout and type intact as it works.",
+      "tint": "chat",
+      "unlocks": "Slide edits, deck building"
+    },
+    {
+      "asOf": "2026-09-07",
+      "blurb": "long documents, tidied",
+      "caption": "Documents",
+      "group": "In your tools",
+      "id": "word",
+      "name": "Word",
+      "needs": "Word and a Microsoft 365 connector",
+      "officialUrl": "https://support.claude.com/en/articles/15183774",
+      "openUrl": "https://support.claude.com/en/articles/15183774",
+      "plans": [
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "platforms": [
+        "desktop",
+        "web"
+      ],
+      "summary": "Claude editing long documents inside Word: tone passes, structural edits and honest feedback on a draft.",
+      "tint": "chat",
+      "unlocks": "Tone passes, structural edits"
+    },
+    {
+      "asOf": "2026-09-07",
+      "blurb": "mail, without leaving it",
+      "caption": "Mail",
+      "group": "In your tools",
+      "id": "outlook",
+      "name": "Outlook",
+      "needs": "Outlook and a Microsoft 365 connector",
+      "officialUrl": "https://support.claude.com/en/articles/15183774",
+      "openUrl": "https://support.claude.com/en/articles/15183774",
+      "plans": [
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "platforms": [
+        "desktop",
+        "web"
+      ],
+      "summary": "Claude working inside Outlook itself: drafting replies and summarising threads without switching to another app.",
+      "tint": "chat",
+      "unlocks": "Mail summaries, drafts in place"
+    },
+    {
+      "asOf": "2026-09-07",
+      "blurb": "claude, mentioned in channel",
+      "caption": "Team chat",
+      "group": "In your tools",
+      "id": "slack",
+      "name": "Tag for Slack",
+      "needs": "Claude Tag installed in your workspace",
+      "officialUrl": "https://www.anthropic.com/news/introducing-claude-tag",
+      "openUrl": "https://www.anthropic.com/news/introducing-claude-tag",
+      "plans": [
+        "team",
+        "enterprise"
+      ],
+      "platforms": [
+        "slack"
+      ],
+      "summary": "Claude Tag brought into a Slack workspace to summarise channels and answer questions where the conversation already happens.",
+      "tint": "design",
+      "unlocks": "Channel summaries, digests"
+    },
+    {
+      "asOf": "2026-09-07",
+      "blurb": "start it, walk away",
+      "caption": "On the go",
+      "group": "Everyday work",
+      "id": "mobile",
+      "name": "Mobile",
+      "needs": "The Cowork mobile app",
+      "officialUrl": "https://support.claude.com/en/articles/15520349",
+      "openUrl": "https://support.claude.com/en/articles/15520349",
+      "plans": [
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "summary": "The Cowork mobile app: start a long job from your phone with a couple of taps and come back to the result later.",
+      "tint": "cowork",
+      "unlocks": "Jobs started away from a desk"
+    },
+    {
+      "asOf": "2026-09-07",
+      "blurb": "claude in your own product",
+      "caption": "For builders",
+      "group": "Making things",
+      "id": "api",
+      "name": "API",
+      "needs": "An API key and a budget",
+      "officialUrl": "https://docs.claude.com/en/docs/intro",
+      "openUrl": "https://console.anthropic.com",
+      "plans": [],
+      "platforms": [
+        "api"
+      ],
+      "summary": "The Claude API for building Claude into your own product or backend, billed by usage rather than a seat.",
+      "tint": "neutral",
+      "unlocks": "Claude inside your own product"
+    }
+  ],
+  "usecases": [
+    {
+      "alternative": {
+        "surface": "outlook",
+        "text": "If you would rather stay inside your mail client, use Claude in Outlook and ask for the same summary by hand each morning. Slower, but nothing to connect."
+      },
+      "capabilities": [
+        "scheduled-tasks",
+        "connectors"
+      ],
+      "connectors": [
+        "microsoft-365"
+      ],
+      "extra": "+ M365 + task",
+      "followUps": [
+        "Draft replies for the “needs a reply today” list, but do not send them.",
+        "Every Friday, tell me who I have kept waiting the longest."
+      ],
+      "id": "tidy-inbox",
+      "intent": [
+        "inbox",
+        "email",
+        "mail",
+        "reply",
+        "replies",
+        "triage",
+        "morning",
+        "tidy",
+        "digest",
+        "automate",
+        "automate my inbox",
+        "unread",
+        "needs a reply",
+        "today"
+      ],
+      "persona": "ops or admin",
+      "pitfalls": [
+        "It will not send replies unless you ask it to. Keep it read only until you trust the summary.",
+        "Very large mailboxes get truncated. Give it a window, not your whole archive."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "300 words",
+          "key": "length",
+          "label": "300 words"
+        },
+        {
+          "defaultValue": "my manager",
+          "key": "sender",
+          "label": "my manager"
+        }
+      ],
+      "planNote": "Connectors and scheduled tasks sit on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "Every weekday at 08:00, read my unread mail from the last 24 hours. Group it into three lists: needs a reply today, waiting on someone else, and safe to archive. For each item give me the sender, one line of context, and a suggested next step. Keep the whole thing under {{length}} and flag anything from {{sender}} first.",
+      "routes": [
+        {
+          "surface": "cowork",
+          "weight": 10
+        },
+        {
+          "surface": "outlook",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
+          "note": "support.claude.com, getting started with Cowork",
+          "text": "Open Cowork in the sidebar"
+        },
+        {
+          "href": "https://claude.com/connectors",
+          "note": "Settings, Connectors, Microsoft 365",
+          "text": "Connect Microsoft 365"
+        },
+        {
+          "note": "read scope is enough for this route",
+          "text": "Allow read access to mail only"
+        },
+        {
+          "note": "weekdays only",
+          "text": "Save the prompt as a task at 08:00"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "inbox",
+        "email",
+        "morning routine",
+        "triage"
+      ],
+      "title": "Tidy my inbox every morning",
+      "why": [
+        "Cowork can hold a job that repeats, so you set it up once rather than asking each day.",
+        "Your mail already lives in Microsoft 365, and there is a connector for it.",
+        "Nothing here needs code, so you can undo it from the same screen you set it up in."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "chat",
+        "text": "Ask Chat by hand each evening with your calendar pasted in. No setup, but you have to remember to ask."
+      },
+      "capabilities": [
+        "scheduled-tasks",
+        "connectors"
+      ],
+      "connectors": [
+        "google-calendar",
+        "microsoft-365"
+      ],
+      "extra": "+ calendar + task",
+      "followUps": [
+        "Pull the last email thread with each external attendee.",
+        "Flag any meeting that clashes with another one."
+      ],
+      "id": "meeting-prep",
+      "intent": [
+        "meetings",
+        "meeting",
+        "prep",
+        "prepare",
+        "tomorrow",
+        "calendar",
+        "agenda",
+        "briefing",
+        "attendees",
+        "morning",
+        "digest"
+      ],
+      "persona": "ops or admin",
+      "pitfalls": [
+        "It only knows what is on the connected calendar, so add guests manually if you invited them elsewhere.",
+        "Recurring meetings all look the same to it unless the title changes."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "3 lines",
+          "key": "length",
+          "label": "3 lines"
+        }
+      ],
+      "planNote": "Scheduled tasks sit on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "Every weekday at 07:30, look at tomorrow's calendar and write me a briefing: who is in each meeting, why it is on my calendar, and one thing to check beforehand. Keep each meeting to {{length}} and put the earliest meeting first.",
+      "routes": [
+        {
+          "surface": "cowork",
+          "weight": 10
+        },
+        {
+          "surface": "chat",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
+          "note": "support.claude.com, getting started with Cowork",
+          "text": "Open Cowork in the sidebar"
+        },
+        {
+          "href": "https://claude.com/connectors",
+          "note": "Settings, Connectors, Google Calendar or Microsoft 365",
+          "text": "Connect your calendar"
+        },
+        {
+          "note": "weekdays only",
+          "text": "Save the prompt as a task at 07:30"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "meetings",
+        "calendar",
+        "prep",
+        "briefing"
+      ],
+      "title": "Prepare me for tomorrow's meetings",
+      "why": [
+        "A repeating job means you never have to remember to ask for it.",
+        "Calendar and mail already sit behind the same connector.",
+        "You can turn it off from the same task list you set it up in."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "chat",
+        "text": "Paste your calendar and sent mail into Chat by hand on Friday and ask for the same report."
+      },
+      "capabilities": [
+        "scheduled-tasks",
+        "connectors"
+      ],
+      "connectors": [
+        "google-calendar",
+        "gmail",
+        "microsoft-365"
+      ],
+      "extra": "+ connectors + task",
+      "followUps": [
+        "Turn this into three bullet points I can paste into Slack.",
+        "Compare this week to last week and flag anything that slipped."
+      ],
+      "id": "weekly-status",
+      "intent": [
+        "weekly status",
+        "status update",
+        "status report",
+        "weekly",
+        "calendar",
+        "email",
+        "report",
+        "write my weekly status update from my calendar",
+        "summary"
+      ],
+      "persona": "ops or admin",
+      "pitfalls": [
+        "It only sees what happened in connected tools, not conversations that happened in person.",
+        "Vague calendar titles produce a vague report. Rename recurring events once and it improves."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "half a page",
+          "key": "length",
+          "label": "half a page"
+        },
+        {
+          "defaultValue": "my manager",
+          "key": "audience",
+          "label": "my manager"
+        }
+      ],
+      "planNote": "Scheduled tasks sit on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "Every Friday afternoon, read this week's calendar and sent mail and write a status update: what shipped, what is blocked, and what is next. Keep it to {{length}} and write it for {{audience}}.",
+      "routes": [
+        {
+          "surface": "cowork",
+          "weight": 10
+        },
+        {
+          "surface": "chat",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
+          "note": "support.claude.com, getting started with Cowork",
+          "text": "Open Cowork in the sidebar"
+        },
+        {
+          "href": "https://claude.com/connectors",
+          "note": "Settings, Connectors",
+          "text": "Connect your calendar and mail"
+        },
+        {
+          "note": "pick a time before your week ends",
+          "text": "Save the prompt as a task on Fridays"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "status report",
+        "weekly",
+        "calendar",
+        "email"
+      ],
+      "title": "Write my weekly status report from my calendar and email",
+      "why": [
+        "A weekly task means the report is ready before you sit down to write it.",
+        "Calendar and sent mail are usually enough evidence for a status update.",
+        "You can edit the draft rather than starting from a blank page."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "excel",
+        "text": "Type the receipt totals into Excel by hand, or ask Claude for Excel to build the sheet once you have the numbers."
+      },
+      "capabilities": [
+        "file-creation"
+      ],
+      "connectors": [
+        "google-drive"
+      ],
+      "extra": "+ skills",
+      "followUps": [
+        "Total the amounts by category.",
+        "Convert any receipt in a foreign currency using that day's rate."
+      ],
+      "id": "expense-sort",
+      "intent": [
+        "receipts",
+        "expenses",
+        "expense",
+        "spreadsheet",
+        "sort my receipts into a spreadsheet",
+        "csv",
+        "sheet",
+        "files",
+        "folders"
+      ],
+      "persona": "ops or admin",
+      "pitfalls": [
+        "Handwritten receipts and blurry photos are read less reliably than printed ones.",
+        "It categorises by best guess. Check the category column before you submit anything."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "my Receipts folder",
+          "key": "folder",
+          "label": "my Receipts folder"
+        }
+      ],
+      "planNote": "File creation in Cowork sits on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "Read the receipts in {{folder}} and build a spreadsheet with one row per receipt: date, vendor, amount, category. Flag anything that looks like a duplicate.",
+      "routes": [
+        {
+          "surface": "cowork",
+          "weight": 10
+        },
+        {
+          "surface": "excel",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
+          "note": "support.claude.com, getting started with Cowork",
+          "text": "Open Cowork in the sidebar"
+        },
+        {
+          "note": "a local folder or a connected drive both work",
+          "text": "Point it at your receipts folder"
+        },
+        {
+          "note": "the xlsx skill loads on its own",
+          "text": "Ask for a spreadsheet, not a summary"
+        }
+      ],
+      "skills": [
+        "xlsx"
+      ],
+      "tags": [
+        "expenses",
+        "receipts",
+        "spreadsheet",
+        "files"
+      ],
+      "title": "Sort receipts into an expense spreadsheet",
+      "why": [
+        "Cowork can read a whole folder of files in one job, not one receipt at a time.",
+        "The output is a real spreadsheet you can open straight away.",
+        "You keep the source receipts exactly where they already are."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "code",
+        "text": "Write a small script in Code that sorts files by extension and date. More control, more setup."
+      },
+      "capabilities": [
+        "computer-use",
+        "file-creation"
+      ],
+      "connectors": [],
+      "extra": "+ computer use",
+      "followUps": [
+        "Find and list any exact duplicate files.",
+        "Rename the files in one folder to a consistent pattern."
+      ],
+      "id": "file-tidy",
+      "intent": [
+        "files",
+        "folders",
+        "organise",
+        "organise the files on my desktop",
+        "desktop",
+        "tidy",
+        "clean up",
+        "downloads",
+        "sort files"
+      ],
+      "persona": "ops or admin",
+      "pitfalls": [
+        "Always review the plan first. Moving files is easy to do and mildly annoying to undo.",
+        "It groups by type and date, not by project, unless you tell it the projects."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "my Downloads folder",
+          "key": "folder",
+          "label": "my Downloads folder"
+        }
+      ],
+      "planNote": "Computer use sits on the higher personal plans as of 7 September 2026",
+      "promptTemplate": "Look at the files in {{folder}} and sort them into folders by type and rough date. Show me the plan before you move anything.",
+      "routes": [
+        {
+          "surface": "cowork",
+          "weight": 10
+        },
+        {
+          "surface": "code",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
+          "note": "support.claude.com, getting started with Cowork",
+          "text": "Open Cowork in the sidebar"
+        },
+        {
+          "href": "https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork",
+          "note": "support.claude.com, computer use in Cowork",
+          "text": "Turn on computer use"
+        },
+        {
+          "note": "try a small folder before your whole desktop",
+          "text": "Point it at one folder to start"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "files",
+        "folders",
+        "organise",
+        "desktop"
+      ],
+      "title": "Organise the files on my machine into folders",
+      "why": [
+        "Cowork can act on real files on your machine with computer use, not just describe a plan.",
+        "Seeing the plan first means nothing moves without your say so.",
+        "A one off tidy up does not need a repeating task."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "cowork",
+        "text": "Set this up as a repeating Cowork task if you repurpose a post every week on a schedule."
+      },
+      "capabilities": [
+        "artifacts"
+      ],
+      "connectors": [],
+      "extra": "+ marketing skill",
+      "followUps": [
+        "Write two versions of the strongest post, one short and one longer.",
+        "Suggest an image idea for each post."
+      ],
+      "id": "blog-repurpose",
+      "intent": [
+        "blog",
+        "social",
+        "linkedin",
+        "instagram",
+        "posts",
+        "turn this blog post into linkedin posts",
+        "repurpose",
+        "content calendar",
+        "brand voice",
+        "week"
+      ],
+      "persona": "marketer",
+      "pitfalls": [
+        "It will lean on the post's own examples, so check nothing sounds repetitive across the week.",
+        "Platform character limits change. Check the current one before you paste."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "a link or pasted text",
+          "key": "post",
+          "label": "a link or pasted text"
+        },
+        {
+          "defaultValue": "5",
+          "key": "count",
+          "label": "5"
+        }
+      ],
+      "planNote": "Chat works on the free plan, with higher limits on paid plans as of 7 September 2026",
+      "promptTemplate": "Read this blog post: {{post}}. Turn it into {{count}} social posts for LinkedIn, each standing on its own, none of them just a summary of the last one.",
+      "routes": [
+        {
+          "surface": "chat",
+          "weight": 10
+        },
+        {
+          "surface": "cowork",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://claude.ai",
+          "note": "claude.ai",
+          "text": "Open a new chat"
+        },
+        {
+          "note": "a link works if the page is public",
+          "text": "Paste the blog post or its link"
+        },
+        {
+          "note": "5 to 7 works well for a week",
+          "text": "Ask for the post count you actually want"
+        }
+      ],
+      "skills": [
+        "marketing"
+      ],
+      "tags": [
+        "social",
+        "content",
+        "repurpose",
+        "linkedin"
+      ],
+      "title": "Turn a blog post into a week of social posts",
+      "why": [
+        "Chat is enough for a single drafting session with no files to manage.",
+        "One long post naturally has five or six ideas already inside it.",
+        "You can iterate on tone in the same conversation."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "chrome",
+        "text": "Read the page with Claude in Chrome first if you want the brief written from the page you already have open."
+      },
+      "capabilities": [
+        "web-search"
+      ],
+      "connectors": [],
+      "extra": "+ marketing skill",
+      "followUps": [
+        "Write three headline options for the top of the page.",
+        "List the objections a sceptical buyer would raise."
+      ],
+      "id": "campaign-brief",
+      "intent": [
+        "campaign",
+        "brief",
+        "write a campaign brief for our new product",
+        "marketing",
+        "product page",
+        "launch",
+        "positioning",
+        "buyer"
+      ],
+      "persona": "marketer",
+      "pitfalls": [
+        "It can only read what is on the page. Add pricing or positioning notes yourself if they live elsewhere.",
+        "A brief is a starting point. Have someone who knows the product check the claims."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "a link to the product page",
+          "key": "page",
+          "label": "a link to the product page"
+        }
+      ],
+      "planNote": "Chat works on the free plan, with higher limits on paid plans as of 7 September 2026",
+      "promptTemplate": "Read this product page: {{page}}. Write a one page campaign brief: audience, the one thing to say, three proof points, and a suggested channel mix.",
+      "routes": [
+        {
+          "surface": "chat",
+          "weight": 10
+        },
+        {
+          "surface": "chrome",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://claude.ai",
+          "note": "claude.ai",
+          "text": "Open a new chat"
+        },
+        {
+          "note": "a full page reads better than a snippet",
+          "text": "Paste the product page link or its text"
+        },
+        {
+          "note": "naming the sections keeps it structured",
+          "text": "Ask for the brief in the format above"
+        }
+      ],
+      "skills": [
+        "marketing"
+      ],
+      "tags": [
+        "campaign",
+        "brief",
+        "marketing",
+        "product"
+      ],
+      "title": "Write a campaign brief from a product page",
+      "why": [
+        "Chat can read a pasted page and reason about it in one pass.",
+        "A brief format keeps the output usable rather than a wall of prose.",
+        "No files or connectors are needed for a single brief."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "cowork",
+        "text": "Set up a repeating Cowork task if you rewrite a batch of copy on the same day each week."
+      },
+      "capabilities": [
+        "skills"
+      ],
+      "connectors": [],
+      "extra": "+ brand skill",
+      "followUps": [
+        "Point out any place the original copy overclaims.",
+        "Write a shorter version for a social caption."
+      ],
+      "id": "brand-voice",
+      "intent": [
+        "brand voice",
+        "rewrite this in our brand voice",
+        "tone",
+        "copy",
+        "rewrite",
+        "house style",
+        "consistency",
+        "style guide"
+      ],
+      "persona": "marketer",
+      "pitfalls": [
+        "A vague voice guide gives a vague rewrite. Include real examples, not just adjectives.",
+        "It will keep the facts you give it, so wrong facts in mean wrong facts out."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "your brand voice notes",
+          "key": "guide",
+          "label": "your brand voice notes"
+        },
+        {
+          "defaultValue": "the copy to rewrite",
+          "key": "copy",
+          "label": "the copy to rewrite"
+        }
+      ],
+      "planNote": "Skills sit on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "Here is our brand voice guide: {{guide}}. Rewrite this copy to match it, keeping the same facts and length: {{copy}}.",
+      "routes": [
+        {
+          "surface": "chat",
+          "weight": 10
+        },
+        {
+          "surface": "cowork",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://claude.ai",
+          "note": "claude.ai",
+          "text": "Open a new chat"
+        },
+        {
+          "href": "https://support.claude.com/en/articles/13119606-managing-skills-as-an-admin",
+          "note": "support.claude.com, managing skills",
+          "text": "Load your brand guidelines skill"
+        },
+        {
+          "note": "include the original so nothing is invented",
+          "text": "Paste the copy to rewrite"
+        }
+      ],
+      "skills": [
+        "brand-guidelines"
+      ],
+      "tags": [
+        "brand voice",
+        "copy",
+        "tone",
+        "rewrite"
+      ],
+      "title": "Rewrite copy in our brand voice",
+      "why": [
+        "A skill loaded once means every rewrite in the conversation stays consistent.",
+        "Chat handles a single piece of copy without any files to set up.",
+        "You can go back and forth on tone in the same thread."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "chrome",
+        "text": "Open each page by hand in Claude in Chrome once a week and ask what changed since your last visit."
+      },
+      "capabilities": [
+        "scheduled-tasks",
+        "web-search"
+      ],
+      "connectors": [],
+      "extra": "+ task",
+      "followUps": [
+        "Keep a running log of every change with the date it was seen.",
+        "Alert me only when a price actually changes."
+      ],
+      "id": "competitor-watch",
+      "intent": [
+        "competitor",
+        "competitors",
+        "watch my competitors' pricing pages every week",
+        "pricing pages",
+        "watch",
+        "keep me posted on changes to a website",
+        "website",
+        "changes",
+        "weekly"
+      ],
+      "persona": "marketer",
+      "pitfalls": [
+        "Pages behind a login or built entirely in client side script may not be readable.",
+        "Cosmetic changes get reported too. Tell it to ignore layout only changes if that gets noisy."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "these competitor pages",
+          "key": "pages",
+          "label": "these competitor pages"
+        }
+      ],
+      "planNote": "Scheduled tasks sit on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "Every Monday, check {{pages}} for anything that changed since last week and summarise it in a short note: what changed, on which page, and why it might matter.",
+      "routes": [
+        {
+          "surface": "cowork",
+          "weight": 10
+        },
+        {
+          "surface": "chrome",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
+          "note": "support.claude.com, getting started with Cowork",
+          "text": "Open Cowork in the sidebar"
+        },
+        {
+          "note": "a handful of URLs is enough to start",
+          "text": "Give it the list of pages to watch"
+        },
+        {
+          "note": "weekly is usually enough",
+          "text": "Save the prompt as a task for Monday mornings"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "competitor",
+        "watch",
+        "weekly",
+        "pricing"
+      ],
+      "title": "Watch competitor pages weekly and summarise changes",
+      "why": [
+        "A repeating task means you find out on Monday, not whenever you remember to look.",
+        "Cowork can hold a list of pages and compare them week over week.",
+        "The output is a short note, not a page by page diff you have to read yourself."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "word",
+        "text": "Draft it straight inside Word once the structure is settled, if you prefer editing in place."
+      },
+      "capabilities": [
+        "artifacts"
+      ],
+      "connectors": [],
+      "extra": "+ docx skill",
+      "followUps": [
+        "Write three subject line options.",
+        "Shorten it by a third without losing the sections."
+      ],
+      "id": "newsletter",
+      "intent": [
+        "newsletter",
+        "draft our monthly newsletter",
+        "monthly",
+        "notes",
+        "draft",
+        "email",
+        "roundup",
+        "content",
+        "subscribers"
+      ],
+      "persona": "marketer",
+      "pitfalls": [
+        "Thin notes produce a thin newsletter. Paste in the detail, not just headlines.",
+        "It will not know your send platform's formatting quirks, so paste in plain text first."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "this month's notes",
+          "key": "notes",
+          "label": "this month's notes"
+        },
+        {
+          "defaultValue": "warm and plain",
+          "key": "tone",
+          "label": "warm and plain"
+        }
+      ],
+      "planNote": "Chat works on the free plan, with higher limits on paid plans as of 7 September 2026",
+      "promptTemplate": "Here are this month's notes: {{notes}}. Draft a newsletter with a short intro, three sections, and a closing line, in {{tone}} tone.",
+      "routes": [
+        {
+          "surface": "chat",
+          "weight": 10
+        },
+        {
+          "surface": "word",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://claude.ai",
+          "note": "claude.ai",
+          "text": "Open a new chat"
+        },
+        {
+          "note": "bullet points are fine, full sentences are not required",
+          "text": "Paste in a month of notes"
+        },
+        {
+          "note": "name them so the draft matches your template",
+          "text": "Ask for the sections you actually use"
+        }
+      ],
+      "skills": [
+        "docx"
+      ],
+      "tags": [
+        "newsletter",
+        "monthly",
+        "notes",
+        "draft"
+      ],
+      "title": "Draft a monthly newsletter from my notes",
+      "why": [
+        "Chat turns loose notes into a structured draft in one pass.",
+        "A monthly cadence does not need a scheduled task, just a habit of pasting notes in.",
+        "You keep full control over the final send."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "chat",
+        "text": "Paste the error and the relevant file into Chat if you would rather review a suggested fix by hand."
+      },
+      "capabilities": [
+        "plugins"
+      ],
+      "connectors": [
+        "github"
+      ],
+      "extra": "+ github",
+      "followUps": [
+        "Write a regression test that would have caught this.",
+        "Explain the root cause in plain language for the ticket."
+      ],
+      "id": "fix-bug",
+      "intent": [
+        "bug",
+        "fix a bug in my repo",
+        "repo",
+        "codebase",
+        "debug",
+        "error",
+        "stack trace",
+        "fix"
+      ],
+      "persona": "engineer",
+      "pitfalls": [
+        "Give it a way to reproduce the bug. A guess without a repro step is a guess.",
+        "Review the diff before merging. It edits real files with your permission, not blind trust."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "the bug report or error",
+          "key": "description",
+          "label": "the bug report or error"
+        },
+        {
+          "defaultValue": "possible",
+          "key": "scope",
+          "label": "possible"
+        }
+      ],
+      "planNote": "Code sits on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "Here is the bug: {{description}}. Find the cause in this repository and fix it, keeping the change as small as {{scope}}.",
+      "routes": [
+        {
+          "surface": "code",
+          "weight": 10
+        },
+        {
+          "surface": "chat",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://docs.claude.com/en/docs/claude-code/overview",
+          "note": "docs.claude.com, Claude Code overview",
+          "text": "Install Code and sign in"
+        },
+        {
+          "note": "cd into the project first",
+          "text": "Run it inside your repository"
+        },
+        {
+          "note": "the more specific, the faster the fix",
+          "text": "Give it the failing test or error message"
+        }
+      ],
+      "skills": [
+        "code-review"
+      ],
+      "tags": [
+        "bug",
+        "repo",
+        "fix",
+        "debugging"
+      ],
+      "title": "Fix a bug in my repo",
+      "why": [
+        "Code reads and edits your actual repository, not a pasted snippet.",
+        "It can run your tests to check the fix before you do.",
+        "You approve each file change, so nothing merges without you seeing it."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "chat",
+        "text": "Paste the diff into Chat for a quick read when you do not need it to run anything."
+      },
+      "capabilities": [
+        "plugins",
+        "connectors"
+      ],
+      "connectors": [
+        "github"
+      ],
+      "extra": "+ github",
+      "followUps": [
+        "Suggest the smallest set of changes that would satisfy the review.",
+        "Write the review comment ready to post."
+      ],
+      "id": "review-pr",
+      "intent": [
+        "pull request",
+        "pr",
+        "review my pull request",
+        "review",
+        "merge",
+        "code review",
+        "diff",
+        "codebase",
+        "github"
+      ],
+      "persona": "engineer",
+      "pitfalls": [
+        "It reviews what the diff shows. Context that lives only in a conversation will be missed.",
+        "It comments on style and risk, not on product judgement calls only a human can make."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "the PR number or link",
+          "key": "pr",
+          "label": "the PR number or link"
+        }
+      ],
+      "planNote": "Code sits on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "Review pull request {{pr}}. Flag anything that looks risky, anything untested, and anything that does not match the rest of the codebase's style.",
+      "routes": [
+        {
+          "surface": "code",
+          "weight": 10
+        },
+        {
+          "surface": "chat",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://docs.claude.com/en/docs/claude-code/overview",
+          "note": "docs.claude.com, Claude Code overview",
+          "text": "Install Code and sign in"
+        },
+        {
+          "href": "https://claude.com/connectors",
+          "note": "Settings, Connectors, GitHub",
+          "text": "Connect GitHub"
+        },
+        {
+          "note": "a link or the branch name both work",
+          "text": "Point it at the pull request"
+        }
+      ],
+      "skills": [
+        "code-review"
+      ],
+      "tags": [
+        "pull request",
+        "review",
+        "merge",
+        "code review"
+      ],
+      "title": "Review a pull request before I merge it",
+      "why": [
+        "Code can check out the branch and run the tests, not just read a diff.",
+        "It knows the rest of the codebase's conventions, not just this one file.",
+        "A second read before merging catches what a tired reviewer misses."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "chat",
+        "text": "Ask Chat for a refactor suggestion on a pasted function when you just want ideas, not an applied change."
+      },
+      "capabilities": [
+        "plugins"
+      ],
+      "connectors": [
+        "github"
+      ],
+      "extra": "+ tests",
+      "followUps": [
+        "Explain what changed and why, for the pull request description.",
+        "Suggest the next module that would benefit from the same treatment."
+      ],
+      "id": "refactor",
+      "intent": [
+        "refactor",
+        "refactor this module without breaking the tests",
+        "module",
+        "tests",
+        "codebase",
+        "clean up code",
+        "tech debt",
+        "rewrite",
+        "legacy code"
+      ],
+      "persona": "engineer",
+      "pitfalls": [
+        "A refactor is only as safe as the test coverage that already exists. Thin tests, thin safety net.",
+        "Large refactors are easier to review in small commits. Ask for the change in steps."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "the module or file",
+          "key": "module",
+          "label": "the module or file"
+        }
+      ],
+      "planNote": "Code sits on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "Refactor {{module}} to be easier to read, without changing its behaviour. Run the test suite after every meaningful change and stop if anything goes red.",
+      "routes": [
+        {
+          "surface": "code",
+          "weight": 10
+        },
+        {
+          "surface": "chat",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://docs.claude.com/en/docs/claude-code/overview",
+          "note": "docs.claude.com, Claude Code overview",
+          "text": "Install Code and sign in"
+        },
+        {
+          "note": "make sure the test command works first",
+          "text": "Run it inside your repository"
+        },
+        {
+          "note": "name the file or folder",
+          "text": "Point it at the module to refactor"
+        }
+      ],
+      "skills": [
+        "code-review"
+      ],
+      "tags": [
+        "refactor",
+        "module",
+        "tests",
+        "codebase"
+      ],
+      "title": "Refactor a module and keep the tests green",
+      "why": [
+        "Code can run the real test suite after each change, not just describe one.",
+        "It edits actual files, so the result is a real diff, not advice to copy out.",
+        "You see each step, so you can stop it if the direction is wrong."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "chat",
+        "text": "Ask Chat to sketch test cases for a pasted function when you only need ideas."
+      },
+      "capabilities": [
+        "plugins"
+      ],
+      "connectors": [
+        "github"
+      ],
+      "extra": "+ tests",
+      "followUps": [
+        "Report the coverage before and after.",
+        "List the riskiest untested code left, in priority order."
+      ],
+      "id": "write-tests",
+      "intent": [
+        "tests",
+        "add tests to my untested codebase",
+        "codebase",
+        "coverage",
+        "unit tests",
+        "test suite",
+        "ci",
+        "quality"
+      ],
+      "persona": "engineer",
+      "pitfalls": [
+        "Tests that only mirror the implementation catch nothing. Ask it to test behaviour, not code shape.",
+        "Start with one area rather than the whole codebase in one pass."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "the module or area",
+          "key": "area",
+          "label": "the module or area"
+        }
+      ],
+      "planNote": "Code sits on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "Add tests for {{area}}, starting with the functions most likely to break silently. Use the project's existing test framework and conventions.",
+      "routes": [
+        {
+          "surface": "code",
+          "weight": 10
+        },
+        {
+          "surface": "chat",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://docs.claude.com/en/docs/claude-code/overview",
+          "note": "docs.claude.com, Claude Code overview",
+          "text": "Install Code and sign in"
+        },
+        {
+          "note": "check the test runner works first",
+          "text": "Run it inside your repository"
+        },
+        {
+          "note": "a coverage report helps, but is not required",
+          "text": "Point it at the least tested area"
+        }
+      ],
+      "skills": [
+        "code-review"
+      ],
+      "tags": [
+        "tests",
+        "codebase",
+        "coverage",
+        "ci"
+      ],
+      "title": "Add tests to an untested codebase",
+      "why": [
+        "Code can run the tests it writes, so you know they pass before review.",
+        "It can see the whole codebase's structure, not just one file at a time.",
+        "Real test files land in your repository, ready for CI."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "chat",
+        "text": "Ask Chat for a starting workflow file to paste in by hand when you do not want it touching the repo directly."
+      },
+      "capabilities": [
+        "plugins",
+        "connectors"
+      ],
+      "connectors": [
+        "github"
+      ],
+      "extra": "+ github",
+      "followUps": [
+        "Add a status badge to the README.",
+        "Cache dependencies so the pipeline runs faster."
+      ],
+      "id": "ci-pipeline",
+      "intent": [
+        "ci",
+        "ci pipeline",
+        "set up github actions for my project",
+        "github actions",
+        "pipeline",
+        "continuous integration",
+        "workflow",
+        "tests",
+        "build",
+        "automation"
+      ],
+      "persona": "engineer",
+      "pitfalls": [
+        "It will read your existing scripts to guess the right commands. Fix any it gets wrong before relying on it.",
+        "Secrets for the pipeline still need to be added by you in the repository settings."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "GitHub Actions",
+          "key": "provider",
+          "label": "GitHub Actions"
+        }
+      ],
+      "planNote": "Code sits on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "Set up a CI pipeline for this project: lint, test, and build on every pull request. Use {{provider}} and match the commands in the project's own scripts.",
+      "routes": [
+        {
+          "surface": "code",
+          "weight": 10
+        },
+        {
+          "surface": "chat",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://docs.claude.com/en/docs/claude-code/overview",
+          "note": "docs.claude.com, Claude Code overview",
+          "text": "Install Code and sign in"
+        },
+        {
+          "href": "https://claude.com/connectors",
+          "note": "Settings, Connectors, GitHub",
+          "text": "Connect GitHub"
+        },
+        {
+          "note": "it will look at package.json or similar first",
+          "text": "Run it inside your repository"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "ci",
+        "pipeline",
+        "github actions",
+        "project"
+      ],
+      "title": "Set up a CI pipeline for my project",
+      "why": [
+        "Code can read your existing build scripts rather than guessing generic commands.",
+        "It writes and commits the workflow file directly into your repository.",
+        "You can ask it to run the pipeline locally first, where that is possible."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "code",
+        "text": "Prototype the same call in Code first if you want to see it work in your repo before wiring it into production."
+      },
+      "capabilities": [],
+      "connectors": [],
+      "extra": "+ sdk",
+      "followUps": [
+        "Add basic retry and timeout handling.",
+        "Show the equivalent example using tool use."
+      ],
+      "id": "api-integration",
+      "intent": [
+        "api",
+        "build claude into my own app",
+        "call the api from my backend",
+        "backend",
+        "integration",
+        "product",
+        "sdk",
+        "developer",
+        "key"
+      ],
+      "persona": "engineer",
+      "pitfalls": [
+        "The API is billed by usage. Estimate token volume before committing to a design.",
+        "Keep the API key server side. Never call it from a browser."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "Python",
+          "key": "language",
+          "label": "Python"
+        }
+      ],
+      "planNote": "The API is billed separately from the personal and team plans as of 7 September 2026",
+      "promptTemplate": "Show me a minimal {{language}} example that calls the API with a system prompt and streams the response, ready to drop into a backend.",
+      "routes": [
+        {
+          "surface": "api",
+          "weight": 10
+        },
+        {
+          "surface": "code",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://docs.claude.com/en/docs/intro",
+          "note": "docs.claude.com, API intro",
+          "text": "Read the API docs"
+        },
+        {
+          "href": "https://console.anthropic.com",
+          "note": "console.anthropic.com",
+          "text": "Create an API key"
+        },
+        {
+          "note": "usage based billing has no ceiling by default",
+          "text": "Set a spend limit before you ship"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "api",
+        "integration",
+        "backend",
+        "product"
+      ],
+      "title": "Build Claude into my own product",
+      "why": [
+        "The API is the right layer when Claude needs to live inside your own product, not a chat window.",
+        "Usage based billing suits an integration better than a seat based plan.",
+        "The docs give a working example in the exact language you need."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "cowork",
+        "text": "Connect Slack to a Cowork scheduled task if you want the digest delivered somewhere other than the channel itself."
+      },
+      "capabilities": [
+        "connectors"
+      ],
+      "connectors": [
+        "slack"
+      ],
+      "extra": "+ slack",
+      "followUps": [
+        "Only summarise threads with more than five replies.",
+        "Do the same for the whole week, every Friday."
+      ],
+      "id": "slack-digest",
+      "intent": [
+        "slack",
+        "summarise my slack channel",
+        "daily digest of our team slack",
+        "digest",
+        "channel",
+        "daily",
+        "friday",
+        "summarise my team's slack threads every friday",
+        "threads",
+        "team"
+      ],
+      "persona": "engineer",
+      "pitfalls": [
+        "It reads what is visible to the app in that channel, so private threads elsewhere are missed.",
+        "Very chatty channels may need a narrower time window to stay useful."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "#engineering",
+          "key": "channel",
+          "label": "#engineering"
+        }
+      ],
+      "planNote": "Claude Tag sits on the team and enterprise plans as of 7 September 2026",
+      "promptTemplate": "At the end of each day, summarise {{channel}}: decisions made, open questions, and anything that needs a reply. Post it as a thread reply.",
+      "routes": [
+        {
+          "surface": "slack",
+          "weight": 10
+        },
+        {
+          "surface": "cowork",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://www.anthropic.com/news/introducing-claude-tag",
+          "note": "anthropic.com, introducing Claude Tag",
+          "text": "Install Claude Tag in your workspace"
+        },
+        {
+          "note": "@ mention it once to add it",
+          "text": "Invite it to the channel"
+        },
+        {
+          "note": "or schedule it from Cowork instead",
+          "text": "Ask for a daily summary in a thread reply"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "slack",
+        "digest",
+        "channel",
+        "daily"
+      ],
+      "title": "Summarise my Slack channel every day",
+      "why": [
+        "Tag reads and posts back into Slack where the conversation already happens.",
+        "A daily summary means nobody has to scroll back through a busy channel.",
+        "Nothing leaves Slack, so there is no extra tool to check."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "chat",
+        "text": "Paste the README and folder structure into Chat for a lighter weight version with no repo access."
+      },
+      "capabilities": [
+        "plugins"
+      ],
+      "connectors": [
+        "github"
+      ],
+      "extra": "+ github",
+      "followUps": [
+        "Draw a simple diagram of how the main modules depend on each other.",
+        "List anything that looks like undocumented tribal knowledge."
+      ],
+      "id": "codebase-tour",
+      "intent": [
+        "codebase",
+        "explain this codebase to me",
+        "onboarding",
+        "explain",
+        "architecture",
+        "unfamiliar",
+        "repo",
+        "walkthrough"
+      ],
+      "persona": "engineer",
+      "pitfalls": [
+        "A large monorepo may need you to point it at one part first.",
+        "It describes what the code does, not always why a decision was made years ago."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "5",
+          "key": "count",
+          "label": "5"
+        }
+      ],
+      "planNote": "Code sits on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "Give me a tour of this codebase: the main folders, how a request flows through it, and the {{count}} files I should read first.",
+      "routes": [
+        {
+          "surface": "code",
+          "weight": 10
+        },
+        {
+          "surface": "chat",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://docs.claude.com/en/docs/claude-code/overview",
+          "note": "docs.claude.com, Claude Code overview",
+          "text": "Install Code and sign in"
+        },
+        {
+          "note": "cd into the project first",
+          "text": "Run it inside the repository"
+        },
+        {
+          "note": "context from the tour makes later answers better",
+          "text": "Ask for the tour before you ask for anything else"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "codebase",
+        "onboarding",
+        "explain",
+        "architecture"
+      ],
+      "title": "Explain an unfamiliar codebase to me",
+      "why": [
+        "Code can read the actual repository structure, not a README that has gone stale.",
+        "A tour saves the usual first week of clicking through files at random.",
+        "You can keep asking follow up questions about any file it mentions."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "code",
+        "text": "Build the same prototype directly in Code with a component library if you want to skip straight to real code."
+      },
+      "capabilities": [
+        "artifacts",
+        "file-creation"
+      ],
+      "connectors": [
+        "figma"
+      ],
+      "extra": "+ frontend skill",
+      "followUps": [
+        "Add a pricing section in the same style.",
+        "Show a mobile layout for the same page."
+      ],
+      "id": "landing-prototype",
+      "intent": [
+        "landing page",
+        "build a landing page prototype",
+        "prototype",
+        "design",
+        "website",
+        "screens",
+        "hero",
+        "figma",
+        "component"
+      ],
+      "persona": "designer",
+      "pitfalls": [
+        "It builds from what you describe. Vague briefs give generic layouts.",
+        "Check real content lengths. Placeholder text always fits better than the real thing."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "your product",
+          "key": "product",
+          "label": "your product"
+        },
+        {
+          "defaultValue": "our existing site",
+          "key": "style",
+          "label": "our existing site"
+        }
+      ],
+      "planNote": "Design sits on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "Build a landing page prototype for {{product}}: a hero, three feature sections, and a footer. Keep it consistent with {{style}}.",
+      "routes": [
+        {
+          "surface": "design",
+          "weight": 10
+        },
+        {
+          "surface": "code",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+          "note": "support.claude.com, get started with Claude Design",
+          "text": "Open Claude Design"
+        },
+        {
+          "note": "hero, features, footer is a good starting brief",
+          "text": "Describe the sections you want"
+        },
+        {
+          "note": "optional, but keeps it consistent",
+          "text": "Point it at your brand colours or an existing page"
+        }
+      ],
+      "skills": [
+        "frontend-design"
+      ],
+      "tags": [
+        "landing page",
+        "prototype",
+        "design",
+        "screens"
+      ],
+      "title": "Build a landing page prototype",
+      "why": [
+        "Design produces a real, inspectable file rather than a flat image.",
+        "A prototype in Design has a straight path to code afterwards.",
+        "You can iterate on layout and copy in the same place."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "code",
+        "text": "Run the comparison from Code alone if your source of truth is already code, not a design file."
+      },
+      "capabilities": [
+        "file-creation",
+        "connectors"
+      ],
+      "connectors": [
+        "figma",
+        "github"
+      ],
+      "extra": "+ figma",
+      "followUps": [
+        "Propose the token changes needed to close the biggest gaps.",
+        "Export the updated components as named files."
+      ],
+      "id": "design-system-sync",
+      "intent": [
+        "design system",
+        "keep our design system in sync with the code",
+        "tokens",
+        "components",
+        "sync",
+        "figma",
+        "design",
+        "css"
+      ],
+      "persona": "designer",
+      "pitfalls": [
+        "It compares what it can see. Components used only in production, not in the design file, get missed.",
+        "Token names differing between design and code will look like mismatches even when the values agree."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "our Figma file",
+          "key": "source",
+          "label": "our Figma file"
+        }
+      ],
+      "planNote": "Design sits on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "Compare our design system in {{source}} against the components in the codebase and list every mismatch in colour, spacing or type.",
+      "routes": [
+        {
+          "surface": "design",
+          "weight": 10
+        },
+        {
+          "surface": "code",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+          "note": "support.claude.com, get started with Claude Design",
+          "text": "Open Claude Design"
+        },
+        {
+          "href": "https://claude.com/connectors",
+          "note": "Settings, Connectors, Figma",
+          "text": "Connect Figma"
+        },
+        {
+          "href": "https://docs.claude.com/en/docs/claude-code/overview",
+          "note": "docs.claude.com, Claude Code overview",
+          "text": "Point it at the code repository too"
+        }
+      ],
+      "skills": [
+        "frontend-design"
+      ],
+      "tags": [
+        "design system",
+        "sync",
+        "tokens",
+        "components"
+      ],
+      "title": "Keep a design system in sync with our code",
+      "why": [
+        "Design and Code can both read the same source of truth, catching drift a human review misses.",
+        "Named, tokenised output means the fix is a diff, not a rewrite.",
+        "Running this regularly keeps the two from drifting apart again."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "chat",
+        "text": "Sketch the flow in words with Chat first if you are still deciding on the steps before building a screen."
+      },
+      "capabilities": [
+        "artifacts"
+      ],
+      "connectors": [],
+      "extra": "+ frontend skill",
+      "followUps": [
+        "Add an error state for a declined card.",
+        "Show the same screen collapsed for mobile."
+      ],
+      "id": "checkout-screen",
+      "intent": [
+        "checkout",
+        "prototype a checkout screen",
+        "screen",
+        "prototype",
+        "ecommerce",
+        "cart",
+        "payment",
+        "payment form"
+      ],
+      "persona": "designer",
+      "pitfalls": [
+        "Never wire a prototype's payment form to a real payment provider without a proper review.",
+        "Edge cases like empty carts or expired sessions are worth asking for explicitly."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "our existing design system",
+          "key": "style",
+          "label": "our existing design system"
+        }
+      ],
+      "planNote": "Design sits on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "Prototype a checkout screen with an order summary, a payment form, and a confirmation state, in {{style}}.",
+      "routes": [
+        {
+          "surface": "design",
+          "weight": 10
+        },
+        {
+          "surface": "chat",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+          "note": "support.claude.com, get started with Claude Design",
+          "text": "Open Claude Design"
+        },
+        {
+          "note": "summary, form, confirmation, and any errors",
+          "text": "Describe the states you need"
+        },
+        {
+          "note": "optional, but checkout is usually mobile heavy",
+          "text": "Ask for a mobile layout too"
+        }
+      ],
+      "skills": [
+        "frontend-design"
+      ],
+      "tags": [
+        "checkout",
+        "prototype",
+        "screen",
+        "ecommerce"
+      ],
+      "title": "Prototype a checkout screen",
+      "why": [
+        "Design produces a real, inspectable screen rather than a static mock up.",
+        "A checkout flow has well known states worth prototyping up front.",
+        "You can hand this straight to an engineer as a working reference."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "powerpoint",
+        "text": "Finish the polish inside PowerPoint once the rough deck has been exported from Design."
+      },
+      "capabilities": [
+        "file-creation"
+      ],
+      "connectors": [
+        "figma"
+      ],
+      "extra": "+ pptx skill",
+      "followUps": [
+        "Export the deck to PowerPoint.",
+        "Add speaker notes summarising each screen's purpose."
+      ],
+      "id": "design-to-deck",
+      "intent": [
+        "design file",
+        "turn my figma file into a deck",
+        "deck",
+        "figma",
+        "slides",
+        "presentation",
+        "export",
+        "handover",
+        "layout"
+      ],
+      "persona": "designer",
+      "pitfalls": [
+        "Custom fonts fall back unless they sit inside the file itself.",
+        "Very dense screens may need splitting across two slides to stay readable."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "ten",
+          "key": "count",
+          "label": "ten"
+        }
+      ],
+      "planNote": "Design sits on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "Turn this design file into a {{count}} slide deck, keeping the type and spacing close to the original.",
+      "routes": [
+        {
+          "surface": "design",
+          "weight": 10
+        },
+        {
+          "surface": "powerpoint",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+          "note": "support.claude.com, get started with Claude Design",
+          "text": "Open Claude Design"
+        },
+        {
+          "href": "https://claude.com/connectors",
+          "note": "Settings, Connectors, Figma",
+          "text": "Connect or import your Figma file"
+        },
+        {
+          "note": "ten slides, exported to PowerPoint, is a common brief",
+          "text": "Ask for a slide count and export target"
+        }
+      ],
+      "skills": [
+        "pptx"
+      ],
+      "tags": [
+        "design file",
+        "deck",
+        "figma",
+        "slides"
+      ],
+      "title": "Turn a design file into a deck",
+      "why": [
+        "Design to slides keeps layouts and spacing intact instead of rebuilding them by hand.",
+        "Every slide stays an editable file, not a flattened image.",
+        "It exports to PowerPoint in one step once the deck looks right."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "design",
+        "text": "Draft it as a proper design system document in Design once the words are agreed."
+      },
+      "capabilities": [
+        "skills"
+      ],
+      "connectors": [],
+      "extra": "+ brand skill",
+      "followUps": [
+        "Write a one page summary version for freelancers.",
+        "List the gaps where our own use of the brand is inconsistent."
+      ],
+      "id": "brand-guidelines",
+      "intent": [
+        "brand guidelines",
+        "write brand guidelines from our logo and colours",
+        "assets",
+        "voice",
+        "colours",
+        "typography",
+        "logo",
+        "style guide",
+        "identity"
+      ],
+      "persona": "designer",
+      "pitfalls": [
+        "It can only work from what you show it. Missing examples of poor use lead to a thinner guide.",
+        "A first draft still needs sign off from whoever owns the brand."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "our logo, colours and recent copy",
+          "key": "assets",
+          "label": "our logo, colours and recent copy"
+        }
+      ],
+      "planNote": "Skills sit on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "Look at {{assets}} and write a first draft of brand guidelines: colours, type, tone of voice, and dos and do nots.",
+      "routes": [
+        {
+          "surface": "chat",
+          "weight": 10
+        },
+        {
+          "surface": "design",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://claude.ai",
+          "note": "claude.ai",
+          "text": "Open a new chat"
+        },
+        {
+          "note": "a handful of real examples beats a long brief",
+          "text": "Share your logo files, colours and some recent copy"
+        },
+        {
+          "href": "https://support.claude.com/en/articles/13119606-managing-skills-as-an-admin",
+          "note": "support.claude.com, managing skills",
+          "text": "Load the brand guidelines skill"
+        }
+      ],
+      "skills": [
+        "brand-guidelines"
+      ],
+      "tags": [
+        "brand guidelines",
+        "assets",
+        "voice",
+        "colours"
+      ],
+      "title": "Write brand guidelines from our existing assets",
+      "why": [
+        "Chat can reason about a handful of assets and existing copy in one conversation.",
+        "A written first draft is faster to react to than a blank page.",
+        "The brand guidelines skill keeps the output in a recognisable structure."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "cowork",
+        "text": "Upload the workbook to Cowork if you would rather run the audit as a background job while you do something else."
+      },
+      "capabilities": [
+        "file-creation",
+        "skills"
+      ],
+      "connectors": [],
+      "extra": "+ skills",
+      "followUps": [
+        "Fix the issues you found, one sheet at a time.",
+        "Add data validation to the cells people type numbers into."
+      ],
+      "id": "spreadsheet-audit",
+      "intent": [
+        "spreadsheet",
+        "check this spreadsheet for broken formulas",
+        "audit",
+        "broken formulas",
+        "formula",
+        "excel",
+        "40mb",
+        "audit a 40mb spreadsheet",
+        "csv",
+        "sheet"
+      ],
+      "persona": "analyst",
+      "pitfalls": [
+        "Very large workbooks may need auditing sheet by sheet rather than all at once.",
+        "It flags what looks wrong. A formula that is unusual but correct still needs a human check."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "this workbook",
+          "key": "file",
+          "label": "this workbook"
+        }
+      ],
+      "planNote": "Claude for Excel sits on the higher personal plans as of 7 September 2026",
+      "promptTemplate": "Audit {{file}} for broken formulas, circular references, and any cell that looks hard coded where a formula should be. List everything before you fix anything.",
+      "routes": [
+        {
+          "surface": "excel",
+          "weight": 10
+        },
+        {
+          "surface": "cowork",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/12650343-using-claude-in-excel",
+          "note": "support.claude.com, using Claude in Excel",
+          "text": "Open the workbook in Excel"
+        },
+        {
+          "note": "Excel, paid plan required",
+          "text": "Open the Claude sidebar"
+        },
+        {
+          "note": "review the list before changing formulas",
+          "text": "Ask for an audit before any fix"
+        }
+      ],
+      "skills": [
+        "xlsx"
+      ],
+      "tags": [
+        "spreadsheet",
+        "audit",
+        "formulas",
+        "excel"
+      ],
+      "title": "Check a spreadsheet for broken formulas before I send it",
+      "why": [
+        "Claude for Excel works inside the real workbook, not a copy pasted table.",
+        "An audit before fixing anything means you see the full list of issues first.",
+        "The xlsx skill keeps any new formulas in the workbook's own style."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "chat",
+        "text": "Sketch the model's structure and assumptions in Chat first if you are not yet ready to build the real sheet."
+      },
+      "capabilities": [
+        "file-creation",
+        "skills"
+      ],
+      "connectors": [],
+      "extra": "+ skills",
+      "followUps": [
+        "Add a sensitivity table for the two most uncertain assumptions.",
+        "Chart monthly cash balance for year one."
+      ],
+      "id": "financial-model",
+      "intent": [
+        "financial model",
+        "build a financial model for my startup",
+        "forecast",
+        "spreadsheet",
+        "revenue",
+        "runway",
+        "startup",
+        "model",
+        "budget"
+      ],
+      "persona": "analyst",
+      "pitfalls": [
+        "A model is only as good as its assumptions. State them clearly on their own sheet.",
+        "Check every formula that references another sheet, since these are the easiest to break by accident."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "your business",
+          "key": "business",
+          "label": "your business"
+        }
+      ],
+      "planNote": "Claude for Excel sits on the higher personal plans as of 7 September 2026",
+      "promptTemplate": "Build a three year financial model for {{business}} with monthly detail in year one: revenue, costs, and a runway calculation.",
+      "routes": [
+        {
+          "surface": "excel",
+          "weight": 10
+        },
+        {
+          "surface": "chat",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/12650343-using-claude-in-excel",
+          "note": "support.claude.com, using Claude in Excel",
+          "text": "Open a new workbook in Excel"
+        },
+        {
+          "note": "Excel, paid plan required",
+          "text": "Open the Claude sidebar"
+        },
+        {
+          "note": "revenue drivers, costs, and headcount plan",
+          "text": "Give it your assumptions"
+        }
+      ],
+      "skills": [
+        "xlsx"
+      ],
+      "tags": [
+        "financial model",
+        "spreadsheet",
+        "forecast",
+        "startup"
+      ],
+      "title": "Build a financial model",
+      "why": [
+        "Claude for Excel builds real formulas in place, not a static table of numbers.",
+        "A working model in a spreadsheet is easier to hand to an investor than a chat transcript.",
+        "You can keep adjusting assumptions and watch the model recalculate."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "excel",
+        "text": "Build the same charts directly in Excel if the result needs to live in a workbook other people will open."
+      },
+      "capabilities": [
+        "custom-visuals",
+        "artifacts"
+      ],
+      "connectors": [],
+      "extra": "+ visuals",
+      "followUps": [
+        "Show the same data broken down by month.",
+        "Export this as a spreadsheet with the charts included."
+      ],
+      "id": "csv-chart",
+      "intent": [
+        "csv",
+        "analyse this csv and chart it",
+        "chart",
+        "analysis",
+        "data",
+        "spreadsheet",
+        "dashboard",
+        "kpi"
+      ],
+      "persona": "analyst",
+      "pitfalls": [
+        "Very large files may need a sample first, then the full analysis once the approach is agreed.",
+        "Correlation shown in a chart is not the same as a cause. Say so if you plan to share it further."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "this csv",
+          "key": "file",
+          "label": "this csv"
+        },
+        {
+          "defaultValue": "three",
+          "key": "count",
+          "label": "three"
+        }
+      ],
+      "planNote": "Chat works on the free plan, with higher limits on paid plans as of 7 September 2026",
+      "promptTemplate": "Analyse {{file}} and chart the {{count}} things most worth knowing about it, with a one line takeaway under each chart.",
+      "routes": [
+        {
+          "surface": "chat",
+          "weight": 10
+        },
+        {
+          "surface": "excel",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://claude.ai",
+          "note": "claude.ai",
+          "text": "Open a new chat"
+        },
+        {
+          "note": "a clean header row helps",
+          "text": "Upload the csv file"
+        },
+        {
+          "note": "three focused charts beat ten scattered ones",
+          "text": "Ask for the number of charts you want"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "csv",
+        "chart",
+        "analysis",
+        "data"
+      ],
+      "title": "Analyse a CSV and chart what matters",
+      "why": [
+        "Custom visuals build a chart made for your data, not a generic template.",
+        "Chat can go straight from a raw file to a chart with a takeaway in one step.",
+        "You can ask follow up questions about the same data without starting again."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "cowork",
+        "text": "Upload the file to Cowork if the cleanup is large enough to run as a background job."
+      },
+      "capabilities": [
+        "file-creation",
+        "skills"
+      ],
+      "connectors": [],
+      "extra": "+ skills",
+      "followUps": [
+        "Standardise every date column to one format.",
+        "Split one column of full names into first and last name columns."
+      ],
+      "id": "data-cleanup",
+      "intent": [
+        "data",
+        "clean up this messy data",
+        "messy data",
+        "data cleanup",
+        "spreadsheet",
+        "duplicates",
+        "formatting",
+        "clean",
+        "excel"
+      ],
+      "persona": "analyst",
+      "pitfalls": [
+        "Ask it to flag suspicious rows rather than delete them, so nothing real gets lost.",
+        "Formatting that looks messy sometimes encodes real meaning. Ask before you assume it is a mistake."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "this sheet",
+          "key": "file",
+          "label": "this sheet"
+        }
+      ],
+      "planNote": "Claude for Excel sits on the higher personal plans as of 7 September 2026",
+      "promptTemplate": "Clean up {{file}}: fix inconsistent formatting, remove exact duplicates, and flag any row that looks like an error rather than deleting it.",
+      "routes": [
+        {
+          "surface": "excel",
+          "weight": 10
+        },
+        {
+          "surface": "cowork",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/12650343-using-claude-in-excel",
+          "note": "support.claude.com, using Claude in Excel",
+          "text": "Open the sheet in Excel"
+        },
+        {
+          "note": "Excel, paid plan required",
+          "text": "Open the Claude sidebar"
+        },
+        {
+          "note": "review the flagged rows yourself",
+          "text": "Ask it to flag before it deletes anything"
+        }
+      ],
+      "skills": [
+        "xlsx"
+      ],
+      "tags": [
+        "data cleanup",
+        "spreadsheet",
+        "messy data",
+        "excel"
+      ],
+      "title": "Clean messy data in a sheet",
+      "why": [
+        "Claude for Excel edits the real sheet in place, so the result opens exactly as expected.",
+        "Flagging rather than deleting keeps the cleanup reversible.",
+        "The xlsx skill keeps formulas and formatting consistent with the rest of the sheet."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "chat",
+        "text": "Sketch the metrics and layout in Chat first if you are still deciding what the dashboard should show."
+      },
+      "capabilities": [
+        "file-creation",
+        "skills"
+      ],
+      "connectors": [],
+      "extra": "+ skills",
+      "followUps": [
+        "Add a trend arrow comparing each metric to last month.",
+        "Highlight any metric that missed its target in red."
+      ],
+      "id": "kpi-dashboard",
+      "intent": [
+        "kpi",
+        "build a monthly kpi dashboard",
+        "dashboard",
+        "monthly",
+        "spreadsheet",
+        "metrics",
+        "chart",
+        "report"
+      ],
+      "persona": "analyst",
+      "pitfalls": [
+        "Agree the metric definitions first. The same word can mean different things across teams.",
+        "A dashboard that updates automatically still needs someone to check the source data lands correctly each month."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "our raw monthly data",
+          "key": "data",
+          "label": "our raw monthly data"
+        },
+        {
+          "defaultValue": "revenue, churn and new customers",
+          "key": "metrics",
+          "label": "revenue, churn and new customers"
+        }
+      ],
+      "planNote": "Claude for Excel sits on the higher personal plans as of 7 September 2026",
+      "promptTemplate": "Build a KPI dashboard sheet from {{data}} showing {{metrics}}, updating from the raw data tab automatically each month.",
+      "routes": [
+        {
+          "surface": "excel",
+          "weight": 10
+        },
+        {
+          "surface": "chat",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/12650343-using-claude-in-excel",
+          "note": "support.claude.com, using Claude in Excel",
+          "text": "Open the workbook in Excel"
+        },
+        {
+          "note": "Excel, paid plan required",
+          "text": "Open the Claude sidebar"
+        },
+        {
+          "note": "agree the definitions before you build",
+          "text": "Name the metrics you want tracked"
+        }
+      ],
+      "skills": [
+        "xlsx"
+      ],
+      "tags": [
+        "kpi",
+        "dashboard",
+        "monthly",
+        "spreadsheet"
+      ],
+      "title": "Build a monthly KPI dashboard",
+      "why": [
+        "Claude for Excel can wire the dashboard to formulas that pull from a raw data tab.",
+        "A working sheet beats a one off chart you have to rebuild every month.",
+        "You keep full control of the layout and can adjust it as metrics change."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "cowork",
+        "text": "Set this up as a repeating Cowork task if you need the same kind of report on a schedule."
+      },
+      "capabilities": [
+        "web-search",
+        "artifacts"
+      ],
+      "connectors": [],
+      "extra": "+ web search",
+      "followUps": [
+        "Turn the summary into a one paragraph version for an email.",
+        "List the questions the report raises but does not answer."
+      ],
+      "id": "research-report",
+      "intent": [
+        "research",
+        "research the market and write me a report",
+        "report",
+        "topic",
+        "study",
+        "investor update",
+        "market",
+        "sources"
+      ],
+      "persona": "writer",
+      "pitfalls": [
+        "Check the cited sources yourself before relying on a claim in a report you will share.",
+        "A broad topic produces a shallow report. Narrow it before you start."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "your topic",
+          "key": "topic",
+          "label": "your topic"
+        }
+      ],
+      "planNote": "Chat works on the free plan, with higher limits on paid plans as of 7 September 2026",
+      "promptTemplate": "Research {{topic}} and write a report with a summary, three main findings, and sources for each claim.",
+      "routes": [
+        {
+          "surface": "chat",
+          "weight": 10
+        },
+        {
+          "surface": "cowork",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://claude.ai",
+          "note": "claude.ai",
+          "text": "Open a new chat"
+        },
+        {
+          "note": "narrower is better",
+          "text": "State the topic and the question you actually want answered"
+        },
+        {
+          "note": "review them before you share the report",
+          "text": "Ask for sources with each finding"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "research",
+        "report",
+        "topic",
+        "writing"
+      ],
+      "title": "Research a topic and write a report",
+      "why": [
+        "Web search grounds the report in current pages rather than only training data.",
+        "Chat can go from a rough topic to a structured report in one conversation.",
+        "Sources attached to each claim make it easy to check the work."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "chat",
+        "text": "Paste a chapter or section into Chat for a quicker, untracked pass when you just want a read."
+      },
+      "capabilities": [
+        "file-creation"
+      ],
+      "connectors": [
+        "microsoft-365"
+      ],
+      "extra": "+ docx skill",
+      "followUps": [
+        "Give me a short note on the three biggest recurring issues.",
+        "Do a second, lighter pass focused only on sentence length."
+      ],
+      "id": "edit-manuscript",
+      "intent": [
+        "manuscript",
+        "edit my manuscript for tone",
+        "editing",
+        "tone",
+        "flow",
+        "document",
+        "tidy up this long word document",
+        "tidy",
+        "long"
+      ],
+      "persona": "writer",
+      "pitfalls": [
+        "It edits for tone and flow, not for facts. A separate fact check pass is still worth doing.",
+        "Very long documents may need editing in sections to keep the tone consistent throughout."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "this document",
+          "key": "document",
+          "label": "this document"
+        }
+      ],
+      "planNote": "Claude for Word sits on the higher personal plans as of 7 September 2026",
+      "promptTemplate": "Edit {{document}} for tone and flow, keeping the meaning and structure the same. Track the changes so I can review each one.",
+      "routes": [
+        {
+          "surface": "word",
+          "weight": 10
+        },
+        {
+          "surface": "chat",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/15183774",
+          "note": "support.claude.com, Microsoft 365 connector",
+          "text": "Open the document in Word"
+        },
+        {
+          "note": "Word, connected via Microsoft 365",
+          "text": "Open the Claude sidebar"
+        },
+        {
+          "note": "review each one before accepting",
+          "text": "Ask for tracked changes"
+        }
+      ],
+      "skills": [
+        "docx"
+      ],
+      "tags": [
+        "manuscript",
+        "editing",
+        "tone",
+        "document"
+      ],
+      "title": "Edit a long document for tone and flow",
+      "why": [
+        "Claude for Word edits the real document in place, with changes you can track and accept.",
+        "A tone and flow pass is exactly the kind of editing that benefits from a second pair of eyes.",
+        "You keep the original structure, so nothing gets reorganised without your say so."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "chat",
+        "text": "Upload one or two PDFs directly into Chat when you only need a quick read, not a whole folder."
+      },
+      "capabilities": [
+        "file-creation"
+      ],
+      "connectors": [
+        "google-drive"
+      ],
+      "extra": "+ pdf skill",
+      "followUps": [
+        "Sort the summaries by date instead of file name.",
+        "Pull out every number that looks like a deadline or a budget."
+      ],
+      "id": "summarise-pdfs",
+      "intent": [
+        "pdfs",
+        "summarise a folder of pdfs",
+        "pdf",
+        "summarise",
+        "summary",
+        "folder",
+        "files",
+        "reports"
+      ],
+      "persona": "writer",
+      "pitfalls": [
+        "Scanned PDFs without real text underneath are read less reliably than exported ones.",
+        "A very large folder may take a while. Run it as a background job rather than waiting on it."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "this folder",
+          "key": "folder",
+          "label": "this folder"
+        }
+      ],
+      "planNote": "File creation in Cowork sits on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "Read every PDF in {{folder}} and write a one paragraph summary of each, plus a combined list of anything that appears in more than one document.",
+      "routes": [
+        {
+          "surface": "cowork",
+          "weight": 10
+        },
+        {
+          "surface": "chat",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
+          "note": "support.claude.com, getting started with Cowork",
+          "text": "Open Cowork in the sidebar"
+        },
+        {
+          "note": "a local folder or a connected drive both work",
+          "text": "Point it at the folder of PDFs"
+        },
+        {
+          "note": "both together save a second pass",
+          "text": "Ask for individual and combined summaries"
+        }
+      ],
+      "skills": [
+        "pdf"
+      ],
+      "tags": [
+        "pdfs",
+        "summarise",
+        "folder",
+        "files"
+      ],
+      "title": "Summarise a folder of PDFs",
+      "why": [
+        "Cowork can read a whole folder in one job instead of one file at a time.",
+        "The pdf skill handles mixed text and scanned pages more reliably than a plain read.",
+        "You get a combined view across documents, not just separate summaries."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "cowork",
+        "text": "Upload the transcript files to a Cowork job if you have a larger batch than fits comfortably in one chat."
+      },
+      "capabilities": [
+        "artifacts"
+      ],
+      "connectors": [],
+      "extra": "+ research",
+      "followUps": [
+        "Count how many participants mentioned each theme.",
+        "Write a one page summary for someone who has not read the transcripts."
+      ],
+      "id": "interview-themes",
+      "intent": [
+        "interview",
+        "turn these interview transcripts into themes",
+        "transcripts",
+        "themes",
+        "research",
+        "interview themes",
+        "qualitative",
+        "coding"
+      ],
+      "persona": "writer",
+      "pitfalls": [
+        "Check quotes against the original transcript before publishing anything attributed to a person.",
+        "A handful of transcripts can surface a theme that is really just one loud participant."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "the interview transcripts",
+          "key": "transcripts",
+          "label": "the interview transcripts"
+        }
+      ],
+      "planNote": "Chat works on the free plan, with higher limits on paid plans as of 7 September 2026",
+      "promptTemplate": "Read these transcripts: {{transcripts}}. Group what people said into themes, with a representative quote for each theme.",
+      "routes": [
+        {
+          "surface": "chat",
+          "weight": 10
+        },
+        {
+          "surface": "cowork",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://claude.ai",
+          "note": "claude.ai",
+          "text": "Open a new chat"
+        },
+        {
+          "note": "anonymise names first if that matters to you",
+          "text": "Paste in the transcripts"
+        },
+        {
+          "note": "quotes keep the summary grounded",
+          "text": "Ask for themes with quotes, not just a list"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "interviews",
+        "transcripts",
+        "themes",
+        "research"
+      ],
+      "title": "Turn interview transcripts into themes",
+      "why": [
+        "Chat can hold several transcripts in context and find patterns across all of them.",
+        "Grouping into themes with quotes is more useful than a transcript by transcript summary.",
+        "You can keep asking about a specific theme in the same conversation."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "cowork",
+        "text": "Set up a repeating Cowork task if you want a fresh quiz delivered every morning during revision."
+      },
+      "capabilities": [
+        "memory"
+      ],
+      "connectors": [],
+      "extra": "+ memory",
+      "followUps": [
+        "Turn my weak topics into a shorter revision plan for the last two days.",
+        "Give me five practice questions on the topic I just got wrong."
+      ],
+      "id": "study-plan",
+      "intent": [
+        "study plan",
+        "quiz me on it",
+        "quiz",
+        "revision",
+        "learning",
+        "exam",
+        "notes",
+        "exam prep",
+        "flashcards"
+      ],
+      "persona": "student",
+      "pitfalls": [
+        "It quizzes on what you tell it to cover. Be honest about the topics you are avoiding.",
+        "A study plan is a starting point. Adjust it once you see how fast you are actually moving."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "two weeks",
+          "key": "time",
+          "label": "two weeks"
+        },
+        {
+          "defaultValue": "this subject",
+          "key": "subject",
+          "label": "this subject"
+        }
+      ],
+      "planNote": "Chat works on the free plan, with higher limits on paid plans as of 7 September 2026",
+      "promptTemplate": "I have {{time}} to prepare for {{subject}}. Build me a study plan and quiz me on one topic at a time as I go.",
+      "routes": [
+        {
+          "surface": "chat",
+          "weight": 10
+        },
+        {
+          "surface": "cowork",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://claude.ai",
+          "note": "claude.ai",
+          "text": "Open a new chat"
+        },
+        {
+          "note": "a syllabus or topic list helps",
+          "text": "Say how much time you have and what is being tested"
+        },
+        {
+          "note": "active recall works better than reading",
+          "text": "Ask to be quizzed as you go, not just handed the plan"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "study plan",
+        "quiz",
+        "revision",
+        "learning"
+      ],
+      "title": "Make a study plan and quiz me on it",
+      "why": [
+        "Chat can build a plan and then quiz you in the same ongoing conversation.",
+        "Memory means it can remember which topics you found hard last time.",
+        "No files or setup are needed, just a subject and a deadline."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "word",
+        "text": "Get tracked, in place suggestions inside Word if the essay is already a Word document."
+      },
+      "capabilities": [
+        "artifacts"
+      ],
+      "connectors": [],
+      "extra": "+ honest pass",
+      "followUps": [
+        "Point out the single weakest paragraph and why.",
+        "Suggest a stronger opening line."
+      ],
+      "id": "essay-feedback",
+      "intent": [
+        "essay",
+        "give me feedback on my essay",
+        "feedback",
+        "writing",
+        "argument",
+        "structure",
+        "essay feedback",
+        "review"
+      ],
+      "persona": "student",
+      "pitfalls": [
+        "Ask explicitly for honest feedback. Left unprompted, it can default to being too gentle.",
+        "Feedback on argument and structure is not a substitute for checking your own sources."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "your essay",
+          "key": "essay",
+          "label": "your essay"
+        }
+      ],
+      "planNote": "Chat works on the free plan, with higher limits on paid plans as of 7 September 2026",
+      "promptTemplate": "Read this essay: {{essay}}. Give me honest feedback on the argument, structure and clarity, not just the grammar.",
+      "routes": [
+        {
+          "surface": "chat",
+          "weight": 10
+        },
+        {
+          "surface": "word",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://claude.ai",
+          "note": "claude.ai",
+          "text": "Open a new chat"
+        },
+        {
+          "note": "the full thing reads better than an excerpt",
+          "text": "Paste in the essay"
+        },
+        {
+          "note": "say you want the structure challenged, not just polished",
+          "text": "Ask for honest feedback, specifically"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "essay",
+        "feedback",
+        "writing",
+        "student"
+      ],
+      "title": "Get honest feedback on my essay",
+      "why": [
+        "Chat can read a full essay and comment on argument, not just line by line grammar.",
+        "A second pair of eyes catches structural issues you cannot see in your own writing.",
+        "You keep full control over which suggestions you actually take."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "powerpoint",
+        "text": "Edit the notes straight inside PowerPoint if you want them to stay in slide form for revision."
+      },
+      "capabilities": [
+        "artifacts"
+      ],
+      "connectors": [],
+      "extra": "+ pdf skill",
+      "followUps": [
+        "Turn the notes into flashcards, one fact per card.",
+        "Highlight anything that looks like it will be an exam question."
+      ],
+      "id": "lecture-notes",
+      "intent": [
+        "lecture",
+        "turn my lecture slides into notes",
+        "revision notes",
+        "slides",
+        "notes",
+        "study",
+        "powerpoint",
+        "revision"
+      ],
+      "persona": "student",
+      "pitfalls": [
+        "Slides with mostly images and little text produce thinner notes. Add your own annotations first if you have them.",
+        "Notes are a study aid, not a replacement for attending the lecture."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "the lecture slides",
+          "key": "slides",
+          "label": "the lecture slides"
+        }
+      ],
+      "planNote": "Chat works on the free plan, with higher limits on paid plans as of 7 September 2026",
+      "promptTemplate": "Turn these lecture slides into revision notes: {{slides}}. Group them by topic and add a short summary at the top of each.",
+      "routes": [
+        {
+          "surface": "chat",
+          "weight": 10
+        },
+        {
+          "surface": "powerpoint",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://claude.ai",
+          "note": "claude.ai",
+          "text": "Open a new chat"
+        },
+        {
+          "note": "a PDF or PowerPoint export both work",
+          "text": "Upload the lecture slides"
+        },
+        {
+          "note": "not just a slide by slide rewrite",
+          "text": "Ask for notes grouped by topic"
+        }
+      ],
+      "skills": [
+        "pdf"
+      ],
+      "tags": [
+        "lecture",
+        "revision notes",
+        "slides",
+        "student"
+      ],
+      "title": "Turn lecture slides into revision notes",
+      "why": [
+        "Chat can read a whole slide deck and reorganise it by topic rather than slide order.",
+        "A summary at the top of each topic makes the notes skimmable before an exam.",
+        "You can keep asking for more detail on any one topic afterwards."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "chat",
+        "text": "Paste the article text into Chat if the page will not load in the extension."
+      },
+      "capabilities": [],
+      "connectors": [],
+      "extra": "+ page context",
+      "followUps": [
+        "List the sources the article itself cites.",
+        "Explain the one term in the article I am least likely to know."
+      ],
+      "id": "article-summary",
+      "intent": [
+        "article",
+        "summarise the article i am reading",
+        "summary",
+        "reading",
+        "page",
+        "read the page i have open and answer questions",
+        "open",
+        "questions"
+      ],
+      "persona": "student",
+      "pitfalls": [
+        "Paywalled or login only pages may not be fully readable.",
+        "A summary is a starting point. Read the original before you quote it elsewhere."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "five bullet points",
+          "key": "length",
+          "label": "five bullet points"
+        }
+      ],
+      "planNote": "Claude in Chrome works on the free plan as of 7 September 2026",
+      "promptTemplate": "Summarise the article on this page in {{length}}, then let me ask follow up questions about it.",
+      "routes": [
+        {
+          "surface": "chrome",
+          "weight": 10
+        },
+        {
+          "surface": "chat",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome",
+          "note": "support.claude.com, getting started with Claude in Chrome",
+          "text": "Install Claude in Chrome"
+        },
+        {
+          "note": "the icon appears in the toolbar",
+          "text": "Open the sidebar on the article"
+        },
+        {
+          "note": "it keeps the page in context",
+          "text": "Ask for a summary, then ask your questions"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "article",
+        "summary",
+        "reading",
+        "browser"
+      ],
+      "title": "Summarise the article I am reading",
+      "why": [
+        "Chrome reads the page you already have open, no copy and paste needed.",
+        "Follow up questions stay grounded in the actual article, not a general answer.",
+        "It works on pages behind a login that a plain web search would never reach."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "design",
+        "text": "Build the deck as a Design file first if you want more control over layout before exporting to slides."
+      },
+      "capabilities": [
+        "file-creation",
+        "skills"
+      ],
+      "connectors": [],
+      "extra": "+ pptx skill",
+      "followUps": [
+        "Tighten the deck to ten slides for a short pitch.",
+        "Write the speaker notes for each slide."
+      ],
+      "id": "pitch-deck",
+      "intent": [
+        "pitch deck",
+        "turn my notes into a pitch deck",
+        "slides",
+        "deck",
+        "presentation",
+        "make slides from this spreadsheet",
+        "spreadsheet",
+        "founder"
+      ],
+      "persona": "solo founder",
+      "pitfalls": [
+        "Keep numbers honest. A polished deck with an inflated market size is worse than a plain one.",
+        "It builds from the notes you give it, so thin traction notes give a thin traction slide."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "your notes",
+          "key": "notes",
+          "label": "your notes"
+        }
+      ],
+      "planNote": "Claude for PowerPoint sits on the higher personal plans as of 7 September 2026",
+      "promptTemplate": "Turn these notes into a pitch deck: {{notes}}. Use the standard sections: problem, solution, market, traction, and ask.",
+      "routes": [
+        {
+          "surface": "powerpoint",
+          "weight": 10
+        },
+        {
+          "surface": "design",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/13521390-using-claude-in-powerpoint",
+          "note": "support.claude.com, using Claude in PowerPoint",
+          "text": "Open PowerPoint"
+        },
+        {
+          "note": "PowerPoint, paid plan required",
+          "text": "Open the Claude sidebar"
+        },
+        {
+          "note": "problem, solution, market, traction, ask",
+          "text": "Give it your notes, section by section"
+        }
+      ],
+      "skills": [
+        "pptx"
+      ],
+      "tags": [
+        "pitch deck",
+        "notes",
+        "slides",
+        "spreadsheet",
+        "founder"
+      ],
+      "title": "Turn my notes into a pitch deck",
+      "why": [
+        "PowerPoint builds a real, editable deck rather than a written outline.",
+        "The standard section order is a well tested structure for investors.",
+        "You can keep refining slides directly where the deck lives."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "cowork",
+        "text": "Set this up as a repeating Cowork task if your metrics already live in a connected spreadsheet or tool."
+      },
+      "capabilities": [
+        "artifacts"
+      ],
+      "connectors": [],
+      "extra": "+ metrics",
+      "followUps": [
+        "Shorten it to five lines for the ones who only skim.",
+        "Draft the subject line."
+      ],
+      "id": "investor-update",
+      "intent": [
+        "investor update",
+        "write a monthly investor update",
+        "monthly",
+        "founder",
+        "metrics",
+        "report",
+        "update",
+        "founder update"
+      ],
+      "persona": "solo founder",
+      "pitfalls": [
+        "Be specific about the ask. A vague update with no ask gets a vague reply.",
+        "Check every number before sending. An investor update is a poor place for a typo in the metrics."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "your metrics",
+          "key": "metrics",
+          "label": "your metrics"
+        },
+        {
+          "defaultValue": "your notes",
+          "key": "notes",
+          "label": "your notes"
+        }
+      ],
+      "planNote": "Chat works on the free plan, with higher limits on paid plans as of 7 September 2026",
+      "promptTemplate": "Write this month's investor update from {{metrics}} and {{notes}}: headline metric, wins, challenges, and one clear ask.",
+      "routes": [
+        {
+          "surface": "chat",
+          "weight": 10
+        },
+        {
+          "surface": "cowork",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://claude.ai",
+          "note": "claude.ai",
+          "text": "Open a new chat"
+        },
+        {
+          "note": "rough numbers are fine to start",
+          "text": "Paste in this month's metrics and notes"
+        },
+        {
+          "note": "one ask lands better than three",
+          "text": "Ask for the standard sections, ending with one ask"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "investor update",
+        "monthly",
+        "founder",
+        "metrics"
+      ],
+      "title": "Write a monthly investor update",
+      "why": [
+        "Chat turns loose metrics and notes into the familiar update format in one pass.",
+        "A monthly cadence does not need a scheduled task, just a habit of pasting numbers in.",
+        "You keep control over tone and the final ask."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "outlook",
+        "text": "Triage by hand inside Outlook and ask Claude for a suggested reply on the ones you are unsure about."
+      },
+      "capabilities": [
+        "scheduled-tasks",
+        "connectors"
+      ],
+      "connectors": [
+        "gmail",
+        "microsoft-365"
+      ],
+      "extra": "+ task",
+      "followUps": [
+        "Draft replies to supplier emails in the same tone.",
+        "Flag any message that mentions a refund by name."
+      ],
+      "id": "support-triage",
+      "intent": [
+        "support",
+        "triage customer support emails",
+        "triage",
+        "customer",
+        "email",
+        "supplier",
+        "draft replies to supplier emails in my tone",
+        "replies",
+        "tone",
+        "draft"
+      ],
+      "persona": "solo founder",
+      "pitfalls": [
+        "Keep it draft only until you trust the triage. Nothing should send itself at the start.",
+        "Angry messages are not always urgent, and urgent messages are not always angry. Check the sort now and then."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "our support inbox",
+          "key": "inbox",
+          "label": "our support inbox"
+        },
+        {
+          "defaultValue": "friendly and direct",
+          "key": "tone",
+          "label": "friendly and direct"
+        }
+      ],
+      "planNote": "Scheduled tasks sit on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "Every morning, read new support mail from {{inbox}} and sort it into urgent, normal and spam. Draft a reply for the urgent ones in {{tone}} tone, but do not send.",
+      "routes": [
+        {
+          "surface": "cowork",
+          "weight": 10
+        },
+        {
+          "surface": "outlook",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
+          "note": "support.claude.com, getting started with Cowork",
+          "text": "Open Cowork in the sidebar"
+        },
+        {
+          "href": "https://claude.com/connectors",
+          "note": "Settings, Connectors",
+          "text": "Connect your support inbox"
+        },
+        {
+          "note": "drafts only until you trust it",
+          "text": "Save the prompt as a task each morning"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "support",
+        "triage",
+        "customer",
+        "email"
+      ],
+      "title": "Triage customer support emails",
+      "why": [
+        "A repeating task means the inbox is already sorted before you open it.",
+        "Drafting replies in your own tone saves the slowest part of support, the blank reply box.",
+        "Cowork holds the connector, so nothing needs re-connecting each day."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "design",
+        "text": "Build the page itself in Design once the copy is settled, so layout and words move together."
+      },
+      "capabilities": [
+        "artifacts"
+      ],
+      "connectors": [],
+      "extra": "+ copy",
+      "followUps": [
+        "Write three alternative headlines.",
+        "Shorten the whole page to fit above the fold."
+      ],
+      "id": "landing-copy",
+      "intent": [
+        "landing page",
+        "write copy for my landing page",
+        "copy",
+        "website",
+        "headline",
+        "founder",
+        "marketing copy",
+        "conversion"
+      ],
+      "persona": "solo founder",
+      "pitfalls": [
+        "It writes to the brief you give it. A one line brief gives generic copy.",
+        "Check every claim it writes is actually true of your product before you publish."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "your product",
+          "key": "product",
+          "label": "your product"
+        },
+        {
+          "defaultValue": "plain and confident",
+          "key": "tone",
+          "label": "plain and confident"
+        }
+      ],
+      "planNote": "Chat works on the free plan, with higher limits on paid plans as of 7 September 2026",
+      "promptTemplate": "Write landing page copy for {{product}}: a headline, subheadline, three feature lines, and a call to action, in {{tone}} tone.",
+      "routes": [
+        {
+          "surface": "chat",
+          "weight": 10
+        },
+        {
+          "surface": "design",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://claude.ai",
+          "note": "claude.ai",
+          "text": "Open a new chat"
+        },
+        {
+          "note": "a specific audience beats a general one",
+          "text": "Describe the product and who it is for"
+        },
+        {
+          "note": "headline, subheadline, features, call to action",
+          "text": "Ask for the sections you need, named"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "landing page",
+        "copy",
+        "founder",
+        "website"
+      ],
+      "title": "Write landing page copy",
+      "why": [
+        "Chat is enough for a single copy drafting session with no files to manage.",
+        "The standard sections, headline, subheadline, features, call to action, are a proven shape.",
+        "You can iterate on tone directly in the same thread."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "chat",
+        "text": "Paste the contract text into Chat if the page will not open in the extension."
+      },
+      "capabilities": [],
+      "connectors": [],
+      "extra": "+ legal skill",
+      "followUps": [
+        "List every date and deadline mentioned in the contract.",
+        "Compare this clause against the standard version we usually sign."
+      ],
+      "id": "contract-check",
+      "intent": [
+        "contract",
+        "summarise this contract before i sign",
+        "legal",
+        "summary",
+        "sign",
+        "terms",
+        "pdf",
+        "review"
+      ],
+      "persona": "solo founder",
+      "pitfalls": [
+        "This is a first read, not legal advice. Anything flagged still needs a real lawyer.",
+        "Scanned contracts without real text underneath are read less reliably."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "one page",
+          "key": "length",
+          "label": "one page"
+        }
+      ],
+      "planNote": "Claude in Chrome works on the free plan as of 7 September 2026",
+      "promptTemplate": "Summarise this contract in plain language and list anything that needs a lawyer's eyes, in under {{length}}.",
+      "routes": [
+        {
+          "surface": "chrome",
+          "weight": 10
+        },
+        {
+          "surface": "chat",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome",
+          "note": "support.claude.com, getting started with Claude in Chrome",
+          "text": "Install Claude in Chrome"
+        },
+        {
+          "note": "a PDF tab or a web page both work",
+          "text": "Open the contract in the browser"
+        },
+        {
+          "note": "review flagged clauses with a lawyer",
+          "text": "Ask for a plain language summary with anything risky flagged"
+        }
+      ],
+      "skills": [
+        "legal-review"
+      ],
+      "tags": [
+        "contract",
+        "legal",
+        "summary",
+        "sign"
+      ],
+      "title": "Summarise a contract before I sign it",
+      "why": [
+        "Chrome reads the page or PDF you already have open, without an upload step.",
+        "A plain language summary makes it obvious what actually needs a lawyer.",
+        "It cites the part of the document each point came from."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "cowork",
+        "text": "Set this up as a repeating Cowork task if you want reminders drafted automatically each week."
+      },
+      "capabilities": [
+        "file-creation",
+        "connectors"
+      ],
+      "connectors": [
+        "stripe",
+        "microsoft-365"
+      ],
+      "extra": "+ connector",
+      "followUps": [
+        "Write a firmer version for anything over 30 days.",
+        "Draft a short thank you note for anyone who pays within a day of the reminder."
+      ],
+      "id": "invoice-chase",
+      "intent": [
+        "invoices",
+        "chase unpaid invoices",
+        "invoice",
+        "chase",
+        "reminders",
+        "send polite reminders about late payments",
+        "late payments",
+        "polite"
+      ],
+      "persona": "small business owner",
+      "pitfalls": [
+        "Keep the tone polite on the first reminder. A harsh first message can cost a relationship for a small delay.",
+        "Double check amounts and invoice numbers before sending anything."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "14",
+          "key": "days",
+          "label": "14"
+        },
+        {
+          "defaultValue": "this list",
+          "key": "list",
+          "label": "this list"
+        }
+      ],
+      "planNote": "Claude for Outlook sits on the higher personal plans as of 7 September 2026",
+      "promptTemplate": "Draft a polite reminder for every invoice over {{days}} days overdue in {{list}}, each one referencing the invoice number and amount.",
+      "routes": [
+        {
+          "surface": "outlook",
+          "weight": 10
+        },
+        {
+          "surface": "cowork",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/15183774",
+          "note": "support.claude.com, Microsoft 365 connector",
+          "text": "Open Outlook"
+        },
+        {
+          "note": "Outlook, connected via Microsoft 365",
+          "text": "Open the Claude sidebar"
+        },
+        {
+          "href": "https://claude.com/connectors",
+          "note": "Settings, Connectors, Stripe",
+          "text": "Give it the overdue list"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "invoices",
+        "unpaid",
+        "chase",
+        "reminders"
+      ],
+      "title": "Chase unpaid invoices politely",
+      "why": [
+        "Claude in Outlook drafts the reminder right where you will send it from.",
+        "Politeness scales better than memory when you are chasing more than a couple of invoices.",
+        "Stripe or your invoicing tool already has the overdue list, so nothing needs re-typing."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "cowork",
+        "text": "Set this up as a repeating Cowork task if you want a fresh batch generated on the same day each month."
+      },
+      "capabilities": [
+        "artifacts"
+      ],
+      "connectors": [],
+      "extra": "+ marketing skill",
+      "followUps": [
+        "Suggest an image idea for each post.",
+        "Flag any post that clashes with a public holiday."
+      ],
+      "id": "social-calendar",
+      "intent": [
+        "social calendar",
+        "plan a month of instagram posts",
+        "instagram",
+        "social",
+        "posts",
+        "monthly",
+        "planning",
+        "content calendar",
+        "brand"
+      ],
+      "persona": "small business owner",
+      "pitfalls": [
+        "A calendar is a plan, not a guarantee. Leave room to react to what is actually happening that month.",
+        "Check platform character limits before copying captions across."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "your business",
+          "key": "business",
+          "label": "your business"
+        },
+        {
+          "defaultValue": "this month's theme",
+          "key": "theme",
+          "label": "this month's theme"
+        }
+      ],
+      "planNote": "Chat works on the free plan, with higher limits on paid plans as of 7 September 2026",
+      "promptTemplate": "Plan a month of social posts for {{business}} around {{theme}}, one post per posting day, with a short caption for each.",
+      "routes": [
+        {
+          "surface": "chat",
+          "weight": 10
+        },
+        {
+          "surface": "cowork",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://claude.ai",
+          "note": "claude.ai",
+          "text": "Open a new chat"
+        },
+        {
+          "note": "a seasonal hook or launch works well",
+          "text": "Describe the business and this month's theme"
+        },
+        {
+          "note": "name your usual posting days",
+          "text": "Ask for one post per posting day, with captions"
+        }
+      ],
+      "skills": [
+        "marketing"
+      ],
+      "tags": [
+        "social calendar",
+        "monthly",
+        "posts",
+        "planning"
+      ],
+      "title": "Plan a month of social posts",
+      "why": [
+        "Chat can plan a whole month's worth of posts in one structured conversation.",
+        "A single theme keeps the month coherent rather than a set of unrelated posts.",
+        "You keep control over the final captions before anything is scheduled."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "chat",
+        "text": "Sketch the pricing logic in Chat first if you are still deciding how margins should work."
+      },
+      "capabilities": [
+        "file-creation",
+        "skills"
+      ],
+      "connectors": [],
+      "extra": "+ skills",
+      "followUps": [
+        "Add a column showing the price in two other currencies.",
+        "Highlight any item with a margin under 20 percent."
+      ],
+      "id": "price-list",
+      "intent": [
+        "price list",
+        "price list spreadsheet",
+        "pricing",
+        "spreadsheet",
+        "products",
+        "cost",
+        "margin",
+        "list"
+      ],
+      "persona": "small business owner",
+      "pitfalls": [
+        "Confirm the margin formula matches how you actually price, not a generic markup.",
+        "Keep cost data current. A price list is only as good as the costs behind it."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "these items",
+          "key": "items",
+          "label": "these items"
+        }
+      ],
+      "planNote": "Claude for Excel sits on the higher personal plans as of 7 September 2026",
+      "promptTemplate": "Build a price list spreadsheet from {{items}} with columns for cost, margin, and final price, so changing the margin updates every price.",
+      "routes": [
+        {
+          "surface": "excel",
+          "weight": 10
+        },
+        {
+          "surface": "chat",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/12650343-using-claude-in-excel",
+          "note": "support.claude.com, using Claude in Excel",
+          "text": "Open a new workbook in Excel"
+        },
+        {
+          "note": "Excel, paid plan required",
+          "text": "Open the Claude sidebar"
+        },
+        {
+          "note": "a rough list to start is fine",
+          "text": "Give it your item list and costs"
+        }
+      ],
+      "skills": [
+        "xlsx"
+      ],
+      "tags": [
+        "price list",
+        "spreadsheet",
+        "pricing",
+        "small business"
+      ],
+      "title": "Build a price list spreadsheet",
+      "why": [
+        "Claude for Excel builds real formulas, so one margin change updates every price at once.",
+        "A working spreadsheet is easier to hand to a supplier or a till system than a chat reply.",
+        "You can keep adjusting items without rebuilding the sheet."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "word",
+        "text": "Draft it straight inside Word if the advert needs to match a template you already use."
+      },
+      "capabilities": [
+        "artifacts"
+      ],
+      "connectors": [],
+      "extra": "+ hiring",
+      "followUps": [
+        "Write a shorter version for a noticeboard.",
+        "Suggest three interview questions for this role."
+      ],
+      "id": "job-advert",
+      "intent": [
+        "job advert",
+        "write a job advert for a barista",
+        "hiring",
+        "recruitment",
+        "role",
+        "vacancy",
+        "recruiting",
+        "posting"
+      ],
+      "persona": "small business owner",
+      "pitfalls": [
+        "Check the advert against local employment law before posting, especially around pay and hours.",
+        "A generic advert attracts generic applicants. Add what actually makes the role or the place different."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "the role",
+          "key": "role",
+          "label": "the role"
+        },
+        {
+          "defaultValue": "your business",
+          "key": "business",
+          "label": "your business"
+        }
+      ],
+      "planNote": "Chat works on the free plan, with higher limits on paid plans as of 7 September 2026",
+      "promptTemplate": "Write a job advert for a {{role}} at {{business}}: what the role involves, what we are looking for, and how to apply.",
+      "routes": [
+        {
+          "surface": "chat",
+          "weight": 10
+        },
+        {
+          "surface": "word",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://claude.ai",
+          "note": "claude.ai",
+          "text": "Open a new chat"
+        },
+        {
+          "note": "specifics beat generic perks",
+          "text": "Describe the role and what makes it or the place worth joining"
+        },
+        {
+          "note": "role, requirements, how to apply",
+          "text": "Ask for the standard sections"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "job advert",
+        "hiring",
+        "recruitment",
+        "small business"
+      ],
+      "title": "Write a job advert",
+      "why": [
+        "Chat can write a full advert in the standard shape in one pass.",
+        "No files or connectors are needed for a single advert.",
+        "You can adjust tone quickly for different platforms in the same thread."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "chat",
+        "text": "Paste the form's questions into Chat and draft the answers there first if you would rather type them in yourself."
+      },
+      "capabilities": [],
+      "connectors": [],
+      "extra": "+ form filling",
+      "followUps": [
+        "Save the answers as a document in case the form times out.",
+        "Flag any field where your notes do not have an answer."
+      ],
+      "id": "web-form",
+      "intent": [
+        "web form",
+        "fill in this long web form from my notes",
+        "form",
+        "filling in",
+        "application",
+        "notes",
+        "browser",
+        "fields"
+      ],
+      "persona": "small business owner",
+      "pitfalls": [
+        "Always review each answer before submitting. A form filled in wrongly is harder to undo than a document.",
+        "Some fields, like payment details, are worth entering yourself rather than automating."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "these notes",
+          "key": "notes",
+          "label": "these notes"
+        }
+      ],
+      "planNote": "Claude in Chrome works on the free plan as of 7 September 2026",
+      "promptTemplate": "Using {{notes}}, fill in this form field by field, and show me each answer before it goes in so I can check it.",
+      "routes": [
+        {
+          "surface": "chrome",
+          "weight": 10
+        },
+        {
+          "surface": "chat",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome",
+          "note": "support.claude.com, getting started with Claude in Chrome",
+          "text": "Install Claude in Chrome"
+        },
+        {
+          "note": "the icon appears in the toolbar",
+          "text": "Open the form and the sidebar"
+        },
+        {
+          "note": "review each field before submitting",
+          "text": "Give it your notes and ask it to fill the form field by field"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "web form",
+        "notes",
+        "filling in",
+        "browser"
+      ],
+      "title": "Fill in a long web form from my notes",
+      "why": [
+        "Chrome can see the actual form and fill it in field by field, not just describe what to type.",
+        "Reviewing each field before it is entered keeps you in control of the submission.",
+        "Long forms with repeated information are exactly where this saves the most time."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "design",
+        "text": "Lay the deck out as a Design file first if the client deck needs a more custom look than a slide template."
+      },
+      "capabilities": [
+        "file-creation",
+        "skills"
+      ],
+      "connectors": [
+        "google-drive"
+      ],
+      "extra": "+ project files",
+      "followUps": [
+        "Write an executive summary slide for the front of the deck.",
+        "Add an appendix slide with the raw data behind the findings."
+      ],
+      "id": "notes-to-deck",
+      "intent": [
+        "research notes",
+        "turn my messy research notes into a client deck",
+        "client deck",
+        "deck",
+        "findings",
+        "presentation",
+        "pitch",
+        "research",
+        "client"
+      ],
+      "persona": "analyst",
+      "pitfalls": [
+        "Messy notes can hide contradictions. Check the deck's claims against the source notes.",
+        "A client deck needs a clean design pass beyond the raw structure Claude gives you."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "your research notes",
+          "key": "notes",
+          "label": "your research notes"
+        },
+        {
+          "defaultValue": "this project folder",
+          "key": "project",
+          "label": "this project folder"
+        }
+      ],
+      "planNote": "Claude for PowerPoint sits on the higher personal plans as of 7 September 2026",
+      "promptTemplate": "Turn these messy notes into a client deck: {{notes}}. Structure it as findings, implications, and a recommendation, using the files in {{project}}.",
+      "routes": [
+        {
+          "surface": "powerpoint",
+          "weight": 10
+        },
+        {
+          "surface": "design",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/13521390-using-claude-in-powerpoint",
+          "note": "support.claude.com, using Claude in PowerPoint",
+          "text": "Open PowerPoint"
+        },
+        {
+          "note": "PowerPoint, paid plan required",
+          "text": "Open the Claude sidebar"
+        },
+        {
+          "href": "https://support.claude.com/en/articles/13892150-work-across-apps-with-cowork",
+          "note": "support.claude.com, work across apps with Cowork",
+          "text": "Point it at your notes and project files"
+        }
+      ],
+      "skills": [
+        "pptx"
+      ],
+      "tags": [
+        "research notes",
+        "client deck",
+        "findings",
+        "presentation"
+      ],
+      "title": "Turn my messy research notes into a client deck",
+      "why": [
+        "PowerPoint builds a real, editable deck rather than a written outline you have to lay out yourself.",
+        "Findings, implications, recommendation is a structure clients already recognise.",
+        "It can pull in the project's own files rather than starting from notes alone."
+      ]
+    },
+    {
+      "alternative": {
+        "surface": "cowork",
+        "text": "Start the same job from Cowork on desktop if you are already at your computer."
+      },
+      "capabilities": [
+        "dispatch"
+      ],
+      "connectors": [],
+      "extra": "+ dispatch",
+      "followUps": [
+        "Send me a short progress note halfway through.",
+        "When it is done, ask if I want a follow up job started straight away."
+      ],
+      "id": "phone-dispatch",
+      "intent": [
+        "phone",
+        "start a long job from my phone",
+        "mobile",
+        "dispatch",
+        "send claude a task from my phone and pick it up later",
+        "task",
+        "pick it up later",
+        "queue",
+        "background job"
+      ],
+      "persona": "solo founder",
+      "pitfalls": [
+        "Dispatch queues the job. Expect minutes, not seconds, especially for longer work.",
+        "Very complex jobs still benefit from a proper review once you are back at a desk."
+      ],
+      "placeholders": [
+        {
+          "defaultValue": "the job",
+          "key": "job",
+          "label": "the job"
+        }
+      ],
+      "planNote": "Dispatch sits on the paid personal plans as of 7 September 2026",
+      "promptTemplate": "From my phone, start this job now and let me know when it is done: {{job}}. I will check the result later.",
+      "routes": [
+        {
+          "surface": "mobile",
+          "weight": 10
+        },
+        {
+          "surface": "cowork",
+          "weight": 4
+        }
+      ],
+      "setup": [
+        {
+          "href": "https://support.claude.com/en/articles/15520349",
+          "note": "support.claude.com, Cowork on web, desktop and mobile",
+          "text": "Install the Cowork mobile app"
+        },
+        {
+          "note": "jobs and files carry across",
+          "text": "Sign in with the same account as your desktop"
+        },
+        {
+          "note": "so you get the nudge when it lands",
+          "text": "Send the job and turn on notifications"
+        }
+      ],
+      "skills": [],
+      "tags": [
+        "phone",
+        "dispatch",
+        "mobile",
+        "long job"
+      ],
+      "title": "Start a long job from my phone and pick it up later",
+      "why": [
+        "Dispatch is built for exactly this: send it, walk away, come back to a result.",
+        "The mobile app needs nothing more than a phone to get a real job started.",
+        "A nudge when the result lands means you do not have to keep checking."
+      ]
+    }
+  ],
+  "version": "2026.09.1"
+}

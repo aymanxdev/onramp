@@ -1,0 +1,7 @@
+pyyaml>=6
+
+# graphifyy (PyPI package for https://github.com/Graphify-Labs/graphify) is
+# optional and build time only. Nothing at runtime depends on it, and
+# validate.py / build.py both work with only PyYAML installed. Uncomment to
+# use the Graphify overlay step in build_graph.sh.
+# graphifyy
