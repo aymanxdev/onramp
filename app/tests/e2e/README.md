@@ -46,6 +46,8 @@ Type it flow, and asserts under 60,000 ms (DEVELOPER_BRIEF section 10a and
 
 ## Updating visual snapshots
 
+The visual suite is tagged `@visual` and runs locally only (`pnpm --dir app test:visual`); baselines are rendered on macOS and would not match a Linux runner, so CI excludes it.
+
 `visual.spec.ts` captures every route at 390x844 and 1440x900, in dark and
 light, full page, with animations disabled, using
 `expect(page).toHaveScreenshot(...)`. Baselines live in

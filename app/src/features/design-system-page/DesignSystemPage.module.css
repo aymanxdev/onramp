@@ -1,4 +1,5 @@
 .page {
+  overflow-x: clip;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
@@ -76,7 +77,7 @@
 /* --- token swatch rows --- */
 .swatchRow {
   display: grid;
-  grid-template-columns: 38px 38px 1fr auto;
+  grid-template-columns: 38px 38px minmax(0, 1fr) minmax(0, auto);
   gap: 10px;
   align-items: center;
   padding: 10px 0;
@@ -99,7 +100,9 @@
 .swatchNote {
   font: 400 11px/1 var(--font-mono);
   color: var(--text-muted);
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: right;
 }
 
 /* --- type scale --- */

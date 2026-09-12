@@ -19,7 +19,7 @@ function slug(route: string): string {
   return route.replace(/^\//, '').replace(/[^a-z0-9]+/gi, '-').replace(/^-+|-+$/g, '') || 'home'
 }
 
-test.describe('visual baselines', () => {
+test.describe('visual baselines @visual', () => {
   // Baselines are kept for Chromium only; CI runs this project and WebKit doubles the repo size.
   test.skip(({ browserName }) => browserName !== 'chromium', 'visual baselines are Chromium only')
 
