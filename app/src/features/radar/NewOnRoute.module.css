@@ -1,0 +1,56 @@
+.button {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  min-height: 56px;
+  padding: 13px 15px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-subtle);
+  border: 1px solid var(--accent-action);
+  box-shadow: 0 3px 0 var(--accent-action-edge);
+  color: var(--text-primary);
+  cursor: pointer;
+  font: 400 16px/1.4 var(--font-sans);
+  transition: transform var(--duration-press) var(--ease-spring);
+}
+.button:hover {
+  transform: translateY(-2px);
+}
+.button:active {
+  transform: translateY(3px);
+  box-shadow: 0 0 0 var(--accent-action-edge);
+}
+
+.ring {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  padding: 2px;
+  background: conic-gradient(from 210deg, var(--accent-action), var(--accent-attention) 58%, var(--accent-action));
+}
+.ring::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--bg-subtle);
+}
+
+.text {
+  flex: 1;
+}
+.strong {
+  font-weight: 600;
+}
+
+.arrow {
+  flex: none;
+  font: 500 15px/1 var(--font-mono);
+  color: var(--text-muted);
+}

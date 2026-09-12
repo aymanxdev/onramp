@@ -1,0 +1,132 @@
+.row {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 8px 4px 8px 4px;
+  margin: -8px -4px 0;
+}
+
+.ringButton {
+  flex: none;
+  width: 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.18s var(--ease-spring);
+}
+.ringButton:hover {
+  transform: translateY(-3px);
+}
+.ringButton:active {
+  transform: translateY(2px);
+}
+.ringButton:focus-visible {
+  outline-offset: 4px;
+}
+
+.ring {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  padding: 3px;
+}
+.ring.unseen {
+  background: conic-gradient(from 210deg, var(--accent-action), var(--accent-attention) 58%, var(--accent-action));
+  animation: om-ringpulse var(--duration-ring) ease-in-out infinite;
+}
+.ring.seen {
+  background: var(--border-strong);
+}
+
+.disc {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 26%, color-mix(in oklab, var(--border-strong) 34%, var(--bg-surface)), var(--bg-surface) 78%);
+  border: 1px solid var(--border);
+  font: 600 9px/1 var(--font-mono);
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  text-align: center;
+}
+.discSeen {
+  color: var(--text-muted);
+}
+
+.disc[data-tint='chat'] {
+  background: radial-gradient(circle at 50% 26%, color-mix(in oklab, var(--tint-chat) 34%, var(--bg-surface)), var(--bg-surface) 78%);
+  border-color: color-mix(in oklab, var(--tint-chat) 54%, var(--border));
+}
+.discSeen[data-tint='chat'] {
+  background: radial-gradient(circle at 50% 26%, color-mix(in oklab, var(--tint-chat) 10%, var(--bg-surface)), var(--bg-surface) 78%);
+  border-color: color-mix(in oklab, var(--tint-chat) 20%, var(--border));
+}
+.disc[data-tint='cowork'] {
+  background: radial-gradient(circle at 50% 26%, color-mix(in oklab, var(--tint-cowork) 34%, var(--bg-surface)), var(--bg-surface) 78%);
+  border-color: color-mix(in oklab, var(--tint-cowork) 54%, var(--border));
+}
+.discSeen[data-tint='cowork'] {
+  background: radial-gradient(circle at 50% 26%, color-mix(in oklab, var(--tint-cowork) 10%, var(--bg-surface)), var(--bg-surface) 78%);
+  border-color: color-mix(in oklab, var(--tint-cowork) 20%, var(--border));
+}
+.disc[data-tint='code'] {
+  background: radial-gradient(circle at 50% 26%, color-mix(in oklab, var(--tint-code) 34%, var(--bg-surface)), var(--bg-surface) 78%);
+  border-color: color-mix(in oklab, var(--tint-code) 54%, var(--border));
+}
+.discSeen[data-tint='code'] {
+  background: radial-gradient(circle at 50% 26%, color-mix(in oklab, var(--tint-code) 10%, var(--bg-surface)), var(--bg-surface) 78%);
+  border-color: color-mix(in oklab, var(--tint-code) 20%, var(--border));
+}
+.disc[data-tint='design'] {
+  background: radial-gradient(circle at 50% 26%, color-mix(in oklab, var(--tint-design) 34%, var(--bg-surface)), var(--bg-surface) 78%);
+  border-color: color-mix(in oklab, var(--tint-design) 54%, var(--border));
+}
+.discSeen[data-tint='design'] {
+  background: radial-gradient(circle at 50% 26%, color-mix(in oklab, var(--tint-design) 10%, var(--bg-surface)), var(--bg-surface) 78%);
+  border-color: color-mix(in oklab, var(--tint-design) 20%, var(--border));
+}
+
+.label {
+  font: 500 12px/1.25 var(--font-sans);
+  text-align: center;
+  color: var(--text-primary);
+}
+.labelSeen {
+  color: var(--text-muted);
+}
+
+.olderRing {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  padding: 3px;
+  background: var(--border-strong);
+}
+.olderInner {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px dashed var(--border-strong);
+  font: 600 15px/1 var(--font-mono);
+  color: var(--text-secondary);
+}
+.olderLabel {
+  font: 500 12px/1.25 var(--font-sans);
+  text-align: center;
+  color: var(--text-muted);
+}

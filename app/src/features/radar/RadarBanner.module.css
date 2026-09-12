@@ -1,0 +1,42 @@
+.banner {
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  border: 1px solid var(--accent-action);
+  box-shadow: 0 4px 0 var(--accent-action-edge);
+  animation: om-up 0.4s var(--ease-spring);
+}
+
+.top {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.text {
+  min-width: 0;
+}
+
+.title {
+  margin: 9px 0 0;
+  font: 700 20px/1.25 var(--font-sans);
+  letter-spacing: -0.02em;
+  text-wrap: pretty;
+}
+
+.dismiss {
+  flex: none;
+  width: var(--size-tap);
+  height: var(--size-tap);
+  border-radius: 50%;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font: 400 19px/1 var(--font-sans);
+  cursor: pointer;
+}
+
+.rings {
+  margin-top: 14px;
+}
