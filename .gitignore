@@ -44,3 +44,6 @@ pipeline/__pycache__/
 
 # Generated at build time by the proof plugin
 app/public/data/proof.json
+
+# Stray captures at the repo root
+/*.png
