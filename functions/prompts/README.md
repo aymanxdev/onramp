@@ -1,0 +1,1 @@
+Prompts the app sends to models live here and are public. Two files only: intent-extraction.md and prompt-personalisation.md. Both treat user text as untrusted data inside a delimited block and return JSON validated by Zod. Adding a third prompt requires an OpenSpec change approved by the owner.
