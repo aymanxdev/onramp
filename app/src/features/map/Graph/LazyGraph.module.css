@@ -1,0 +1,19 @@
+.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 18px;
+  border-radius: var(--radius-xl);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+}
+.ambientFallback {
+  margin-top: 0;
+  border-radius: var(--radius-md);
+}
+
+.label {
+  font: 400 12px/1 var(--font-mono);
+  color: var(--text-muted);
+}

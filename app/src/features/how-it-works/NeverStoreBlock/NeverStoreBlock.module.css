@@ -1,0 +1,32 @@
+.card {
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+
+.list {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 10px;
+}
+
+.tick {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  border-radius: 6px;
+  background: var(--state-ok-soft);
+  color: var(--state-ok);
+  font: 600 12px/20px var(--font-mono);
+  text-align: center;
+}
