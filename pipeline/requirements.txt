@@ -1,4 +1,4 @@
-pyyaml>=6
+pyyaml>=6.0.3
 
 # graphifyy (PyPI package for https://github.com/Graphify-Labs/graphify) is
 # optional and build time only. Nothing at runtime depends on it, and
