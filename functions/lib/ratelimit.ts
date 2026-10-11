@@ -12,7 +12,7 @@ import { sha256Hex, utcDateKey } from './hash'
 
 const DEFAULT_RATE_LIMIT_PER_MINUTE = 3
 const DEFAULT_RATE_LIMIT_PER_DAY = 1
-const DEFAULT_DAILY_LLM_BUDGET = 500
+const DEFAULT_DAILY_LLM_BUDGET = 300
 
 const MINUTE_TTL_SECONDS = 70
 const DAY_TTL_SECONDS = 60 * 60 * 25
