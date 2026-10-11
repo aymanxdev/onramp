@@ -1,7 +1,7 @@
 /**
  * Cloudflare Workers AI adapter (DEVELOPER_BRIEF section 2a and 8): the default provider,
  * because it has a free daily allowance and needs no external API key. Uses the `AI`
- * binding declared in app/wrangler.toml.
+ * binding configured in the Cloudflare Pages dashboard (see functions/README.md).
  */
 import type { Env } from '../lib/env'
 import type { Intake, Route } from '../../app/src/lib/matcher'
@@ -11,10 +11,11 @@ import type { LlmAdapter } from './types'
 
 /**
  * Small instruct model, chosen for low cost and speed on Workers AI's free allowance.
+ * The fp8 variant is used because it is roughly half the price per token on Workers AI.
  * Verify this id is still current in the Workers AI model catalogue before launch:
  * https://developers.cloudflare.com/workers-ai/models/
  */
-const DEFAULT_WORKERS_AI_MODEL = '@cf/meta/llama-3.1-8b-instruct'
+const DEFAULT_WORKERS_AI_MODEL = '@cf/meta/llama-3.1-8b-instruct-fp8'
 
 type WorkersAiTextResult = { response?: string }
 
