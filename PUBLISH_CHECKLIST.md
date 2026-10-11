@@ -9,7 +9,7 @@
 - [ ] Security headers tested in e2e (CSP without unsafe-inline scripts, HSTS, nosniff, referrer policy, permissions policy)
 - [ ] SBOM generated and attached to the release
 - [ ] Actions pinned to SHAs; Dependabot on; lockfile frozen in CI
-- [ ] Preview deploys use a separate KV namespace and the `none` LLM provider
+- [ ] Preview deploys use a separate KV namespace and the `none` LLM provider (set in the Pages dashboard, see functions/README.md)
 - [ ] `DATA.md` matches the privacy page word for word
 - [ ] LICENSE and LICENSE-DATA contain full licence text
 - [ ] README leads with the architecture diagram and the disclaimer

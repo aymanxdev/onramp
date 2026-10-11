@@ -40,7 +40,7 @@ This file is the shared contract between the orchestrating session and the imple
 | E. Landing, intake, thinking, route, prompt card | `app/src/routes/index.tsx`, `app/src/routes/start.tsx`, `app/src/routes/route.$id.tsx`, `app/src/routes/card.$id.tsx`, `app/src/features/landing/**`, `app/src/features/intake/**`, `app/src/features/route/**`, `app/src/features/card/**` | |
 | F. Map and How it works | `app/src/routes/map.tsx`, `app/src/routes/how-it-works.tsx`, `app/src/features/map/**`, `app/src/features/how-it-works/**` | |
 | G. Radar and score | `app/src/routes/new.tsx`, `app/src/routes/score.tsx`, `app/src/features/radar/**`, `app/src/features/score/**` | |
-| H. Edge API | `functions/**`, `app/wrangler.toml`, `app/src/features/intake/api.ts` (the browser side client, shared with E) | |
+| H. Edge API | `functions/**` (bindings and variables are set in the Pages dashboard, see the checklist in `functions/README.md`), `app/src/features/intake/api.ts` (the browser side client, shared with E) | |
 | I. Tests, CI, docs | `app/tests/**`, `.github/workflows/ci.yml` edits, `README.md`, `docs/adr/**` | |
 
 If you need a file you do not own, write what you need in your report; the orchestrator will route it.
