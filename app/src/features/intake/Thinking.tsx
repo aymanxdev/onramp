@@ -7,7 +7,7 @@ import { assembleRoute, encodeIntake, matchIntake } from '@/lib/matcher'
 import type { Intake } from '@/lib/matcher'
 import { thinking } from '@/content/thinking'
 import { states } from '@/content/states'
-import { requestRoute } from './api'
+import { requestVerifiedRoute } from './api'
 import type { StartSearch } from './search'
 import s from './Thinking.module.css'
 
@@ -36,6 +36,7 @@ export function Thinking({ search }: ThinkingProps) {
   const [stage, setStage] = useState(0)
   const [showButton, setShowButton] = useState(false)
   const [stateCard, setStateCard] = useState<'rate-limited' | 'bot-check' | null>(null)
+  const [challenge, setChallenge] = useState(false)
   const routeIdRef = useRef<string | null>(null)
   const started = useRef(false)
 
@@ -59,7 +60,14 @@ export function Thinking({ search }: ThinkingProps) {
       let limitReason: 'rate-limited' | 'bot-check' | null = null
       const t2 = Date.now()
       if (search.mode === 'type' && (search.q ?? '').trim()) {
-        const apiResult = await requestRoute(search.q ?? '')
+        const apiResult = await requestVerifiedRoute(search.q ?? '', {
+          onChallenge: () => {
+            if (!cancelled) setChallenge(true)
+          },
+          onChallengeDone: () => {
+            if (!cancelled) setChallenge(false)
+          },
+        })
         if (apiResult.ok) {
           finalIntake = apiResult.intake
         } else if (apiResult.reason === 'rate-limited' || apiResult.reason === 'bot-check') {
@@ -110,16 +118,13 @@ export function Thinking({ search }: ThinkingProps) {
     )
   }
 
-  if (stateCard === 'bot-check') {
+  if (stateCard === 'bot-check' || challenge) {
     return (
       <div className={s.wrap}>
         <div className={s.stateCard}>
           <p className={s.stateTitle}>{states.botCheck.heading}</p>
           <p className={s.stateBody}>{states.botCheck.body}</p>
-          <div className={s.checkRow}>
-            <span className={s.checkbox} aria-hidden="true" />
-            <span className={s.checkLabel}>{states.botCheck.action}</span>
-          </div>
+          {challenge && <div id="turnstile-fallback" className={s.checkRow} />}
         </div>
       </div>
     )
