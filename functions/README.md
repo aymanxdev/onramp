@@ -27,7 +27,7 @@ Checklist (names only, set per environment in the Pages project):
 - Settings, Runtime: compatibility date `2026-09-01`, compatibility flag `nodejs_compat`, for production and preview.
 - Settings, Bindings, Production: KV namespace binding `ONRAMP_KV` pointing at the `onramp-prod` namespace; Workers AI binding `AI`.
 - Settings, Bindings, Preview: KV `ONRAMP_KV` pointing at `onramp-preview`; no AI binding.
-- Settings, Variables and Secrets, Production (type Text): `ENVIRONMENT=production`, `LLM_PROVIDER=workers-ai`, `LLM_MODEL=@cf/meta/llama-3.1-8b-instruct-fp8`, `DAILY_LLM_BUDGET=500`, `RATE_LIMIT_PER_MINUTE=3`, `RATE_LIMIT_PER_DAY=1`.
+- Settings, Variables and Secrets, Production (type Text): `ENVIRONMENT=production`, `LLM_PROVIDER=workers-ai`, `LLM_MODEL=@cf/meta/llama-3.1-8b-instruct-fp8`, `DAILY_LLM_BUDGET=300`, `RATE_LIMIT_PER_MINUTE=3`, `RATE_LIMIT_PER_DAY=1`.
 - Build-time, Production (type Text): `PNPM_VERSION=12.3.4`, `VITE_SITE_URL`, and `VITE_TURNSTILE_SITE_KEY` once Turnstile exists.
 - Preview (type Text): `ENVIRONMENT=preview`, `LLM_PROVIDER=none`, `PNPM_VERSION=12.3.4`.
 - Production (type Secret, encrypted): `IP_HASH_SALT_SEED`, `TURNSTILE_SECRET_KEY`; `ANTHROPIC_API_KEY` only if that provider is used. Never in the repo or in chat.
