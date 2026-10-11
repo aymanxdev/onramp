@@ -8,7 +8,19 @@
 
 `pipeline/build_graph.sh` runs steps 1 to 3 end to end, plus an optional Graphify pass over a fetched corpus first. `pipeline/fetch_corpus.py` and Graphify itself both need network access and are not part of the steps above.
 
-`pipeline/drift.py` is the weekly drift check behind `.github/workflows/catalogue-drift.yml`: it fetches the Claude release notes page, diffs it against `pipeline/snapshots/release-notes.md`, and writes a report for the CI job to turn into an issue. After updating the catalogue for anything it flags, refresh the snapshot with `python3 pipeline/drift.py --source <url> --snapshot pipeline/snapshots/release-notes.md --update` and commit it.
+
+## Weekly update
+
+`pipeline/sources.yaml` lists the official pages the weekly update job reads. `validate.py` checks that every URL is on an allowed host and every parser name is known. The job code lives in `pipeline/weekly_update/` (standard library plus PyYAML):
+
+```
+pnpm --dir app weekly:draft:build        # bundles scripts/weekly-update/draft.ts to scripts/weekly-update/dist/draft.mjs
+python -m pipeline.weekly_update run --out /tmp/weekly --dry-run              # preview on temporary copies
+python -m pipeline.weekly_update run --out /tmp/weekly --seed                 # record current items, propose nothing
+python -m unittest discover pipeline/weekly_update                            # offline tests
+```
+
+Per-source snapshots live in `pipeline/snapshots/<source-id>.json`. Without `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_AI_TOKEN` every item gets a plain stub.
 
 ## Feature images
 

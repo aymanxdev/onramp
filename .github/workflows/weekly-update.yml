@@ -1,0 +1,159 @@
+name: weekly-update
+
+# OpenSpec change weekly-catalogue-update. Every Monday at 07:00 UK time: find new items on
+# the official sources in pipeline/sources.yaml, draft catalogue entries (capped AI help,
+# facts left to the owner), and open or update one "[Weekly update] ..." pull request.
+# Never runs on pull requests, so its secrets are never exposed to forks.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # 07:00 UK while British Summer Time applies
+    - cron: "0 7 * * 1" # 07:00 UK while Greenwich Mean Time applies
+  workflow_dispatch:
+    inputs:
+      seed:
+        description: Record every current item as known, without drafting anything
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  actions: write
+
+concurrency:
+  group: weekly-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Run only the schedule that matches UK time
+        id: guard
+        env:
+          EVENT: ${{ github.event_name }}
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          run=true
+          if [ "$EVENT" = "schedule" ]; then
+            offset=$(TZ=Europe/London date +%z)
+            if [ "$SCHEDULE" = "0 6 * * 1" ] && [ "$offset" != "+0100" ]; then run=false; fi
+            if [ "$SCHEDULE" = "0 7 * * 1" ] && [ "$offset" != "+0000" ]; then run=false; fi
+          fi
+          echo "run=$run" >> "$GITHUB_OUTPUT"
+
+      - if: steps.guard.outputs.run == 'true'
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - if: steps.guard.outputs.run == 'true'
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with: { python-version: "3.12" }
+
+      - if: steps.guard.outputs.run == 'true'
+        run: pip install -r pipeline/requirements.txt
+
+      - if: steps.guard.outputs.run == 'true'
+        uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+        with: { package_json_file: app/package.json }
+
+      - if: steps.guard.outputs.run == 'true'
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with: { node-version: 22, cache: pnpm, cache-dependency-path: app/pnpm-lock.yaml }
+
+      - if: steps.guard.outputs.run == 'true'
+        run: pnpm --dir app install --frozen-lockfile
+
+      - name: Bundle the drafting script
+        if: steps.guard.outputs.run == 'true'
+        run: pnpm --dir app weekly:draft:build
+
+      - name: Restore source health
+        if: steps.guard.outputs.run == 'true'
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ runner.temp }}/health
+          key: weekly-update-health-${{ github.run_id }}
+          restore-keys: weekly-update-health-
+
+      - name: Find new items and draft entries
+        id: run
+        if: steps.guard.outputs.run == 'true'
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_AI_TOKEN: ${{ secrets.CLOUDFLARE_AI_TOKEN }}
+          SEED: ${{ inputs.seed && 'true' || 'false' }}
+          OUT: ${{ runner.temp }}/wu
+          HEALTH: ${{ runner.temp }}/health/source-health.json
+        run: |
+          mkdir -p "$(dirname "$HEALTH")"
+          args=(run --out "$OUT" --health "$HEALTH")
+          if [ "$SEED" = "true" ]; then args+=(--seed); fi
+          python -m pipeline.weekly_update "${args[@]}"
+          {
+            echo "changed=$(jq -r '.changed' "$OUT/summary.json")"
+            echo "problems=$(jq -r '.sourceProblemIssue | join(", ")' "$OUT/summary.json")"
+            echo "recovered=$(jq -r '.recoveredSources | length' "$OUT/summary.json")"
+          } >> "$GITHUB_OUTPUT"
+          if [ -f "$OUT/pr-title.txt" ]; then
+            echo "title=$(head -n 1 "$OUT/pr-title.txt")" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Regenerate the published data
+        if: steps.run.outputs.changed == 'true'
+        run: pnpm --dir app data:build
+
+      - name: Open or update the weekly pull request
+        id: pr
+        if: steps.run.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          branch: weekly-update
+          base: main
+          delete-branch: true
+          title: ${{ steps.run.outputs.title }}
+          body-path: ${{ runner.temp }}/wu/pr-body.md
+          commit-message: "catalogue: weekly update from official sources"
+          labels: catalogue
+          assignees: aymanxdev
+          add-paths: |
+            pipeline/catalogue.yaml
+            pipeline/snapshots/*.json
+            app/public/data/*.json
+            app/public/feed.xml
+            app/public/feed.json
+            app/public/radar.ics
+
+      - name: Run CI on the weekly branch
+        if: steps.pr.outputs.pull-request-operation == 'created' || steps.pr.outputs.pull-request-operation == 'updated'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run ci.yml --ref weekly-update
+
+      - name: Report a source that failed twice in a row
+        if: steps.run.outputs.problems != '' && steps.guard.outputs.run == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PROBLEMS: ${{ steps.run.outputs.problems }}
+        run: |
+          title="[Weekly update] source problem"
+          body=$(printf 'These sources could not be fetched or parsed on two or more weekly runs in a row: %s.\n\nCheck the URL in pipeline/sources.yaml and the parser in pipeline/weekly_update/sources.py. This issue closes itself when the sources recover.' "$PROBLEMS")
+          number=$(gh issue list --state open --search "in:title \"$title\"" --json number,title --jq ".[] | select(.title == \"$title\") | .number" | head -n 1)
+          if [ -n "$number" ]; then
+            gh issue edit "$number" --body "$body"
+          else
+            gh label create catalogue --color 0E8A16 --force >/dev/null 2>&1 || true
+            gh issue create --title "$title" --body "$body" --label catalogue --assignee aymanxdev
+          fi
+
+      - name: Close the source problem issue once sources recover
+        if: steps.run.outputs.problems == '' && steps.run.outputs.recovered != '0' && steps.guard.outputs.run == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="[Weekly update] source problem"
+          number=$(gh issue list --state open --search "in:title \"$title\"" --json number,title --jq ".[] | select(.title == \"$title\") | .number" | head -n 1)
+          if [ -n "$number" ]; then gh issue close "$number" --comment "All sources are working again."; fi

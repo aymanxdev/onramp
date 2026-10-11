@@ -36,7 +36,7 @@ Every entry in `pipeline/catalogue.yaml` must have:
 
 | Field | Rule |
 |---|---|
-| `officialUrl` | A live link on claude.com, claude.ai, anthropic.com, docs.claude.com, support.claude.com or code.claude.com. Nothing else counts as a source. |
+| `officialUrl` | A live link on claude.com, claude.ai, anthropic.com, docs.claude.com, support.claude.com, code.claude.com or claude.dev. Nothing else counts as a source. |
 | `asOf` | The date you verified it, ISO format. |
 | `summary` | Your own words, under 280 characters. |
 | `plans` | Only what the official page says. If unsure, leave empty; never guess. |
