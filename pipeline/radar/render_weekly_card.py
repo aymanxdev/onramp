@@ -12,10 +12,14 @@ each visitor's own browser, never on the server).
 
 Usage:
     python3 pipeline/radar/render_weekly_card.py
+
+The address printed on the card comes from the VITE_SITE_URL environment
+variable (scheme and trailing slash removed), defaulting to onramp.example.
 """
 from __future__ import annotations
 
 import json
+import os
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -24,6 +28,13 @@ REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 CATALOGUE_JSON = REPO_ROOT / "app" / "public" / "data" / "catalogue.json"
 TEMPLATE = Path(__file__).resolve().parent / "weekly-card.html"
 OUT_PATH = Path(__file__).resolve().parent / "weekly-card.filled.html"
+
+
+def site_host() -> str:
+    """Mirrors site_url() in pipeline/build.py (same variable and default,
+    not imported because build.py pulls in yaml), minus scheme and slash."""
+    url = os.environ.get("VITE_SITE_URL", "https://onramp.example").rstrip("/")
+    return url.split("://", 1)[-1].rstrip("/")
 
 
 def pick_features(catalogue: dict, today: datetime | None = None) -> list[dict]:
@@ -81,7 +92,7 @@ def main() -> int:
 
     html = TEMPLATE.read_text(encoding="utf-8")
     html = html.replace("{{WEEK_LABEL}}", week_label(today))
-    html = html.replace("{{SITE_URL}}", "onramp.example")
+    html = html.replace("{{SITE_URL}}", site_host())
 
     for i in range(3):
         slot = i + 1
