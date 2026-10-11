@@ -4,7 +4,7 @@
  * by the pipeline (package B) into app/public/data/catalogue.json and committed, so this
  * import is resolved at bundle time with no runtime fetch.
  */
-import catalogueJson from '../../app/public/data/catalogue.json' with { type: 'json' }
+import catalogueJson from '../../app/public/data/catalogue.json'
 import type { Catalogue } from '../../app/src/features/catalogue/types'
 
 // JSON imports are always inferred as plain arrays (e.g. `followUps: string[]`), never as
