@@ -7,9 +7,9 @@ export const states = {
     button: 'Guide me instead',
   },
   rateLimited: {
-    eyebrow: 'RATE LIMITED',
-    heading: 'That is your ten routes for today',
-    body: 'The counter resets at midnight UK time. Your saved routes still work.',
+    eyebrow: 'DAILY LIMIT',
+    heading: 'That is your credit for today',
+    body: 'It resets overnight. We are working on a way to add more credits soon.',
     button: 'Browse the map',
   },
   notFound: {
