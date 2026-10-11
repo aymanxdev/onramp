@@ -12,7 +12,7 @@
   "scripts": {
     "postinstall": "node ../scripts/link-root-modules.mjs",
     "dev": "vite",
-    "dev:api": "pnpm prompts:build && wrangler pages dev dist --compatibility-date=2026-09-01 --kv ONRAMP_KV --port 8788",
+    "dev:api": "pnpm prompts:build && cd .. && WRANGLER_SEND_METRICS=false wrangler pages dev app/dist --compatibility-date=2026-09-01 --compatibility-flags=nodejs_compat --kv ONRAMP_KV --binding ENVIRONMENT=preview --binding LLM_PROVIDER=none --port 8788",
     "build": "pnpm tokens:build && pnpm data:build && pnpm prompts:build && tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint . && node ../scripts/no-dashes.mjs src/content ../docs ../pipeline/catalogue.yaml",

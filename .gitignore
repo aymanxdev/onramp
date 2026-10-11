@@ -47,3 +47,12 @@ app/public/data/proof.json
 
 # Stray captures at the repo root
 /*.png
+
+# Cloudflare config lives in the Pages dashboard (Settings, per environment), so the repo
+# never holds account ids. A committed wrangler file would also override the dashboard.
+/wrangler.toml
+/wrangler.json
+/wrangler.jsonc
+/app/wrangler.toml
+/app/wrangler.json
+/app/wrangler.jsonc

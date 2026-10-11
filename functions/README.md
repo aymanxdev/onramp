@@ -1,6 +1,6 @@
 # Edge functions
 
-Cloudflare Pages Functions behind `/api`. No accounts, no user text stored, ever.
+Cloudflare Pages Functions behind `/api`. No user text is stored.
 
 ## Running locally
 
@@ -14,10 +14,27 @@ pnpm --dir app dev         # Vite on :5173, proxies /api to the line above
 through a repo-root `node_modules` symlink to `app/node_modules`, created by
 `app/package.json`'s `postinstall` (`scripts/link-root-modules.mjs`, safe to re-run).
 
-## Environment variables
+## Cloudflare Pages setup (dashboard only)
 
-See `.env.example` at the repo root. Set secrets with `wrangler pages secret put <NAME>`,
-never in `wrangler.toml`.
+No Cloudflare account detail lives in the repo, and there must be no `wrangler.toml`,
+`wrangler.json` or `wrangler.jsonc` anywhere: on Pages a config file at the project root
+becomes the source of truth and the dashboard could no longer edit variables or bindings.
+Local dev needs no Cloudflare account or login: `pnpm --dir app dev:api` passes everything
+as flags and uses a local KV store. See `.env.example` for a reference list of names.
+
+Checklist (names only, set per environment in the Pages project):
+
+- Settings, Runtime: compatibility date `2026-09-01`, compatibility flag `nodejs_compat`, for production and preview.
+- Settings, Bindings, Production: KV namespace binding `ONRAMP_KV` pointing at the `onramp-prod` namespace; Workers AI binding `AI`.
+- Settings, Bindings, Preview: KV `ONRAMP_KV` pointing at `onramp-preview`; no AI binding.
+- Settings, Variables and Secrets, Production (type Text): `ENVIRONMENT=production`, `LLM_PROVIDER=workers-ai`, `LLM_MODEL=@cf/meta/llama-3.1-8b-instruct-fp8`, `DAILY_LLM_BUDGET=500`, `RATE_LIMIT_PER_MINUTE=3`, `RATE_LIMIT_PER_DAY=1`.
+- Build-time, Production (type Text): `PNPM_VERSION=12.3.4`, `VITE_SITE_URL`, and `VITE_TURNSTILE_SITE_KEY` once Turnstile exists.
+- Preview (type Text): `ENVIRONMENT=preview`, `LLM_PROVIDER=none`, `PNPM_VERSION=12.3.4`.
+- Production (type Secret, encrypted): `IP_HASH_SALT_SEED`, `TURNSTILE_SECRET_KEY`; `ANTHROPIC_API_KEY` only if that provider is used. Never in the repo or in chat.
+- Build settings: framework preset None, root directory empty, build command `pip install -r pipeline/requirements.txt && pnpm --dir app install --frozen-lockfile && pnpm --dir app build`, output directory `app/dist`.
+
+The code defaults `LLM_PROVIDER` to workers-ai when it is unset (see `functions/llm/index.ts`),
+so preview must set `LLM_PROVIDER=none` explicitly.
 
 ## Endpoints
 
