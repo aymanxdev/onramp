@@ -7,15 +7,15 @@ export const privacy = {
   eyebrow: 'PRIVACY',
   h1: 'Privacy',
   /** The plain statement, DEVELOPER_BRIEF section 11. */
-  statement: 'No accounts, no personal data, hashed daily IP counters only, no analytics cookies.',
-  intro: 'Aggregate daily counters only. No accounts, no cookies, no IP storage, no user text, no third-party analytics scripts.',
+  statement: 'No personal data. Hashed daily IP counters only, no analytics cookies.',
+  intro: 'Aggregate daily counters only. No cookies, no IP storage, no user text, no third-party analytics scripts.',
   tableHeading: 'What Onramp collects',
   abuseControls:
     'Abuse controls keep a per-day counter against a salted hash of the IP that expires within 24 hours. The salt rotates daily and is never stored with the counter.',
   totals: 'Running totals per counter are kept without expiry, alongside the daily ones above.',
   usageLine: 'When the usage line is switched on, the site shows those totals. They are counts, nothing else.',
   rollup: 'Counters are rolled up nightly into public/data/stats.json and shown publicly on the How it works page.',
-  changes: 'Changes to this policy require an OpenSpec change approved by the owner and an update to this page in the same PR.',
+  changes: 'Changes to this policy require an OpenSpec change approved by the owner and an update to both DATA.md and the privacy page in the same PR.',
 } as const
 
 export type DataTableRow = { counter: string; keyedBy: string; neverStored: string }

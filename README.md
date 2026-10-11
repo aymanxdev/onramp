@@ -4,7 +4,7 @@
 
 Onramp turns "what are you trying to do?" into a route through Claude: the
 right surface to open, what to switch on, and the exact first prompt to
-paste. It is free, needs no login, and stores nothing personal.
+paste. It is free and gets straight to the point.
 
 Onramp is an independent project. It is not affiliated with, endorsed by, or
 sponsored by Anthropic. Claude and Anthropic are trademarks of Anthropic,
@@ -92,12 +92,14 @@ against the real catalogue.
 
 ## The data promise
 
-Onramp collects aggregate daily counters only: no accounts, no cookies, no
-IP storage, no user text, and no third-party analytics scripts. The exact
-list of what is and is not collected is `DATA.md`, published word for word
-on the app's `/privacy` page.
+Onramp collects aggregate daily counters only: no cookies, no IP storage, no
+user text, and no third-party analytics scripts. The exact list of what is
+and is not collected is `DATA.md`, published word for word on the app's
+`/privacy` page.
 
 ## Licence
+
+Copyright (C) 2026 Ayman (aymanxdev).
 
 Onramp's code is licensed AGPL-3.0 (`LICENSE`). The catalogue and generated
 data (`pipeline/catalogue.yaml`, `graph.json`, `catalogue.json`,

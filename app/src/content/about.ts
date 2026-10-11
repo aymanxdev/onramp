@@ -7,7 +7,7 @@ export const about = {
   tagline: 'The on-ramp to everything Claude can do. Unofficial, free, open source.',
   disclaimer: DISCLAIMER,
   whatItIs:
-    'Onramp is a small, free tool that turns "what are you trying to do?" into a route through Claude: the surface to open, what to switch on, and the exact first prompt to paste. There is no login and nothing you type is stored.',
+    'Onramp is a small, free tool that turns "what are you trying to do?" into a route through Claude: the surface to open, what to switch on, and the exact first prompt to paste.',
   howBuiltIntro: 'Every route comes from a catalogue of surfaces, capabilities, connectors and use cases that a person checked against the official Claude documentation, not from a model guessing on the spot.',
   howBuiltLinkLabel: 'Read how routes are built',
   howBuiltHref: '/how-it-works',

@@ -8,4 +8,4 @@ In scope: the edge function at /api/route, abuse-control bypasses, secret leakag
 
 Out of scope: rate-limit thresholds being "too low", anything on Anthropic's own services (report those to Anthropic).
 
-Onramp stores no accounts and no personal data. Daily hashed IP counters expire within 24 hours.
+Onramp keeps aggregate daily counters only (see DATA.md). Daily hashed IP counters expire within 24 hours.

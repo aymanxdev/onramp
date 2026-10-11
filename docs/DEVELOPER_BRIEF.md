@@ -1,6 +1,6 @@
 # Developer brief: Onramp
 
-An unofficial, free, no-login web app that turns "what are you trying to do?" into a route through Claude: the right surface, what to enable, and the exact first prompt. The designer's brief and Figma file are **required reading and the source of truth for anything visual**. Where this brief and the design conflict on look, feel or motion, the design wins. Where they conflict on behaviour, data or security, this brief wins.
+An unofficial, free web app that turns "what are you trying to do?" into a route through Claude: the right surface, what to enable, and the exact first prompt. The designer's brief and Figma file are **required reading and the source of truth for anything visual**. Where this brief and the design conflict on look, feel or motion, the design wins. Where they conflict on behaviour, data or security, this brief wins.
 
 If you are using Claude Code to build this, drop this file in the repo as `docs/DEVELOPER_BRIEF.md`, reference it from `CLAUDE.md`, and keep the designer brief next to it.
 
@@ -187,7 +187,7 @@ Ship a `matcher.test.ts` with at least 60 golden queries ("automate my inbox", "
 |---|---|
 | Turnstile | Required for `/api/route`. Verify server-side with the secret. Invisible mode; managed challenge as fallback. |
 | Honeypot | Hidden field `website`; any non-empty value returns a fake success with a cached generic route and increments an abuse counter. |
-| Per-IP limits | KV key `rl:${sha256(ip + dailySalt)}`: 3 per minute, 10 per day for LLM-backed routes. Deterministic routes are unlimited. Return 429 with the designed "sleeping mascot" state and the reset time. |
+| Per-IP limits | KV key `rl:${sha256(ip + dailySalt)}`: 3 per minute, 1 per day (configurable; a credit top-up is planned) for LLM-backed routes. Deterministic routes are unlimited. Return 429 with the designed "sleeping mascot" state and the reset time. |
 | Global circuit breaker | KV key `budget:YYYY-MM-DD`. Hard cap on LLM calls per day. When hit, the API silently switches to deterministic-only until midnight UTC. |
 | Cache | 7-day KV cache keyed by normalised input hash. Most queries repeat. |
 | Input limits | 2,000 characters, UTF-8, strip control characters, reject binary. |
@@ -227,7 +227,7 @@ Ship a `matcher.test.ts` with at least 60 golden queries ("automate my inbox", "
 | `/route/:id` | Route screen. `:id` is a base64url-encoded compact intake so routes are shareable with no database. Copy button, "Make it mine" inline inputs, setup checklist persisted in `sessionStorage`. Sticky action bar under 768px. |
 | `/map` | Graph on desktop, card stack on mobile. Node drawer with "Route me here". Search and filters in URL params. |
 | `/card/:id` | Prompt card: export-ready 1080 x 1350 layout, `@media print` stylesheet, "Download PNG" via `html-to-image`. |
-| `/about`, `/privacy` | Static. Privacy page says plainly: no accounts, no personal data, hashed daily IP counters only, no analytics cookies. |
+| `/about`, `/privacy` | Static. Privacy page says plainly: no personal data, hashed daily IP counters only, no analytics cookies. |
 | `/how-it-works` | The credibility page. See designer brief section 6 for the seven blocks. Engineering requirements below. |
 | `404` | Waving mascot, footer. |
 
