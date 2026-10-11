@@ -1,0 +1,55 @@
+{
+ "source": "claude-dev",
+ "items": [
+  {
+   "key": "https://claude.dev/blog/building-effective-agent-automations/",
+   "date": "2026-10-08",
+   "title": "Building effective agent automations"
+  },
+  {
+   "key": "https://claude.dev/blog/claude-code-in-the-cloud/",
+   "date": "2026-10-06",
+   "title": "Claude Code in the cloud: a field guide to cloud sessions"
+  },
+  {
+   "key": "https://claude.dev/blog/getting-started-with-claude-code-mods/",
+   "date": "2026-10-01",
+   "title": "Getting started with Claude Code mods"
+  },
+  {
+   "key": "https://claude.dev/blog/building-with-claude-sonnet-5-5/",
+   "date": "2026-09-28",
+   "title": "Building with Claude Sonnet 5.5"
+  },
+  {
+   "key": "https://claude.dev/blog/automating-eval-design-and-hillclimbing/",
+   "date": "2026-09-28",
+   "title": "Automating eval design and hillclimbing with Claude"
+  },
+  {
+   "key": "https://claude.dev/blog/what-a-task-costs-on-opus-5-5/",
+   "date": "2026-09-25",
+   "title": "What a task costs on Opus 5.5"
+  },
+  {
+   "key": "https://claude.dev/blog/spending-your-effort/",
+   "date": "2026-09-25",
+   "title": "Using Claude Code: Spending your effort"
+  },
+  {
+   "key": "https://claude.dev/blog/how-we-made-claude-ai-faster/",
+   "date": "2026-09-23",
+   "title": "How we made claude.ai 3x faster in two weeks"
+  },
+  {
+   "key": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5/",
+   "date": "2026-09-22",
+   "title": "Getting the most out of Opus 5.5 in Claude and Claude Code"
+  },
+  {
+   "key": "https://claude.dev/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models/",
+   "date": "2026-07-24",
+   "title": "The new rules of context engineering for Claude 5 generation models"
+  }
+ ]
+}

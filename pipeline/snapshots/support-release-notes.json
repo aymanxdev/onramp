@@ -1,0 +1,460 @@
+{
+ "source": "support-release-notes",
+ "items": [
+  {
+   "key": "2026-10-07|monthly-api-credits-for-max-and-team-plans",
+   "date": "2026-10-07",
+   "title": "Monthly API credits for Max and Team plans"
+  },
+  {
+   "key": "2026-10-07|claude-haiku-5-5-launch",
+   "date": "2026-10-07",
+   "title": "Claude Haiku 5.5 launch"
+  },
+  {
+   "key": "2026-09-28|claude-sonnet-5-5-launch",
+   "date": "2026-09-28",
+   "title": "Claude Sonnet 5.5 launch"
+  },
+  {
+   "key": "2026-09-25|build-plugins-for-claude",
+   "date": "2026-09-25",
+   "title": "Build plugins for Claude"
+  },
+  {
+   "key": "2026-09-22|claude-opus-5-5-launch",
+   "date": "2026-09-22",
+   "title": "Claude Opus 5.5 launch"
+  },
+  {
+   "key": "2026-09-16|create-designs-decks-and-docs-in-any-conversation",
+   "date": "2026-09-16",
+   "title": "Create designs, decks, and docs in any conversation"
+  },
+  {
+   "key": "2026-09-16|claude-cowork-comes-to-every-conversation",
+   "date": "2026-09-16",
+   "title": "Claude Cowork comes to every conversation"
+  },
+  {
+   "key": "2026-09-15|launching-salesforce-in-claude-beta",
+   "date": "2026-09-15",
+   "title": "Launching Salesforce in Claude (beta)"
+  },
+  {
+   "key": "2026-09-10|smart-reports-beta",
+   "date": "2026-09-10",
+   "title": "Smart reports (beta)"
+  },
+  {
+   "key": "2026-09-01|claude-fable-5-1-and-claude-mythos-5-1-launch",
+   "date": "2026-09-01",
+   "title": "Claude Fable 5.1 and Claude Mythos 5.1 launch"
+  },
+  {
+   "key": "2026-08-25|memory-in-claude-cowork-editable-topics-and-a-sensitive-topics-setting",
+   "date": "2026-08-25",
+   "title": "Memory in Claude Cowork, editable topics, and a sensitive topics setting"
+  },
+  {
+   "key": "2026-08-06|skill-and-plugin-security-scanning-beta",
+   "date": "2026-08-06",
+   "title": "Skill and plugin security scanning (beta)"
+  },
+  {
+   "key": "2026-07-24|claude-opus-5-launch",
+   "date": "2026-07-24",
+   "title": "Claude Opus 5 launch"
+  },
+  {
+   "key": "2026-07-14|hipaa-configuration-for-your-claude-organizations-is-now-self-serve",
+   "date": "2026-07-14",
+   "title": "HIPAA configuration for your Claude organizations is now self-serve"
+  },
+  {
+   "key": "2026-07-10|updated-memory-for-claude",
+   "date": "2026-07-10",
+   "title": "Updated memory for Claude"
+  },
+  {
+   "key": "2026-07-09|a-new-way-to-reflect-with-claude",
+   "date": "2026-07-09",
+   "title": "A new way to reflect with Claude"
+  },
+  {
+   "key": "2026-07-07|write-tools-for-the-microsoft-365-connector",
+   "date": "2026-07-07",
+   "title": "Write tools for the Microsoft 365 connector"
+  },
+  {
+   "key": "2026-07-07|claude-cowork-on-web-and-mobile",
+   "date": "2026-07-07",
+   "title": "Claude Cowork on web and mobile"
+  },
+  {
+   "key": "2026-07-01|model-entitlements-for-enterprise-plans-beta",
+   "date": "2026-07-01",
+   "title": "Model entitlements for Enterprise plans (beta)"
+  },
+  {
+   "key": "2026-07-01|access-to-claude-fable-5-and-claude-mythos-5-restored",
+   "date": "2026-07-01",
+   "title": "Access to Claude Fable 5 and Claude Mythos 5 restored"
+  },
+  {
+   "key": "2026-06-30|claude-sonnet-5-launch",
+   "date": "2026-06-30",
+   "title": "Claude Sonnet 5 launch"
+  },
+  {
+   "key": "2026-06-25|enable-trusted-devices-for-remote-control",
+   "date": "2026-06-25",
+   "title": "Enable Trusted Devices for Remote Control"
+  },
+  {
+   "key": "2026-06-23|delegate-work-to-claude-in-slack-with-claude-tag",
+   "date": "2026-06-23",
+   "title": "Delegate work to Claude in Slack with Claude Tag"
+  },
+  {
+   "key": "2026-06-12|edit-claude-s-drafts-in-place",
+   "date": "2026-06-12",
+   "title": "Edit Claude’s drafts in place"
+  },
+  {
+   "key": "2026-06-12|access-to-claude-fable-5-and-claude-mythos-5-suspended",
+   "date": "2026-06-12",
+   "title": "Access to Claude Fable 5 and Claude Mythos 5 suspended"
+  },
+  {
+   "key": "2026-06-09|claude-fable-5-launch",
+   "date": "2026-06-09",
+   "title": "Claude Fable 5 launch"
+  },
+  {
+   "key": "2026-06-02|enterprise-plans-can-manage-admin-permissions-with-custom-roles",
+   "date": "2026-06-02",
+   "title": "Enterprise plans can manage admin permissions with custom roles"
+  },
+  {
+   "key": "2026-05-28|enterprise-plans-can-manage-connector-access-with-custom-roles",
+   "date": "2026-05-28",
+   "title": "Enterprise plans can manage connector access with custom roles"
+  },
+  {
+   "key": "2026-05-28|claude-opus-4-8-launch",
+   "date": "2026-05-28",
+   "title": "Claude Opus 4.8 launch"
+  },
+  {
+   "key": "2026-05-21|claude-now-works-with-more-security-and-compliance-tools",
+   "date": "2026-05-21",
+   "title": "Claude now works with more security and compliance tools"
+  },
+  {
+   "key": "2026-04-17|claude-design-by-anthropic-labs",
+   "date": "2026-04-17",
+   "title": "Claude Design by Anthropic Labs"
+  },
+  {
+   "key": "2026-04-16|claude-opus-4-7-launch",
+   "date": "2026-04-16",
+   "title": "Claude Opus 4.7 launch"
+  },
+  {
+   "key": "2026-04-09|role-based-access-controls-for-enterprise-plans",
+   "date": "2026-04-09",
+   "title": "Role-based access controls for Enterprise plans"
+  },
+  {
+   "key": "2026-04-09|claude-cowork-generally-available",
+   "date": "2026-04-09",
+   "title": "Claude Cowork generally available"
+  },
+  {
+   "key": "2026-03-25|interactive-apps-in-claude-for-ios-and-android",
+   "date": "2026-03-25",
+   "title": "Interactive apps in Claude for iOS and Android"
+  },
+  {
+   "key": "2026-03-23|computer-use-research-preview-in-cowork-and-claude-code-dispatch-improvements",
+   "date": "2026-03-23",
+   "title": "Computer use research preview in Cowork and Claude Code + Dispatch improvements"
+  },
+  {
+   "key": "2026-03-17|control-cowork-from-your-phone-with-a-persistent-thread-research-preview-for-pro-max",
+   "date": "2026-03-17",
+   "title": "Control Cowork from your phone with a persistent thread (research preview for Pro/Max)"
+  },
+  {
+   "key": "2026-03-12|claude-creates-interactive-charts-diagrams-and-visualizations",
+   "date": "2026-03-12",
+   "title": "Claude creates interactive charts, diagrams and visualizations"
+  },
+  {
+   "key": "2026-03-11|work-across-excel-and-powerpoint",
+   "date": "2026-03-11",
+   "title": "Work across Excel and PowerPoint"
+  },
+  {
+   "key": "2026-03-02|use-claude-s-chat-search-and-memory-to-build-on-previous-context",
+   "date": "2026-03-02",
+   "title": "Use Claude’s chat search and memory to build on previous context"
+  },
+  {
+   "key": "2026-03-02|memory-for-free-users",
+   "date": "2026-03-02",
+   "title": "Memory for free users"
+  },
+  {
+   "key": "2026-02-25|scheduled-tasks-in-cowork",
+   "date": "2026-02-25",
+   "title": "Scheduled tasks in Cowork"
+  },
+  {
+   "key": "2026-02-24|manage-cowork-plugins-for-your-organization",
+   "date": "2026-02-24",
+   "title": "Manage Cowork plugins for your organization"
+  },
+  {
+   "key": "2026-02-24|cowork-plugins-and-admin-controls",
+   "date": "2026-02-24",
+   "title": "Cowork plugins and admin controls"
+  },
+  {
+   "key": "2026-02-17|claude-sonnet-4-6-launch",
+   "date": "2026-02-17",
+   "title": "Claude Sonnet 4.6 launch"
+  },
+  {
+   "key": "2026-02-13|analytics-api-for-enterprise-plans",
+   "date": "2026-02-13",
+   "title": "Analytics API for Enterprise plans"
+  },
+  {
+   "key": "2026-02-12|self-serve-enterprise-plans",
+   "date": "2026-02-12",
+   "title": "Self-serve Enterprise plans"
+  },
+  {
+   "key": "2026-02-05|introducing-claude-for-powerpoint",
+   "date": "2026-02-05",
+   "title": "Introducing Claude for PowerPoint"
+  },
+  {
+   "key": "2026-02-05|claude-opus-4-6-launch",
+   "date": "2026-02-05",
+   "title": "Claude Opus 4.6 launch"
+  },
+  {
+   "key": "2026-02-05|claude-for-excel-improvements",
+   "date": "2026-02-05",
+   "title": "Claude for Excel improvements"
+  },
+  {
+   "key": "2026-01-16|opus-4-and-4-1-deprecated-from-claude-and-claude-code",
+   "date": "2026-01-16",
+   "title": "Opus 4 and 4.1 deprecated from Claude and Claude Code"
+  },
+  {
+   "key": "2026-01-16|cowork-research-preview-expanded-to-pro-plans",
+   "date": "2026-01-16",
+   "title": "Cowork research preview expanded to Pro plans"
+  },
+  {
+   "key": "2026-01-16|claude-code-access-added-to-team-plan-standard-seats",
+   "date": "2026-01-16",
+   "title": "Claude Code access added to Team plan Standard seats"
+  },
+  {
+   "key": "2026-01-12|using-claude-with-ios-apps",
+   "date": "2026-01-12",
+   "title": "Using Claude with iOS Apps"
+  },
+  {
+   "key": "2026-01-12|hipaa-ready-enterprise-plans",
+   "date": "2026-01-12",
+   "title": "HIPAA-ready Enterprise plans"
+  },
+  {
+   "key": "2026-01-12|health-and-fitness-data-on-claude-mobile",
+   "date": "2026-01-12",
+   "title": "Health and fitness data on Claude Mobile"
+  },
+  {
+   "key": "2026-01-12|cowork-research-preview-on-claude-desktop-macos-only-for-max-plans",
+   "date": "2026-01-12",
+   "title": "Cowork research preview on Claude Desktop (macOS only) for Max plans"
+  },
+  {
+   "key": "2025-12-18|skills-for-organizations-partners-and-the-ecosystem",
+   "date": "2025-12-18",
+   "title": "Skills for organizations, partners, and the ecosystem"
+  },
+  {
+   "key": "2025-12-18|claude-in-chrome-updates",
+   "date": "2025-12-18",
+   "title": "Claude in Chrome updates"
+  },
+  {
+   "key": "2025-11-24|context-window-compaction",
+   "date": "2025-11-24",
+   "title": "Context window compaction"
+  },
+  {
+   "key": "2025-11-24|claude-opus-4-5-launch",
+   "date": "2025-11-24",
+   "title": "Claude Opus 4.5 launch"
+  },
+  {
+   "key": "2025-11-24|claude-in-chrome-updates",
+   "date": "2025-11-24",
+   "title": "Claude in Chrome updates"
+  },
+  {
+   "key": "2025-11-24|claude-for-excel-beta-release",
+   "date": "2025-11-24",
+   "title": "Claude for Excel beta release"
+  },
+  {
+   "key": "2025-10-23|claude-s-memory-on-max-and-pro-plans",
+   "date": "2025-10-23",
+   "title": "Claude’s memory on Max and Pro plans"
+  },
+  {
+   "key": "2025-10-15|claude-in-chrome-updates",
+   "date": "2025-10-15",
+   "title": "Claude in Chrome updates"
+  },
+  {
+   "key": "2025-10-15|claude-haiku-4-5-launch",
+   "date": "2025-10-15",
+   "title": "Claude Haiku 4.5 launch"
+  },
+  {
+   "key": "2025-09-29|creating-and-editing-files-with-claude-for-pro-plans-and-mobile",
+   "date": "2025-09-29",
+   "title": "Creating and editing files with Claude for Pro plans and mobile"
+  },
+  {
+   "key": "2025-09-29|claude-sonnet-4-5-launch",
+   "date": "2025-09-29",
+   "title": "Claude Sonnet 4.5 launch"
+  },
+  {
+   "key": "2025-09-29|claude-in-chrome-updates",
+   "date": "2025-09-29",
+   "title": "Claude in Chrome updates"
+  },
+  {
+   "key": "2025-09-18|using-claude-s-chat-search-and-memory-to-build-on-previous-context",
+   "date": "2025-09-18",
+   "title": "Using Claude’s chat search and memory to build on previous context"
+  },
+  {
+   "key": "2025-09-18|claude-s-memory-on-enterprise-plans",
+   "date": "2025-09-18",
+   "title": "Claude’s memory on Enterprise plans"
+  },
+  {
+   "key": "2025-09-16|claude-in-chrome-expansion",
+   "date": "2025-09-16",
+   "title": "Claude in Chrome expansion"
+  },
+  {
+   "key": "2025-09-11|using-claude-s-chat-search-and-memory-to-build-on-previous-context",
+   "date": "2025-09-11",
+   "title": "Using Claude’s chat search and memory to build on previous context"
+  },
+  {
+   "key": "2025-09-11|claude-s-memory-on-team-plans-and-incognito-chats-for-free-pro-max-and-team-plans",
+   "date": "2025-09-11",
+   "title": "Claude’s memory on Team plans and incognito chats for free, Pro, Max, and Team plans"
+  },
+  {
+   "key": "2025-09-09|creating-and-editing-files-with-claude",
+   "date": "2025-09-09",
+   "title": "Creating and editing files with Claude"
+  },
+  {
+   "key": "2025-09-09|create-and-edit-files-with-claude",
+   "date": "2025-09-09",
+   "title": "Create and edit files with Claude"
+  },
+  {
+   "key": "2025-09-03|using-claude-with-ios-apps",
+   "date": "2025-09-03",
+   "title": "Using Claude with iOS Apps"
+  },
+  {
+   "key": "2025-09-03|location-maps-and-calendar-access-on-claude-for-ios-and-android",
+   "date": "2025-09-03",
+   "title": "Location, maps, and calendar access on Claude for iOS and Android"
+  },
+  {
+   "key": "2025-08-27|code-execution-tool",
+   "date": "2025-08-27",
+   "title": "Code Execution Tool"
+  },
+  {
+   "key": "2025-08-26|claude-in-chrome",
+   "date": "2025-08-26",
+   "title": "Claude in Chrome"
+  },
+  {
+   "key": "2025-08-21|making-shared-artifacts-embeddable",
+   "date": "2025-08-21",
+   "title": "Making shared artifacts embeddable"
+  },
+  {
+   "key": "2025-08-21|admin-controls-for-desktop-extensions",
+   "date": "2025-08-21",
+   "title": "Admin controls for desktop extensions"
+  },
+  {
+   "key": "2025-08-20|purchasing-and-managing-seats",
+   "date": "2025-08-20",
+   "title": "Purchasing and managing seats"
+  },
+  {
+   "key": "2025-08-20|premium-seats-with-claude-code-for-team-and-enterprise-plans",
+   "date": "2025-08-20",
+   "title": "Premium seats with Claude Code for Team and Enterprise plans"
+  },
+  {
+   "key": "2025-08-20|extra-usage-for-team-and-enterprise-plans",
+   "date": "2025-08-20",
+   "title": "Extra usage for Team and Enterprise plans"
+  },
+  {
+   "key": "2025-08-15|ability-to-change-monthly-team-plan-billing-to-annual",
+   "date": "2025-08-15",
+   "title": "Ability to change monthly Team plan billing to annual"
+  },
+  {
+   "key": "2025-08-12|1m-token-context-window",
+   "date": "2025-08-12",
+   "title": "1M token context window"
+  },
+  {
+   "key": "2025-08-11|ability-to-search-past-conversations",
+   "date": "2025-08-11",
+   "title": "Ability to search past conversations"
+  },
+  {
+   "key": "2025-08-06|claude-code-security-reviews",
+   "date": "2025-08-06",
+   "title": "Claude Code Security Reviews"
+  },
+  {
+   "key": "2025-08-05|claude-opus-4-1",
+   "date": "2025-08-05",
+   "title": "Claude Opus 4.1"
+  },
+  {
+   "key": "2025-08-01|project-sharing",
+   "date": "2025-08-01",
+   "title": "Project Sharing"
+  }
+ ]
+}

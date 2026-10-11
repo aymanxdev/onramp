@@ -14,7 +14,7 @@ Copy every file in this folder into the repo root in phase 0. Then apply `branch
 | `OWNER.md` | Contact for trademark or takedown requests |
 | `branch-ruleset-main.json` | Importable GitHub ruleset for `main` |
 | `.github/workflows/ci.yml` | The required status checks |
-| `.github/workflows/catalogue-drift.yml` | Weekly release-notes diff that opens an issue |
+| `.github/workflows/weekly-update.yml` | Weekly check of the official sources that opens one `[Weekly update]` PR |
 | `.github/ISSUE_TEMPLATE/*` | Wrong route, New use case, Bug |
 | `.github/PULL_REQUEST_TEMPLATE/*` | Code PR and Catalogue PR |
 | `.github/dependabot.yml` | Weekly grouped updates |

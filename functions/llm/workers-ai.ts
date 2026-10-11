@@ -5,9 +5,9 @@
  */
 import type { Env } from '../lib/env'
 import type { Intake, Route } from '../../app/src/lib/matcher'
-import { intentExtractionTurn, personalisationTurn } from './prompts'
+import { catalogueDraftTurn, intentExtractionTurn, personalisationTurn } from './prompts'
 import { extractJsonObject } from './schema'
-import type { LlmAdapter } from './types'
+import type { CatalogueKnownIds, CatalogueSourceItem, LlmAdapter } from './types'
 
 /**
  * Small instruct model, chosen for low cost and speed on Workers AI's free allowance.
@@ -53,6 +53,12 @@ export function createWorkersAiAdapter(env: Env): LlmAdapter {
     async personalisePrompt(route: Route, intake: Intake): Promise<unknown | null> {
       const turn = personalisationTurn(route, intake)
       const response = await run(env, turn.system, turn.user, 600)
+      return response ? extractJsonObject(response) : null
+    },
+
+    async draftCatalogueEntry(item: CatalogueSourceItem, knownIds: CatalogueKnownIds): Promise<unknown | null> {
+      const turn = catalogueDraftTurn(item, knownIds)
+      const response = await run(env, turn.system, turn.user, 800)
       return response ? extractJsonObject(response) : null
     },
   }

@@ -20,6 +20,10 @@ from urllib.parse import urlparse
 
 import yaml
 
+# Parser names live next to the parsers themselves; importing them keeps the two in step.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from weekly_update.sources import PARSER_NAMES  # noqa: E402
+
 # Resolved relative to this file, not the caller's cwd, so `image.src` existence
 # checks work whether validate.py is run from the repo root or from pipeline/.
 APP_PUBLIC_DIR = Path(__file__).resolve().parent.parent / "app" / "public"
@@ -31,7 +35,10 @@ ALLOWED_HOSTS = (
     "docs.claude.com",
     "support.claude.com",
     "code.claude.com",
+    "claude.dev",
 )
+
+SOURCE_KINDS = ("release-notes", "blog", "news", "changelog")
 
 DASH_RE = re.compile("[–—]")
 ISO_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -422,6 +429,39 @@ def validate(cat: dict, require: list[str]) -> Problems:
     return problems
 
 
+def validate_sources(data: object) -> Problems:
+    """Checks pipeline/sources.yaml: unique ids, known parser names and kinds, and a
+    URL on an allowed official host for every source."""
+    problems = Problems()
+    sources = data.get("sources") if isinstance(data, dict) else None
+    if not isinstance(sources, list) or not sources:
+        problems.add("sources", "expected a non-empty list under 'sources'")
+        return problems
+    seen: set[str] = set()
+    for i, src in enumerate(sources):
+        if not isinstance(src, dict):
+            problems.add(f"sources[{i}]", "must be a mapping")
+            continue
+        sid = src.get("id")
+        where = f"sources[{sid or i}]"
+        if not isinstance(sid, str) or not re.match(r"^[a-z0-9][a-z0-9-]*$", sid):
+            problems.add(where, f"id must be lowercase letters, digits and hyphens, got {sid!r}")
+        elif sid in seen:
+            problems.add(where, f"duplicate id {sid!r}")
+        else:
+            seen.add(sid)
+        url = src.get("url")
+        if not isinstance(url, str) or not url.startswith("https://"):
+            problems.add(where, f"url must be an https URL, got {url!r}")
+        elif not is_allowed_host(url):
+            problems.add(where, f"url host not allowed: {url!r}")
+        if src.get("parser") not in PARSER_NAMES:
+            problems.add(where, f"unknown parser {src.get('parser')!r}, expected one of {sorted(PARSER_NAMES)}")
+        if src.get("kind") not in SOURCE_KINDS:
+            problems.add(where, f"kind must be one of {list(SOURCE_KINDS)}, got {src.get('kind')!r}")
+    return problems
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("path", help="path to catalogue.yaml")
@@ -433,6 +473,12 @@ def main() -> int:
 
     require = [f.strip() for f in args.require.split(",") if f.strip()]
     problems = validate(cat, require)
+
+    # The weekly update source list sits beside the catalogue and is validated with it.
+    sources_path = Path(args.path).resolve().parent / "sources.yaml"
+    if sources_path.is_file():
+        with open(sources_path, "r", encoding="utf-8") as f:
+            problems.items.extend(validate_sources(yaml.safe_load(f)).items)
 
     if problems:
         print(f"catalogue-validate: {len(problems.items)} problem(s) found in {args.path}\n")
@@ -450,6 +496,8 @@ def main() -> int:
         "features": len(cat.get("features") or []),
         "changelog": len(cat.get("changelog") or []),
     }
+    if sources_path.is_file():
+        counts["sources"] = len(yaml.safe_load(sources_path.read_text(encoding="utf-8"))["sources"])
     print(f"catalogue-validate: clean. {counts}")
     return 0
 

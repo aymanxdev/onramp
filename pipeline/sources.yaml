@@ -1,0 +1,31 @@
+# Official sources the weekly update job reads (see openspec/changes/weekly-catalogue-update).
+# Each URL must be on an allowed official host (pipeline/validate.py ALLOWED_HOSTS) and each
+# parser must be one of the names registered in pipeline/weekly_update/sources.py.
+# validate.py checks both, so a typo here fails CI before the weekly job can use it.
+#
+# kind: release-notes | blog | news | changelog
+#   release-notes  dated notes, may hold several items a day; becomes a feature and a changelog entry
+#   news           company announcements; becomes a feature and a changelog entry
+#   blog           engineering and how-to posts; mostly no product change, so changelog only
+#   changelog      many small versions a week; one aggregated changelog entry per run, never a feature
+sources:
+- id: support-release-notes
+  name: Claude release notes
+  url: https://support.claude.com/en/articles/12138966-release-notes
+  parser: support-release-notes
+  kind: release-notes
+- id: claude-dev
+  name: claude.dev blog
+  url: https://claude.dev
+  parser: claude-dev
+  kind: blog
+- id: anthropic-news
+  name: Anthropic news
+  url: https://www.anthropic.com/news
+  parser: anthropic-news
+  kind: news
+- id: claude-code-changelog
+  name: Claude Code changelog
+  url: https://code.claude.com/docs/en/changelog
+  parser: claude-code-changelog
+  kind: changelog

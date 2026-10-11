@@ -26,6 +26,7 @@
     "tokens:build": "node ../scripts/build-tokens.mjs",
     "prompts:build": "node ../scripts/build-prompts.mjs",
     "data:build": "python3 ../pipeline/build.py",
+    "weekly:draft:build": "vite build --config ../scripts/weekly-update/vite.config.ts",
     "catalogue:validate": "python3 ../pipeline/validate.py --require officialUrl,asOf ../pipeline/catalogue.yaml"
   },
   "dependencies": {

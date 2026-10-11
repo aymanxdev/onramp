@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Generates functions/llm/prompts.generated.ts from the two public prompt files in
+ * Generates functions/llm/prompts.generated.ts from the public prompt files in
  * functions/prompts/ (BUILD_CONTRACT section H). The prompts stay human-editable
  * markdown; this script just turns them into typed string constants the Worker can
  * import with no runtime file read. Run via `pnpm prompts:build`, wired into `build`
@@ -17,6 +17,7 @@ const outFile = resolve(here, '../functions/llm/prompts.generated.ts')
 const files = {
   INTENT_EXTRACTION_PROMPT: 'intent-extraction.md',
   PROMPT_PERSONALISATION_PROMPT: 'prompt-personalisation.md',
+  CATALOGUE_DRAFT_PROMPT: 'catalogue-draft.md',
 }
 
 function toTsStringLiteral(text) {
