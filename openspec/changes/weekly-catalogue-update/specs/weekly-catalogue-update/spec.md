@@ -40,16 +40,26 @@ For each new item the job SHALL draft one `features` entry and one `changelog` e
 - **WHEN** the AI secrets are missing
 - **THEN** every new item gets a stub entry and the pull request is still opened
 
-### Requirement: Facts never come from the model
-Entry fields for dates (`shippedOn`, changelog `date`) and links (`officialUrl`, changelog `url`) SHALL be copied from the source item. Model output SHALL be limited to wording fields (`name`, `plainWords`, `whatItIs`, `whoItIsFor`, `forChips`, `bullets`, `tryPrompt`, `pitfalls`), plus a `surface` guess and `introduces` ids. The guess and the ids SHALL be dropped unless they match existing catalogue ids. `plans` SHALL default to the plans of the guessed surface, with a `# OWNER: confirm plans` comment above it. The entry SHALL also carry a `# OWNER: confirm availability` comment.
+### Requirement: Dates and links come from the source
+Entry dates (`shippedOn`, changelog `date`) and links (`officialUrl`, changelog `url`) SHALL be copied from the source item, never from model output.
 
 #### Scenario: Model returns a different link
 - **WHEN** the model output contains a URL or a date
 - **THEN** the drafted entry uses the source item's URL and date, and ignores the model's
 
+### Requirement: Model output is limited to wording
+Model output SHALL only fill wording fields (`name`, `plainWords`, `whatItIs`, `whoItIsFor`, `forChips`, `bullets`, `tryPrompt`, `pitfalls`), a `surface` guess and `introduces` ids. A guess or id that does not match an existing catalogue id SHALL be dropped.
+
 #### Scenario: Model invents a surface
 - **WHEN** the model's surface guess is not an existing surface id
 - **THEN** the entry gets no surface and an `# OWNER: choose surface` comment
+
+### Requirement: Owner-confirmed facts are flagged
+`plans` SHALL default to the plans of the guessed surface, with a `# OWNER: confirm plans` comment above it. Every drafted entry SHALL carry a `# OWNER: confirm availability` comment.
+
+#### Scenario: Plans defaulted
+- **WHEN** an entry is drafted for a feature on the Cowork surface
+- **THEN** its `plans` equal the Cowork surface plans, with a `# OWNER: confirm plans` comment above them
 
 ### Requirement: Untrusted source text
 Fetched page text SHALL be treated as untrusted data. Model output SHALL be validated against a strict schema, with length limits on every field, before use. It SHALL be written through a YAML serialiser, never by string concatenation, and SHALL NOT contain em or en dashes.
