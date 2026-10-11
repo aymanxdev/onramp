@@ -147,6 +147,27 @@ class FetchSourceTests(unittest.TestCase):
         self.assertEqual(items, [])
         self.assertIn("parse failed", error)
 
+    def test_links_off_the_source_host_are_dropped(self):
+        html = (
+            '<a href="//evil.example/x"><time>Oct 1, 2026</time><h3>Bad</h3></a>'
+            '<a href="/news/good"><time>Oct 2, 2026</time><h3>Good</h3></a>'
+        )
+        src = S.Source(id="anthropic-news", name="News", url="https://www.anthropic.com/news",
+                       parser="anthropic-news", kind="news")
+        items, error = S.fetch_source(src, lambda url: html)
+        self.assertIsNone(error)
+        self.assertEqual([it["title"] for it in items], ["Good"])
+
+    def test_titles_are_capped(self):
+        item = S._item("k", "x" * 5000, None, "https://claude.dev/a", "")
+        self.assertLessEqual(len(item["title"]), S.MAX_TITLE + 4)
+        self.assertLessEqual(len(item["text"]), S.MAX_ITEM_TEXT + 4)
+
+    def test_same_host(self):
+        self.assertTrue(S.same_host("https://claude.dev/blog/a", "https://claude.dev/blog"))
+        self.assertFalse(S.same_host("https://evil.example/a", "https://claude.dev/blog"))
+        self.assertFalse(S.same_host("http://claude.dev/a", "https://claude.dev/blog"))
+
     def test_success_returns_items(self):
         items, error = S.fetch_source(self.src, lambda url: fixture("claude-dev.html"))
         self.assertIsNone(error)

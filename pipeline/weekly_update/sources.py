@@ -22,7 +22,7 @@ import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 
 import yaml
 
@@ -36,6 +36,7 @@ REQUEST_TIMEOUT_SECONDS = 30
 FETCH_ATTEMPTS = 2
 MAX_PAGE_BYTES = 8_000_000
 MAX_ITEM_TEXT = 3000
+MAX_TITLE = 200
 
 Item = dict
 
@@ -74,6 +75,8 @@ def fetch(url: str, timeout: int = REQUEST_TIMEOUT_SECONDS, attempts: int = FETC
             with urllib.request.urlopen(req, timeout=timeout) as resp:
                 if resp.status != 200:
                     raise FetchError(f"unexpected status {resp.status}")
+                if not same_host(resp.geturl(), url):
+                    raise FetchError(f"redirected off the source host to {resp.geturl()}")
                 return resp.read(MAX_PAGE_BYTES).decode("utf-8", errors="replace")
         except urllib.error.HTTPError as e:
             last = FetchError(f"HTTP {e.code}")
@@ -133,13 +136,22 @@ def slugify(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
 
 
+def same_host(url: str, source_url: str) -> bool:
+    """True when url is https on the same host as the source page."""
+    try:
+        a, b = urlparse(url), urlparse(source_url)
+    except ValueError:
+        return False
+    return a.scheme == "https" and bool(a.hostname) and a.hostname == b.hostname
+
+
 def cap(text: str, limit: int = MAX_ITEM_TEXT) -> str:
     text = text.strip()
     return text if len(text) <= limit else text[:limit].rstrip() + " ..."
 
 
 def _item(key: str, title: str, date: str | None, url: str, text: str) -> Item:
-    title = re.sub(r"\s+", " ", title).strip()
+    title = cap(re.sub(r"\s+", " ", title), MAX_TITLE)
     return {"key": key, "title": title, "date": date, "url": url, "text": cap(text or title)}
 
 
@@ -329,10 +341,12 @@ def fetch_source(source: Source, fetcher: Callable[[str], str] = fetch) -> tuple
         return [], f"parse failed: {e}"
     except Exception as e:  # noqa: BLE001
         return [], f"parse failed: {type(e).__name__}: {e}"
-    # Drop duplicate keys, keep the first.
+    # Drop links that leave the source host (e.g. "//other.example/x") and duplicate keys.
     seen: set[str] = set()
     unique = []
     for it in items:
+        if not same_host(it["url"], source.url):
+            continue
         if it["key"] not in seen:
             seen.add(it["key"])
             unique.append(it)
