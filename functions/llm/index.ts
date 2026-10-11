@@ -8,8 +8,9 @@ import { createNoneAdapter } from './none'
 import type { LlmAdapter } from './types'
 import { createWorkersAiAdapter } from './workers-ai'
 
-export type { LlmAdapter } from './types'
-export type { ExtractedIntent, PersonalisedPrompt } from './schema'
+export type { LlmAdapter, CatalogueSourceItem, CatalogueKnownIds } from './types'
+export { createWorkersAiRestAdapter } from './workers-ai-rest'
+export type { ExtractedIntent, PersonalisedPrompt, CatalogueDraft } from './schema'
 
 export function createLlmAdapter(env: Env): LlmAdapter {
   const provider = env.LLM_PROVIDER || 'workers-ai'

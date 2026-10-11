@@ -14,5 +14,8 @@ export function createNoneAdapter(): LlmAdapter {
     async personalisePrompt() {
       return null
     },
+    async draftCatalogueEntry() {
+      return null
+    },
   }
 }

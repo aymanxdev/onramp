@@ -14,6 +14,7 @@ app/playwright-report/
 app/test-results/
 app/coverage/
 app/.vite/
+scripts/weekly-update/dist/
 
 # pipeline
 pipeline/corpus/

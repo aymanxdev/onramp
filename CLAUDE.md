@@ -20,7 +20,7 @@ Read `docs/DEVELOPER_BRIEF.md` (sections 1, 15 and 15a first) and `docs/DESIGNER
 - pnpm only. TypeScript strict. Tokens from `tokens.json`, never hard-coded colours or springs.
 - British English in copy. No em or en dashes anywhere in `app/src/content`, `docs` or the catalogue.
 - No Claude or Anthropic logos, wordmarks, sparkle or Clawd. Plain-text mentions only. The disclaimer footer stays on every page.
-- No model calls from the browser. The only model calls are the two adapter functions in `functions/llm/`. Prompts live in `functions/prompts/` and are public.
+- No model calls from the browser. The only model calls are the adapter functions in `functions/llm/` (the two Type-it calls and the weekly catalogue draft). Prompts live in `functions/prompts/` and are public.
 - Never store user text, IPs or anything personal. Only the counters listed in `DATA.md`.
 - Catalogue facts come from official pages a human opened. AI drafts wording; it never decides plans, dates or availability.
 - No secrets in the repo. `.env.example` documents every variable.

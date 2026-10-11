@@ -15,6 +15,7 @@ function nullAdapter(): LlmAdapter {
   return {
     extractIntent: vi.fn(async () => null),
     personalisePrompt: vi.fn(async () => null),
+    draftCatalogueEntry: vi.fn(async () => null),
   }
 }
 
@@ -121,6 +122,7 @@ describe('POST /api/route', () => {
     const adapter: LlmAdapter = {
       extractIntent: vi.fn(async () => ({ role: 12345 })), // wrong type: schema expects a string
       personalisePrompt: vi.fn(async () => null),
+      draftCatalogueEntry: vi.fn(async () => null),
     }
     vi.spyOn(llmModule, 'createLlmAdapter').mockReturnValue(adapter)
 

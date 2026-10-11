@@ -4,6 +4,9 @@ on:
   pull_request:
   push:
     branches: [main]
+  # The weekly-update job dispatches CI on its own branch, because pull requests opened
+  # with GITHUB_TOKEN do not trigger other workflows.
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -112,6 +115,8 @@ jobs:
         with: { python-version: "3.12" }
       - run: pip install -r pipeline/requirements.txt
       - run: python pipeline/validate.py pipeline/catalogue.yaml
+      - name: Weekly update pipeline tests
+        run: python -m unittest discover pipeline/weekly_update
       - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
         with: { package_json_file: app/package.json }
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4

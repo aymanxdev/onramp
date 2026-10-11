@@ -7,9 +7,9 @@
  */
 import type { Env } from '../lib/env'
 import type { Intake, Route } from '../../app/src/lib/matcher'
-import { intentExtractionTurn, personalisationTurn } from './prompts'
+import { catalogueDraftTurn, intentExtractionTurn, personalisationTurn } from './prompts'
 import { extractJsonObject } from './schema'
-import type { LlmAdapter } from './types'
+import type { CatalogueKnownIds, CatalogueSourceItem, LlmAdapter } from './types'
 
 const MESSAGES_URL = 'https://api.anthropic.com/v1/messages'
 const ANTHROPIC_VERSION = '2023-06-01'
@@ -55,6 +55,12 @@ export function createAnthropicAdapter(env: Env): LlmAdapter {
     async personalisePrompt(route: Route, intake: Intake): Promise<unknown | null> {
       const turn = personalisationTurn(route, intake)
       const response = await run(env, turn.system, turn.user, 600)
+      return response ? extractJsonObject(response) : null
+    },
+
+    async draftCatalogueEntry(item: CatalogueSourceItem, knownIds: CatalogueKnownIds): Promise<unknown | null> {
+      const turn = catalogueDraftTurn(item, knownIds)
+      const response = await run(env, turn.system, turn.user, 800)
       return response ? extractJsonObject(response) : null
     },
   }

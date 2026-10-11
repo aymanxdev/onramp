@@ -34,7 +34,7 @@ If you are using Claude Code to build this, drop this file in the repo as `docs/
 | LLM (optional) | Provider adapter with two implementations: Cloudflare Workers AI (free daily allowance) as default, Anthropic Claude Haiku as an opt-in when an API key and budget exist | Keeps "free" true; lets us go on-brand later. Verify current free quotas before launch; they change. |
 | Data pipeline | Python 3.10+, `graphifyy` (Graphify) to build `graph.json` from a docs corpus, plus a hand-curated `catalogue.yaml` merged at build time | Graphify gives us nodes, edges and community clustering for free; curation keeps it correct. |
 | Tests | Vitest (unit), Playwright (e2e and visual), axe-core in Playwright | Team standard. |
-| CI | GitHub Actions: lint, typecheck, unit, e2e, a11y, catalogue validation, weekly catalogue-drift check | |
+| CI | GitHub Actions: lint, typecheck, unit, e2e, a11y, catalogue validation, weekly catalogue update job | |
 
 ## 2a. Backend and storage, in one table
 
@@ -118,7 +118,7 @@ Seed `catalogue.yaml` with at least these. Every entry needs the official link; 
 
 | Surface | Official starting point |
 |---|---|
-| Release notes (drives the "What's new" ticker and drift check) | https://support.claude.com/en/articles/12138966-release-notes |
+| Release notes (drives the "What's new" ticker and the weekly update job) | https://support.claude.com/en/articles/12138966-release-notes |
 | Claude Cowork (desktop, web and mobile; plugins; scheduled tasks; computer use; Dispatch) | https://support.claude.com/en/articles/13345190-getting-started-with-cowork |
 | Cowork on web, desktop and mobile | https://support.claude.com/en/articles/15520349 |
 | Scheduled tasks in Cowork | https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork |
@@ -158,7 +158,7 @@ Use it like this:
 | 3. Merge | `pipeline/merge.py` reads `graphify-out/graph.json`, keeps only EXTRACTED edges by default, maps nodes onto our typed schema, then overlays `catalogue.yaml` (curated wins on conflict). |
 | 4. Validate | Zod / JSON Schema: every node has `officialUrl` and `asOf`; every use case has a route; no dangling edges; every URL returns 200 (CI job). |
 | 5. Emit | `app/public/data/graph.json` and `catalogue.json` (flattened for the matcher). Commit these. |
-| 6. Drift check | Weekly GitHub Action re-fetches the release notes, diffs against the last run, opens an issue listing new items so a human updates `catalogue.yaml`. |
+| 6. Weekly update | Weekly GitHub Action reads the official sources in `pipeline/sources.yaml`, finds items missing from the committed snapshots and opens one `[Weekly update]` pull request with drafted catalogue entries for the owner to review (section 11a). |
 
 Graphify is a build-time tool here. Nothing at runtime depends on it, so a Graphify breaking change can never take the site down.
 
@@ -246,12 +246,12 @@ Why this is safe to publish when the repo is open anyway: the page is not a spec
 
 ## 11a. Radar: turning releases into routes
 
-The drift job (section 6) already notices when Claude ships something. Radar is what happens next. See designer brief section 6a for the screens. Engineering:
+The weekly update job (section 6) notices when Claude ships something. Radar is what happens next. See designer brief section 6a for the screens. Engineering:
 
 | Piece | Spec |
 |---|---|
 | `feature` node type | Add to the data model: id, name, plainWords (required, under 120 chars), whatItIs, whoItIsFor, shippedOn, verifiedOn, surface[], plans[], officialUrl, tryPrompt, pitfalls[], status (`draft`, `published`). Edges: `introduces` (feature → capability), `available_on`. |
-| Intake pipeline | Drift job parses new release-note items into `pipeline/radar/inbox/*.yaml` drafts using the LLM adapter with a strict schema (plainWords, whatItIs, whoItIsFor, surface guess, tryPrompt). Drafts are never published automatically. The job opens one PR titled "Radar: N new items" assigned to the owner. Owner edits and merges; that is the publish step. Governance is unchanged. |
+| Intake pipeline | The weekly update job (`.github/workflows/weekly-update.yml`, Mondays 07:00 UK, plus manual dispatch on `main`) reads every source in `pipeline/sources.yaml` (the support release notes, claude.dev, anthropic.com/news and the Claude Code changelog). Per-source parsers turn each page into dated items; items whose key is missing from the committed snapshot in `pipeline/snapshots/<source-id>.json` are new. For each new item the job drafts a `features` entry and a `changelog` entry with the third LLM adapter function, `draftCatalogueEntry` (strict Zod schema, at most 20 model calls per run, plain stubs beyond that or without credentials). Dates and links are copied from the source item, never from the model; plans default from the guessed surface and every drafted fact carries an `# OWNER:` comment. The Claude Code changelog yields one aggregated changelog line per run, never a feature. The job validates its own output, then opens or updates exactly one pull request titled `[Weekly update] YYYY-MM-DD: N new items`, assigned to the owner, listing each item with its link, the facts to confirm and anything that may affect existing routes. A broken source is listed in the PR body and never fails the run; one that fails two runs in a row opens a single source-problem issue. Drafts are never published automatically: the owner edits and merges, and merging (which advances the snapshots) is the publish step. |
 | Since you were here | Device only. `localStorage` keys: `radar:lastSeen` (ISO date), `radar:surfaces` (surfaces the person has routed to), `radar:dismissed` (feature ids). Banner shows features with `shippedOn > lastSeen` intersected with `radar:surfaces`, max three, never the same id twice. No network. |
 | `/new` page | Reads `catalogue.json` features sorted by `shippedOn` desc. Filters are URL params. Depth toggle persisted in `localStorage` as `radar:depth`. Cards render from data only; no per-feature JSX. |
 | Map time slider | Nodes carry `shippedOn`; slider sets a threshold and dims nodes older than it. New nodes (shipped in the last 14 days) pulse once on first render, respecting reduced motion. |
@@ -261,7 +261,7 @@ The drift job (section 6) already notices when Claude ships something. Radar is 
 | Freshness rule | A feature whose `verifiedOn` is older than 90 days shows a "check the official page" note on its card and is excluded from the weekly card and the banner until re-verified. CI warns; owner re-verifies via a catalogue PR. |
 | Tests | Golden tests for the banner logic (lastSeen, surfaces, dismissed), score maths, and feed validity. |
 
-Delivery: phase 4 alongside the Map. The drift-to-draft step ships first because it costs nothing and immediately makes the owner's weekly job a ten-minute review instead of research.
+Delivery: phase 4 alongside the Map. The release-to-draft step ships first because it costs nothing and immediately makes the owner's weekly job a ten-minute review instead of research.
 
 Share previews: dynamic OG image per route generated at build time for the seeded use cases; generic OG image for everything else.
 
@@ -290,7 +290,7 @@ Share previews: dynamic OG image per route generated at build time for the seede
 | 1 | Catalogue seed (40 use cases), Graphify pipeline, matcher with golden tests. |
 | 2 | Guide-me flow and Route screen, fully offline-capable. Deploy. This is the MVP. |
 | 3 | Edge API with Turnstile, KV limits, cache, Workers AI adapter. Type-it flow. |
-| 4 | Map, prompt card, OG images, "What's new" ticker, drift check action. |
+| 4 | Map, prompt card, OG images, "What's new" ticker, weekly update action. |
 | 5 | Sound, confetti, polish pass against the Josh Comeau bar with the designer. |
 
 ## 14. Legal and content rules
@@ -390,7 +390,7 @@ Two different things. Both live in `AI_USAGE.md` and are linked from `CONTRIBUTI
 | AI-assisted PRs are welcome and must say so | A `## AI assistance` line in the PR template: which tool, for what. Undisclosed AI content that turns out to be wrong gets the PR closed. |
 | You must understand what you submit | Reviewers ask questions; if the contributor cannot explain the change, it is closed. |
 | AI may not author catalogue facts | Facts come from the official page a human opened. AI may draft wording; it may not decide plans, dates or availability. |
-| The app's own model use is bounded | Only the two adapter calls in section 8. No new model calls without a spec change approved by the owner. |
+| The app's own model use is bounded | Only the adapter functions in `functions/llm/`: the two calls in section 8 and the weekly catalogue draft (section 11a, at most 20 calls a week, run from CI). No new model calls without a spec change approved by the owner. |
 | No model call from the browser, no user text stored, no prompts logged | Enforced by lint rule (section 11) and code review. |
 | Prompts that the app sends to models are public | They live in `functions/prompts/` and are part of the open source repo. If a prompt is embarrassing to publish, it is the wrong prompt. |
 
