@@ -150,8 +150,13 @@ export async function fetchStats(): Promise<Stats | null> {
 
 type TurnstileRenderOptions = {
   sitekey: string
-  size?: 'invisible'
+  /** Managed mode only shows a widget when needed with 'interaction-only'. */
+  appearance?: 'always' | 'execute' | 'interaction-only'
   callback: (token: string) => void
+  'before-interactive-callback'?: () => void
+  'after-interactive-callback'?: () => void
+  'expired-callback'?: () => void
+  'timeout-callback'?: () => void
   'error-callback'?: () => void
   'unsupported-callback'?: () => void
 }
@@ -186,7 +191,7 @@ function injectTurnstileScript(): Promise<void> {
 }
 
 /**
- * Solves an invisible Turnstile challenge and resolves its token. Falls back to a
+ * Solves a hidden (interaction-only) Turnstile challenge and resolves its token. Falls back to a
  * visible managed challenge, rendered into `#turnstile-fallback` (package E shows the
  * bot check card around it), when the invisible mode cannot complete on its own.
  */
@@ -206,13 +211,26 @@ export async function loadTurnstile(siteKey: string, onChallenge?: () => void): 
 
     let settled = false
     let fallbackStarted = false
+    let hiddenWidgetId: string | undefined
     const invisibleTimer = setTimeout(() => renderFallback(), INVISIBLE_TIMEOUT_MS)
+
+    function removeHiddenWidget() {
+      if (hiddenWidgetId !== undefined) {
+        try {
+          turnstile.remove(hiddenWidgetId)
+        } catch {
+          // Already gone; nothing to clean up.
+        }
+        hiddenWidgetId = undefined
+      }
+      hiddenContainer.remove()
+    }
 
     function renderFallback() {
       if (settled || fallbackStarted) return
       fallbackStarted = true
       clearTimeout(invisibleTimer)
-      hiddenContainer.remove()
+      removeHiddenWidget()
       // Ask the UI to mount `#turnstile-fallback`, then wait for it to appear.
       onChallenge?.()
       const startedAt = Date.now()
@@ -238,17 +256,33 @@ export async function loadTurnstile(siteKey: string, onChallenge?: () => void): 
       mount()
     }
 
-    turnstile.render(hiddenContainer, {
+    // Invisible behaviour is a widget mode set in the Cloudflare dashboard, not a `size`.
+    // 'interaction-only' keeps a Managed widget hidden unless interaction is needed, and
+    // then `before-interactive-callback` moves straight to the visible fallback.
+    const id = turnstile.render(hiddenContainer, {
       sitekey: siteKey,
-      size: 'invisible',
+      appearance: 'interaction-only',
       callback: (token) => {
+        if (fallbackStarted) return
         settled = true
         clearTimeout(invisibleTimer)
-        hiddenContainer.remove()
+        removeHiddenWidget()
         resolve(token)
       },
+      'before-interactive-callback': renderFallback,
       'error-callback': renderFallback,
       'unsupported-callback': renderFallback,
+      'timeout-callback': renderFallback,
     })
+    if (settled || fallbackStarted) {
+      // A callback fired during render, before the id was known.
+      try {
+        turnstile.remove(id)
+      } catch {
+        // Already gone.
+      }
+    } else {
+      hiddenWidgetId = id
+    }
   })
 }

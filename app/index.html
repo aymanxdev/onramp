@@ -16,13 +16,7 @@
     <meta property="og:description" content="An unofficial guide to Claude. Tell us what you are trying to do and we hand you the route." />
     <meta property="og:image" content="/og/default.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <script>
-      // Theme before first paint. Only three keys ever touch storage: theme, sound, intake-mode.
-      try {
-        var t = localStorage.getItem('theme');
-        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
-      } catch (e) {}
-    </script>
+    <script src="/theme-init.js"></script>
   </head>
   <body>
     <div id="root"></div>

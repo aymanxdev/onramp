@@ -95,4 +95,75 @@ describe('requestVerifiedRoute', () => {
       vi.useRealTimers()
     }
   })
+
+  describe('hidden stage', () => {
+    type Opts = {
+      size?: string
+      appearance?: string
+      callback: (t: string) => void
+      'before-interactive-callback'?: () => void
+      'error-callback'?: () => void
+    }
+
+    function setup() {
+      vi.stubEnv('VITE_TURNSTILE_SITE_KEY', 'site-key')
+      const calls: Opts[] = []
+      const remove = vi.fn()
+      const render = vi.fn((_c: HTMLElement, o: Opts) => {
+        calls.push(o)
+        return `w${calls.length}`
+      })
+      window.turnstile = { render, remove }
+      mockFetch(200, okBody)
+      return { calls, remove, render }
+    }
+
+    it('passes no size and uses interaction-only appearance', async () => {
+      vi.useFakeTimers()
+      try {
+        const { calls } = setup()
+        const pending = requestVerifiedRoute('x')
+        await vi.advanceTimersByTimeAsync(0)
+        expect(calls[0]).not.toHaveProperty('size')
+        expect(calls[0]?.appearance).toBe('interaction-only')
+        calls[0]?.callback('tok')
+        await pending
+      } finally {
+        vi.useRealTimers()
+      }
+    })
+
+    it('shows the fallback at once when interaction is needed', async () => {
+      vi.useFakeTimers()
+      try {
+        const { calls, remove } = setup()
+        const onChallenge = vi.fn()
+        const pending = requestVerifiedRoute('x', { onChallenge })
+        await vi.advanceTimersByTimeAsync(0)
+        calls[0]?.['before-interactive-callback']?.()
+        expect(onChallenge).toHaveBeenCalledTimes(1)
+        expect(remove).toHaveBeenCalledWith('w1')
+        await vi.advanceTimersByTimeAsync(3000)
+        await pending
+      } finally {
+        vi.useRealTimers()
+      }
+    })
+
+    it('goes to the fallback when the hidden stage errors', async () => {
+      vi.useFakeTimers()
+      try {
+        const { calls } = setup()
+        const onChallenge = vi.fn()
+        const pending = requestVerifiedRoute('x', { onChallenge })
+        await vi.advanceTimersByTimeAsync(0)
+        calls[0]?.['error-callback']?.()
+        expect(onChallenge).toHaveBeenCalledTimes(1)
+        await vi.advanceTimersByTimeAsync(3000)
+        await pending
+      } finally {
+        vi.useRealTimers()
+      }
+    })
+  })
 })
