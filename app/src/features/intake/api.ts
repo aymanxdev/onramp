@@ -9,10 +9,44 @@ import type { Intake } from '@/lib/matcher'
 
 const REQUEST_TIMEOUT_MS = 8000
 const STATS_TIMEOUT_MS = 8000
+/** If the invisible check has not finished by then, show the visible challenge. */
+const INVISIBLE_TIMEOUT_MS = 8000
+const FALLBACK_MOUNT_TIMEOUT_MS = 2000
 const TURNSTILE_SCRIPT_URL = 'https://challenges.cloudflare.com/turnstile/v0/api.js'
 
 /** Public: safe to read in the browser. Unset disables Turnstile entirely (local dev). */
 export const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined
+
+/** Read at call time so tests (and previews) can vary it. Empty counts as unset. */
+function turnstileSiteKey(): string | undefined {
+  const key = import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined
+  return key ? key : undefined
+}
+
+/**
+ * Posts to /api/route with a fresh Turnstile token (tokens are single use). With no
+ * site key configured nothing is loaded and no token is sent, exactly as before. If a
+ * token cannot be obtained the request still goes out without one; the server then
+ * answers 403 bot-check, which `requestRoute` maps to the bot-check state.
+ * `onChallenge` fires when a visible challenge must be shown in `#turnstile-fallback`.
+ */
+export async function requestVerifiedRoute(
+  text: string,
+  hooks: { onChallenge?: () => void; onChallengeDone?: () => void } = {},
+): Promise<RouteApiResult> {
+  const siteKey = turnstileSiteKey()
+  if (!siteKey) return requestRoute(text)
+
+  let token: string | undefined
+  try {
+    token = await loadTurnstile(siteKey, hooks.onChallenge)
+  } catch {
+    token = undefined
+  } finally {
+    hooks.onChallengeDone?.()
+  }
+  return requestRoute(text, token)
+}
 
 export type RouteApiResult =
   | { ok: true; intake: Intake; source: 'api' | 'cache' | 'deterministic'; prompt?: string }
@@ -156,10 +190,11 @@ function injectTurnstileScript(): Promise<void> {
  * visible managed challenge, rendered into `#turnstile-fallback` (package E shows the
  * bot check card around it), when the invisible mode cannot complete on its own.
  */
-export async function loadTurnstile(siteKey: string): Promise<string> {
+export async function loadTurnstile(siteKey: string, onChallenge?: () => void): Promise<string> {
   await injectTurnstileScript()
-  const turnstile = window.turnstile
-  if (!turnstile) throw new Error('Turnstile did not load')
+  const loaded = window.turnstile
+  if (!loaded) throw new Error('Turnstile did not load')
+  const turnstile: TurnstileGlobal = loaded
 
   return new Promise<string>((resolve, reject) => {
     const hiddenContainer = document.createElement('div')
@@ -169,24 +204,46 @@ export async function loadTurnstile(siteKey: string): Promise<string> {
     hiddenContainer.style.overflow = 'hidden'
     document.body.appendChild(hiddenContainer)
 
-    const renderFallback = () => {
+    let settled = false
+    let fallbackStarted = false
+    const invisibleTimer = setTimeout(() => renderFallback(), INVISIBLE_TIMEOUT_MS)
+
+    function renderFallback() {
+      if (settled || fallbackStarted) return
+      fallbackStarted = true
+      clearTimeout(invisibleTimer)
       hiddenContainer.remove()
-      const fallbackContainer = document.getElementById('turnstile-fallback')
-      if (!fallbackContainer) {
-        reject(new Error('Missing #turnstile-fallback container'))
-        return
+      // Ask the UI to mount `#turnstile-fallback`, then wait for it to appear.
+      onChallenge?.()
+      const startedAt = Date.now()
+      const mount = () => {
+        const fallbackContainer = document.getElementById('turnstile-fallback')
+        if (!fallbackContainer) {
+          if (Date.now() - startedAt > FALLBACK_MOUNT_TIMEOUT_MS) {
+            reject(new Error('Missing #turnstile-fallback container'))
+            return
+          }
+          setTimeout(mount, 25)
+          return
+        }
+        turnstile.render(fallbackContainer, {
+          sitekey: siteKey,
+          callback: (token) => {
+            settled = true
+            resolve(token)
+          },
+          'error-callback': () => reject(new Error('Turnstile challenge failed')),
+        })
       }
-      turnstile.render(fallbackContainer, {
-        sitekey: siteKey,
-        callback: (token) => resolve(token),
-        'error-callback': () => reject(new Error('Turnstile challenge failed')),
-      })
+      mount()
     }
 
     turnstile.render(hiddenContainer, {
       sitekey: siteKey,
       size: 'invisible',
       callback: (token) => {
+        settled = true
+        clearTimeout(invisibleTimer)
         hiddenContainer.remove()
         resolve(token)
       },
