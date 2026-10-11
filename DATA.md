@@ -1,6 +1,6 @@
 # What Onramp collects
 
-Aggregate daily counters only. No accounts, no cookies, no IP storage, no user text, no third-party analytics scripts.
+Aggregate daily counters only. No cookies, no IP storage, no user text, no third-party analytics scripts.
 
 | Counter | Keyed by | Never stored |
 |---|---|---|
@@ -19,4 +19,4 @@ Running totals per counter are kept without expiry, alongside the daily ones abo
 
 Counters are rolled up nightly into `public/data/stats.json` and shown publicly on the How it works page.
 
-Changes to this file require an OpenSpec change approved by the owner and an update to the privacy page in the same PR.
+Changes to this policy require an OpenSpec change approved by the owner and an update to both DATA.md and the privacy page in the same PR.

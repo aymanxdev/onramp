@@ -6,11 +6,11 @@
  */
 export const landing = {
   hero: {
-    /** Short enough to stay on one line at 360px; the sub copy already says free and no login. */
+    /** Short enough to stay on one line at 360px. */
     eyebrow: 'AN UNOFFICIAL GUIDE TO CLAUDE',
     /** Split so the headline can colour just the word "route" without new copy elsewhere. */
     h1: { before: 'Tell us what you are trying to do. We hand you the ', emphasis: 'route', after: '.' },
-    sub: 'The right surface, what to switch on, and the exact first prompt to paste. Free, no login, nothing stored.',
+    sub: 'The right surface, what to switch on, and the exact first prompt to paste. Free and instant.',
     disclaimer: 'An unofficial guide to Claude. Not affiliated with Anthropic.',
     /** "{nodes} nodes mapped · {verified}", e.g. "412 nodes mapped · verified 3 days ago". */
     statTemplate: '{nodes} nodes mapped · {verified}',
@@ -41,10 +41,10 @@ export const landing = {
   },
   score: {
     title: 'How much of Claude do you actually use?',
-    /** "60 seconds · {n} taps · nothing stored", n = catalogue.capabilities.length.
+    /** "60 seconds · {n} taps", n = catalogue.capabilities.length.
      * Use metaFallback (no taps segment) until the catalogue has loaded. */
-    metaTemplate: '60 seconds · {n} taps · nothing stored',
-    metaFallback: '60 seconds · nothing stored',
+    metaTemplate: '60 seconds · {n} taps',
+    metaFallback: '60 seconds',
     button: 'Take the quiz',
   },
   ticker: {

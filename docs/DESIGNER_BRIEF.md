@@ -1,6 +1,6 @@
 # Designer brief: Onramp
 
-An unofficial, free, no-login web app that helps people find their way around everything Claude can do. You are designing the whole product: brand, mascot, design system, every screen, every state, and the motion.
+An unofficial, free web app that helps people find their way around everything Claude can do. You are designing the whole product: brand, mascot, design system, every screen, every state, and the motion.
 
 Read this brief end to end before opening a design tool. Section 9 is a checklist you must satisfy before handing over.
 
@@ -30,7 +30,7 @@ Onramp answers all four in one sitting: **tell us what you're trying to do, and 
 | 4 | Map | The whole Claude ecosystem as an explorable graph: surfaces, capabilities, connectors, skills, plugins, plans, and the use cases that link them. Click a node to see what it does, what it needs and what it unlocks. |
 | 5 | Prompt card | A printable / copyable card of the starting prompt with the setup steps. Designed to be screenshotted and shared. |
 
-Also design: empty states, "we couldn't match that" state, rate-limit state ("you've used your 10 routes for today"), offline / error state, 404, and the Turnstile bot-check moment (it is usually invisible; design the fallback when it isn't).
+Also design: empty states, "we couldn't match that" state, rate-limit state ("that is your credit for today"), offline / error state, 404, and the Turnstile bot-check moment (it is usually invisible; design the fallback when it isn't).
 
 ## 3. Design direction: the Josh Comeau standard
 
@@ -155,7 +155,7 @@ This page exists to make an engineer nod and a copycat sigh. It shows the machin
 | 2. Try the matcher | A single input. As the person types, the top three use cases and the winning surface update live with an animated confidence bar and a "clear / needs a question" verdict. Real code, real data, no network call. | The scoring formula, synonyms list, thresholds. |
 | 3. The pipeline | A horizontal three-stage strip with one sentence each: Official docs → Knowledge graph → Curated catalogue. Each stage shows a live artefact preview (a fetched page title, a graph cluster, a catalogue entry rendered as a card). | The merge rules, the fetch list, the validator. |
 | 4. Route assembly | A short animated sequence: intake chips fly into a surface, then setup steps and a prompt slide out. Six seconds, loops once. | Template syntax, placeholder logic. |
-| 5. What we never store | A plain list: no accounts, no personal data, no analytics cookies, daily hashed counters only. | Nothing; this is fully public on purpose. |
+| 5. What Onramp stores today | A plain list: no personal data, no analytics cookies, daily hashed counters only. | Nothing; this is fully public on purpose. |
 | 6. Proof strip | Mono strip at the bottom: commit hash, catalogue version, last link check date, number of golden tests passing, Lighthouse scores. Pulled from CI at build time. | Nothing. |
 | 7. Open source | One line and one button to the repo. Copy: "The code is open. The curated map is the work." | |
 

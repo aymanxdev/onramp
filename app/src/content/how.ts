@@ -29,9 +29,8 @@ export const how = {
       footnote: 'six seconds · loops once in the product',
     },
     neverStore: {
-      eyebrow: '05 WHAT WE NEVER STORE',
+      eyebrow: '05 WHAT ONRAMP STORES TODAY',
       items: [
-        'No accounts. There is nothing to log in to.',
         'No personal data. Your goal text is never written to disk.',
         'No analytics cookies. None, not even the polite kind.',
         'Daily hashed counters only, so we know the rate limit is working.',

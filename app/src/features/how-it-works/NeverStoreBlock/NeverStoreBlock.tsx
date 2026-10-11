@@ -1,4 +1,4 @@
-/** Block 5, "WHAT WE NEVER STORE" (design lines 788 to 796): fully public on purpose. */
+/** Block 5, "WHAT ONRAMP STORES TODAY" (design lines 788 to 796): fully public on purpose. */
 import { Card, MonoLabel } from '@/design-system'
 import { how } from '@/content/how'
 import s from './NeverStoreBlock.module.css'

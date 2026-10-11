@@ -1,7 +1,7 @@
 /** Copy for /score, the coverage score (design lines 199 to 206, DEVELOPER_BRIEF section 11a). */
 export const score = {
   h1: 'How much of Claude do you actually use?',
-  intro: 'Tick what you already use. Sixty seconds, nothing stored.',
+  intro: 'Tick what you already use. It takes sixty seconds.',
   cta: 'Show my result',
   restart: 'Start again',
   result: {
