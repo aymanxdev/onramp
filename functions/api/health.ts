@@ -3,7 +3,7 @@
  * and reports the catalogue version and the pipeline's build time, both already baked
  * into the bundle. Carries no secrets.
  */
-import graphJson from '../../app/public/data/graph.json' with { type: 'json' }
+import graphJson from '../../app/public/data/graph.json'
 import { catalogue } from '../lib/catalogue'
 import type { Env } from '../lib/env'
 import { json, jsonError } from '../lib/respond'
