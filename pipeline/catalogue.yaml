@@ -3840,7 +3840,7 @@ features:
   - Edit with Claude
   - Share by link
   bullets:
-  - Docs are living documents you write with Claude and your team.
+  - Docs can be edited with Claude and shared by link.
   - Slides can be exported to PowerPoint or PDF.
   - Designs can pick up your own design system.
   shippedOn: '2026-09-16'
@@ -3877,7 +3877,7 @@ features:
   - Sellers
   - You approve changes
   bullets:
-  - Prep a call from Salesforce, email and Slack in one go.
+  - Prep for a call or review your pipeline from Salesforce data.
   - Claude asks you to approve each change before it writes to Salesforce.
   - An admin connects Salesforce once for the organisation.
   shippedOn: '2026-09-15'
@@ -3905,8 +3905,8 @@ features:
   - cowork
   - code
   plainWords: Enterprise admins get a report on how their team uses Claude, what it costs and where it gets stuck.
-  whatItIs: A beta report that reads a sample of a team's sessions, groups them into workstreams and
-    outputs, attaches the spend, and points out repeated patterns worth turning into shared skills.
+  whatItIs: A beta report that analyses the work a team does with Claude, what it costs, where it hits
+    friction, and repeated patterns worth turning into shared skills.
   whoItIsFor: For admins planning how their organisation invests in Claude.
   forChips:
   - Enterprise
@@ -3991,8 +3991,7 @@ features:
   - enterprise
   officialUrl: https://www.anthropic.com/claude-opus-5-5
   tryPrompt: Review this plan and tell me what you would change first.
-  pitfalls:
-  - Sonnet 5.5 is the faster, lower cost choice for well scoped everyday tasks.
+  pitfalls: []
   status: published
   introduces: []
   weight: 7
@@ -4042,7 +4041,7 @@ features:
   - Runs without you
   - Any device
   bullets:
-  - Each task gets its own virtual machine and branch.
+  - Each session runs in its own isolated virtual machine.
   - Check in on it or steer it from a phone or a browser.
   - Connect GitHub so it can clone your code and push branches.
   shippedOn: '2026-10-06'

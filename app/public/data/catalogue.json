@@ -797,7 +797,7 @@
     },
     {
       "bullets": [
-        "Docs are living documents you write with Claude and your team.",
+        "Docs can be edited with Claude and shared by link.",
         "Slides can be exported to PowerPoint or PDF.",
         "Designs can pick up your own design system."
       ],
@@ -839,7 +839,7 @@
     },
     {
       "bullets": [
-        "Prep a call from Salesforce, email and Slack in one go.",
+        "Prep for a call or review your pipeline from Salesforce data.",
         "Claude asks you to approve each change before it writes to Salesforce.",
         "An admin connects Salesforce once for the organisation."
       ],
@@ -910,7 +910,7 @@
       "tryPrompt": "Which tasks that came up again and again this month would make good shared skills?",
       "verifiedOn": "2026-10-11",
       "weight": 4,
-      "whatItIs": "A beta report that reads a sample of a team's sessions, groups them into workstreams and outputs, attaches the spend, and points out repeated patterns worth turning into shared skills.",
+      "whatItIs": "A beta report that analyses the work a team does with Claude, what it costs, where it hits friction, and repeated patterns worth turning into shared skills.",
       "whoItIsFor": "For admins planning how their organisation invests in Claude."
     },
     {
@@ -967,9 +967,7 @@
       "introduces": [],
       "name": "Claude Opus 5.5",
       "officialUrl": "https://www.anthropic.com/claude-opus-5-5",
-      "pitfalls": [
-        "Sonnet 5.5 is the faster, lower cost choice for well scoped everyday tasks."
-      ],
+      "pitfalls": [],
       "plainWords": "The first Claude 5.5 model, which Anthropic says matches Fable 5.1 on most work for less.",
       "plans": [
         "pro",
@@ -1030,7 +1028,7 @@
     },
     {
       "bullets": [
-        "Each task gets its own virtual machine and branch.",
+        "Each session runs in its own isolated virtual machine.",
         "Check in on it or steer it from a phone or a browser.",
         "Connect GitHub so it can clone your code and push branches."
       ],
