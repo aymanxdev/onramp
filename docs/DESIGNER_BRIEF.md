@@ -212,7 +212,7 @@ Include all of these. Each is small; together they are the tell.
 
 Line 1: **Made with ♥ for Claude in London.**
 Line 2: Onramp is an independent project. It is not affiliated with, endorsed by, or sponsored by Anthropic. Claude and Anthropic are trademarks of Anthropic, PBC.
-Line 3: Links: About, How routes are built, Report a wrong route, Privacy (we store nothing personal), GitHub.
+Line 3: Links: About, How routes are built, Report a wrong route, Privacy, GitHub.
 
 The heart should have a tiny idle animation and a boop on hover. This is the one place the whimsy is mandatory.
 

@@ -27,7 +27,7 @@ export const states = {
   botCheck: {
     eyebrow: 'BOT CHECK FALLBACK',
     heading: 'One tap to prove you are human',
-    body: 'This is normally invisible. When it is not, it looks like this.',
+    body: 'A quick check that you are a person. It keeps the free AI help free.',
     action: 'Verify you are human',
   },
 } as const
