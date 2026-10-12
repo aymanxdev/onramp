@@ -152,6 +152,7 @@ type TurnstileRenderOptions = {
   sitekey: string
   /** Managed mode only shows a widget when needed with 'interaction-only'. */
   appearance?: 'always' | 'execute' | 'interaction-only'
+  size?: 'normal' | 'flexible' | 'compact'
   callback: (token: string) => void
   'before-interactive-callback'?: () => void
   'after-interactive-callback'?: () => void
@@ -246,6 +247,8 @@ export async function loadTurnstile(siteKey: string, onChallenge?: () => void): 
         }
         turnstile.render(fallbackContainer, {
           sitekey: siteKey,
+          // Compact (150px) fits the narrow bot-check card; normal (300px) overflows it on phones.
+          size: 'compact',
           callback: (token) => {
             settled = true
             resolve(token)
