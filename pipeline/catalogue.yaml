@@ -6,9 +6,9 @@
 # pipeline/build.py reads this file, merges any Graphify overlay, and writes
 # app/public/data/catalogue.json and app/public/data/graph.json.
 
-version: 2026.09.1
-asOf: '2026-09-07'
-linkCheck: '2026-09-07'
+version: 2026.10.1
+asOf: '2026-10-11'
+linkCheck: '2026-10-11'
 # Placeholder values, overwritten by CI from the previous Lighthouse run at deploy time.
 lighthouse:
   performance: 100
@@ -49,17 +49,19 @@ surfaces:
   - desktop
   - ios
   - android
+  # OWNER: confirm plans. The page says the merged experience is rolling out gradually, starting with
+  # Pro and Max, with more plans to follow; Team and Enterprise are unchanged for now.
   plans:
   - pro
   - max
   - team
   - enterprise
-  officialUrl: https://support.claude.com/en/articles/13345190-getting-started-with-cowork
-  asOf: '2026-09-07'
+  officialUrl: https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude
+  asOf: '2026-10-11'
   blurb: agentic work, files, tasks
   caption: Agentic work
-  summary: 'An agentic workspace where Claude runs a job end to end: it keeps files, works across your
-    other apps, and can repeat a task on a schedule.'
+  summary: Claude runs a job end to end, with files, your other apps and scheduled repeats. On Pro and
+    Max it is rolling out into every conversation, so there is no mode to pick first.
   needs: A paid personal plan
   unlocks: Scheduled tasks, connectors, file output
   openUrl: https://claude.ai
@@ -89,19 +91,23 @@ surfaces:
   group: Making things
   platforms:
   - web
+  # OWNER: confirm plans. The page lists Free, Pro, Max, Team and Enterprise; on Enterprise it turns on
+  # by default on 15 October 2026 and owners can switch it on earlier.
   plans:
+  - free
   - pro
   - max
   - team
   - enterprise
   officialUrl: https://support.claude.com/en/articles/14604416-get-started-with-claude-design
-  asOf: '2026-09-07'
+  asOf: '2026-10-11'
   blurb: screens and systems
   caption: Systems
   summary: Claude building real screens and design systems as inspectable files rather than flat mock
-    ups, with a straight path to code.
-  needs: A paid plan
+    ups, now from any conversation, the Artifacts tab or Claude Code.
+  needs: Nothing, the free plan works
   unlocks: Design systems, prototypes, handover
+  # OWNER: confirm availability. The page says the standalone claude.ai/design closes on 14 December 2026.
   openUrl: https://claude.ai/design
 - id: chrome
   name: Chrome
@@ -297,18 +303,20 @@ capabilities:
   name: Artifacts
   availableOn:
   - chat
+  - code
   plans:
   - free
   - pro
   - max
   - team
   - enterprise
-  officialUrl: https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them
-  asOf: '2026-09-07'
+  officialUrl: https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them
+  asOf: '2026-10-11'
   needs: Nothing
   unlocks: Inspectable, editable output alongside the chat
   weight: 6
-  summary: A working pane next to the chat for documents, code and visuals you can edit in place.
+  summary: A working pane next to the chat for designs, decks, docs and code you can edit in place, from
+    any conversation including Claude Code.
 - id: file-creation
   name: File creation
   availableOn:
@@ -649,6 +657,18 @@ connectors:
   unlocks: Status updates, issue triage
   officialUrl: https://claude.com/connectors
   asOf: '2026-09-07'
+- id: salesforce
+  name: Salesforce
+  category: CRM
+  # OWNER: confirm interactive. The pages do not say whether this connector renders interactive tools.
+  interactive: false
+  summary: Read accounts, opportunities and pipeline from Salesforce under your own permissions, and
+    propose updates that you approve before they are written.
+  # OWNER: confirm availability. Beta, only for organisations Salesforce approves through its sign-up.
+  needs: A Salesforce account, connected once by an admin
+  unlocks: Call prep, pipeline review, CRM updates
+  officialUrl: https://support.claude.com/en/articles/16952186-use-salesforce-in-claude
+  asOf: '2026-10-11'
 skills:
 - id: docx
   name: docx
@@ -733,6 +753,16 @@ skills:
   officialUrl: https://claude.com/docs/plugins/overview
   summary: House rules and checks a team runs before merging, packaged as a plugin for Code.
   asOf: '2026-09-07'
+- id: salesforce-in-claude
+  name: Salesforce in Claude
+  kind: plugin
+  installsOn:
+  - chat
+  - cowork
+  officialUrl: https://support.claude.com/en/articles/16952186-use-salesforce-in-claude
+  summary: A plugin built with Salesforce, with 37 sales skills for account research, call prep, pipeline
+    review and CRM updates.
+  asOf: '2026-10-11'
 plans:
 - id: free
   name: Free
@@ -3623,6 +3653,8 @@ features:
   - You get a nudge when the result lands.
   shippedOn: '2026-09-02'
   verifiedOn: '2026-09-04'
+  # OWNER: confirm availability. The Cowork and chat article says Dispatch is not available to new
+  # users on the new experience, while existing users can keep using it for now.
   plans:
   - pro
   - max
@@ -3760,6 +3792,304 @@ features:
   introduces:
   - file-creation
   weight: 5
+- id: cowork-in-every-conversation
+  name: Cowork in every conversation
+  surface:
+  - cowork
+  - chat
+  plainWords: Ask a quick question or hand over a bigger job in the same chat, with no mode to pick first.
+  whatItIs: The work Cowork does, such as reports, spreadsheets and presentations, can start from any
+    conversation, and your chats, tasks, projects, connectors and skills carry over.
+  whoItIsFor: For people who were never sure which mode to choose.
+  forChips:
+  - Pro and Max
+  - One conversation
+  - No mode switch
+  bullets:
+  - Quick questions and bigger tasks sit together in one list.
+  - Longer tasks keep running in the cloud after you close the page.
+  - Tasks that touch files or apps on your computer need Claude Desktop open.
+  shippedOn: '2026-09-16'
+  verifiedOn: '2026-10-11'
+  # OWNER: confirm plans and availability. Rolling out gradually, starting with Pro and Max on web,
+  # desktop and mobile; the page says more plans will follow.
+  plans:
+  - pro
+  - max
+  officialUrl: https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude
+  tryPrompt: Pull the top themes from these interview notes and put them in a one page brief.
+  pitfalls:
+  - It arrives in stages, so your account may still show separate Chat and Cowork options.
+  - Once your account has it, you cannot go back to the separate options.
+  status: published
+  introduces:
+  - file-creation
+  weight: 9
+- id: designs-decks-docs-anywhere
+  name: Designs, decks and docs anywhere
+  surface:
+  - chat
+  - design
+  - code
+  plainWords: Ask for a design, a deck or a living document in any conversation and edit it beside the chat.
+  whatItIs: Claude Design, Claude Slides and Claude Docs open as artifacts from any conversation, including
+    Claude Code, or from the Artifacts tab, and you can edit them yourself or ask Claude to.
+  whoItIsFor: For people who need something to show others, not only an answer.
+  forChips:
+  - Every plan
+  - Edit with Claude
+  - Share by link
+  bullets:
+  - Docs can be edited with Claude and shared by link.
+  - Slides can be exported to PowerPoint or PDF.
+  - Designs can pick up your own design system.
+  shippedOn: '2026-09-16'
+  verifiedOn: '2026-10-11'
+  # OWNER: confirm plans and beta status. The artifacts page lists all five plans and says Enterprise
+  # turns these on by default on 15 October 2026; the 16 September release note called them beta on
+  # Enterprise, while the 8 October claude.com post says Docs, Slides and Design are out of beta.
+  plans:
+  - free
+  - pro
+  - max
+  - team
+  - enterprise
+  officialUrl: https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them
+  tryPrompt: Turn this project plan into a one page visual summary I can share.
+  pitfalls:
+  - Artifacts need cloud code execution and file creation switched on in your capabilities settings.
+  - On Enterprise, owners can turn the templates on before they switch on by default.
+  status: published
+  introduces:
+  - file-creation
+  weight: 8
+- id: salesforce-in-claude
+  name: Salesforce in Claude
+  surface:
+  - chat
+  - cowork
+  plainWords: A plugin that brings your Salesforce accounts and pipeline into Claude, with sales skills built in.
+  whatItIs: A plugin built with Salesforce that reads your accounts, opportunities and pipeline under your
+    own permissions, with 37 skills for call prep, deal reviews and CRM updates.
+  whoItIsFor: For sellers who spend hours pulling call prep together by hand.
+  forChips:
+  - Beta
+  - Sellers
+  - You approve changes
+  bullets:
+  - Prep for a call or review your pipeline from Salesforce data.
+  - Claude asks you to approve each change before it writes to Salesforce.
+  - An admin connects Salesforce once for the organisation.
+  shippedOn: '2026-09-15'
+  verifiedOn: '2026-10-11'
+  # OWNER: confirm plans and availability. The pages say beta on all paid plans, but only for
+  # organisations Salesforce approves through its beta sign-up.
+  plans:
+  - pro
+  - max
+  - team
+  - enterprise
+  officialUrl: https://support.claude.com/en/articles/16952186-use-salesforce-in-claude
+  tryPrompt: Prep me for my renewal call with Acme and list the open questions from our last two calls.
+  pitfalls:
+  - It is a beta, open only to organisations that Salesforce approves.
+  - For now it works in chat and Cowork on web and desktop.
+  status: published
+  introduces:
+  - connectors
+  weight: 6
+- id: smart-reports
+  name: Smart reports
+  surface:
+  - chat
+  - cowork
+  - code
+  plainWords: Enterprise admins get a report on how their team uses Claude, what it costs and where it gets stuck.
+  whatItIs: A beta report that analyses the work a team does with Claude, what it costs, where it hits
+    friction, and repeated patterns worth turning into shared skills.
+  whoItIsFor: For admins planning how their organisation invests in Claude.
+  forChips:
+  - Enterprise
+  - Beta
+  - Admins
+  bullets:
+  - Shows what the work was and what it cost.
+  - Points at where sessions run into friction.
+  - Each organisation gets up to 10 reports a month during the beta.
+  shippedOn: '2026-09-10'
+  verifiedOn: '2026-10-11'
+  # OWNER: confirm plans and availability. Beta on Claude Enterprise plans only.
+  plans:
+  - enterprise
+  officialUrl: https://support.claude.com/en/articles/16893491-get-started-with-smart-reports
+  tryPrompt: Which tasks that came up again and again this month would make good shared skills?
+  pitfalls:
+  - Not for judging individual performance or making employment decisions.
+  - Not available with customer managed encryption keys or HIPAA configurations.
+  status: published
+  introduces: []
+  weight: 4
+- id: plugin-submissions
+  name: Plugin submissions
+  surface:
+  - cowork
+  - code
+  plainWords: Developers can submit plugins to the Claude directory and follow them through review.
+  whatItIs: A developer portal where you submit a plugin, see its safety scan and review status, publish
+    it once approved, and then watch install and listing analytics.
+  whoItIsFor: For developers building extensions for other people.
+  forChips:
+  - Developers
+  - Paid plans
+  - Directory
+  bullets:
+  - Submit one MCP connector, or a bundle of connectors and skills.
+  - Each submission is checked and safety scanned as soon as you send it.
+  - Usage analytics show installs by product and version.
+  shippedOn: '2026-09-25'
+  verifiedOn: '2026-10-11'
+  # OWNER: confirm plans. The post says the portal is open to developers on paid Claude plans.
+  plans:
+  - pro
+  - max
+  - team
+  - enterprise
+  officialUrl: https://claude.com/resources/articles/build-plugins-for-claude
+  tryPrompt: Help me package this skill and its connector as a plugin that is ready to submit.
+  pitfalls:
+  - Skills, connectors and plugins already in the directory need no changes.
+  status: published
+  introduces:
+  - plugins
+  weight: 5
+- id: opus-5-5
+  name: Claude Opus 5.5
+  surface:
+  - chat
+  - cowork
+  - code
+  plainWords: The first Claude 5.5 model, which Anthropic says matches Fable 5.1 on most work for less.
+  whatItIs: A new Opus model that Anthropic says performs at Fable 5.1 level on most work and costs about
+    40% less to run than Opus 5, with higher five hour usage limits on paid plans.
+  whoItIsFor: For anyone who hits usage limits on hard jobs.
+  forChips:
+  - Paid plans
+  - Cheaper to run
+  - Higher limits
+  bullets:
+  - Anthropic says it writes more clearly than Opus 5.
+  - Five hour usage limits go up on Pro, Max, Team and seat based Enterprise plans.
+  - Subscribers can save a rate limit reset and use it when they choose.
+  shippedOn: '2026-09-22'
+  verifiedOn: '2026-10-11'
+  # OWNER: confirm plans. The page names Pro, Max, Team and seat based Enterprise only for the higher
+  # limits; it does not say which plans can pick the model.
+  plans:
+  - pro
+  - max
+  - team
+  - enterprise
+  officialUrl: https://www.anthropic.com/claude-opus-5-5
+  tryPrompt: Review this plan and tell me what you would change first.
+  pitfalls: []
+  status: published
+  introduces: []
+  weight: 7
+- id: claude-code-mods
+  name: Claude Code mods
+  surface:
+  - code
+  plainWords: Small plugins that change how Claude Code looks and behaves, from a context readout to guards on commands.
+  whatItIs: A mod is a plugin made of JavaScript or TypeScript handlers that run inside Claude Code,
+    watch or change what it does, and can draw panes and bands in the terminal or the desktop app.
+  whoItIsFor: For developers who want Claude Code to fit how they work.
+  forChips:
+  - Developers
+  - Terminal and Desktop
+  - Plugins
+  bullets:
+  - Describe the mod you want in a session and Claude writes it.
+  - Mods install as plugins from a marketplace.
+  - They are on by default in recent versions, so there is no switch to flip.
+  shippedOn: '2026-10-01'
+  verifiedOn: '2026-10-11'
+  # OWNER: confirm plans and date. The docs page does not list plans (Code plans used here), and 1 October
+  # is the date of the claude.dev getting started post, not a confirmed launch date.
+  plans:
+  - pro
+  - max
+  - team
+  - enterprise
+  officialUrl: https://code.claude.com/docs/en/plugins/mods/overview
+  tryPrompt: Write me a mod that shows how full my context window is, in a band above the prompt.
+  pitfalls:
+  - A mod runs with your permissions, so install them only from authors you trust.
+  status: published
+  introduces:
+  - plugins
+  weight: 5
+- id: claude-code-cloud-sessions
+  name: Claude Code cloud sessions
+  surface:
+  - code
+  plainWords: Run Claude Code on a machine of its own, so a task keeps going when your laptop sleeps.
+  whatItIs: A Claude Code session that runs on cloud infrastructure with your repository cloned onto a
+    fresh branch, started from the browser, the mobile app, the desktop app or your terminal.
+  whoItIsFor: For developers with several tasks and one laptop.
+  forChips:
+  - Developers
+  - Runs without you
+  - Any device
+  bullets:
+  - Each session runs in its own isolated virtual machine.
+  - Check in on it or steer it from a phone or a browser.
+  - Connect GitHub so it can clone your code and push branches.
+  shippedOn: '2026-10-06'
+  verifiedOn: '2026-10-11'
+  # OWNER: confirm plans and date. The docs say Pro, Max and Team, and Enterprise only with premium
+  # seats or Chat + Claude Code seats. 6 October is the date of the claude.dev field guide, not a launch.
+  plans:
+  - pro
+  - max
+  - team
+  - enterprise
+  officialUrl: https://code.claude.com/docs/en/claude-code-on-the-web
+  tryPrompt: Fix the failing test in the checkout module and open a pull request.
+  pitfalls:
+  - Repositories on hosts other than GitHub come with restrictions, so check the docs first.
+  status: published
+  introduces: []
+  weight: 5
+- id: monthly-api-credits
+  name: Monthly API credits
+  surface:
+  - api
+  plainWords: Max and Team plans now include monthly credits for building your own apps and agents on the API.
+  whatItIs: A monthly credit on the Claude Platform for Max and Team subscribers, claimed by linking a
+    Console organisation, that covers API calls, managed agents and the Agent SDK.
+  whoItIsFor: For Max and Team subscribers who build their own tools.
+  forChips:
+  - Max and Team
+  - Monthly
+  - Claim in settings
+  bullets:
+  - Max 5x gets $100 and Max 20x gets $200 each month.
+  - Team gets $20 per Standard seat and $100 per Premium seat, pooled up to $500.
+  - Unused credit expires at the end of each billing cycle.
+  shippedOn: '2026-10-07'
+  verifiedOn: '2026-10-11'
+  # OWNER: confirm the amounts, which the page lists per plan and seat type.
+  plans:
+  - max
+  - team
+  officialUrl: https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans
+  tryPrompt: Help me set up an API key and a first script that summarises a text file.
+  pitfalls:
+  - It rolls out over a few days and appears after seven days on the plan.
+  - It does not cover interactive Claude Code or extra usage.
+  status: published
+  introduces: []
+  weight: 6
 changelog:
 - date: '2026-08-15'
   text: Cowork adds scheduled tasks
@@ -3773,6 +4103,36 @@ changelog:
 - date: '2026-09-01'
   text: 12 new connectors this month
   url: https://support.claude.com/en/articles/12138966-release-notes
+- date: '2026-09-10'
+  text: Smart reports arrive in beta for Enterprise
+  url: https://support.claude.com/en/articles/16893491-get-started-with-smart-reports
+- date: '2026-09-15'
+  text: Salesforce in Claude launches in beta
+  url: https://support.claude.com/en/articles/16952186-use-salesforce-in-claude
+- date: '2026-09-16'
+  text: Cowork comes to every conversation, starting with Pro and Max
+  url: https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude
+- date: '2026-09-16'
+  text: Designs, decks and docs in any conversation
+  url: https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them
+- date: '2026-09-22'
+  text: Claude Opus 5.5 launches
+  url: https://www.anthropic.com/claude-opus-5-5
+- date: '2026-09-25'
+  text: Developers can submit plugins to the Claude directory
+  url: https://claude.com/resources/articles/build-plugins-for-claude
+- date: '2026-09-28'
+  text: Claude Sonnet 5.5 launches
+  url: https://www.anthropic.com/claude-sonnet-5-5
+- date: '2026-10-01'
+  text: Claude Code gains mods
+  url: https://code.claude.com/docs/en/plugins/mods/overview
+- date: '2026-10-07'
+  text: Claude Haiku 5.5 launches
+  url: https://www.anthropic.com/claude-haiku-5-5
+- date: '2026-10-07'
+  text: Max and Team plans get monthly API credits
+  url: https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans
 scoreWeights:
   memory: 5
   projects: 4

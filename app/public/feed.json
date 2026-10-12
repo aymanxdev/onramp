@@ -3,6 +3,69 @@
   "home_page_url": "https://onramp.example/new",
   "items": [
     {
+      "content_text": "Max and Team plans now include monthly credits for building your own apps and agents on the API.",
+      "date_published": "2026-10-07T00:00:00Z",
+      "id": "monthly-api-credits",
+      "title": "Monthly API credits",
+      "url": "https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans"
+    },
+    {
+      "content_text": "Run Claude Code on a machine of its own, so a task keeps going when your laptop sleeps.",
+      "date_published": "2026-10-06T00:00:00Z",
+      "id": "claude-code-cloud-sessions",
+      "title": "Claude Code cloud sessions",
+      "url": "https://code.claude.com/docs/en/claude-code-on-the-web"
+    },
+    {
+      "content_text": "Small plugins that change how Claude Code looks and behaves, from a context readout to guards on commands.",
+      "date_published": "2026-10-01T00:00:00Z",
+      "id": "claude-code-mods",
+      "title": "Claude Code mods",
+      "url": "https://code.claude.com/docs/en/plugins/mods/overview"
+    },
+    {
+      "content_text": "Developers can submit plugins to the Claude directory and follow them through review.",
+      "date_published": "2026-09-25T00:00:00Z",
+      "id": "plugin-submissions",
+      "title": "Plugin submissions",
+      "url": "https://claude.com/resources/articles/build-plugins-for-claude"
+    },
+    {
+      "content_text": "The first Claude 5.5 model, which Anthropic says matches Fable 5.1 on most work for less.",
+      "date_published": "2026-09-22T00:00:00Z",
+      "id": "opus-5-5",
+      "title": "Claude Opus 5.5",
+      "url": "https://www.anthropic.com/claude-opus-5-5"
+    },
+    {
+      "content_text": "Ask a quick question or hand over a bigger job in the same chat, with no mode to pick first.",
+      "date_published": "2026-09-16T00:00:00Z",
+      "id": "cowork-in-every-conversation",
+      "title": "Cowork in every conversation",
+      "url": "https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude"
+    },
+    {
+      "content_text": "Ask for a design, a deck or a living document in any conversation and edit it beside the chat.",
+      "date_published": "2026-09-16T00:00:00Z",
+      "id": "designs-decks-docs-anywhere",
+      "title": "Designs, decks and docs anywhere",
+      "url": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them"
+    },
+    {
+      "content_text": "A plugin that brings your Salesforce accounts and pipeline into Claude, with sales skills built in.",
+      "date_published": "2026-09-15T00:00:00Z",
+      "id": "salesforce-in-claude",
+      "title": "Salesforce in Claude",
+      "url": "https://support.claude.com/en/articles/16952186-use-salesforce-in-claude"
+    },
+    {
+      "content_text": "Enterprise admins get a report on how their team uses Claude, what it costs and where it gets stuck.",
+      "date_published": "2026-09-10T00:00:00Z",
+      "id": "smart-reports",
+      "title": "Smart reports",
+      "url": "https://support.claude.com/en/articles/16893491-get-started-with-smart-reports"
+    },
+    {
       "content_text": "Send Claude a job from your phone and pick up the result later.",
       "date_published": "2026-09-02T00:00:00Z",
       "id": "dispatch",

@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-09-07T00:00:00Z",
+  "builtAt": "2026-10-11T00:00:00Z",
   "edges": [
     {
       "source": "surface:chat",
@@ -124,6 +124,11 @@
     {
       "source": "capability:artifacts",
       "target": "surface:chat",
+      "type": "available_on"
+    },
+    {
+      "source": "capability:artifacts",
+      "target": "surface:code",
       "type": "available_on"
     },
     {
@@ -278,6 +283,16 @@
     },
     {
       "source": "plugin:marketing",
+      "target": "surface:cowork",
+      "type": "available_on"
+    },
+    {
+      "source": "plugin:salesforce-in-claude",
+      "target": "surface:chat",
+      "type": "available_on"
+    },
+    {
+      "source": "plugin:salesforce-in-claude",
       "target": "surface:cowork",
       "type": "available_on"
     },
@@ -938,7 +953,17 @@
       "type": "introduces"
     },
     {
+      "source": "feature:claude-code-mods",
+      "target": "capability:plugins",
+      "type": "introduces"
+    },
+    {
       "source": "feature:component-export",
+      "target": "capability:file-creation",
+      "type": "introduces"
+    },
+    {
+      "source": "feature:cowork-in-every-conversation",
       "target": "capability:file-creation",
       "type": "introduces"
     },
@@ -948,8 +973,23 @@
       "type": "introduces"
     },
     {
+      "source": "feature:designs-decks-docs-anywhere",
+      "target": "capability:file-creation",
+      "type": "introduces"
+    },
+    {
       "source": "feature:dispatch",
       "target": "capability:dispatch",
+      "type": "introduces"
+    },
+    {
+      "source": "feature:plugin-submissions",
+      "target": "capability:plugins",
+      "type": "introduces"
+    },
+    {
+      "source": "feature:salesforce-in-claude",
+      "target": "capability:connectors",
       "type": "introduces"
     },
     {
@@ -999,7 +1039,7 @@
     },
     {
       "source": "surface:design",
-      "target": "plan:pro",
+      "target": "plan:free",
       "type": "requires"
     },
     {
@@ -1292,7 +1332,7 @@
     {
       "id": "capability:artifacts",
       "name": "Artifacts",
-      "officialUrl": "https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them",
+      "officialUrl": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them",
       "ref": "artifacts",
       "surface": "chat",
       "tint": "chat",
@@ -1532,6 +1572,13 @@
       "type": "connector"
     },
     {
+      "id": "connector:salesforce",
+      "name": "Salesforce",
+      "officialUrl": "https://support.claude.com/en/articles/16952186-use-salesforce-in-claude",
+      "ref": "salesforce",
+      "type": "connector"
+    },
+    {
       "id": "connector:slack",
       "name": "Slack",
       "officialUrl": "https://claude.com/connectors",
@@ -1560,6 +1607,26 @@
       "type": "feature"
     },
     {
+      "id": "feature:claude-code-cloud-sessions",
+      "name": "Claude Code cloud sessions",
+      "officialUrl": "https://code.claude.com/docs/en/claude-code-on-the-web",
+      "ref": "claude-code-cloud-sessions",
+      "shippedOn": "2026-10-06",
+      "surface": "code",
+      "tint": "code",
+      "type": "feature"
+    },
+    {
+      "id": "feature:claude-code-mods",
+      "name": "Claude Code mods",
+      "officialUrl": "https://code.claude.com/docs/en/plugins/mods/overview",
+      "ref": "claude-code-mods",
+      "shippedOn": "2026-10-01",
+      "surface": "code",
+      "tint": "code",
+      "type": "feature"
+    },
+    {
       "id": "feature:component-export",
       "name": "Component export",
       "officialUrl": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
@@ -1567,6 +1634,16 @@
       "shippedOn": "2026-08-19",
       "surface": "design",
       "tint": "design",
+      "type": "feature"
+    },
+    {
+      "id": "feature:cowork-in-every-conversation",
+      "name": "Cowork in every conversation",
+      "officialUrl": "https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude",
+      "ref": "cowork-in-every-conversation",
+      "shippedOn": "2026-09-16",
+      "surface": "cowork",
+      "tint": "cowork",
       "type": "feature"
     },
     {
@@ -1580,6 +1657,16 @@
       "type": "feature"
     },
     {
+      "id": "feature:designs-decks-docs-anywhere",
+      "name": "Designs, decks and docs anywhere",
+      "officialUrl": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them",
+      "ref": "designs-decks-docs-anywhere",
+      "shippedOn": "2026-09-16",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "feature"
+    },
+    {
       "id": "feature:dispatch",
       "name": "Dispatch",
       "officialUrl": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
@@ -1590,11 +1677,61 @@
       "type": "feature"
     },
     {
+      "id": "feature:monthly-api-credits",
+      "name": "Monthly API credits",
+      "officialUrl": "https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans",
+      "ref": "monthly-api-credits",
+      "shippedOn": "2026-10-07",
+      "surface": "api",
+      "tint": "neutral",
+      "type": "feature"
+    },
+    {
+      "id": "feature:opus-5-5",
+      "name": "Claude Opus 5.5",
+      "officialUrl": "https://www.anthropic.com/claude-opus-5-5",
+      "ref": "opus-5-5",
+      "shippedOn": "2026-09-22",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "feature"
+    },
+    {
+      "id": "feature:plugin-submissions",
+      "name": "Plugin submissions",
+      "officialUrl": "https://claude.com/resources/articles/build-plugins-for-claude",
+      "ref": "plugin-submissions",
+      "shippedOn": "2026-09-25",
+      "surface": "cowork",
+      "tint": "cowork",
+      "type": "feature"
+    },
+    {
+      "id": "feature:salesforce-in-claude",
+      "name": "Salesforce in Claude",
+      "officialUrl": "https://support.claude.com/en/articles/16952186-use-salesforce-in-claude",
+      "ref": "salesforce-in-claude",
+      "shippedOn": "2026-09-15",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "feature"
+    },
+    {
       "id": "feature:skill-packs",
       "name": "Skill packs",
       "officialUrl": "https://support.claude.com/en/articles/13119606-managing-skills-as-an-admin",
       "ref": "skill-packs",
       "shippedOn": "2026-08-29",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "feature"
+    },
+    {
+      "id": "feature:smart-reports",
+      "name": "Smart reports",
+      "officialUrl": "https://support.claude.com/en/articles/16893491-get-started-with-smart-reports",
+      "ref": "smart-reports",
+      "shippedOn": "2026-09-10",
       "surface": "chat",
       "tint": "chat",
       "type": "feature"
@@ -1659,6 +1796,13 @@
       "ref": "marketing",
       "surface": "chat",
       "tint": "chat",
+      "type": "plugin"
+    },
+    {
+      "id": "plugin:salesforce-in-claude",
+      "name": "Salesforce in Claude",
+      "officialUrl": "https://support.claude.com/en/articles/16952186-use-salesforce-in-claude",
+      "ref": "salesforce-in-claude",
       "type": "plugin"
     },
     {
@@ -1759,7 +1903,7 @@
       "caption": "Agentic work",
       "id": "surface:cowork",
       "name": "Cowork",
-      "officialUrl": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
+      "officialUrl": "https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude",
       "ref": "cowork",
       "surface": "cowork",
       "tint": "cowork",
@@ -2220,5 +2364,5 @@
       "type": "usecase"
     }
   ],
-  "version": "2026.09.1"
+  "version": "2026.10.1"
 }

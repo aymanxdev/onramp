@@ -1,5 +1,55 @@
 [
   {
+    "date": "2026-10-07",
+    "text": "Claude Haiku 5.5 launches",
+    "url": "https://www.anthropic.com/claude-haiku-5-5"
+  },
+  {
+    "date": "2026-10-07",
+    "text": "Max and Team plans get monthly API credits",
+    "url": "https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans"
+  },
+  {
+    "date": "2026-10-01",
+    "text": "Claude Code gains mods",
+    "url": "https://code.claude.com/docs/en/plugins/mods/overview"
+  },
+  {
+    "date": "2026-09-28",
+    "text": "Claude Sonnet 5.5 launches",
+    "url": "https://www.anthropic.com/claude-sonnet-5-5"
+  },
+  {
+    "date": "2026-09-25",
+    "text": "Developers can submit plugins to the Claude directory",
+    "url": "https://claude.com/resources/articles/build-plugins-for-claude"
+  },
+  {
+    "date": "2026-09-22",
+    "text": "Claude Opus 5.5 launches",
+    "url": "https://www.anthropic.com/claude-opus-5-5"
+  },
+  {
+    "date": "2026-09-16",
+    "text": "Cowork comes to every conversation, starting with Pro and Max",
+    "url": "https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude"
+  },
+  {
+    "date": "2026-09-16",
+    "text": "Designs, decks and docs in any conversation",
+    "url": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them"
+  },
+  {
+    "date": "2026-09-15",
+    "text": "Salesforce in Claude launches in beta",
+    "url": "https://support.claude.com/en/articles/16952186-use-salesforce-in-claude"
+  },
+  {
+    "date": "2026-09-10",
+    "text": "Smart reports arrive in beta for Enterprise",
+    "url": "https://support.claude.com/en/articles/16893491-get-started-with-smart-reports"
+  },
+  {
     "date": "2026-09-01",
     "text": "12 new connectors this month",
     "url": "https://support.claude.com/en/articles/12138966-release-notes"

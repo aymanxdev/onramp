@@ -5,6 +5,69 @@
     <link>https://onramp.example/new</link>
     <description>Everything Claude shipped, in plain words, newest first.</description>
     <item>
+      <title>Monthly API credits</title>
+      <link>https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans</link>
+      <guid isPermaLink="false">monthly-api-credits</guid>
+      <pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Max and Team plans now include monthly credits for building your own apps and agents on the API.</description>
+    </item>
+    <item>
+      <title>Claude Code cloud sessions</title>
+      <link>https://code.claude.com/docs/en/claude-code-on-the-web</link>
+      <guid isPermaLink="false">claude-code-cloud-sessions</guid>
+      <pubDate>Tue, 06 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Run Claude Code on a machine of its own, so a task keeps going when your laptop sleeps.</description>
+    </item>
+    <item>
+      <title>Claude Code mods</title>
+      <link>https://code.claude.com/docs/en/plugins/mods/overview</link>
+      <guid isPermaLink="false">claude-code-mods</guid>
+      <pubDate>Thu, 01 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Small plugins that change how Claude Code looks and behaves, from a context readout to guards on commands.</description>
+    </item>
+    <item>
+      <title>Plugin submissions</title>
+      <link>https://claude.com/resources/articles/build-plugins-for-claude</link>
+      <guid isPermaLink="false">plugin-submissions</guid>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Developers can submit plugins to the Claude directory and follow them through review.</description>
+    </item>
+    <item>
+      <title>Claude Opus 5.5</title>
+      <link>https://www.anthropic.com/claude-opus-5-5</link>
+      <guid isPermaLink="false">opus-5-5</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <description>The first Claude 5.5 model, which Anthropic says matches Fable 5.1 on most work for less.</description>
+    </item>
+    <item>
+      <title>Cowork in every conversation</title>
+      <link>https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude</link>
+      <guid isPermaLink="false">cowork-in-every-conversation</guid>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Ask a quick question or hand over a bigger job in the same chat, with no mode to pick first.</description>
+    </item>
+    <item>
+      <title>Designs, decks and docs anywhere</title>
+      <link>https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them</link>
+      <guid isPermaLink="false">designs-decks-docs-anywhere</guid>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Ask for a design, a deck or a living document in any conversation and edit it beside the chat.</description>
+    </item>
+    <item>
+      <title>Salesforce in Claude</title>
+      <link>https://support.claude.com/en/articles/16952186-use-salesforce-in-claude</link>
+      <guid isPermaLink="false">salesforce-in-claude</guid>
+      <pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate>
+      <description>A plugin that brings your Salesforce accounts and pipeline into Claude, with sales skills built in.</description>
+    </item>
+    <item>
+      <title>Smart reports</title>
+      <link>https://support.claude.com/en/articles/16893491-get-started-with-smart-reports</link>
+      <guid isPermaLink="false">smart-reports</guid>
+      <pubDate>Thu, 10 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Enterprise admins get a report on how their team uses Claude, what it costs and where it gets stuck.</description>
+    </item>
+    <item>
       <title>Dispatch</title>
       <link>https://support.claude.com/en/articles/13345190-getting-started-with-cowork</link>
       <guid isPermaLink="false">dispatch</guid>
