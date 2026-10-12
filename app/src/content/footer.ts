@@ -24,7 +24,7 @@ export const footerLinks: readonly FooterLink[] = [
   { label: 'About', href: '/about' },
   { label: 'How routes are built', href: '/how-it-works' },
   { label: 'Report a wrong route', href: WRONG_ROUTE_ISSUE_URL, external: true },
-  { label: 'Privacy, we store nothing personal', href: '/privacy' },
+  { label: 'Privacy', href: '/privacy' },
   { label: 'GitHub', href: 'https://github.com/aymanxdev/onramp', external: true },
 ] as const
 
