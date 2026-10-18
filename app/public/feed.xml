@@ -12,13 +12,6 @@
       <description>Max and Team plans now include monthly credits for building your own apps and agents on the API.</description>
     </item>
     <item>
-      <title>Claude Code cloud sessions</title>
-      <link>https://code.claude.com/docs/en/claude-code-on-the-web</link>
-      <guid isPermaLink="false">claude-code-cloud-sessions</guid>
-      <pubDate>Tue, 06 Oct 2026 00:00:00 +0000</pubDate>
-      <description>Run Claude Code on a machine of its own, so a task keeps going when your laptop sleeps.</description>
-    </item>
-    <item>
       <title>Claude Code mods</title>
       <link>https://code.claude.com/docs/en/plugins/mods/overview</link>
       <guid isPermaLink="false">claude-code-mods</guid>
@@ -69,7 +62,7 @@
     </item>
     <item>
       <title>Dispatch</title>
-      <link>https://support.claude.com/en/articles/13345190-getting-started-with-cowork</link>
+      <link>https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude</link>
       <guid isPermaLink="false">dispatch</guid>
       <pubDate>Wed, 02 Sep 2026 00:00:00 +0000</pubDate>
       <description>Send Claude a job from your phone and pick up the result later.</description>
