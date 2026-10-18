@@ -1377,7 +1377,7 @@
     {
       "id": "capability:dispatch",
       "name": "Dispatch",
-      "officialUrl": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
+      "officialUrl": "https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude",
       "ref": "dispatch",
       "shippedOn": "2026-09-02",
       "surface": "cowork",
@@ -1607,16 +1607,6 @@
       "type": "feature"
     },
     {
-      "id": "feature:claude-code-cloud-sessions",
-      "name": "Claude Code cloud sessions",
-      "officialUrl": "https://code.claude.com/docs/en/claude-code-on-the-web",
-      "ref": "claude-code-cloud-sessions",
-      "shippedOn": "2026-10-06",
-      "surface": "code",
-      "tint": "code",
-      "type": "feature"
-    },
-    {
       "id": "feature:claude-code-mods",
       "name": "Claude Code mods",
       "officialUrl": "https://code.claude.com/docs/en/plugins/mods/overview",
@@ -1669,7 +1659,7 @@
     {
       "id": "feature:dispatch",
       "name": "Dispatch",
-      "officialUrl": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
+      "officialUrl": "https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude",
       "ref": "dispatch",
       "shippedOn": "2026-09-02",
       "surface": "cowork",

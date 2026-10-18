@@ -143,15 +143,15 @@
       "weight": 7
     },
     {
-      "asOf": "2026-09-07",
+      "asOf": "2026-10-18",
       "availableOn": [
         "cowork",
         "mobile"
       ],
       "id": "dispatch",
       "name": "Dispatch",
-      "needs": "Cowork",
-      "officialUrl": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
+      "needs": "Cowork, and only if you already used Dispatch",
+      "officialUrl": "https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude",
       "plans": [
         "pro",
         "max",
@@ -581,8 +581,9 @@
         "dispatch"
       ],
       "name": "Dispatch",
-      "officialUrl": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork",
+      "officialUrl": "https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude",
       "pitfalls": [
+        "Only for people who already used it. New users do not get Dispatch.",
         "It queues. Expect minutes, not seconds."
       ],
       "plainWords": "Send Claude a job from your phone and pick up the result later.",
@@ -598,7 +599,7 @@
         "cowork"
       ],
       "tryPrompt": "Read the notes in my Projects folder and write me a one page brief.",
-      "verifiedOn": "2026-09-04",
+      "verifiedOn": "2026-10-18",
       "weight": 8,
       "whatItIs": "A queued job in Cowork that keeps running after you close the tab or the app, so you can start it from your phone and check back.",
       "whoItIsFor": "For people who think of work away from a desk."
@@ -1021,46 +1022,10 @@
         "code"
       ],
       "tryPrompt": "Write me a mod that shows how full my context window is, in a band above the prompt.",
-      "verifiedOn": "2026-10-11",
+      "verifiedOn": "2026-10-18",
       "weight": 5,
       "whatItIs": "A mod is a plugin made of JavaScript or TypeScript handlers that run inside Claude Code, watch or change what it does, and can draw panes and bands in the terminal or the desktop app.",
       "whoItIsFor": "For developers who want Claude Code to fit how they work."
-    },
-    {
-      "bullets": [
-        "Each session runs in its own isolated virtual machine.",
-        "Check in on it or steer it from a phone or a browser.",
-        "Connect GitHub so it can clone your code and push branches."
-      ],
-      "forChips": [
-        "Developers",
-        "Runs without you",
-        "Any device"
-      ],
-      "id": "claude-code-cloud-sessions",
-      "introduces": [],
-      "name": "Claude Code cloud sessions",
-      "officialUrl": "https://code.claude.com/docs/en/claude-code-on-the-web",
-      "pitfalls": [
-        "Repositories on hosts other than GitHub come with restrictions, so check the docs first."
-      ],
-      "plainWords": "Run Claude Code on a machine of its own, so a task keeps going when your laptop sleeps.",
-      "plans": [
-        "pro",
-        "max",
-        "team",
-        "enterprise"
-      ],
-      "shippedOn": "2026-10-06",
-      "status": "published",
-      "surface": [
-        "code"
-      ],
-      "tryPrompt": "Fix the failing test in the checkout module and open a pull request.",
-      "verifiedOn": "2026-10-11",
-      "weight": 5,
-      "whatItIs": "A Claude Code session that runs on cloud infrastructure with your repository cloned onto a fresh branch, started from the browser, the mobile app, the desktop app or your terminal.",
-      "whoItIsFor": "For developers with several tasks and one laptop."
     },
     {
       "bullets": [
@@ -5509,6 +5474,7 @@
       ],
       "persona": "solo founder",
       "pitfalls": [
+        "Dispatch is only for people who already used it. New users do not get it, so start the job from Cowork on desktop instead.",
         "Dispatch queues the job. Expect minutes, not seconds, especially for longer work.",
         "Very complex jobs still benefit from a proper review once you are back at a desk."
       ],

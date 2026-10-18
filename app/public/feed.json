@@ -10,13 +10,6 @@
       "url": "https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans"
     },
     {
-      "content_text": "Run Claude Code on a machine of its own, so a task keeps going when your laptop sleeps.",
-      "date_published": "2026-10-06T00:00:00Z",
-      "id": "claude-code-cloud-sessions",
-      "title": "Claude Code cloud sessions",
-      "url": "https://code.claude.com/docs/en/claude-code-on-the-web"
-    },
-    {
       "content_text": "Small plugins that change how Claude Code looks and behaves, from a context readout to guards on commands.",
       "date_published": "2026-10-01T00:00:00Z",
       "id": "claude-code-mods",
@@ -70,7 +63,7 @@
       "date_published": "2026-09-02T00:00:00Z",
       "id": "dispatch",
       "title": "Dispatch",
-      "url": "https://support.claude.com/en/articles/13345190-getting-started-with-cowork"
+      "url": "https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude"
     },
     {
       "content_text": "Turn a design file into a deck without rebuilding the layouts.",

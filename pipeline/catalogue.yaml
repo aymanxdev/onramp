@@ -392,9 +392,9 @@ capabilities:
   - max
   - team
   - enterprise
-  officialUrl: https://support.claude.com/en/articles/13345190-getting-started-with-cowork
-  asOf: '2026-09-07'
-  needs: Cowork
+  officialUrl: https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude
+  asOf: '2026-10-18'
+  needs: Cowork, and only if you already used Dispatch
   unlocks: Long jobs started from a phone and picked up later
   weight: 9
   shippedOn: '2026-09-02'
@@ -3611,6 +3611,8 @@ usecases:
   - Send me a short progress note halfway through.
   - When it is done, ask if I want a follow up job started straight away.
   pitfalls:
+  - Dispatch is only for people who already used it. New users do not get it, so start the job from
+    Cowork on desktop instead.
   - Dispatch queues the job. Expect minutes, not seconds, especially for longer work.
   - Very complex jobs still benefit from a proper review once you are back at a desk.
   why:
@@ -3652,17 +3654,16 @@ features:
   - It keeps working after you close the tab.
   - You get a nudge when the result lands.
   shippedOn: '2026-09-02'
-  verifiedOn: '2026-09-04'
-  # OWNER: confirm availability. The Cowork and chat article says Dispatch is not available to new
-  # users on the new experience, while existing users can keep using it for now.
+  verifiedOn: '2026-10-18'
   plans:
   - pro
   - max
   - team
   - enterprise
-  officialUrl: https://support.claude.com/en/articles/13345190-getting-started-with-cowork
+  officialUrl: https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude
   tryPrompt: Read the notes in my Projects folder and write me a one page brief.
   pitfalls:
+  - Only for people who already used it. New users do not get Dispatch.
   - It queues. Expect minutes, not seconds.
   status: published
   introduces:
@@ -4012,9 +4013,9 @@ features:
   - Mods install as plugins from a marketplace.
   - They are on by default in recent versions, so there is no switch to flip.
   shippedOn: '2026-10-01'
-  verifiedOn: '2026-10-11'
-  # OWNER: confirm plans and date. The docs page does not list plans (Code plans used here), and 1 October
-  # is the date of the claude.dev getting started post, not a confirmed launch date.
+  verifiedOn: '2026-10-18'
+  # Date from the Claude Code changelog, 2.1.287 on 1 October 2026: "Added Claude Mods". The mods docs
+  # list no plans of their own, so these are the plans that include Claude Code.
   plans:
   - pro
   - max
@@ -4027,38 +4028,6 @@ features:
   status: published
   introduces:
   - plugins
-  weight: 5
-- id: claude-code-cloud-sessions
-  name: Claude Code cloud sessions
-  surface:
-  - code
-  plainWords: Run Claude Code on a machine of its own, so a task keeps going when your laptop sleeps.
-  whatItIs: A Claude Code session that runs on cloud infrastructure with your repository cloned onto a
-    fresh branch, started from the browser, the mobile app, the desktop app or your terminal.
-  whoItIsFor: For developers with several tasks and one laptop.
-  forChips:
-  - Developers
-  - Runs without you
-  - Any device
-  bullets:
-  - Each session runs in its own isolated virtual machine.
-  - Check in on it or steer it from a phone or a browser.
-  - Connect GitHub so it can clone your code and push branches.
-  shippedOn: '2026-10-06'
-  verifiedOn: '2026-10-11'
-  # OWNER: confirm plans and date. The docs say Pro, Max and Team, and Enterprise only with premium
-  # seats or Chat + Claude Code seats. 6 October is the date of the claude.dev field guide, not a launch.
-  plans:
-  - pro
-  - max
-  - team
-  - enterprise
-  officialUrl: https://code.claude.com/docs/en/claude-code-on-the-web
-  tryPrompt: Fix the failing test in the checkout module and open a pull request.
-  pitfalls:
-  - Repositories on hosts other than GitHub come with restrictions, so check the docs first.
-  status: published
-  introduces: []
   weight: 5
 - id: monthly-api-credits
   name: Monthly API credits
