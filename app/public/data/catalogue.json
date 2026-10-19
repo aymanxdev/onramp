@@ -395,6 +395,36 @@
       "date": "2026-10-07",
       "text": "Max and Team plans get monthly API credits",
       "url": "https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans"
+    },
+    {
+      "date": "2026-10-15",
+      "text": "How the Claude Code team does code review",
+      "url": "https://claude.dev/blog/solving-code-review-at-anthropic/"
+    },
+    {
+      "date": "2026-10-18",
+      "text": "Investing in the public benefit",
+      "url": "https://www.anthropic.com/news/public-benefit-fund"
+    },
+    {
+      "date": "2026-10-15",
+      "text": "An update on independent evaluators",
+      "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators"
+    },
+    {
+      "date": "2026-10-14",
+      "text": "Preparing for the 2026 US midterms",
+      "url": "https://www.anthropic.com/news/2026-us-midterms"
+    },
+    {
+      "date": "2026-10-14",
+      "text": "Anthropic opens Singapore office and signs MOU with the Government of Singapore",
+      "url": "https://www.anthropic.com/news/singapore-office-opening"
+    },
+    {
+      "date": "2026-10-18",
+      "text": "Claude Code 2.1.299 to 2.1.303",
+      "url": "https://code.claude.com/docs/en/changelog#2-1-303"
     }
   ],
   "connectors": [
@@ -1061,6 +1091,65 @@
       "weight": 6,
       "whatItIs": "A monthly credit on the Claude Platform for Max and Team subscribers, claimed by linking a Console organisation, that covers API calls, managed agents and the Agent SDK.",
       "whoItIsFor": "For Max and Team subscribers who build their own tools."
+    },
+    {
+      "bullets": [
+        "Supports open-source projects",
+        "Fosters community development",
+        "Promotes public good"
+      ],
+      "forChips": [
+        "public",
+        "benefit",
+        "philanthropy"
+      ],
+      "id": "public-benefit-investment",
+      "introduces": [],
+      "name": "Public Benefit Investment",
+      "officialUrl": "https://www.anthropic.com/news/public-benefit-fund",
+      "pitfalls": [
+        "May have limited availability",
+        "Requires careful consideration of public impact"
+      ],
+      "plainWords": "Claude is now investing in projects that benefit the public",
+      "plans": [],
+      "shippedOn": "2026-10-18",
+      "status": "draft",
+      "surface": [],
+      "tryPrompt": "Try investing in a public benefit project using Claude's new feature",
+      "verifiedOn": "2026-10-19",
+      "weight": 5,
+      "whatItIs": "Claude is now investing in projects that benefit the public, such as open-source software and community initiatives",
+      "whoItIsFor": "For people who want to contribute to the greater good"
+    },
+    {
+      "bullets": [
+        "Get unbiased assessments of Claude's performance",
+        "Expert evaluation of Claude's capabilities",
+        "Independent assessment of Claude's strengths and weaknesses"
+      ],
+      "forChips": [
+        "evaluation",
+        "assessments",
+        "experts"
+      ],
+      "id": "independent-evaluators",
+      "introduces": [],
+      "name": "Independent Evaluators",
+      "officialUrl": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+      "pitfalls": [
+        "Evaluations may vary depending on the expert's criteria"
+      ],
+      "plainWords": "Claude can now be evaluated by independent experts.",
+      "plans": [],
+      "shippedOn": "2026-10-15",
+      "status": "draft",
+      "surface": [],
+      "tryPrompt": "Use the independent evaluator to assess Claude's performance and capabilities.",
+      "verifiedOn": "2026-10-19",
+      "weight": 5,
+      "whatItIs": "Claude can be evaluated by independent experts to assess its performance and capabilities.",
+      "whoItIsFor": "For people who want to assess Claude's performance and capabilities."
     }
   ],
   "lighthouse": {
