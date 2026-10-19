@@ -37,12 +37,16 @@ def digest(path: Path) -> str:
 
 
 def fake_draft(items_path, known_path, out_path, date, bundle, node, stubs_only):
-    """Stands in for scripts/weekly-update/draft.ts: a stub feature per release note, a changelog line each."""
+    """Stands in for scripts/weekly-update/draft.ts: a stub feature per release note, a changelog
+    line only for every other kind, matching the real `draftItems` allow list."""
     items = json.loads(Path(items_path).read_text(encoding="utf-8"))
     drafts = []
     for n, it in enumerate(items):
         feature = None
-        if it["kind"] == "release-notes":
+        if it["kind"] != "release-notes":
+            mode, reason = "changelog-only", f"{it['kind']} source"
+        else:
+            mode, reason = "stub", "no AI credentials"
             feature = {
                 "id": f"fake-{n}", "name": it["title"][:60], "surface": ["cowork"], "plainWords": "Plain words here.",
                 "whatItIs": "What it is.", "whoItIsFor": "For people who test.", "forChips": ["A", "B", "C"],
@@ -52,7 +56,7 @@ def fake_draft(items_path, known_path, out_path, date, bundle, node, stubs_only)
             }
         drafts.append({
             "key": it["key"], "sourceId": it["sourceId"], "title": it["title"], "url": it["url"], "date": it["date"],
-            "mode": "stub", "reason": "no AI credentials", "productChange": None, "feature": feature,
+            "mode": mode, "reason": reason, "productChange": None, "feature": feature,
             "featureComments": {"_top": ["OWNER: confirm availability"]} if feature else {},
             "changelog": {"date": it["date"], "text": it["title"][:100], "url": it["url"]}, "changelogComments": {},
         })
@@ -141,6 +145,22 @@ class CliTests(unittest.TestCase):
         items = json.loads((self.out / "new-items.json").read_text())
         self.assertTrue(items[0]["aggregate"])
         self.assertEqual(items[0]["title"], "Claude Code 2.1.295 to 2.1.296")
+
+    def test_news_items_are_flagged_for_review_in_the_pull_request(self):
+        self.seed()
+        self.drop_keys("anthropic-news", 1)
+        _, summary, _ = self.run_cli()
+        self.assertEqual(summary["newItems"], 1)
+        body = (self.out / "pr-body.md").read_text()
+        self.assertIn("news changelog line: delete it if it is not about Claude", body)
+
+    def test_blog_items_are_changelog_only_in_the_pull_request(self):
+        self.seed()
+        self.drop_keys("claude-dev", 1)
+        _, summary, _ = self.run_cli()
+        self.assertEqual(summary["newItems"], 1)
+        body = (self.out / "pr-body.md").read_text()
+        self.assertIn("changelog only (blog)", body)
 
     def test_title_uses_the_singular_for_one_item(self):
         self.seed()

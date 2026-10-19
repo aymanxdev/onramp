@@ -217,11 +217,38 @@ describe('draftItems: stub fallback', () => {
     expect(d.changelog.url).toBe(item(1).url)
   })
 
-  it('gives blog posts a changelog line only when they are stubbed', async () => {
-    const [d] = (await draftItems([item(1, { kind: 'blog' })], known, null, { date: RUN_DATE })).drafts
-    expect(d.mode).toBe('stub')
+  it('gives a news item a changelog line only, with no model call', async () => {
+    const { adapter, draftCatalogueEntry } = adapterReturning(goodDraft)
+    const result = await draftItems([item(1, { kind: 'news' })], known, adapter, { date: RUN_DATE })
+    const [d] = result.drafts
+    expect(draftCatalogueEntry).not.toHaveBeenCalled()
+    expect(result.modelCalls).toBe(0)
+    expect(d.mode).toBe('changelog-only')
+    expect(d.reason).toBe('news source')
     expect(d.feature).toBeNull()
+    expect(d.featureComments).toEqual({})
     expect(d.changelog.text).toBe('Item number 1')
+  })
+
+  it('gives a blog item a changelog line only, with no model call', async () => {
+    const { adapter, draftCatalogueEntry } = adapterReturning(goodDraft)
+    const result = await draftItems([item(1, { kind: 'blog' })], known, adapter, { date: RUN_DATE })
+    const [d] = result.drafts
+    expect(draftCatalogueEntry).not.toHaveBeenCalled()
+    expect(result.modelCalls).toBe(0)
+    expect(d.mode).toBe('changelog-only')
+    expect(d.reason).toBe('blog source')
+    expect(d.feature).toBeNull()
+    expect(d.featureComments).toEqual({})
+    expect(d.changelog.text).toBe('Item number 1')
+  })
+
+  it('still sends a release-notes item to the model', async () => {
+    const { adapter, draftCatalogueEntry } = adapterReturning(goodDraft)
+    const [d] = (await draftItems([item(1)], known, adapter, { date: RUN_DATE })).drafts
+    expect(draftCatalogueEntry).toHaveBeenCalledTimes(1)
+    expect(d.mode).toBe('model')
+    expect(d.feature).not.toBeNull()
   })
 })
 
