@@ -1,5 +1,35 @@
 [
   {
+    "date": "2026-10-18",
+    "text": "Investing in the public benefit",
+    "url": "https://www.anthropic.com/news/public-benefit-fund"
+  },
+  {
+    "date": "2026-10-18",
+    "text": "Claude Code 2.1.299 to 2.1.303",
+    "url": "https://code.claude.com/docs/en/changelog#2-1-303"
+  },
+  {
+    "date": "2026-10-15",
+    "text": "How the Claude Code team does code review",
+    "url": "https://claude.dev/blog/solving-code-review-at-anthropic/"
+  },
+  {
+    "date": "2026-10-15",
+    "text": "An update on independent evaluators",
+    "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators"
+  },
+  {
+    "date": "2026-10-14",
+    "text": "Preparing for the 2026 US midterms",
+    "url": "https://www.anthropic.com/news/2026-us-midterms"
+  },
+  {
+    "date": "2026-10-14",
+    "text": "Anthropic opens Singapore office and signs MOU with the Government of Singapore",
+    "url": "https://www.anthropic.com/news/singapore-office-opening"
+  },
+  {
     "date": "2026-10-07",
     "text": "Claude Haiku 5.5 launches",
     "url": "https://www.anthropic.com/claude-haiku-5-5"

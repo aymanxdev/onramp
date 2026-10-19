@@ -1667,6 +1667,14 @@
       "type": "feature"
     },
     {
+      "id": "feature:independent-evaluators",
+      "name": "Independent Evaluators",
+      "officialUrl": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+      "ref": "independent-evaluators",
+      "shippedOn": "2026-10-15",
+      "type": "feature"
+    },
+    {
       "id": "feature:monthly-api-credits",
       "name": "Monthly API credits",
       "officialUrl": "https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans",
@@ -1694,6 +1702,14 @@
       "shippedOn": "2026-09-25",
       "surface": "cowork",
       "tint": "cowork",
+      "type": "feature"
+    },
+    {
+      "id": "feature:public-benefit-investment",
+      "name": "Public Benefit Investment",
+      "officialUrl": "https://www.anthropic.com/news/public-benefit-fund",
+      "ref": "public-benefit-investment",
+      "shippedOn": "2026-10-18",
       "type": "feature"
     },
     {

@@ -2,6 +2,26 @@
  "source": "anthropic-news",
  "items": [
   {
+   "key": "https://www.anthropic.com/news/public-benefit-fund",
+   "date": "2026-10-18",
+   "title": "Investing in the public benefit"
+  },
+  {
+   "key": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+   "date": "2026-10-15",
+   "title": "An update on independent evaluators"
+  },
+  {
+   "key": "https://www.anthropic.com/news/singapore-office-opening",
+   "date": "2026-10-14",
+   "title": "Anthropic opens Singapore office and signs MOU with the Government of Singapore"
+  },
+  {
+   "key": "https://www.anthropic.com/news/2026-us-midterms",
+   "date": "2026-10-14",
+   "title": "Preparing for the 2026 US midterms"
+  },
+  {
    "key": "https://www.anthropic.com/news/genesis-mission-commitment",
    "date": "2026-10-08",
    "title": "Building on our commitment to American scientific discovery"
