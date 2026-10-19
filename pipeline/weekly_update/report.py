@@ -93,7 +93,12 @@ def render_body(
                 fid = d["feature"]["id"]
                 result = f"feature `{fid}` ({d['feature']['status']}) and changelog"
             elif d.get("mode") == "changelog-only":
-                result = "changelog only (Claude Code changelog)"
+                if it["kind"] == "news":
+                    result = "news changelog line: delete it if it is not about Claude"
+                elif it["kind"] == "blog":
+                    result = "changelog only (blog)"
+                else:
+                    result = "changelog only (Claude Code changelog)"
             elif d.get("productChange") is False:
                 result = "changelog only, no catalogue change suggested"
             else:
