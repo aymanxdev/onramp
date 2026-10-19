@@ -117,6 +117,8 @@ jobs:
           title: ${{ steps.run.outputs.title }}
           body-path: ${{ runner.temp }}/wu/pr-body.md
           commit-message: "catalogue: weekly update from official sources"
+          # Commits go through the GitHub API as github-actions[bot], so they are verified and meet the signed-commit rule.
+          sign-commits: true
           labels: catalogue
           assignees: aymanxdev
           add-paths: |
