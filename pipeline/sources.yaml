@@ -1,12 +1,12 @@
-# Official sources the weekly update job reads (see openspec/changes/weekly-catalogue-update).
+# Official sources the weekly update job reads (see openspec/specs/weekly-catalogue-update).
 # Each URL must be on an allowed official host (pipeline/validate.py ALLOWED_HOSTS) and each
 # parser must be one of the names registered in pipeline/weekly_update/sources.py.
 # validate.py checks both, so a typo here fails CI before the weekly job can use it.
 #
 # kind: release-notes | blog | news | changelog
-#   release-notes  dated notes, may hold several items a day; becomes a feature and a changelog entry
-#   news           company announcements; becomes a feature and a changelog entry
-#   blog           engineering and how-to posts; mostly no product change, so changelog only
+#   release-notes  dated notes, may hold several items a day; the only kind that can become a feature
+#   news           company announcements; changelog only, flagged in the pull request for the owner to check
+#   blog           engineering and how-to posts; changelog only
 #   changelog      many small versions a week; one aggregated changelog entry per run, never a feature
 sources:
 - id: support-release-notes

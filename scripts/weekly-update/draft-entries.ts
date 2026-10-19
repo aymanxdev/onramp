@@ -244,22 +244,19 @@ export async function draftItems(
   for (const item of items) {
     const base = baseResult(item, options.date)
 
-    // The Claude Code changelog is one aggregated line per run: a changelog entry, no feature.
-    if (item.kind === 'changelog' || item.aggregate) {
+    // Only a release-notes item may reach the model and become a feature. A product launch
+    // always reaches the release notes too, so every other kind, including a kind not yet
+    // seen, is a changelog line only: the changelog text already comes from the source title,
+    // so the model would add nothing.
+    if (item.kind !== 'release-notes') {
       drafts.push({
-        ...base, mode: 'changelog-only', reason: 'changelog source', productChange: null,
+        ...base, mode: 'changelog-only', reason: `${item.kind} source`, productChange: null,
         feature: null, featureComments: {},
       })
       continue
     }
 
     const stub = (reason: string): DraftResult => {
-      // Blog posts are mostly engineering and how-to writing: a changelog line, no feature.
-      if (item.kind === 'blog') {
-        return {
-          ...base, mode: 'stub', reason, productChange: null, feature: null, featureComments: {},
-        }
-      }
       const built = stubFeature(item, options.date, taken)
       return {
         ...base, mode: 'stub', reason, productChange: null,
