@@ -4059,6 +4059,62 @@ features:
   status: published
   introduces: []
   weight: 6
+# OWNER: confirm availability on the official page
+- id: public-benefit-investment
+  name: Public Benefit Investment
+  # OWNER: choose surface
+  surface: []
+  plainWords: Claude is now investing in projects that benefit the public
+  whatItIs: Claude is now investing in projects that benefit the public, such as open-source software
+    and community initiatives
+  whoItIsFor: For people who want to contribute to the greater good
+  forChips:
+  - public
+  - benefit
+  - philanthropy
+  bullets:
+  - Supports open-source projects
+  - Fosters community development
+  - Promotes public good
+  shippedOn: '2026-10-18'
+  verifiedOn: '2026-10-19'
+  # OWNER: confirm plans
+  plans: []
+  officialUrl: https://www.anthropic.com/news/public-benefit-fund
+  tryPrompt: Try investing in a public benefit project using Claude's new feature
+  pitfalls:
+  - May have limited availability
+  - Requires careful consideration of public impact
+  status: draft
+  introduces: []
+  weight: 5
+# OWNER: confirm availability on the official page
+- id: independent-evaluators
+  name: Independent Evaluators
+  # OWNER: choose surface
+  surface: []
+  plainWords: Claude can now be evaluated by independent experts.
+  whatItIs: Claude can be evaluated by independent experts to assess its performance and capabilities.
+  whoItIsFor: For people who want to assess Claude's performance and capabilities.
+  forChips:
+  - evaluation
+  - assessments
+  - experts
+  bullets:
+  - Get unbiased assessments of Claude's performance
+  - Expert evaluation of Claude's capabilities
+  - Independent assessment of Claude's strengths and weaknesses
+  shippedOn: '2026-10-15'
+  verifiedOn: '2026-10-19'
+  # OWNER: confirm plans
+  plans: []
+  officialUrl: https://www.anthropic.com/news/an-update-on-independent-evaluators
+  tryPrompt: Use the independent evaluator to assess Claude's performance and capabilities.
+  pitfalls:
+  - Evaluations may vary depending on the expert's criteria
+  status: draft
+  introduces: []
+  weight: 5
 changelog:
 - date: '2026-08-15'
   text: Cowork adds scheduled tasks
@@ -4102,6 +4158,24 @@ changelog:
 - date: '2026-10-07'
   text: Max and Team plans get monthly API credits
   url: https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans
+- date: '2026-10-15'
+  text: How the Claude Code team does code review
+  url: https://claude.dev/blog/solving-code-review-at-anthropic/
+- date: '2026-10-18'
+  text: Investing in the public benefit
+  url: https://www.anthropic.com/news/public-benefit-fund
+- date: '2026-10-15'
+  text: An update on independent evaluators
+  url: https://www.anthropic.com/news/an-update-on-independent-evaluators
+- date: '2026-10-14'
+  text: Preparing for the 2026 US midterms
+  url: https://www.anthropic.com/news/2026-us-midterms
+- date: '2026-10-14'
+  text: Anthropic opens Singapore office and signs MOU with the Government of Singapore
+  url: https://www.anthropic.com/news/singapore-office-opening
+- date: '2026-10-18'
+  text: Claude Code 2.1.299 to 2.1.303
+  url: https://code.claude.com/docs/en/changelog#2-1-303
 scoreWeights:
   memory: 5
   projects: 4

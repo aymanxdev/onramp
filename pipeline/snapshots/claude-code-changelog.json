@@ -2,6 +2,31 @@
  "source": "claude-code-changelog",
  "items": [
   {
+   "key": "https://code.claude.com/docs/en/changelog#2-1-303",
+   "date": "2026-10-18",
+   "title": "Claude Code 2.1.303"
+  },
+  {
+   "key": "https://code.claude.com/docs/en/changelog#2-1-302",
+   "date": "2026-10-16",
+   "title": "Claude Code 2.1.302"
+  },
+  {
+   "key": "https://code.claude.com/docs/en/changelog#2-1-301",
+   "date": "2026-10-15",
+   "title": "Claude Code 2.1.301"
+  },
+  {
+   "key": "https://code.claude.com/docs/en/changelog#2-1-300",
+   "date": "2026-10-14",
+   "title": "Claude Code 2.1.300"
+  },
+  {
+   "key": "https://code.claude.com/docs/en/changelog#2-1-299",
+   "date": "2026-10-14",
+   "title": "Claude Code 2.1.299"
+  },
+  {
    "key": "https://code.claude.com/docs/en/changelog#2-1-296",
    "date": "2026-10-09",
    "title": "Claude Code 2.1.296"
