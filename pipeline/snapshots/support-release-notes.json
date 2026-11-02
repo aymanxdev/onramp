@@ -2,6 +2,11 @@
  "source": "support-release-notes",
  "items": [
   {
+   "key": "2026-10-21|claude-duet-research-preview-for-pro-and-max-plans",
+   "date": "2026-10-21",
+   "title": "Claude Duet research preview for Pro and Max plans"
+  },
+  {
    "key": "2026-10-07|monthly-api-credits-for-max-and-team-plans",
    "date": "2026-10-07",
    "title": "Monthly API credits for Max and Team plans"

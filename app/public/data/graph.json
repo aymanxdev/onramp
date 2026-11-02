@@ -1617,6 +1617,14 @@
       "type": "feature"
     },
     {
+      "id": "feature:claude-duet",
+      "name": "Claude Duet",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_fdbb85f303",
+      "ref": "claude-duet",
+      "shippedOn": "2026-10-21",
+      "type": "feature"
+    },
+    {
       "id": "feature:component-export",
       "name": "Component export",
       "officialUrl": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",

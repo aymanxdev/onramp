@@ -4115,6 +4115,33 @@ features:
   status: draft
   introduces: []
   weight: 5
+# OWNER: confirm availability on the official page
+- id: claude-duet
+  name: Claude Duet
+  # OWNER: choose surface
+  surface: []
+  plainWords: Claude works as a proactive agent in a new app.
+  whatItIs: A new app where Claude works proactively to assist users.
+  whoItIsFor: For people who use Pro and Max plans.
+  forChips:
+  - proactive
+  - assistant
+  - app
+  bullets:
+  - Work with Claude as a proactive agent
+  - New way to interact with Claude
+  - Enhanced productivity
+  shippedOn: '2026-10-21'
+  verifiedOn: '2026-11-02'
+  # OWNER: confirm plans
+  plans: []
+  officialUrl: https://support.claude.com/en/articles/12138966-release-notes#h_fdbb85f303
+  tryPrompt: Try 'Claude Duet' in your Pro or Max plan to see how it works.
+  pitfalls:
+  - Still in research preview, may have bugs
+  status: draft
+  introduces: []
+  weight: 5
 changelog:
 - date: '2026-08-15'
   text: Cowork adds scheduled tasks
@@ -4176,6 +4203,12 @@ changelog:
 - date: '2026-10-18'
   text: Claude Code 2.1.299 to 2.1.303
   url: https://code.claude.com/docs/en/changelog#2-1-303
+- date: '2026-10-21'
+  text: Claude Duet research preview for Pro and Max plans
+  url: https://support.claude.com/en/articles/12138966-release-notes#h_fdbb85f303
+- date: '2026-10-31'
+  text: Claude Code 2.1.304 to 2.1.316
+  url: https://code.claude.com/docs/en/changelog#2-1-316
 scoreWeights:
   memory: 5
   projects: 4
