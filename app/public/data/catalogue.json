@@ -425,6 +425,16 @@
       "date": "2026-10-18",
       "text": "Claude Code 2.1.299 to 2.1.303",
       "url": "https://code.claude.com/docs/en/changelog#2-1-303"
+    },
+    {
+      "date": "2026-10-21",
+      "text": "Claude Duet research preview for Pro and Max plans",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_fdbb85f303"
+    },
+    {
+      "date": "2026-10-31",
+      "text": "Claude Code 2.1.304 to 2.1.316",
+      "url": "https://code.claude.com/docs/en/changelog#2-1-316"
     }
   ],
   "connectors": [
@@ -1150,6 +1160,35 @@
       "weight": 5,
       "whatItIs": "Claude can be evaluated by independent experts to assess its performance and capabilities.",
       "whoItIsFor": "For people who want to assess Claude's performance and capabilities."
+    },
+    {
+      "bullets": [
+        "Work with Claude as a proactive agent",
+        "New way to interact with Claude",
+        "Enhanced productivity"
+      ],
+      "forChips": [
+        "proactive",
+        "assistant",
+        "app"
+      ],
+      "id": "claude-duet",
+      "introduces": [],
+      "name": "Claude Duet",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_fdbb85f303",
+      "pitfalls": [
+        "Still in research preview, may have bugs"
+      ],
+      "plainWords": "Claude works as a proactive agent in a new app.",
+      "plans": [],
+      "shippedOn": "2026-10-21",
+      "status": "draft",
+      "surface": [],
+      "tryPrompt": "Try 'Claude Duet' in your Pro or Max plan to see how it works.",
+      "verifiedOn": "2026-11-02",
+      "weight": 5,
+      "whatItIs": "A new app where Claude works proactively to assist users.",
+      "whoItIsFor": "For people who use Pro and Max plans."
     }
   ],
   "lighthouse": {
