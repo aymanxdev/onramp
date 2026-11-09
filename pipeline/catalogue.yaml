@@ -4115,6 +4115,118 @@ features:
   status: draft
   introduces: []
   weight: 5
+# OWNER: confirm availability on the official page
+- id: track-spend-by-cost-code
+  name: Track spend by cost code
+  # OWNER: choose surface
+  surface: []
+  plainWords: See how much you've spent on projects by their cost code or client-matter number.
+  whatItIs: Tag projects with cost codes and view spend by those tags.
+  whoItIsFor: For people who manage projects and want to track expenses.
+  forChips:
+  - projects
+  - expenses
+  - tags
+  bullets:
+  - View spend by cost code or client-matter number
+  - Tag projects with existing codes
+  - Get a clearer picture of project expenses
+  shippedOn: '2026-11-06'
+  verifiedOn: '2026-11-09'
+  # OWNER: confirm plans
+  plans: []
+  officialUrl: https://support.claude.com/en/articles/12138966-release-notes#h_8cd3ee82ce
+  tryPrompt: Try tagging a project with a cost code and viewing its spend.
+  pitfalls:
+  - This feature is in beta, so it may not be fully stable.
+  - Not all cost codes may be compatible.
+  status: draft
+  introduces: []
+  weight: 5
+# OWNER: confirm availability on the official page
+- id: enterprise-security-and-admin-controls
+  name: Enterprise Security and Admin Controls
+  # OWNER: choose surface
+  surface: []
+  plainWords: Claude Enterprise gets new security and admin features.
+  whatItIs: Security center, inference hooks, centralized management, and additional access controls for
+    Enterprise plans.
+  whoItIsFor: For people who manage Claude Enterprise.
+  forChips:
+  - Security
+  - Admin
+  - Enterprise
+  bullets:
+  - Improved security and control
+  - Centralized management
+  - Additional access controls
+  shippedOn: '2026-11-05'
+  verifiedOn: '2026-11-09'
+  # OWNER: confirm plans
+  plans: []
+  officialUrl: https://support.claude.com/en/articles/12138966-release-notes#h_1c75a86390
+  tryPrompt: Try 'claude enterprise security features' in chat.
+  pitfalls:
+  - Some features are in beta.
+  - May require additional setup.
+  status: draft
+  introduces: []
+  weight: 5
+# OWNER: confirm availability on the official page
+- id: personal-finance
+  name: Personal Finance
+  # OWNER: choose surface
+  surface: []
+  plainWords: Link your bank and investment accounts to see your balances and spending in one place.
+  whatItIs: Link your financial accounts to view balances and spending in one place, and ask questions
+    about your money.
+  whoItIsFor: For people who want to track their finances and get financial insights.
+  forChips:
+  - finance
+  - banking
+  - investments
+  bullets:
+  - View all your balances in one place
+  - Ask Claude questions about your money
+  - Get financial insights
+  shippedOn: '2026-11-05'
+  verifiedOn: '2026-11-09'
+  # OWNER: confirm plans
+  plans: []
+  officialUrl: https://support.claude.com/en/articles/12138966-release-notes#h_1c75a86390
+  tryPrompt: Link your bank account to Claude and ask 'What's my current balance?'
+  pitfalls:
+  - Only available in the US
+  - Only available on Pro, Max, and Ultra plans
+  status: draft
+  introduces: []
+  weight: 5
+# OWNER: confirm availability on the official page
+- id: claude-duet
+  name: Claude Duet
+  # OWNER: choose surface
+  surface: []
+  plainWords: Claude works as a proactive agent in a new app.
+  whatItIs: A new app where Claude works proactively to assist users.
+  whoItIsFor: For people who use Pro and Max plans.
+  forChips:
+  - Pro
+  - Max
+  - Research
+  bullets:
+  - Work with Claude as a proactive agent
+  - New app for Pro and Max users
+  - Research preview available
+  shippedOn: '2026-10-21'
+  verifiedOn: '2026-11-09'
+  # OWNER: confirm plans
+  plans: []
+  officialUrl: https://support.claude.com/en/articles/12138966-release-notes#h_fdbb85f303
+  tryPrompt: Try Claude Duet in your Pro or Max plan to see how it works.
+  pitfalls: []
+  status: draft
+  introduces: []
+  weight: 5
 changelog:
 - date: '2026-08-15'
   text: Cowork adds scheduled tasks
@@ -4176,6 +4288,21 @@ changelog:
 - date: '2026-10-18'
   text: Claude Code 2.1.299 to 2.1.303
   url: https://code.claude.com/docs/en/changelog#2-1-303
+- date: '2026-11-06'
+  text: Track spend by cost code with project tags (beta)
+  url: https://support.claude.com/en/articles/12138966-release-notes#h_8cd3ee82ce
+- date: '2026-11-05'
+  text: New security and admin controls for Enterprise plans
+  url: https://support.claude.com/en/articles/12138966-release-notes#h_1c75a86390
+- date: '2026-11-05'
+  text: Personal Finance in Claude
+  url: https://support.claude.com/en/articles/12138966-release-notes#h_1c75a86390
+- date: '2026-10-21'
+  text: Claude Duet research preview for Pro and Max plans
+  url: https://support.claude.com/en/articles/12138966-release-notes#h_fdbb85f303
+- date: '2026-11-06'
+  text: Claude Code 2.1.304 to 2.1.319
+  url: https://code.claude.com/docs/en/changelog#2-1-319
 scoreWeights:
   memory: 5
   projects: 4
