@@ -425,6 +425,31 @@
       "date": "2026-10-18",
       "text": "Claude Code 2.1.299 to 2.1.303",
       "url": "https://code.claude.com/docs/en/changelog#2-1-303"
+    },
+    {
+      "date": "2026-11-06",
+      "text": "Track spend by cost code with project tags (beta)",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_8cd3ee82ce"
+    },
+    {
+      "date": "2026-11-05",
+      "text": "New security and admin controls for Enterprise plans",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_1c75a86390"
+    },
+    {
+      "date": "2026-11-05",
+      "text": "Personal Finance in Claude",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_1c75a86390"
+    },
+    {
+      "date": "2026-10-21",
+      "text": "Claude Duet research preview for Pro and Max plans",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_fdbb85f303"
+    },
+    {
+      "date": "2026-11-06",
+      "text": "Claude Code 2.1.304 to 2.1.319",
+      "url": "https://code.claude.com/docs/en/changelog#2-1-319"
     }
   ],
   "connectors": [
@@ -1150,6 +1175,123 @@
       "weight": 5,
       "whatItIs": "Claude can be evaluated by independent experts to assess its performance and capabilities.",
       "whoItIsFor": "For people who want to assess Claude's performance and capabilities."
+    },
+    {
+      "bullets": [
+        "View spend by cost code or client-matter number",
+        "Tag projects with existing codes",
+        "Get a clearer picture of project expenses"
+      ],
+      "forChips": [
+        "projects",
+        "expenses",
+        "tags"
+      ],
+      "id": "track-spend-by-cost-code",
+      "introduces": [],
+      "name": "Track spend by cost code",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_8cd3ee82ce",
+      "pitfalls": [
+        "This feature is in beta, so it may not be fully stable.",
+        "Not all cost codes may be compatible."
+      ],
+      "plainWords": "See how much you've spent on projects by their cost code or client-matter number.",
+      "plans": [],
+      "shippedOn": "2026-11-06",
+      "status": "draft",
+      "surface": [],
+      "tryPrompt": "Try tagging a project with a cost code and viewing its spend.",
+      "verifiedOn": "2026-11-09",
+      "weight": 5,
+      "whatItIs": "Tag projects with cost codes and view spend by those tags.",
+      "whoItIsFor": "For people who manage projects and want to track expenses."
+    },
+    {
+      "bullets": [
+        "Improved security and control",
+        "Centralized management",
+        "Additional access controls"
+      ],
+      "forChips": [
+        "Security",
+        "Admin",
+        "Enterprise"
+      ],
+      "id": "enterprise-security-and-admin-controls",
+      "introduces": [],
+      "name": "Enterprise Security and Admin Controls",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_1c75a86390",
+      "pitfalls": [
+        "Some features are in beta.",
+        "May require additional setup."
+      ],
+      "plainWords": "Claude Enterprise gets new security and admin features.",
+      "plans": [],
+      "shippedOn": "2026-11-05",
+      "status": "draft",
+      "surface": [],
+      "tryPrompt": "Try 'claude enterprise security features' in chat.",
+      "verifiedOn": "2026-11-09",
+      "weight": 5,
+      "whatItIs": "Security center, inference hooks, centralized management, and additional access controls for Enterprise plans.",
+      "whoItIsFor": "For people who manage Claude Enterprise."
+    },
+    {
+      "bullets": [
+        "View all your balances in one place",
+        "Ask Claude questions about your money",
+        "Get financial insights"
+      ],
+      "forChips": [
+        "finance",
+        "banking",
+        "investments"
+      ],
+      "id": "personal-finance",
+      "introduces": [],
+      "name": "Personal Finance",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_1c75a86390",
+      "pitfalls": [
+        "Only available in the US",
+        "Only available on Pro, Max, and Ultra plans"
+      ],
+      "plainWords": "Link your bank and investment accounts to see your balances and spending in one place.",
+      "plans": [],
+      "shippedOn": "2026-11-05",
+      "status": "draft",
+      "surface": [],
+      "tryPrompt": "Link your bank account to Claude and ask 'What's my current balance?'",
+      "verifiedOn": "2026-11-09",
+      "weight": 5,
+      "whatItIs": "Link your financial accounts to view balances and spending in one place, and ask questions about your money.",
+      "whoItIsFor": "For people who want to track their finances and get financial insights."
+    },
+    {
+      "bullets": [
+        "Work with Claude as a proactive agent",
+        "New app for Pro and Max users",
+        "Research preview available"
+      ],
+      "forChips": [
+        "Pro",
+        "Max",
+        "Research"
+      ],
+      "id": "claude-duet",
+      "introduces": [],
+      "name": "Claude Duet",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_fdbb85f303",
+      "pitfalls": [],
+      "plainWords": "Claude works as a proactive agent in a new app.",
+      "plans": [],
+      "shippedOn": "2026-10-21",
+      "status": "draft",
+      "surface": [],
+      "tryPrompt": "Try Claude Duet in your Pro or Max plan to see how it works.",
+      "verifiedOn": "2026-11-09",
+      "weight": 5,
+      "whatItIs": "A new app where Claude works proactively to assist users.",
+      "whoItIsFor": "For people who use Pro and Max plans."
     }
   ],
   "lighthouse": {

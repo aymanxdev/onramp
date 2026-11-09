@@ -1617,6 +1617,14 @@
       "type": "feature"
     },
     {
+      "id": "feature:claude-duet",
+      "name": "Claude Duet",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_fdbb85f303",
+      "ref": "claude-duet",
+      "shippedOn": "2026-10-21",
+      "type": "feature"
+    },
+    {
       "id": "feature:component-export",
       "name": "Component export",
       "officialUrl": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
@@ -1667,6 +1675,14 @@
       "type": "feature"
     },
     {
+      "id": "feature:enterprise-security-and-admin-controls",
+      "name": "Enterprise Security and Admin Controls",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_1c75a86390",
+      "ref": "enterprise-security-and-admin-controls",
+      "shippedOn": "2026-11-05",
+      "type": "feature"
+    },
+    {
       "id": "feature:independent-evaluators",
       "name": "Independent Evaluators",
       "officialUrl": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
@@ -1692,6 +1708,14 @@
       "shippedOn": "2026-09-22",
       "surface": "chat",
       "tint": "chat",
+      "type": "feature"
+    },
+    {
+      "id": "feature:personal-finance",
+      "name": "Personal Finance",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_1c75a86390",
+      "ref": "personal-finance",
+      "shippedOn": "2026-11-05",
       "type": "feature"
     },
     {
@@ -1740,6 +1764,14 @@
       "shippedOn": "2026-09-10",
       "surface": "chat",
       "tint": "chat",
+      "type": "feature"
+    },
+    {
+      "id": "feature:track-spend-by-cost-code",
+      "name": "Track spend by cost code",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_8cd3ee82ce",
+      "ref": "track-spend-by-cost-code",
+      "shippedOn": "2026-11-06",
       "type": "feature"
     },
     {
