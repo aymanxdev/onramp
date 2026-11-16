@@ -1,5 +1,45 @@
 [
   {
+    "date": "2026-11-13",
+    "text": "Claude Code 2.1.304 to 2.1.325",
+    "url": "https://code.claude.com/docs/en/changelog#2-1-325"
+  },
+  {
+    "date": "2026-11-12",
+    "text": "Claude Meetings is rolling out in beta on Team and Enterprise plans in Claude and Claude...",
+    "url": "https://support.claude.com/en/articles/12138966-release-notes#h_2d03630102"
+  },
+  {
+    "date": "2026-11-09",
+    "text": "Safely scaling multi-agent teams with Claude Fable 5.2",
+    "url": "https://claude.dev/blog/safely-scaling-multi-agent-teams-with-fable-5-2/"
+  },
+  {
+    "date": "2026-11-09",
+    "text": "Which Claude model should you build with? Fable, Opus, Sonnet, or Haiku",
+    "url": "https://claude.dev/blog/which-claude-model-should-you-build-with/"
+  },
+  {
+    "date": "2026-11-06",
+    "text": "Track spend by cost code with project tags (beta)",
+    "url": "https://support.claude.com/en/articles/12138966-release-notes#h_8cd3ee82ce"
+  },
+  {
+    "date": "2026-11-05",
+    "text": "New security and admin controls for Enterprise plans",
+    "url": "https://support.claude.com/en/articles/12138966-release-notes#h_1c75a86390"
+  },
+  {
+    "date": "2026-11-05",
+    "text": "Personal Finance in Claude",
+    "url": "https://support.claude.com/en/articles/12138966-release-notes#h_1c75a86390"
+  },
+  {
+    "date": "2026-10-21",
+    "text": "Claude Duet research preview for Pro and Max plans",
+    "url": "https://support.claude.com/en/articles/12138966-release-notes#h_fdbb85f303"
+  },
+  {
     "date": "2026-10-18",
     "text": "Investing in the public benefit",
     "url": "https://www.anthropic.com/news/public-benefit-fund"
