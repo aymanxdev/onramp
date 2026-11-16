@@ -5,6 +5,13 @@
     <link>https://onramp.example/new</link>
     <description>Everything Claude shipped, in plain words, newest first.</description>
     <item>
+      <title>Track spend by cost code</title>
+      <link>https://support.claude.com/en/articles/12138966-release-notes#h_8cd3ee82ce</link>
+      <guid isPermaLink="false">track-spend-by-cost-code</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 +0000</pubDate>
+      <description>See how much you've spent on projects by their cost code or client-matter number.</description>
+    </item>
+    <item>
       <title>Monthly API credits</title>
       <link>https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans</link>
       <guid isPermaLink="false">monthly-api-credits</guid>

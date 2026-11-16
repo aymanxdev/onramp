@@ -2,6 +2,16 @@
  "source": "claude-dev",
  "items": [
   {
+   "key": "https://claude.dev/blog/which-claude-model-should-you-build-with/",
+   "date": "2026-11-09",
+   "title": "Which Claude model should you build with? Fable, Opus, Sonnet, or Haiku"
+  },
+  {
+   "key": "https://claude.dev/blog/safely-scaling-multi-agent-teams-with-fable-5-2/",
+   "date": "2026-11-09",
+   "title": "Safely scaling multi-agent teams with Claude Fable 5.2"
+  },
+  {
    "key": "https://claude.dev/blog/solving-code-review-at-anthropic/",
    "date": "2026-10-15",
    "title": "How the Claude Code team does code review"

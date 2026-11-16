@@ -3,6 +3,13 @@
   "home_page_url": "https://onramp.example/new",
   "items": [
     {
+      "content_text": "See how much you've spent on projects by their cost code or client-matter number.",
+      "date_published": "2026-11-06T00:00:00Z",
+      "id": "track-spend-by-cost-code",
+      "title": "Track spend by cost code",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_8cd3ee82ce"
+    },
+    {
       "content_text": "Max and Team plans now include monthly credits for building your own apps and agents on the API.",
       "date_published": "2026-10-07T00:00:00Z",
       "id": "monthly-api-credits",
