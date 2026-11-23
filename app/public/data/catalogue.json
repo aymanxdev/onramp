@@ -425,6 +425,71 @@
       "date": "2026-10-18",
       "text": "Claude Code 2.1.299 to 2.1.303",
       "url": "https://code.claude.com/docs/en/changelog#2-1-303"
+    },
+    {
+      "date": "2026-11-20",
+      "text": "A refreshed look for Claude Mobile",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_c2590a46af"
+    },
+    {
+      "date": "2026-11-20",
+      "text": "Computer use (beta) for Team and Enterprise plans",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_c2590a46af"
+    },
+    {
+      "date": "2026-11-17",
+      "text": "Choose a release channel in Claude Desktop",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_e2e22537c4"
+    },
+    {
+      "date": "2026-11-12",
+      "text": "Add Claude to your meetings",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_2d03630102"
+    },
+    {
+      "date": "2026-11-06",
+      "text": "Track spend by cost code with project tags (beta)",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_8cd3ee82ce"
+    },
+    {
+      "date": "2026-11-05",
+      "text": "New security and admin controls for Enterprise plans",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_1c75a86390"
+    },
+    {
+      "date": "2026-11-05",
+      "text": "Personal Finance in Claude",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_1c75a86390"
+    },
+    {
+      "date": "2026-10-21",
+      "text": "Claude Duet research preview for Pro and Max plans",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_fdbb85f303"
+    },
+    {
+      "date": "2026-11-17",
+      "text": "Using a \"chaos loop\" to harden the Claude Docs launch: 60 server errors across billions of requests",
+      "url": "https://claude.dev/blog/chaos-loop-claude-docs-launch/"
+    },
+    {
+      "date": "2026-11-16",
+      "text": "How the Claude Code team thinks about verification",
+      "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/"
+    },
+    {
+      "date": "2026-11-09",
+      "text": "Safely scaling multi-agent teams with Claude Fable 5.2",
+      "url": "https://claude.dev/blog/safely-scaling-multi-agent-teams-with-fable-5-2/"
+    },
+    {
+      "date": "2026-11-09",
+      "text": "Which Claude model should you build with? Fable, Opus, Sonnet, or Haiku",
+      "url": "https://claude.dev/blog/which-claude-model-should-you-build-with/"
+    },
+    {
+      "date": "2026-11-20",
+      "text": "Claude Code 2.1.304 to 2.1.330",
+      "url": "https://code.claude.com/docs/en/changelog#2-1-330"
     }
   ],
   "connectors": [
@@ -1150,6 +1215,222 @@
       "weight": 5,
       "whatItIs": "Claude can be evaluated by independent experts to assess its performance and capabilities.",
       "whoItIsFor": "For people who want to assess Claude's performance and capabilities."
+    },
+    {
+      "bullets": [
+        "To be written.",
+        "To be written.",
+        "To be written."
+      ],
+      "forChips": [
+        "New",
+        "Update",
+        "Claude"
+      ],
+      "id": "a-refreshed-look-for-claude-mobile",
+      "introduces": [],
+      "name": "A refreshed look for Claude Mobile",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_c2590a46af",
+      "pitfalls": [],
+      "plainWords": "A refreshed look for Claude Mobile",
+      "plans": [],
+      "shippedOn": "2026-11-20",
+      "status": "draft",
+      "surface": [],
+      "tryPrompt": "To be written.",
+      "verifiedOn": "2026-11-23",
+      "weight": 5,
+      "whatItIs": "To be written from the official page.",
+      "whoItIsFor": "For people who want to know what is new."
+    },
+    {
+      "bullets": [
+        "To be written.",
+        "To be written.",
+        "To be written."
+      ],
+      "forChips": [
+        "New",
+        "Update",
+        "Claude"
+      ],
+      "id": "computer-use-beta-for-team-and",
+      "introduces": [],
+      "name": "Computer use (beta) for Team and Enterprise plans",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_c2590a46af",
+      "pitfalls": [],
+      "plainWords": "Computer use (beta) for Team and Enterprise plans",
+      "plans": [],
+      "shippedOn": "2026-11-20",
+      "status": "draft",
+      "surface": [],
+      "tryPrompt": "To be written.",
+      "verifiedOn": "2026-11-23",
+      "weight": 5,
+      "whatItIs": "To be written from the official page.",
+      "whoItIsFor": "For people who want to know what is new."
+    },
+    {
+      "bullets": [
+        "To be written.",
+        "To be written.",
+        "To be written."
+      ],
+      "forChips": [
+        "New",
+        "Update",
+        "Claude"
+      ],
+      "id": "choose-a-release-channel-in-claude",
+      "introduces": [],
+      "name": "Choose a release channel in Claude Desktop",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_e2e22537c4",
+      "pitfalls": [],
+      "plainWords": "Choose a release channel in Claude Desktop",
+      "plans": [],
+      "shippedOn": "2026-11-17",
+      "status": "draft",
+      "surface": [],
+      "tryPrompt": "To be written.",
+      "verifiedOn": "2026-11-23",
+      "weight": 5,
+      "whatItIs": "To be written from the official page.",
+      "whoItIsFor": "For people who want to know what is new."
+    },
+    {
+      "bullets": [
+        "To be written.",
+        "To be written.",
+        "To be written."
+      ],
+      "forChips": [
+        "New",
+        "Update",
+        "Claude"
+      ],
+      "id": "add-claude-to-your-meetings",
+      "introduces": [],
+      "name": "Add Claude to your meetings",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_2d03630102",
+      "pitfalls": [],
+      "plainWords": "Add Claude to your meetings",
+      "plans": [],
+      "shippedOn": "2026-11-12",
+      "status": "draft",
+      "surface": [],
+      "tryPrompt": "To be written.",
+      "verifiedOn": "2026-11-23",
+      "weight": 5,
+      "whatItIs": "To be written from the official page.",
+      "whoItIsFor": "For people who want to know what is new."
+    },
+    {
+      "bullets": [
+        "To be written.",
+        "To be written.",
+        "To be written."
+      ],
+      "forChips": [
+        "New",
+        "Update",
+        "Claude"
+      ],
+      "id": "track-spend-by-cost-code-with-project",
+      "introduces": [],
+      "name": "Track spend by cost code with project tags (beta)",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_8cd3ee82ce",
+      "pitfalls": [],
+      "plainWords": "Track spend by cost code with project tags (beta)",
+      "plans": [],
+      "shippedOn": "2026-11-06",
+      "status": "draft",
+      "surface": [],
+      "tryPrompt": "To be written.",
+      "verifiedOn": "2026-11-23",
+      "weight": 5,
+      "whatItIs": "To be written from the official page.",
+      "whoItIsFor": "For people who want to know what is new."
+    },
+    {
+      "bullets": [
+        "To be written.",
+        "To be written.",
+        "To be written."
+      ],
+      "forChips": [
+        "New",
+        "Update",
+        "Claude"
+      ],
+      "id": "new-security-and-admin-controls-for",
+      "introduces": [],
+      "name": "New security and admin controls for Enterprise plans",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_1c75a86390",
+      "pitfalls": [],
+      "plainWords": "New security and admin controls for Enterprise plans",
+      "plans": [],
+      "shippedOn": "2026-11-05",
+      "status": "draft",
+      "surface": [],
+      "tryPrompt": "To be written.",
+      "verifiedOn": "2026-11-23",
+      "weight": 5,
+      "whatItIs": "To be written from the official page.",
+      "whoItIsFor": "For people who want to know what is new."
+    },
+    {
+      "bullets": [
+        "To be written.",
+        "To be written.",
+        "To be written."
+      ],
+      "forChips": [
+        "New",
+        "Update",
+        "Claude"
+      ],
+      "id": "personal-finance-in-claude",
+      "introduces": [],
+      "name": "Personal Finance in Claude",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_1c75a86390",
+      "pitfalls": [],
+      "plainWords": "Personal Finance in Claude",
+      "plans": [],
+      "shippedOn": "2026-11-05",
+      "status": "draft",
+      "surface": [],
+      "tryPrompt": "To be written.",
+      "verifiedOn": "2026-11-23",
+      "weight": 5,
+      "whatItIs": "To be written from the official page.",
+      "whoItIsFor": "For people who want to know what is new."
+    },
+    {
+      "bullets": [
+        "To be written.",
+        "To be written.",
+        "To be written."
+      ],
+      "forChips": [
+        "New",
+        "Update",
+        "Claude"
+      ],
+      "id": "claude-duet-research-preview-for-pro-and",
+      "introduces": [],
+      "name": "Claude Duet research preview for Pro and Max plans",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_fdbb85f303",
+      "pitfalls": [],
+      "plainWords": "Claude Duet research preview for Pro and Max plans",
+      "plans": [],
+      "shippedOn": "2026-10-21",
+      "status": "draft",
+      "surface": [],
+      "tryPrompt": "To be written.",
+      "verifiedOn": "2026-11-23",
+      "weight": 5,
+      "whatItIs": "To be written from the official page.",
+      "whoItIsFor": "For people who want to know what is new."
     }
   ],
   "lighthouse": {
