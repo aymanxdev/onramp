@@ -8,18 +8,35 @@ import type { Intake, Route } from '../../app/src/lib/matcher'
 import { catalogueDraftTurn, intentExtractionTurn, personalisationTurn } from './prompts'
 import { extractJsonObject } from './schema'
 import type { CatalogueKnownIds, CatalogueSourceItem, LlmAdapter } from './types'
+import { DEFAULT_WORKERS_AI_MODEL } from './workers-ai-model'
+
+/** Either response shape a Workers AI text-generation model may return. */
+type WorkersAiTextResult = {
+  response?: unknown
+  choices?: { message?: { content?: unknown } }[]
+}
 
 /**
- * Small instruct model, chosen for low cost and speed on Workers AI's free allowance.
- * The fp8 variant is used because it is roughly half the price per token on Workers AI.
- * Verify this id is still current in the Workers AI model catalogue before launch:
- * https://developers.cloudflare.com/workers-ai/models/
+ * Pulls the model's output out of either response shape: the plain `response` field (string
+ * or, for some models, an already-parsed object), or the OpenAI-style `choices[0].message.content`.
  */
-const DEFAULT_WORKERS_AI_MODEL = '@cf/meta/llama-3.1-8b-instruct-fp8'
+function extractModelOutput(result: WorkersAiTextResult): unknown | null {
+  if (result.response !== undefined && result.response !== null) return result.response
+  const content = result.choices?.[0]?.message?.content
+  return typeof content === 'string' ? content : null
+}
 
-type WorkersAiTextResult = { response?: string }
+/**
+ * Logs just enough to explain a fallback without ever logging user text, prompts or model
+ * output: the error's name and, when present, a numeric error code.
+ */
+function logWorkersAiError(error: unknown): void {
+  const name = error instanceof Error ? error.name : typeof error
+  const code = typeof (error as { code?: unknown })?.code === 'number' ? (error as { code: number }).code : undefined
+  console.error('workers-ai adapter error', { name, code })
+}
 
-async function run(env: Env, system: string, user: string, maxTokens: number): Promise<string | null> {
+async function run(env: Env, system: string, user: string, maxTokens: number): Promise<unknown | null> {
   if (!env.AI) return null
   const model = env.LLM_MODEL || DEFAULT_WORKERS_AI_MODEL
   try {
@@ -36,8 +53,11 @@ async function run(env: Env, system: string, user: string, maxTokens: number): P
         max_tokens: maxTokens,
       },
     )) as WorkersAiTextResult
-    return result.response ?? null
-  } catch {
+    const output = extractModelOutput(result)
+    if (typeof output === 'string') return extractJsonObject(output)
+    return output && typeof output === 'object' ? output : null
+  } catch (error) {
+    logWorkersAiError(error)
     return null
   }
 }
@@ -46,20 +66,17 @@ export function createWorkersAiAdapter(env: Env): LlmAdapter {
   return {
     async extractIntent(text: string): Promise<unknown | null> {
       const turn = intentExtractionTurn(text)
-      const response = await run(env, turn.system, turn.user, 400)
-      return response ? extractJsonObject(response) : null
+      return run(env, turn.system, turn.user, 400)
     },
 
     async personalisePrompt(route: Route, intake: Intake): Promise<unknown | null> {
       const turn = personalisationTurn(route, intake)
-      const response = await run(env, turn.system, turn.user, 600)
-      return response ? extractJsonObject(response) : null
+      return run(env, turn.system, turn.user, 600)
     },
 
     async draftCatalogueEntry(item: CatalogueSourceItem, knownIds: CatalogueKnownIds): Promise<unknown | null> {
       const turn = catalogueDraftTurn(item, knownIds)
-      const response = await run(env, turn.system, turn.user, 800)
-      return response ? extractJsonObject(response) : null
+      return run(env, turn.system, turn.user, 800)
     },
   }
 }

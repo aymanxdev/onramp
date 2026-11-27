@@ -115,7 +115,7 @@ describe('createWorkersAiRestAdapter', () => {
     const result = await adapter.draftCatalogueEntry(item, known)
     expect(result).toEqual(valid)
     const [url, init] = fetchImpl.mock.calls[0] as unknown as [string, RequestInit]
-    expect(url).toBe('https://api.cloudflare.com/client/v4/accounts/acct/ai/run/@cf/meta/llama-3.1-8b-instruct-fp8')
+    expect(url).toBe('https://api.cloudflare.com/client/v4/accounts/acct/ai/run/@cf/google/gemma-4-26b-a4b-it')
     expect((init.headers as Record<string, string>).authorization).toBe('Bearer tkn-1')
     const body = JSON.parse(init.body as string) as { max_tokens: number; messages: { role: string }[] }
     expect(body.max_tokens).toBe(800)
@@ -133,6 +133,33 @@ describe('createWorkersAiRestAdapter', () => {
     expect(await chatty.draftCatalogueEntry(item, known)).toEqual(valid)
     const parsed = createWorkersAiRestAdapter({ accountId: 'a', token: 't', fetchImpl: okFetch(valid) })
     expect(await parsed.draftCatalogueEntry(item, known)).toEqual(valid)
+  })
+
+  it('parses the OpenAI-style choices[0].message.content shape', async () => {
+    const fetchImpl = vi.fn(
+      async () =>
+        new Response(JSON.stringify({ success: true, result: { choices: [{ message: { content: JSON.stringify(valid) } }] } }), {
+          status: 200,
+        }),
+    )
+    const adapter = createWorkersAiRestAdapter({ accountId: 'a', token: 't', fetchImpl })
+    expect(await adapter.draftCatalogueEntry(item, known)).toEqual(valid)
+  })
+
+  it('logs the HTTP status and Cloudflare error codes on a retired-model 410, never any prompt text', async () => {
+    const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {})
+    const fetchImpl = vi.fn(
+      async () =>
+        new Response(JSON.stringify({ success: false, errors: [{ code: 5028, message: 'model not found' }] }), { status: 410 }),
+    )
+    const adapter = createWorkersAiRestAdapter({ accountId: 'a', token: 't', fetchImpl })
+    expect(await adapter.draftCatalogueEntry(item, known)).toBeNull()
+    expect(consoleError).toHaveBeenCalledTimes(1)
+    const logged = consoleError.mock.calls[0]
+    expect(logged.join(' ')).not.toContain('Cowork can now run tasks')
+    expect(logged.join(' ')).not.toContain('model not found')
+    expect(logged).toEqual(['workers-ai-rest adapter error', { status: 410, codes: [5028] }])
+    consoleError.mockRestore()
   })
 
   it('returns null on a non-200 answer, a failure flag, a network error and unparseable text', async () => {
