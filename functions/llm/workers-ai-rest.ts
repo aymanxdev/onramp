@@ -14,10 +14,9 @@ import {
 } from './prompts'
 import { extractJsonObject } from './schema'
 import type { CatalogueKnownIds, CatalogueSourceItem, LlmAdapter } from './types'
+import { DEFAULT_WORKERS_AI_MODEL } from './workers-ai-model'
 import type { Intake, Route } from '../../app/src/lib/matcher'
 
-/** Same small, cheap fp8 instruct model as the binding adapter's default. */
-export const DEFAULT_WORKERS_AI_REST_MODEL = '@cf/meta/llama-3.1-8b-instruct-fp8'
 const DEFAULT_TIMEOUT_MS = 30_000
 /** Upper bound on output tokens for the drafting call: about 800, per the weekly job's spend cap. */
 const DRAFT_MAX_TOKENS = 800
@@ -31,11 +30,41 @@ export type WorkersAiRestOptions = {
   fetchImpl?: typeof fetch
 }
 
-type RestResponse = { success?: boolean; result?: { response?: unknown } }
+type RestResult = { response?: unknown; choices?: { message?: { content?: unknown } }[] }
+type RestResponse = { success?: boolean; result?: RestResult; errors?: { code?: unknown }[] }
+
+/**
+ * Pulls the model's output out of either response shape: the plain `result.response` field
+ * (string or, for some models, an already-parsed object), or the OpenAI-style
+ * `result.choices[0].message.content`.
+ */
+function extractModelOutput(body: RestResponse | null): unknown | null {
+  const result = body?.result
+  if (!result) return null
+  if (result.response !== undefined && result.response !== null) {
+    const text = result.response
+    if (typeof text === 'string') return extractJsonObject(text)
+    // Some models return the parsed JSON object directly.
+    return typeof text === 'object' ? text : null
+  }
+  const content = result.choices?.[0]?.message?.content
+  return typeof content === 'string' ? extractJsonObject(content) : null
+}
+
+/**
+ * Logs just enough to explain a fallback without ever logging user text, prompts or model
+ * output: the HTTP status and the Cloudflare error codes from `body.errors[].code`.
+ */
+function logWorkersAiRestError(status: number, body: RestResponse | null): void {
+  const codes = (body?.errors ?? [])
+    .map((e) => e.code)
+    .filter((code): code is number => typeof code === 'number')
+  console.error('workers-ai-rest adapter error', { status, codes })
+}
 
 export function createWorkersAiRestAdapter(options: WorkersAiRestOptions): LlmAdapter {
   const { accountId, token } = options
-  const model = options.model || DEFAULT_WORKERS_AI_REST_MODEL
+  const model = options.model || DEFAULT_WORKERS_AI_MODEL
   const timeoutMs = options.timeoutMs ?? DEFAULT_TIMEOUT_MS
   const doFetch = options.fetchImpl ?? fetch
 
@@ -59,13 +88,17 @@ export function createWorkersAiRestAdapter(options: WorkersAiRestOptions): LlmAd
         }),
         signal: controller.signal,
       })
-      if (!response.ok) return null
-      const body = (await response.json()) as RestResponse
-      if (body.success === false) return null
-      const text = body.result?.response
-      if (typeof text === 'string') return extractJsonObject(text)
-      // Some models return the parsed JSON object directly.
-      return text && typeof text === 'object' ? text : null
+      let body: RestResponse | null = null
+      try {
+        body = (await response.json()) as RestResponse
+      } catch {
+        body = null
+      }
+      if (!response.ok || body?.success === false) {
+        logWorkersAiRestError(response.status, body)
+        return null
+      }
+      return extractModelOutput(body)
     } catch {
       return null
     } finally {
