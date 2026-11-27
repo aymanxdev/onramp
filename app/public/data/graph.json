@@ -1597,6 +1597,30 @@
       "type": "connector"
     },
     {
+      "id": "feature:a-refreshed-look-for-claude-mobile",
+      "name": "A refreshed look for Claude Mobile",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_c2590a46af",
+      "ref": "a-refreshed-look-for-claude-mobile",
+      "shippedOn": "2026-11-20",
+      "type": "feature"
+    },
+    {
+      "id": "feature:add-claude-to-your-meetings",
+      "name": "Add Claude to your meetings",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_2d03630102",
+      "ref": "add-claude-to-your-meetings",
+      "shippedOn": "2026-11-12",
+      "type": "feature"
+    },
+    {
+      "id": "feature:choose-a-release-channel-in-claude",
+      "name": "Choose a release channel in Claude Desktop",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_e2e22537c4",
+      "ref": "choose-a-release-channel-in-claude",
+      "shippedOn": "2026-11-17",
+      "type": "feature"
+    },
+    {
       "id": "feature:chrome-reads-pdfs",
       "name": "Chrome reads PDFs",
       "officialUrl": "https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome",
@@ -1617,6 +1641,14 @@
       "type": "feature"
     },
     {
+      "id": "feature:claude-duet-research-preview-for-pro-and",
+      "name": "Claude Duet research preview for Pro and Max plans",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_fdbb85f303",
+      "ref": "claude-duet-research-preview-for-pro-and",
+      "shippedOn": "2026-10-21",
+      "type": "feature"
+    },
+    {
       "id": "feature:component-export",
       "name": "Component export",
       "officialUrl": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
@@ -1624,6 +1656,14 @@
       "shippedOn": "2026-08-19",
       "surface": "design",
       "tint": "design",
+      "type": "feature"
+    },
+    {
+      "id": "feature:computer-use-beta-for-team-and",
+      "name": "Computer use (beta) for Team and Enterprise plans",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_c2590a46af",
+      "ref": "computer-use-beta-for-team-and",
+      "shippedOn": "2026-11-20",
       "type": "feature"
     },
     {
@@ -1685,6 +1725,14 @@
       "type": "feature"
     },
     {
+      "id": "feature:new-security-and-admin-controls-for",
+      "name": "New security and admin controls for Enterprise plans",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_1c75a86390",
+      "ref": "new-security-and-admin-controls-for",
+      "shippedOn": "2026-11-05",
+      "type": "feature"
+    },
+    {
       "id": "feature:opus-5-5",
       "name": "Claude Opus 5.5",
       "officialUrl": "https://www.anthropic.com/claude-opus-5-5",
@@ -1692,6 +1740,14 @@
       "shippedOn": "2026-09-22",
       "surface": "chat",
       "tint": "chat",
+      "type": "feature"
+    },
+    {
+      "id": "feature:personal-finance-in-claude",
+      "name": "Personal Finance in Claude",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_1c75a86390",
+      "ref": "personal-finance-in-claude",
+      "shippedOn": "2026-11-05",
       "type": "feature"
     },
     {
@@ -1740,6 +1796,14 @@
       "shippedOn": "2026-09-10",
       "surface": "chat",
       "tint": "chat",
+      "type": "feature"
+    },
+    {
+      "id": "feature:track-spend-by-cost-code-with-project",
+      "name": "Track spend by cost code with project tags (beta)",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_8cd3ee82ce",
+      "ref": "track-spend-by-cost-code-with-project",
+      "shippedOn": "2026-11-06",
       "type": "feature"
     },
     {
