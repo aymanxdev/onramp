@@ -8,12 +8,13 @@ import type { Intake, Route } from '../../app/src/lib/matcher'
 import { catalogueDraftTurn, intentExtractionTurn, personalisationTurn } from './prompts'
 import { extractJsonObject } from './schema'
 import type { CatalogueKnownIds, CatalogueSourceItem, LlmAdapter } from './types'
-import { DEFAULT_WORKERS_AI_MODEL } from './workers-ai-model'
+import { DEFAULT_WORKERS_AI_MODEL, WORKERS_AI_DISABLE_THINKING } from './workers-ai-model'
 
 /** Either response shape a Workers AI text-generation model may return. */
+type WorkersAiChoice = { message?: { content?: unknown }; finish_reason?: unknown }
 type WorkersAiTextResult = {
   response?: unknown
-  choices?: { message?: { content?: unknown } }[]
+  choices?: WorkersAiChoice[]
 }
 
 /**
@@ -24,6 +25,17 @@ function extractModelOutput(result: WorkersAiTextResult): unknown | null {
   if (result.response !== undefined && result.response !== null) return result.response
   const content = result.choices?.[0]?.message?.content
   return typeof content === 'string' ? content : null
+}
+
+/**
+ * True when a thinking model has spent its whole output token budget on reasoning and left
+ * `content` empty with `finish_reason: "length"`, rather than ever answering.
+ */
+function isEmptyDueToLength(result: WorkersAiTextResult): boolean {
+  const choice = result.choices?.[0]
+  if (!choice || choice.finish_reason !== 'length') return false
+  const content = choice.message?.content
+  return content === undefined || content === null || content === ''
 }
 
 /**
@@ -51,8 +63,13 @@ async function run(env: Env, system: string, user: string, maxTokens: number): P
         ],
         temperature: 0,
         max_tokens: maxTokens,
+        ...WORKERS_AI_DISABLE_THINKING,
       },
     )) as WorkersAiTextResult
+    if (isEmptyDueToLength(result)) {
+      console.error('workers-ai adapter error', { finishReason: 'length' })
+      return null
+    }
     const output = extractModelOutput(result)
     if (typeof output === 'string') return extractJsonObject(output)
     return output && typeof output === 'object' ? output : null

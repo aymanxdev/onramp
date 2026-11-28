@@ -122,6 +122,30 @@ describe('createWorkersAiRestAdapter', () => {
     expect(body.messages.map((m) => m.role)).toEqual(['system', 'user'])
   })
 
+  it('disables thinking on every request, so the output budget is not spent on reasoning', async () => {
+    const fetchImpl = okFetch(JSON.stringify(valid))
+    await createWorkersAiRestAdapter({ accountId: 'acct', token: 'tkn-1', fetchImpl }).draftCatalogueEntry(item, known)
+    const [, init] = fetchImpl.mock.calls[0] as unknown as [string, RequestInit]
+    const body = JSON.parse(init.body as string) as { chat_template_kwargs?: { enable_thinking: boolean } }
+    expect(body.chat_template_kwargs).toEqual({ enable_thinking: false })
+  })
+
+  it('returns null and logs only the finish reason when a thinking model burns its budget on reasoning', async () => {
+    const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {})
+    const fetchImpl = vi.fn(
+      async () =>
+        new Response(
+          JSON.stringify({ success: true, result: { choices: [{ message: { content: '' }, finish_reason: 'length' }] } }),
+          { status: 200 },
+        ),
+    )
+    const adapter = createWorkersAiRestAdapter({ accountId: 'a', token: 't', fetchImpl })
+    expect(await adapter.draftCatalogueEntry(item, known)).toBeNull()
+    expect(consoleError).toHaveBeenCalledTimes(1)
+    expect(consoleError.mock.calls[0]).toEqual(['workers-ai-rest adapter error', { finishReason: 'length' }])
+    consoleError.mockRestore()
+  })
+
   it('honours a custom model', async () => {
     const fetchImpl = okFetch('{}')
     await createWorkersAiRestAdapter({ accountId: 'a', token: 't', model: '@cf/example/model', fetchImpl }).draftCatalogueEntry(item, known)
