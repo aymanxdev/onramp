@@ -1,5 +1,30 @@
 [
   {
+    "date": "2026-11-25",
+    "text": "Claude Code 2.1.331 to 2.1.332",
+    "url": "https://code.claude.com/docs/en/changelog#2-1-332"
+  },
+  {
+    "date": "2026-11-24",
+    "text": "Monthly recap is out of beta",
+    "url": "https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886"
+  },
+  {
+    "date": "2026-11-24",
+    "text": "Install artifacts as apps (beta)",
+    "url": "https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886"
+  },
+  {
+    "date": "2026-11-24",
+    "text": "Send files to connected apps and save files from them (beta)",
+    "url": "https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886"
+  },
+  {
+    "date": "2026-11-24",
+    "text": "A practical guide to shipping with Claude Code",
+    "url": "https://claude.dev/blog/the-work-after-you-open-a-pr/"
+  },
+  {
     "date": "2026-11-20",
     "text": "A refreshed look for Claude Mobile",
     "url": "https://support.claude.com/en/articles/12138966-release-notes#h_c2590a46af"
