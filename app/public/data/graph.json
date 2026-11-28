@@ -983,6 +983,21 @@
       "type": "introduces"
     },
     {
+      "source": "feature:file-transfers-with-connected-apps",
+      "target": "capability:connectors",
+      "type": "introduces"
+    },
+    {
+      "source": "feature:install-artifacts-as-apps",
+      "target": "capability:artifacts",
+      "type": "introduces"
+    },
+    {
+      "source": "feature:install-artifacts-as-apps",
+      "target": "capability:interactive-apps",
+      "type": "introduces"
+    },
+    {
       "source": "feature:plugin-submissions",
       "target": "capability:plugins",
       "type": "introduces"
@@ -1707,11 +1722,31 @@
       "type": "feature"
     },
     {
+      "id": "feature:file-transfers-with-connected-apps",
+      "name": "File transfers with connected apps",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886",
+      "ref": "file-transfers-with-connected-apps",
+      "shippedOn": "2026-11-24",
+      "surface": "chat",
+      "tint": "chat",
+      "type": "feature"
+    },
+    {
       "id": "feature:independent-evaluators",
       "name": "Independent Evaluators",
       "officialUrl": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
       "ref": "independent-evaluators",
       "shippedOn": "2026-10-15",
+      "type": "feature"
+    },
+    {
+      "id": "feature:install-artifacts-as-apps",
+      "name": "Install artifacts as apps",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886",
+      "ref": "install-artifacts-as-apps",
+      "shippedOn": "2026-11-24",
+      "surface": "chat",
+      "tint": "chat",
       "type": "feature"
     },
     {
@@ -1722,6 +1757,14 @@
       "shippedOn": "2026-10-07",
       "surface": "api",
       "tint": "neutral",
+      "type": "feature"
+    },
+    {
+      "id": "feature:monthly-recap-is-out-of-beta",
+      "name": "Monthly recap is out of beta",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886",
+      "ref": "monthly-recap-is-out-of-beta",
+      "shippedOn": "2026-11-24",
       "type": "feature"
     },
     {

@@ -4331,6 +4331,106 @@ features:
   status: draft
   introduces: []
   weight: 5
+# OWNER: stub with no drafted wording. Write it from the official page, then set status to published
+# OWNER: confirm availability on the official page
+- id: monthly-recap-is-out-of-beta
+  name: Monthly recap is out of beta
+  # OWNER: choose surface
+  surface: []
+  plainWords: Monthly recap is out of beta
+  whatItIs: To be written from the official page.
+  whoItIsFor: For people who want to know what is new.
+  forChips:
+  - New
+  - Update
+  - Claude
+  bullets:
+  - To be written.
+  - To be written.
+  - To be written.
+  shippedOn: '2026-11-24'
+  verifiedOn: '2026-11-28'
+  # OWNER: confirm plans
+  plans: []
+  officialUrl: https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886
+  tryPrompt: To be written.
+  pitfalls: []
+  status: draft
+  introduces: []
+  weight: 5
+# OWNER: confirm availability on the official page
+- id: install-artifacts-as-apps
+  name: Install artifacts as apps
+  surface:
+  - chat
+  plainWords: Turn the code or tools Claude creates into standalone applications on your computer.
+  whatItIs: This feature allows you to install Claude artifacts directly onto your Mac or Windows desktop.
+    Once installed, they function as independent applications with their own windows, icons, and the ability
+    to interact with your operating system.
+  whoItIsFor: For people who want to use Claude's generated tools and applications outside of the chat
+    interface.
+  forChips:
+  - desktop apps
+  - productivity
+  - software
+  bullets:
+  - Run tools in dedicated windows
+  - Access artifacts like standard desktop software
+  - Enable interaction with your operating system
+  shippedOn: '2026-11-24'
+  verifiedOn: '2026-11-28'
+  # OWNER: confirm plans
+  plans:
+  - free
+  - pro
+  - max
+  - team
+  - enterprise
+  officialUrl: https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886
+  tryPrompt: Create a simple pomodoro timer app that I can install and use on my desktop.
+  pitfalls:
+  - Functionality may vary depending on your operating system
+  status: published
+  introduces:
+  - artifacts
+  - interactive-apps
+  weight: 5
+# OWNER: confirm availability on the official page
+- id: file-transfers-with-connected-apps
+  name: File transfers with connected apps
+  surface:
+  - chat
+  plainWords: You can now move files directly between Claude and your connected applications.
+  whatItIs: This feature allows Claude to send files to external apps you have connected and save files
+    provided by those apps back into your chat.
+  whoItIsFor: For people who want to streamline workflows between Claude and other software tools.
+  # OWNER: add a third chip
+  forChips:
+  - file transfer
+  - app integration
+  - New
+  # OWNER: add a third bullet
+  bullets:
+  - Send documents directly to connected apps
+  - Save files from external apps into Claude
+  - See the official page for the details.
+  shippedOn: '2026-11-24'
+  verifiedOn: '2026-11-28'
+  # OWNER: confirm plans
+  plans:
+  - free
+  - pro
+  - max
+  - team
+  - enterprise
+  officialUrl: https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886
+  tryPrompt: Send the summary I just wrote to my connected app as a text file.
+  pitfalls:
+  - Requires connected apps to be set up beforehand
+  status: published
+  introduces:
+  - connectors
+  weight: 5
 changelog:
 - date: '2026-08-15'
   text: Cowork adds scheduled tasks
@@ -4431,6 +4531,21 @@ changelog:
 - date: '2026-11-20'
   text: Claude Code 2.1.304 to 2.1.330
   url: https://code.claude.com/docs/en/changelog#2-1-330
+- date: '2026-11-24'
+  text: Monthly recap is out of beta
+  url: https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886
+- date: '2026-11-24'
+  text: Install artifacts as apps (beta)
+  url: https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886
+- date: '2026-11-24'
+  text: Send files to connected apps and save files from them (beta)
+  url: https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886
+- date: '2026-11-24'
+  text: A practical guide to shipping with Claude Code
+  url: https://claude.dev/blog/the-work-after-you-open-a-pr/
+- date: '2026-11-25'
+  text: Claude Code 2.1.331 to 2.1.332
+  url: https://code.claude.com/docs/en/changelog#2-1-332
 scoreWeights:
   memory: 5
   projects: 4

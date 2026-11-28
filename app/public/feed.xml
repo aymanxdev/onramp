@@ -5,6 +5,20 @@
     <link>https://onramp.example/new</link>
     <description>Everything Claude shipped, in plain words, newest first.</description>
     <item>
+      <title>Install artifacts as apps</title>
+      <link>https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886</link>
+      <guid isPermaLink="false">install-artifacts-as-apps</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Turn the code or tools Claude creates into standalone applications on your computer.</description>
+    </item>
+    <item>
+      <title>File transfers with connected apps</title>
+      <link>https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886</link>
+      <guid isPermaLink="false">file-transfers-with-connected-apps</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0000</pubDate>
+      <description>You can now move files directly between Claude and your connected applications.</description>
+    </item>
+    <item>
       <title>Monthly API credits</title>
       <link>https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans</link>
       <guid isPermaLink="false">monthly-api-credits</guid>
