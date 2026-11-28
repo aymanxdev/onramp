@@ -8,3 +8,10 @@
  * current in the Workers AI model catalogue before launch: https://developers.cloudflare.com/workers-ai/models/
  */
 export const DEFAULT_WORKERS_AI_MODEL = '@cf/google/gemma-4-26b-a4b-it'
+
+/**
+ * Shared request option for both Workers AI adapters: the default model above is a thinking
+ * model, and without this it spends the whole output token budget on `reasoning_content`,
+ * leaving `content` empty with `finish_reason: "length"`.
+ */
+export const WORKERS_AI_DISABLE_THINKING = { chat_template_kwargs: { enable_thinking: false } } as const

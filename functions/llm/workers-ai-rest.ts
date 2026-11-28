@@ -14,7 +14,7 @@ import {
 } from './prompts'
 import { extractJsonObject } from './schema'
 import type { CatalogueKnownIds, CatalogueSourceItem, LlmAdapter } from './types'
-import { DEFAULT_WORKERS_AI_MODEL } from './workers-ai-model'
+import { DEFAULT_WORKERS_AI_MODEL, WORKERS_AI_DISABLE_THINKING } from './workers-ai-model'
 import type { Intake, Route } from '../../app/src/lib/matcher'
 
 const DEFAULT_TIMEOUT_MS = 30_000
@@ -30,8 +30,19 @@ export type WorkersAiRestOptions = {
   fetchImpl?: typeof fetch
 }
 
-type RestResult = { response?: unknown; choices?: { message?: { content?: unknown } }[] }
+type RestChoice = { message?: { content?: unknown }; finish_reason?: unknown }
+type RestResult = { response?: unknown; choices?: RestChoice[] }
 type RestResponse = { success?: boolean; result?: RestResult; errors?: { code?: unknown }[] }
+
+/**
+ * True when a thinking model has spent its whole output token budget on reasoning and left
+ * `content` empty with `finish_reason: "length"`, rather than ever answering.
+ */
+function isEmptyDueToLength(choice: RestChoice | undefined): boolean {
+  if (!choice || choice.finish_reason !== 'length') return false
+  const content = choice.message?.content
+  return content === undefined || content === null || content === ''
+}
 
 /**
  * Pulls the model's output out of either response shape: the plain `result.response` field
@@ -85,6 +96,7 @@ export function createWorkersAiRestAdapter(options: WorkersAiRestOptions): LlmAd
           ],
           temperature: 0,
           max_tokens: maxTokens,
+          ...WORKERS_AI_DISABLE_THINKING,
         }),
         signal: controller.signal,
       })
@@ -96,6 +108,10 @@ export function createWorkersAiRestAdapter(options: WorkersAiRestOptions): LlmAd
       }
       if (!response.ok || body?.success === false) {
         logWorkersAiRestError(response.status, body)
+        return null
+      }
+      if (isEmptyDueToLength(body?.result?.choices?.[0])) {
+        console.error('workers-ai-rest adapter error', { finishReason: 'length' })
         return null
       }
       return extractModelOutput(body)
