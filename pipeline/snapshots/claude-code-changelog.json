@@ -2,6 +2,16 @@
  "source": "claude-code-changelog",
  "items": [
   {
+   "key": "https://code.claude.com/docs/en/changelog#2-1-332",
+   "date": "2026-11-25",
+   "title": "Claude Code 2.1.332"
+  },
+  {
+   "key": "https://code.claude.com/docs/en/changelog#2-1-331",
+   "date": "2026-11-23",
+   "title": "Claude Code 2.1.331"
+  },
+  {
    "key": "https://code.claude.com/docs/en/changelog#2-1-330",
    "date": "2026-11-20",
    "title": "Claude Code 2.1.330"

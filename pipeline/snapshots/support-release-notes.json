@@ -2,6 +2,21 @@
  "source": "support-release-notes",
  "items": [
   {
+   "key": "2026-11-24|send-files-to-connected-apps-and-save-files-from-them-beta",
+   "date": "2026-11-24",
+   "title": "Send files to connected apps and save files from them (beta)"
+  },
+  {
+   "key": "2026-11-24|monthly-recap-is-out-of-beta",
+   "date": "2026-11-24",
+   "title": "Monthly recap is out of beta"
+  },
+  {
+   "key": "2026-11-24|install-artifacts-as-apps-beta",
+   "date": "2026-11-24",
+   "title": "Install artifacts as apps (beta)"
+  },
+  {
    "key": "2026-11-20|computer-use-beta-for-team-and-enterprise-plans",
    "date": "2026-11-20",
    "title": "Computer use (beta) for Team and Enterprise plans"

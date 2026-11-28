@@ -3,6 +3,27 @@
   "home_page_url": "https://onramp.example/new",
   "items": [
     {
+      "content_text": "Get a summary of your interactions and progress with Claude over the past month.",
+      "date_published": "2026-11-24T00:00:00Z",
+      "id": "monthly-recap",
+      "title": "Monthly recap",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886"
+    },
+    {
+      "content_text": "Turn the code or tools Claude creates into standalone applications on your computer.",
+      "date_published": "2026-11-24T00:00:00Z",
+      "id": "install-artifacts-as-apps",
+      "title": "Install artifacts as apps",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886"
+    },
+    {
+      "content_text": "You can now send files to connected applications and save files directly from them.",
+      "date_published": "2026-11-24T00:00:00Z",
+      "id": "file-transfers-with-connected-apps",
+      "title": "File transfers with connected apps",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886"
+    },
+    {
       "content_text": "Max and Team plans now include monthly credits for building your own apps and agents on the API.",
       "date_published": "2026-10-07T00:00:00Z",
       "id": "monthly-api-credits",

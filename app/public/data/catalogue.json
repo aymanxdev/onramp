@@ -490,6 +490,31 @@
       "date": "2026-11-20",
       "text": "Claude Code 2.1.304 to 2.1.330",
       "url": "https://code.claude.com/docs/en/changelog#2-1-330"
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Monthly recap is out of beta",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886"
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Install artifacts as apps (beta)",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886"
+    },
+    {
+      "date": "2026-11-24",
+      "text": "Send files to connected apps and save files from them (beta)",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886"
+    },
+    {
+      "date": "2026-11-24",
+      "text": "A practical guide to shipping with Claude Code",
+      "url": "https://claude.dev/blog/the-work-after-you-open-a-pr/"
+    },
+    {
+      "date": "2026-11-25",
+      "text": "Claude Code 2.1.331 to 2.1.332",
+      "url": "https://code.claude.com/docs/en/changelog#2-1-332"
     }
   ],
   "connectors": [
@@ -1431,6 +1456,124 @@
       "weight": 5,
       "whatItIs": "To be written from the official page.",
       "whoItIsFor": "For people who want to know what is new."
+    },
+    {
+      "bullets": [
+        "Review your monthly progress",
+        "Includes Code and Cowork activity",
+        "Manage and delete stored recaps"
+      ],
+      "forChips": [
+        "productivity",
+        "summaries",
+        "New"
+      ],
+      "id": "monthly-recap",
+      "introduces": [
+        "reflect"
+      ],
+      "name": "Monthly recap",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886",
+      "pitfalls": [
+        "Recaps are based on stored history which you can delete"
+      ],
+      "plainWords": "Get a summary of your interactions and progress with Claude over the past month.",
+      "plans": [
+        "free",
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "shippedOn": "2026-11-24",
+      "status": "published",
+      "surface": [
+        "chat"
+      ],
+      "tryPrompt": "I cannot trigger this via a prompt, but you can find it in your settings under Reflect to see your monthly summary.",
+      "verifiedOn": "2026-11-28",
+      "weight": 5,
+      "whatItIs": "A feature in settings that provides a retrospective of your activity, including Claude Code sessions and Claude Cowork tasks, with the option to manage or delete your stored history.",
+      "whoItIsFor": "For people who want to review their monthly productivity and usage patterns."
+    },
+    {
+      "bullets": [
+        "Run artifacts in a dedicated window",
+        "Access tools via desktop icons",
+        "Enable interaction with your operating system"
+      ],
+      "forChips": [
+        "desktop apps",
+        "productivity",
+        "New"
+      ],
+      "id": "install-artifacts-as-apps",
+      "introduces": [
+        "artifacts",
+        "interactive-apps"
+      ],
+      "name": "Install artifacts as apps",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886",
+      "pitfalls": [
+        "Functionality may vary depending on your operating system"
+      ],
+      "plainWords": "Turn the code or tools Claude creates into standalone applications on your computer.",
+      "plans": [
+        "free",
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "shippedOn": "2026-11-24",
+      "status": "published",
+      "surface": [
+        "chat"
+      ],
+      "tryPrompt": "Create a simple pomodoro timer app that I can install and use on my desktop.",
+      "verifiedOn": "2026-11-28",
+      "weight": 5,
+      "whatItIs": "This feature allows you to install Claude artifacts directly onto your Mac or Windows desktop. Once installed, they function as independent applications with their own windows, icons, and the ability to interact with your operating system.",
+      "whoItIsFor": "For people who want to use Claude's creations as permanent, dedicated tools on their desktop."
+    },
+    {
+      "bullets": [
+        "Send files directly to connected apps",
+        "Save files from apps into your chat",
+        "See the official page for the details."
+      ],
+      "forChips": [
+        "file transfer",
+        "app integration",
+        "New"
+      ],
+      "id": "file-transfers-with-connected-apps",
+      "introduces": [
+        "connectors"
+      ],
+      "name": "File transfers with connected apps",
+      "officialUrl": "https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886",
+      "pitfalls": [
+        "Requires connected apps to be set up first"
+      ],
+      "plainWords": "You can now send files to connected applications and save files directly from them.",
+      "plans": [
+        "free",
+        "pro",
+        "max",
+        "team",
+        "enterprise"
+      ],
+      "shippedOn": "2026-11-24",
+      "status": "published",
+      "surface": [
+        "chat"
+      ],
+      "tryPrompt": "Send the summary of our conversation as a text file to my connected workspace app.",
+      "verifiedOn": "2026-11-28",
+      "weight": 5,
+      "whatItIs": "A new capability that allows Claude to exchange files with external apps through connectors, enabling seamless data movement between your chat and other software.",
+      "whoItIsFor": "For people who want to move documents and data between Claude and their other professional tools."
     }
   ],
   "lighthouse": {

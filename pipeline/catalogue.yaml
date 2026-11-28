@@ -4331,6 +4331,116 @@ features:
   status: draft
   introduces: []
   weight: 5
+# OWNER: confirm availability on the official page
+- id: monthly-recap
+  name: Monthly recap
+  surface:
+  - chat
+  plainWords: Get a summary of your interactions and progress with Claude over the past month.
+  whatItIs: A feature in settings that provides a retrospective of your activity, including Claude Code
+    sessions and Claude Cowork tasks, with the option to manage or delete your stored history.
+  whoItIsFor: For people who want to review their monthly productivity and usage patterns.
+  # OWNER: add a third chip
+  forChips:
+  - productivity
+  - summaries
+  - New
+  bullets:
+  - Review your monthly progress
+  - Includes Code and Cowork activity
+  - Manage and delete stored recaps
+  shippedOn: '2026-11-24'
+  verifiedOn: '2026-11-28'
+  # OWNER: confirm plans
+  plans:
+  - free
+  - pro
+  - max
+  - team
+  - enterprise
+  officialUrl: https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886
+  tryPrompt: I cannot trigger this via a prompt, but you can find it in your settings under Reflect to
+    see your monthly summary.
+  pitfalls:
+  - Recaps are based on stored history which you can delete
+  status: published
+  introduces:
+  - reflect
+  weight: 5
+# OWNER: confirm availability on the official page
+- id: install-artifacts-as-apps
+  name: Install artifacts as apps
+  surface:
+  - chat
+  plainWords: Turn the code or tools Claude creates into standalone applications on your computer.
+  whatItIs: This feature allows you to install Claude artifacts directly onto your Mac or Windows desktop.
+    Once installed, they function as independent applications with their own windows, icons, and the ability
+    to interact with your operating system.
+  whoItIsFor: For people who want to use Claude's creations as permanent, dedicated tools on their desktop.
+  # OWNER: add a third chip
+  forChips:
+  - desktop apps
+  - productivity
+  - New
+  bullets:
+  - Run artifacts in a dedicated window
+  - Access tools via desktop icons
+  - Enable interaction with your operating system
+  shippedOn: '2026-11-24'
+  verifiedOn: '2026-11-28'
+  # OWNER: confirm plans
+  plans:
+  - free
+  - pro
+  - max
+  - team
+  - enterprise
+  officialUrl: https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886
+  tryPrompt: Create a simple pomodoro timer app that I can install and use on my desktop.
+  pitfalls:
+  - Functionality may vary depending on your operating system
+  status: published
+  introduces:
+  - artifacts
+  - interactive-apps
+  weight: 5
+# OWNER: confirm availability on the official page
+- id: file-transfers-with-connected-apps
+  name: File transfers with connected apps
+  surface:
+  - chat
+  plainWords: You can now send files to connected applications and save files directly from them.
+  whatItIs: A new capability that allows Claude to exchange files with external apps through connectors,
+    enabling seamless data movement between your chat and other software.
+  whoItIsFor: For people who want to move documents and data between Claude and their other professional
+    tools.
+  # OWNER: add a third chip
+  forChips:
+  - file transfer
+  - app integration
+  - New
+  # OWNER: add a third bullet
+  bullets:
+  - Send files directly to connected apps
+  - Save files from apps into your chat
+  - See the official page for the details.
+  shippedOn: '2026-11-24'
+  verifiedOn: '2026-11-28'
+  # OWNER: confirm plans
+  plans:
+  - free
+  - pro
+  - max
+  - team
+  - enterprise
+  officialUrl: https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886
+  tryPrompt: Send the summary of our conversation as a text file to my connected workspace app.
+  pitfalls:
+  - Requires connected apps to be set up first
+  status: published
+  introduces:
+  - connectors
+  weight: 5
 changelog:
 - date: '2026-08-15'
   text: Cowork adds scheduled tasks
@@ -4431,6 +4541,21 @@ changelog:
 - date: '2026-11-20'
   text: Claude Code 2.1.304 to 2.1.330
   url: https://code.claude.com/docs/en/changelog#2-1-330
+- date: '2026-11-24'
+  text: Monthly recap is out of beta
+  url: https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886
+- date: '2026-11-24'
+  text: Install artifacts as apps (beta)
+  url: https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886
+- date: '2026-11-24'
+  text: Send files to connected apps and save files from them (beta)
+  url: https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886
+- date: '2026-11-24'
+  text: A practical guide to shipping with Claude Code
+  url: https://claude.dev/blog/the-work-after-you-open-a-pr/
+- date: '2026-11-25'
+  text: Claude Code 2.1.331 to 2.1.332
+  url: https://code.claude.com/docs/en/changelog#2-1-332
 scoreWeights:
   memory: 5
   projects: 4

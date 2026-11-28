@@ -2,6 +2,11 @@
  "source": "claude-dev",
  "items": [
   {
+   "key": "https://claude.dev/blog/the-work-after-you-open-a-pr/",
+   "date": "2026-11-24",
+   "title": "A practical guide to shipping with Claude Code"
+  },
+  {
    "key": "https://claude.dev/blog/chaos-loop-claude-docs-launch/",
    "date": "2026-11-17",
    "title": "Using a \"chaos loop\" to harden the Claude Docs launch: 60 server errors across billions of requests"
